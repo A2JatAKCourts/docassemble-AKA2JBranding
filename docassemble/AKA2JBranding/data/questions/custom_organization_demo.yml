@@ -1,0 +1,37 @@
+comment: |
+  This file lets you quickly test changes you made in your organization package.
+  
+  You will need to install this package in order to test changes to your logo
+  (since the logo URL uses a static path).
+---
+include:
+  - docassemble.AssemblyLine:al_package.yml
+  - custom_organization.yml
+---
+comment: |
+  These are placeholder values for some of the mandatory values that need to
+  be defined.
+code: |
+  allowed_courts = ["District","Superior","Supreme Court"]
+  al_form_type = "starts_case"
+  form_approved_for_email_filing = False
+  interview_short_title = "Custom organization demo"
+  user_role = "plaintiff"
+---
+mandatory: True
+code: |
+  al_intro_screen
+  trial_court
+  trial_court_demo
+---
+event: trial_court_demo
+question: |
+  Here is the court you selected
+subquestion: |
+  ${ trial_court }
+  ${ trial_court.address.block() }
+  
+  ${ trial_court.description }
+  
+  ${ map_of(trial_court) }
+  
