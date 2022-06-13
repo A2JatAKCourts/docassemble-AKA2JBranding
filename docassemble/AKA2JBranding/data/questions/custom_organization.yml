@@ -26,7 +26,8 @@ metadata:
   short title: |
     Guided Assistant  
   title url: https://www.legalnav.org/guided-assistant/?location=alaska
-  logo: |
+  logo: |   
+   <img src="/packagestatic/docassemble.ALAKJurisdiction/acs_logo.jpg" class="ma_icon" alt="Logo"><div class="title">Guided Assistant</div>
   #  <img src="/packagestatic/docassemble.ALGenericJurisdiction/iconmonstr-script-5-64.png" class="ma_icon" alt="Logo"><div class="title">Guided Assistant</div>
   exit url: |
     https://www.legalnav.org/guided-assistant/?location=alaska
@@ -50,7 +51,8 @@ subquestion: |
   
   Tap the {green words} on any screen for a definition or more information.
   
-  ### Your action plan does not take the place of a lawyer
+  **Important:**
+  Your action plan does not take the place of a lawyer.
   It is not advice and cannot tell you what you **should** do about your particular legal problem. It only lists things you may be able to do. Always speak with a lawyer, if you can.  See [Finding a lawyer](http://courts.alaska.gov/shc/shclawyer.htm).
   
   % if chat_partners_available().help:
