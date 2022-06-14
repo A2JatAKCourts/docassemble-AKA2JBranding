@@ -13,24 +13,19 @@ modules:
 objects:
   # the court database can be an Excel, CSV, or JSON data file
   - all_courts: ALCourtLoader.using(file_name="court_sample.xlsx")
+  - al_logo: DAStaticFile.using(filename= "acs_logo.png")
 ---  
-comment: |
-  Upload a new icon to the "static" folder and update the path
-  in the "logo" area below, as well as updating each metadata field below.
-  
-  If you want to use the sample icon, you need to accept the license here: 
-  https://iconmonstr.com/license/
 metadata:
   title: |
     Guided Assistant
   short title: |
     Guided Assistant  
   title url: https://www.legalnav.org/guided-assistant/?location=alaska
-  logo: |   
-   <img src="/packagestatic/docassemble.ALAKJurisdiction/acs_logo.jpg" class="ma_icon" alt="Logo"><div class="title">Guided Assistant</div>
-  #  <img src="/packagestatic/docassemble.ALGenericJurisdiction/iconmonstr-script-5-64.png" class="ma_icon" alt="Logo"><div class="title">Guided Assistant</div>
   exit url: |
     https://www.legalnav.org/guided-assistant/?location=alaska
+---
+code: |
+  AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
 ---
 features:
   question help button: True
