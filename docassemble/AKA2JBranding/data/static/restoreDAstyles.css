@@ -1,0 +1,7 @@
+#dablock .form-label {
+    text-align: left !important;
+    border: none;
+    background-color: #f8f9fa;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
