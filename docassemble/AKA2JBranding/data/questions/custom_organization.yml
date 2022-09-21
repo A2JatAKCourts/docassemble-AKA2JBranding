@@ -31,7 +31,8 @@ features:
   question help button: True
   question back button: True
   progress bar: True
-  css: colors.css
+  css: 
+    - colors.css
 ---
 id: basic questions intro screen
 decoration: form-lineal
