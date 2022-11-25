@@ -23,6 +23,8 @@ metadata:
   title url: https://www.legalnav.org/guided-assistant/?location=alaska
   exit url: |
     https://www.legalnav.org/guided-assistant/?location=alaska
+  back button label: |
+    Back
 ---
 code: |
   AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
