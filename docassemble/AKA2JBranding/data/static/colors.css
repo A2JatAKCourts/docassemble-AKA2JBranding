@@ -60,3 +60,8 @@ blockquote:before {
 blockquote p {
     display: inline;
 }
+
+
+.bg-dark {
+    background-color: #0D6EFD !important;
+}
