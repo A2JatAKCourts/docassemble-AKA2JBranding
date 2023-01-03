@@ -27,6 +27,7 @@ metadata:
 default screen parts:
   back button label: |
     Back
+  footer: ""
 ---
 code: |
   AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
