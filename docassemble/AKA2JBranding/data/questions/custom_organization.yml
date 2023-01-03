@@ -27,6 +27,7 @@ metadata:
 default screen parts:
   back button label: |
     Back
+  under: ""
   footer: ""
 ---
 code: |
