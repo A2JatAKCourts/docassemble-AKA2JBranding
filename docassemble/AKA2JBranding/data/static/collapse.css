@@ -1,0 +1,22 @@
+.collapse .card, .collapsing .card {
+  background-color: transparent !important;
+  border: none;
+}
+.pdcaretopen, .pdcaretclosed, a[data-bs-toggle="collapse"]  {
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
+.step-subheading {
+  font-size: 1.3rem;
+  font-weight: bold; 
+}
+
+.al_table, .al_table#al_user_bundle {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.card > ul > li > ul > li:last-child {
+  margin-bottom: 1em;
+}

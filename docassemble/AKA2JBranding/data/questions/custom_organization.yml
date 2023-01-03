@@ -37,6 +37,7 @@ features:
   progress bar: True
   css: 
     - colors.css
+    - collapse.css
 ---
 id: basic questions intro screen
 decoration: form-lineal
