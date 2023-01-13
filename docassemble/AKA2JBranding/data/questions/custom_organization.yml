@@ -33,10 +33,9 @@ default screen parts:
   under: ""
   footer: |
 		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user, package_version=package_version_number) } ){:target="_blank"}
-
 ---
 code: |
-  feedback_form = "feedback.yml" 
+  feedback_form = "docassemble-AKA2JBranding:feedback.yml" 
 ---
 features:
   question help button: True
