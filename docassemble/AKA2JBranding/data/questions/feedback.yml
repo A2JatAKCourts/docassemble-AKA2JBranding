@@ -2,9 +2,12 @@ comment: |
   Customize this feedback form to include any elements you want in
   your package.
 ---
-metadata:
-  title: Feedback Form
-  short title: Feedback
+include: 
+  - docassemble.AKA2JBranding:custom_organization.yml
+---
+#  metadata:
+#    title: Feedback Form
+#    short title: Feedback
 ---
 modules:
   - docassemble.GithubFeedbackForm.github_issue
@@ -33,24 +36,36 @@ features:
   labels above fields: True   
   question back button: True
 ---
+image sets:
+  freepik:
+    attribution: |
+      Icon made by [Freepik](http://www.flaticon.com/authors/freepik)
+    images:
+      opinion: opinion.svg
+---
 mandatory: True
 code: |
-  intro
-  if reason == 'bug':
-    bug_details
-    issue_template = bug_report
-  elif reason == 'confusing':
-    confusing_details
-    issue_template = confusing_report
-  elif reason == 'else':
-    other_feedback
-    issue_template = other_feedback_report
-  elif reason == 'help':
-    gentle_exit
+  other_feedback
+  issue_template = other_feedback_report
   send_to_github
   prevent_going_back()
   store_variables_snapshot() # this is mostly just for backup reasons
   end_results
+#  if reason == 'bug':
+#    bug_details
+#    issue_template = bug_report
+#  elif reason == 'confusing':
+#    confusing_details
+#    issue_template = confusing_report
+#  elif reason == 'else':
+#  other_feedback
+#  issue_template = other_feedback_report
+#  elif reason == 'help':
+#    gentle_exit
+#  send_to_github
+#  prevent_going_back()
+#  store_variables_snapshot() # this is mostly just for backup reasons
+#  end_results
 ---
 code: github_user = url_args.get('github_user', default_github_user_or_organization)
 ---
@@ -69,24 +84,56 @@ code: |
 ---
 id: intro
 question: |
-  Tell us how we are doing
+  Tell us your thoughts
+decoration: opinion
 subquestion: |
-
-  The information you type will be public. Anyone
-  will be able to see it. 
-  
-  so, do not include any personal details in your comments.
-
-  Thank you for telling us about your experience with this interview.
+  Do not include private information about your case. The information you
+  type on this form will be visible on a public website.
 fields:
-  - "**What would you like to tell us about?**": reason
-    input type: radio
+  - How helpful was this Guided Assistant?: how_helpful
+    datatype: radio
     choices:
-      - I found a bug: bug
-      - Part of the form was confusing or missing information: confusing
-      - I need more help: help      
-      - I have something else to tell you: else
-continue button field: intro  
+      - Very helpful
+      - A little helpful
+      - Not helpful at all
+  - What is the best way to describe you?: user_type
+    datatype: radio
+    choices:
+      - Person needing help
+      - Friend or family member of person needing help
+      - Social worker
+      - Attorney or paralegal
+      - Other: other
+  - Other (please specify): user_type
+    show if:
+      variable: user_type
+      is: other
+  - label: |
+      **What would you like to tell us?**
+    field: other_feedback   
+    datatype: area
+---
+
+
+#question: |
+#  Tell us how we are doing
+#subquestion: |
+#
+#  The information you type will be public. Anyone
+#  will be able to see it. 
+#  
+#  so, do not include any personal details in your comments.
+#
+#  Thank you for telling us about your experience with this interview.
+#fields:
+#  - "**What would you like to tell us about?**": reason
+#    input type: radio
+#    choices:
+#      - I found a bug: bug
+#      - Part of the form was confusing or missing information: confusing
+#      - I need more help: help      
+#      - I have something else to tell you: else
+#continue button field: intro  
 ---
 id: bug
 question: |
@@ -165,15 +212,16 @@ fields:
 id: other thoughts
 question: |
   Tell us your thoughts
+decoration: opinion
 subquestion: |
   Do not include private information about your case. The information you
   type on this form will be visible on a public website.
 fields:
-  - How helpful were the advice and paperwork?: how_helpful
+  - How helpful were the Guided Assistant?: how_helpful
     datatype: radio
     choices:
       - Very helpful
-      - Somewhat helpful
+      - A little helpful
       - Not helpful at all
   - What is the best way to describe you?: user_type
     datatype: radio

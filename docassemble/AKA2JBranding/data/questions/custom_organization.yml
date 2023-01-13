@@ -24,14 +24,19 @@ metadata:
   exit url: |
     https://www.legalnav.org/guided-assistant/?location=alaska
 ---
+code: |
+  AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
+---
 default screen parts:
   back button label: |
     Back
   under: ""
-  footer: ""
+  footer: |
+		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user, package_version=package_version_number) } ){:target="_blank"}
+
 ---
 code: |
-  AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
+  feedback_form = "feedback.yml" 
 ---
 features:
   question help button: True
