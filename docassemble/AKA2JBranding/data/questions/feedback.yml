@@ -16,7 +16,9 @@ modules:
 ---
 # This is the repository that Github issue will be created on if
 # the repository is not passed as a URL argument
-code: default_repository = 'docassemble-ALGenericJurisdiction'  
+code: |
+  default_repository = 'docassemble-AKA2JBranding' 
+  github_repo_name = 'docassemble-Changingforeigncsorder'
 ---
 # Change this to your github user or organization that will own
 # most of the repositories
