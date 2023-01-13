@@ -5,7 +5,6 @@ comment: |
 include: 
   # - docassemble.GithubFeedbackForm:feedback.yml
   - docassemble.AKA2JBranding:custom_organization.yml
-  
 ---
 #  metadata:
 #    title: Feedback Form
@@ -73,7 +72,7 @@ code: |
 ---
 code: github_user = url_args.get('github_user', default_github_user_or_organization)
 ---
-code: github_repo = url_args.get('github_repo_name', default_repository)
+code: github_repo = url_args.get('github_repo', default_repository)
 ---
 code: variable = url_args.get('variable')
 ---
@@ -85,6 +84,9 @@ code: |
       issue_url = make_github_issue(github_user, github_repo, template=issue_template)
     mark_task_as_performed('sent to github', persistent=True)
   send_to_github = True
+---
+default screen parts:
+  footer: ""
 ---
 id: intro
 question: |
