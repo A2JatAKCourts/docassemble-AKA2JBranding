@@ -13,7 +13,7 @@ code: |
 ---
 default screen parts:
 	footer: |
-		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user, package_version=package_version_number) } ){:target="_blank"}
+		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user) } ){:target="_blank"}
 ---
 mandatory: True
 question: |
