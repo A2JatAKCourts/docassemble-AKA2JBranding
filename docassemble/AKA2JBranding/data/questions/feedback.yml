@@ -73,7 +73,7 @@ code: |
 ---
 code: github_user = url_args.get('github_user', default_github_user_or_organization)
 ---
-code: github_repo = url_args.get('github_repo', default_repository)
+code: github_repo = url_args.get('github_repo_name', default_repository)
 ---
 code: variable = url_args.get('variable')
 ---
