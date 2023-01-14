@@ -1,0 +1,23 @@
+metadata:
+  title: "Guided Assistant: Testing Feedback form on AK docassemble"
+  short title: Test feedback
+  comment: This is a learning tool.  Feel free to write over it.
+---
+include:
+  - docassemble.AssemblyLine:al_package.yml
+  - docassemble.AKA2JBranding:custom_organization.yml
+---
+code: |
+  github_repo_name = "docassemble-TestAKFeedback"
+  feedback_form = "feedback.yml" 
+---
+default screen parts:
+	footer: |
+		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user) } ){:target="_blank"}
+---
+mandatory: True
+question: |
+  What is your docket number?
+fields:
+  - no label: docket_number
+---
