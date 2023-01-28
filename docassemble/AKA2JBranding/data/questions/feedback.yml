@@ -152,10 +152,11 @@ question: |
   Thank you for your feedback
 subquestion: |
   Thank you for letting us know how we are doing.
-  
+  %  if user_logged_in():
   % if defined('issue_url'):
   If you would like to track this issue, you can [follow 
   it](${issue_url}) on GitHub.
+  % endif
   % endif
 buttons:
   - Exit: exit
