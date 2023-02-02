@@ -85,6 +85,7 @@ fields:
       - Very helpful
       - A little helpful
       - Not helpful at all
+    required: false
   - What is the best way to describe you?: user_type
     datatype: radio
     choices:
@@ -93,6 +94,7 @@ fields:
       - Social worker
       - Attorney or paralegal
       - Other: other
+    required: false
   - Other (please specify): user_type
     show if:
       variable: user_type
