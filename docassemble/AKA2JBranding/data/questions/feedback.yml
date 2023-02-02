@@ -118,6 +118,9 @@ fields:
       - Very helpful
       - A little helpful
       - Not helpful at all
+    required: False
+      
+      
   - What is the best way to describe you?: user_type
     datatype: radio
     choices:
@@ -126,6 +129,7 @@ fields:
       - Social worker
       - Attorney or paralegal
       - Other: other
+    required: False
   - Other (please specify): user_type
     show if:
       variable: user_type
@@ -155,7 +159,7 @@ question: |
 subquestion: |
   Thank you for letting us know how we are doing.
   
-  %  if user_logged_in():
+  % if user_logged_in():
   % if defined('issue_url'):
   If you would like to track this issue, you can [follow 
   it](${issue_url}) on GitHub.
