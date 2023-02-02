@@ -174,12 +174,13 @@ subject: |
 content: | 
   ## How helpful was this form?
   Choices are "very helpful", "somewhat helpful", "not helpful at all".
-  
+  % if defined(how_helpful):
   ${ how_helpful }
-  
+  % endif
   ## What best describes you?
-  
+   % if defined(user_type):
   ${ user_type }
+  % endif
   
   ## User feedback:  
   > ${ other_feedback }
