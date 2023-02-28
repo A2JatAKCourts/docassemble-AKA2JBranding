@@ -1,0 +1,8 @@
+package name: AKA2JBranding
+organization_choices:
+  - description: AKA2JBranding
+    dependency: "docassemble.MyPackage @ https://github.com/MyOrg/docassemble-AKA2JBranding/archive/main.zip"
+    include_name: "docassemble.AKA2JBranding:custom_organization.yml"
+    state: AK
+    country: US
+    default: false
