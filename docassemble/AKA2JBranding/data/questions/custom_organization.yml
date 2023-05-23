@@ -9,6 +9,7 @@ comment: |
 ---
 modules:
   - .al_courts
+  - .ak_document
 ---
 objects:
   # the court database can be an Excel, CSV, or JSON data file
