@@ -18,12 +18,12 @@ objects:
 ---  
 metadata:
   title: |
-    Guided Assistant
+    Guided Assistant Feedback
   short title: |
-    Guided Assistant  
-  title url: https://www.legalnav.org/guided-assistant/?location=alaska
+    Guided Assistant Feedback
+  title url: https://courts.alaska.gov/forms
   exit url: |
-    https://www.legalnav.org/guided-assistant/?location=alaska
+    https://courts.alaska.gov/forms
 ---
 code: |
   AL_ORGANIZATION_TITLE = "AKCourts Access to Justice"
