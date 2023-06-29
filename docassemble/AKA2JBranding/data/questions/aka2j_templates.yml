@@ -55,7 +55,7 @@ content: |
     % endif
     % endif
   % elif user_need == 'Ask':
-    [FILE certofservice_interim_orders.png, 100%, Certificate of Service box]
+    [FILE docassemble.AKA2JBranding:certofservice_interim_orders.png, 100%, Certificate of Service box]
   % endif				
 ---
 template: file_step
