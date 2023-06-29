@@ -25,32 +25,32 @@ content: |
   </li>
   </ol>
   % if user_need == 'change foreign order':
-  [FILE certofservice_modify.png, 100%, Certificate of Service box]
+  [FILE docassemble.AKA2JBranding:certofservice_modify.png, 100%, Certificate of Service box]
   % elif user_need in('enforce foreign order', 'enforce AK order'):
-  [FILE certofservice_enforce.png, 100%, Certificate of Service box]					
+  [FILE docassemble.AKA2JBranding:certofservice_enforce.png, 100%, Certificate of Service box]
   % elif user_need == 'change AK order':
     % if why_change in('income', 'problem'):							
     % if middle_of_case:						
     % if (defined('interim_order_date') and date_difference(starting=interim_order_date, ending=today()).days <= 10)  or (defined('interim_order_period')	and	guess_interim_order_date == 'within 10 days'):
-    [FILE certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
+    [FILE docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
     % elif (defined('interim_order_date') and date_difference(starting=interim_order_date, ending=today()).days  > 10) or	(defined('interim_order_period') and guess_interim_order_date == 'more than 10 days'):
-    [FILE certofservice_modify.png, 100%, Certificate of Service box]			
+    [FILE docassemble.AKA2JBranding:certofservice_modify.png, 100%, Certificate of Service box]			
     % else:					
     % if unknown_interim_date == 'reconsider':				
-    [FILE certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
+    [FILE docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
     % elif unknown_interim_date == 'modify':				
-    [FILE certofservice_modify.png, 100%, Certificate of Service box]			
+    [FILE docassemble.AKA2JBranding:certofservice_modify.png, 100%, Certificate of Service box]			
     % else:				
     Fill out the Certificate of Service for the motion you decide to use:			
-    [FILE certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
-    [FILE certofservice_modify.png, 100%, Certificate of Service box]
+    [FILE docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]			
+    [FILE docassemble.AKA2JBranding:certofservice_modify.png, 100%, Certificate of Service box]
     % endif
     % endif		
     % else:						
     % if why_change =='income':		
-    [FILE certofservice_modify.png, 100%, Certificate of Service box]				
+    [FILE docassemble.AKA2JBranding:certofservice_modify.png, 100%, Certificate of Service box]				
     % else:					
-    [FILE certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]
+    [FILE docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png, 100%, Certificate of Service box]
     % endif
     % endif
     % endif
