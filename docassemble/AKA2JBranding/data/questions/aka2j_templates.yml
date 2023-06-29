@@ -55,6 +55,8 @@ content: |
     % endif
     % endif
   % elif user_need == 'Ask':
+    placeholder text for Certificate of Service box
+  % elif user_need == 'Ask for real':
     [FILE certofservice_interim_orders.png, 100%, Certificate of Service box]
   % endif				
 ---
