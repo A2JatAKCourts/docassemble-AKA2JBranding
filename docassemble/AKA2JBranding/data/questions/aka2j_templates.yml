@@ -1,6 +1,6 @@
-template: template_cert_of_service_step
+template: cert_of_service_step
 subject: |
-  Step ${ template_cert_of_service_idx }: Fill out the Certificate of Service
+  Step ${ cert_of_service_idx }: Fill out the Certificate of Service
 content: |
   You must give the other parent 1 copy of everything you file with the court. This is called “service.”
   <ol>
