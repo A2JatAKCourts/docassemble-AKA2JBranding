@@ -14,7 +14,7 @@ content: |
     <li>The judge overlooked, misapplied or failed to  consider a statute, decision or principle directly controlling. This means the  judge made a mistake when they applied the law in your case.
       <p><strong>For example</strong></p>
       <ul>
-        <li>Rule 90.3 states that if a child spends at least  256 nights with one parent, that parent has primary custody and the other  parent  pays 20% of their adjusted annual  income for child support to the parent the child lives with. .</li>
+        <li>Rule 90.3 states that if a child spends at least  256 nights with one parent, that parent has primary custody and the other  parent pays 20% of their adjusted annual  income for child support to the parent the child lives with.</li>
         <li>If the judge used 27% of adjusted income instead  of 20%, the <strong>Motion to Reconsider</strong> would state that the judge misapplied Civil Rule 90.3.</li>
       </ul>
     </li>
@@ -66,10 +66,10 @@ subject: |
   Step ${ expect_reconsider_idx }: What to expect after you file a Motion to Reconsider 
 content: |
   <p>A <strong>Motion to Reconsider</strong> is different from other motions.</p>
-  <p>The other parent does not have to respond unless the judge sends  a notice and asks the other parent to respond in writing.</p>
-  <p> If the judge agrees to reconsider their decision, they may ask  the other parent to respond in writing or they may change the decision.  Usually, the judge only changes their  decision after they ask the other parent for a written response.</p>
+  <p>${ capitalize(other_party_in_case) } does not have to respond unless the judge sends a notice and asks ${ other_party_in_case } to respond in writing.</p>
+  <p> If the judge agrees to reconsider their decision, they may ask ${ other_party_in_case } to respond in writing or they may change the decision. Usually, the judge only changes their  decision after they ask ${ other_party_in_case } for a written response.</p>
   <p>If the judge does nothing for 30 days, it  means the judge is not going to grant your <strong>Motion  to Reconsider</strong>. You will not get anything in writing</a>. The original decision is not changed.</p>
-  <p>The 30 days starts when  you file your <strong>Motion to Reconsider</strong>.  If the judge asks the other parent to respond in writing, the 30 days starts  over when the other parent files their written response.</p>
+  <p>The 30 days starts when  you file your <strong>Motion to Reconsider</strong>.  If the judge asks ${ other_party_in_case } to respond in writing, the 30 days starts  over when ${ other_party_in_case } files their written response.</p>
   <p>Read the court's web  page <a href="https://courts.alaska.gov/shc/family/after-judgment.htm">Options  after you get a judge's decision</a>.</p>
 ---
 template: appeal_step
@@ -144,7 +144,7 @@ content: |
     <li>The judgment is  void.
       <p><strong>For example</strong></p>
       <ul>
-        <li>An Alaska court generally does not have the authority or  &quot;jurisdiction&quot; to make a parenting  plan for a child who has lived in another state for the past 6 or more  months.  </li>
+        <li>An Alaska court generally does not have the authority or &quot;jurisdiction&quot; to make a parenting  plan for a child who has lived in another state for the past 6 or more  months. </li>
         <li>If a child was living in Oregon for 6 months before the divorce  case started, and</li>
         <li>A parent hid this detail from the other parent and the court, </li>
         <li>The parenting plan order would be void because the court did not  have jurisdiction to decide the parenting plan.</li>
@@ -190,13 +190,13 @@ subject: |
   Step ${ expect_set_aside_idx }: What to expect after you file a Motion to Set Aside
 content: |
   <div class='step-subheading'>The other parent may file a response or "opposition"</div>
-  <p>If you serve the other parent: 
+  <p>If you serve ${ other_party_in_case }: 
   <ul>
   <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li> 
   <li>by mail, they have 13 days.</li>
   </ul></p>
-  <p>The documents the other parent files after you serve them is their "response" or "opposition."</p>   <div class='step-subheading'>You can reply to their response</div>
-  <p>If the other parent files a response you can file a reply. If they serve you:
+  <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>   <div class='step-subheading'>You can reply to their response</div>
+  <p>If ${ other_party_in_case } files a response you can file a reply. If they serve you:
   <ul>
   <li>By hand delivery, email or TrueFile, you have 5 days to file,</li> 
   <li>By mail, you have 8 days.</li>
