@@ -60,20 +60,18 @@ subject: |
   Step ${ expect_idx }: What to expect after you file
 content: |
   <div class='step-subheading'>${ capitalize(other_party_in_case) } may file a response or “opposition”</div>
-  <p><strong>If you serve ${ other_party_in_case }</strong>:
+  If you serve ${ other_party_in_case }:
   <ul>
   <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li>
   <li>by mail, they have 13 days.</li>
-  <ul>
-  </p>
-  
+  <ul>  
   The documents ${ other_party_in_case } files after you serve them is their “response” or “opposition.”
   <div class='step-subheading'>You can reply to their response</div>
   If ${ other_party_in_case } files a response you can file a reply. If they serve you:
   <ul>
   <li>By hand delivery, email or TrueFile, you have 5 days to file,</li>
   <li>By mail, you have 8 days</li>
-  <ul>
+  </ul>
   If the due date is a weekend or holiday, your reply is due the next day the court is open. For example, if your reply is due on a Saturday, and the court is open Monday, your reply is due Monday.
   Watch a video about replies: [Motions Part 3: Preparing a Reply](https://www.youtube.com/watch?v=egoBeRFB_Uw)
   Use: <strong>Reply, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC – 1305</a></strong>.
