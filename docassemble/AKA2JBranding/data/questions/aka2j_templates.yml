@@ -285,7 +285,6 @@ content: |
   <p>Serve them on the date you put in the <strong>Certificate of Service</strong>.</p>
   <p>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a>.</p>
   <p>File the new certificate with the court.</p>
-    
 ---
 template: expect_step
 subject: |
@@ -311,3 +310,13 @@ content: |
   Use: <strong>Reply, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC – 1305</a></strong>.
   
   Read more about [motions](https://courts.alaska.gov/shc/family/motions.htm#order) and [replying](https://courts.alaska.gov/shc/family/motions.htm#reply) on the court’s webpage
+---
+template: file_and_serve_step
+subject: |
+  Step ${ file_and_serve_idx }: Old File and serve step
+content: |
+  Placeholder until we can replace with:
+  Cert of Service
+  File
+  Serve
+  Expect
