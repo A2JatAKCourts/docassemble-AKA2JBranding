@@ -49,7 +49,7 @@ template: serve_step
 subject: |
   Step ${ serve_idx }: Serve ${ other_party_in_case }
 content: |
-  p>Give a copy of all your documents to ${ other_party_in_case } the way you  put on the <strong>Certificate of Service</strong>.</p>
+  <p>Give a copy of all your documents to ${ other_party_in_case } the way you  put on the <strong>Certificate of Service</strong>.</p>
   <p>Serve them on the date you put in the <strong>Certificate of Service</strong>.</p>
   <p>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a>.</p>
   <p>File the new certificate with the court.</p>
