@@ -42,7 +42,7 @@ content: |
   </li>
   <li>Keep 1 copy for your own records.</li>
   <li>Give the 2nd copy to ${ other_party_in_case } the date and way you wrote on your <strong>Certificate of Service</strong>.<br>
-  Read ${ serve_idx }: Serve ${ other_party_in_case }.</li>
+  Read Step ${ serve_idx }: Serve ${ other_party_in_case }.</li>
   </ol>
 ---
 template: serve_step
