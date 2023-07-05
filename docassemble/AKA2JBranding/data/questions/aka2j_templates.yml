@@ -263,6 +263,7 @@ template: file_step
 subject: |
   Step ${ file_idx }: File your motion forms
 content: |
+  ${ file_motion_to_set_aside }
   <ol>
   <li>Make 2 copies of all the documents you are going to give the court.</li>
   <li>Give the original version of your documents to the Court. This is called "filing" your  documents. You can:
