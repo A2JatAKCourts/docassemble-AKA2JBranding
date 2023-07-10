@@ -264,6 +264,7 @@ subject: |
   Step ${ file_idx }: File your motion forms
 content: |
   ${ file_motion_to_set_aside }
+  ${ file_motion_to_enforce }
   <ol>
   <li>Make 2 copies of all the documents you are going to give the court.</li>
   <li>Give the original version of your documents to the Court. This is called "filing" your  documents. You can:
@@ -296,7 +297,8 @@ content: |
   <ul>
   <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li>
   <li>by mail, they have 13 days.</li>
-  </ul>  
+  </ul>
+  ${ expect_after_motion }
   The documents ${ other_party_in_case } files after you serve them is their “response” or “opposition.”
   <div class='step-subheading'>You can reply to their response</div>
   If ${ other_party_in_case } files a response you can file a reply. If they serve you:
