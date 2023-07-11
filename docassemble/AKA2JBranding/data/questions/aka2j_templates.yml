@@ -256,8 +256,10 @@ content: |
   </ul></li>
   </li>
   </ol>
-  
-  ${ certificate_of_service_image }
+
+
+  ${ service_cert_image.show(width='100%') }
+
 ---
 template: file_step
 subject: |
