@@ -1,3 +1,9 @@
+objects:
+  - service_cert_interim_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_interim_orders.png', alt_text="Certificate of Service box")
+  - service_cert_reconsider_set_aside_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png', alt_text="Certificate of Service box")
+  - service_cert_modify_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_modify.png', alt_text="Certificate of Service box")
+  - service_cert_enforce_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_enforce.png', alt_text="Certificate of Service box")
+---
 template: learn_reconsider_step
 subject: |
   Step ${ learn_reconsider_idx }: Learn about Motions to Reconsider
@@ -256,8 +262,11 @@ content: |
   </ul></li>
   </li>
   </ol>
-  
-  ${ certificate_of_service_image }
+  % for image_data in images_list:
+  ${  image_data['text'] }
+  ${ image_data['image'].show(width='100%') }
+  ${  image_data['text'] }
+  % endfor
 ---
 template: file_step
 subject: |
