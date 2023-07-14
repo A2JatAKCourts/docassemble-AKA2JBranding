@@ -6,3 +6,5 @@ organization_choices:
     state: AK
     country: US
     default: false
+output_mako:
+  AKCourts: output.mako
