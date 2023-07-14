@@ -37,6 +37,7 @@ def download_buttons_html(
         view_icon: str = "eye",
         download_label: str = "Download",
         download_icon: str = "download",
+        add_suffix = False
     ) -> str:
         """
         Returns an HTML string of a table to display all the docs
