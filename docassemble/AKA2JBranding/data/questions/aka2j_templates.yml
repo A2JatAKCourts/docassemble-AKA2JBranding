@@ -97,10 +97,22 @@ subject: |
   Step ${ learn_set_aside_idx }: Learn about Motions to Set Aside
 content: |
   <p>A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to</a></p>
-  <ul>
-    <li>Set aside or undo the final child support  decision in your case, and </li>
+  % if user_need == 'change AK order':
+    <ul>
+    <li>Set aside or undo the final child support  decision in your case, and</li>
     <li>Start the child support part of your case over  again.</li>
   </ul>
+  % elif user_need in('change custody order','respond to custody'):
+  <ul>
+    <li>Set aside or undo the final custody, parenting plan or child support decision in your case, and</li>
+    <li>Start the child support part of your case over again.</li>
+  </ul>
+  % else:
+  <ul>
+    <li>Set aside or undo the final decision in your case, and</li>
+    <li>Start the case all over again.</li>
+  </ul>
+  % endif
   <p>Judges rarely agree to do this.</p>
   <p>Civil Rule 60(a) and (b) describe the  reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong> if: </p>
   <ul>
