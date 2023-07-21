@@ -242,23 +242,6 @@ content: |
   <p>Either parent can decide to appeal the decision about the Motion to Set Aside if they believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
   <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 template: cert_of_service_step
 subject: |
   Step ${ cert_of_service_idx }: Fill out the Certificate of Service
@@ -286,13 +269,13 @@ content: |
   </li>
   </ol>
   % for image_data in images_list:
-  ${  image_data['text'] }
+  ${ image_data['text'] }
   ${ image_data['image'].show(width='100%') }
   % endfor
 ---
 template: file_step
 subject: |
-  Step ${ file_idx }: File your motion forms
+  Step ${ file_idx }: {% if interim_motion = 'ask' %}File your Motion for Interim Child Support{% elif modify_within_15_days or modify_after_15 == 'AK order' %}Pay the $75 fee, and file your Motion to Modify{% else %}File your {% if motion or motion_for_reconsideration  %}Motion for Reconsideration {% elif standing_order %}Motion{% elif modify_after_15 == 'foreign order' %}File and your Motion to Modify{% endif %}{% endif %}
 content: |
   ${ file_motion_to_set_aside }
   ${ file_motion_to_enforce }
