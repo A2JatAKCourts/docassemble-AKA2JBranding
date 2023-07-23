@@ -275,7 +275,7 @@ content: |
 ---
 template: file_step
 subject: |
-  Step ${ file_idx }: {% if interim_motion = 'ask' %}File your Motion for Interim Child Support{% elif modify_within_15_days or modify_after_15 == 'AK order' %}Pay the $75 fee, and file your Motion to Modify{% else %}File your {% if motion or motion_for_reconsideration  %}Motion for Reconsideration {% elif standing_order %}Motion{% elif modify_after_15 == 'foreign order' %}File and your Motion to Modify{% endif %}{% endif %}
+  Step ${ file_idx }: File your motion forms    
 content: |
   ${ file_motion_to_set_aside }
   ${ file_motion_to_enforce }
@@ -288,6 +288,7 @@ content: |
       <li>Use the Court's <a href="https://courts.alaska.gov/efile/">TrueFile  eFiling system</a> to send the documents to the court electronically.</li>
     </ul>
   </li>
+  ${ file_modify_filing_fee }
   <li>Keep 1 copy for your own records.</li>
   <li>Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your <strong>Certificate of Service</strong>.<br>
   Read Step ${ serve_idx }: Serve ${ other_party_in_case }.</li>
@@ -327,6 +328,23 @@ content: |
   Use: <strong>Reply, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC – 1305</a></strong>.
   
   Read more about [motions](https://courts.alaska.gov/shc/family/motions.htm#order) and [replying](https://courts.alaska.gov/shc/family/motions.htm#reply) on the court’s webpage
+---
+template: get_help
+subject: |
+  Step ${ get_help_idx }: Get more information or help
+content: |
+  For help with forms or understanding the process:
+  <ul><li>Call the Family Law Self-Help Center
+  <br>
+  (907) 264-0851 or<br>  
+  (866) 279-0851.</li>
+  <li>See the court’s <a href="https://courts.alaska.gov/shc/family">family law self-help webpages</a>.
+  
+  Many lawyers offer free or flat fee consultations without having to hire them for the whole case. [Find a Lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
+  
+  Depending on your income, you may qualify for [Alaska Free Legal Answers](https://alaska.freelegalanswers.org).
+  
+  Depending on your income and circumstances, you may qualify for a free lawyer from [Alaska Legal Services](https://alsc-law.org/apply-for-services).
 ---
 template: file_and_serve_step
 subject: |
