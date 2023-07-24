@@ -7,6 +7,17 @@ objects:
   - distrib_cert_custody_divorce_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_divorce_custody.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
   - distrib_cert_dissolution_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_dissolution.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
 ---
+template: pick_a_step_step
+subject: |
+  Step ${ pick_a_step_idx}: Decide the steps you want to take
+content: |
+ You have more than one way to ask the judge to change your custody or parenting plan order. 
+ 
+  Read each of the following steps.
+  
+  Decide on the steps that make the most sense in your case.
+---
+---
 template: learn_reconsider_step
 subject: |
   Step ${ learn_reconsider_idx }: Learn about Motions to Reconsider
