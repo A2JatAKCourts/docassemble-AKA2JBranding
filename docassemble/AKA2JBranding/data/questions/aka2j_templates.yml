@@ -105,7 +105,7 @@ content: |
 ---
 template: learn_set_aside_step
 subject: |
-  Step ${ learn_set_aside_idx }: Learn about Motions to Set Aside
+  Step ${ learn_set_aside_idx }: Learn about the Motion to Set Aside Judgment or Order
 content: |
   <p>A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to</a></p>
   % if user_need == 'change AK order':
@@ -137,7 +137,7 @@ content: |
   ${ image_data['image'].show(width='100%') }
   % endfor
 
-  <p>Act quickly! The judge defines  &quot;reasonable&quot; and "in a reasonable time&quot;. The judge  may refuse to set aside the order if you file <strong>after</strong> a &quot;reasonable time&quot; has passed, even if your reason  for filing is a good one.</p>
+  <p>Act quickly! The judge defines"reasonable" and "in a reasonable time". The judge  may refuse to set aside the order if you file <strong>after</strong> a "reasonable time" has passed, even if your reason  for filing is a good one.</p>
   <div class='step-subheading'>Reasons you may file a Motion to Set Aside  Judgment or Order</div>
   <p><strong>Civil Rule 60(a)</strong> <br>
     The  court made a clerical mistake or accidentally left something out of a document. </p>
