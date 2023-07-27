@@ -17,6 +17,79 @@ content: |
   
   Decide on the steps that make the most sense in your case.
 ---
+template: parents_agree_step
+subject: |
+  Step ${ parents_agree_idx }: Find out if you and ${ other_other_party_in_your_case } agree
+content: |
+  <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_other_party_in_your_case }. See if you agree about the change or if you both want to try to reach an agreement in one of these ways:</p>
+  <ul>
+    <li>Talk more with each other until you can agree.</li>
+    <li>Mediation.</li>
+    <li>Collaborative Law.</li>
+  </ul>
+  <div class="step-subheading">Talk with ${ other_other_party_in_your_case } about settling your case without a trial</div>
+  <p>Some people are able to talk to each other and agree about the issues they need to work out. They do not need a judge to decide for them. Sometimes a friend or family member can help you figure out an agreement.</p>
+  <div class="step-subheading">Mediation</div>
+  <p>Mediation is an informal, voluntary, and confidential way   to resolve disagreements without giving the decision-making power to someone   else, like a judge. A neutral person, called the mediator, helps people outside the court process:</p>
+  <ul>
+    <li>Figure out the important issues in the   disagreement</li>
+    <li>Explain and understand each other's needs</li>
+    <li>Clear up misunderstandings</li>
+    <li>Explore creative solutions</li>
+    <li>Reach acceptable agreements</li>
+  </ul>
+  <p>You can hire your own private mediator to help resolve any issue in your case.  If there was abuse or domestic violence in your relationship, be sure to hire someone with training and experience working with domestic violence. Tell your mediator if you want to bring a support person with you.  <br>
+    <a href="https://courts.alaska.gov/mediation">Read about mediation</a>.</p>
+    
+  <div class="step-subheading">Collaborative Law</div>
+  <p>The Alaska Association of Collaborative Professionals helps people resolve parenting issues outside of the court process without a judge making decisions.  Learn more about the <a href="https://www.alaskacollaborative.org">Association</a>.</p>
+    
+    <div class="step-subheading">If you both agree, you can change things on your own.</div>
+    <p>Whether or not you must tell the court depends on the type of change you make.</p>
+  <ul>
+    <li>If you make a minor change, such as changing a pick-up time by an hour, or a change to the holiday schedule, you do not have   to tell the court.</li>
+    <li>If you make a change about something big, like   changing the parenting schedule from weekends with one parent to week on / week   off, tell the court in writing.</li>
+    <li>If you want to be sure you are both bound by the   new agreement, tell the court in writing so the judge can make the agreement   part of the court order in your case.</li>
+    <li>If you want to change child support because   either the parenting schedule or a parent's income changes, you should always   tell the court in writing so the judge can decide whether the child support   amount should change.  The parent who   owes money under the child support order you want to change will continue to   owe that amount until the judge signs a new order.</li>
+  </ul>
+---
+template: tell_the_court_step
+subject: |
+  Step ${ tell_the_court_idx }: Tell the court about your agreement
+content: |
+  <p>If you reach an agreement, fill out these forms:</p>
+  <div class="step-subheading">Forms to ask to modify</div>
+  <ul>
+    <li><strong>Joint Motion, SHC-1310</strong>.  Title it "Joint Motion to Modify."<br>
+        As a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310.doc">Word</a> file<br>
+        as a  <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310n.pdf">PDF</a> file</li>
+    <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063<br>
+        </strong>as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> file<br>
+      as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+  </ul>
+  <div class="step-subheading">If you are changing the Parenting Plan</div>
+  <p>Choose 1 parenting plan order. Do <strong>not</strong> sign the Order section:</p>
+  <ul>
+    <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128<br>
+        </strong>as a<strong> </strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> file<br>
+      as a  <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
+    <li><strong>Agreement   &amp; Order for Custody and Visitation, SHC-1126<br>
+        as a </strong> <a href="https://www.courts.alaska.gov/shc/family/docs/shc-1126.doc">Word</a> file<br>
+      as a <a href="https://courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
+  </ul>
+  <div class="step-subheading">If you are changing child support</div>
+  <ul>
+    <li><strong>Order for Modification of Child Support, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]</li>
+    <li><strong>Child Support Guidelines Affidavit, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill-In PDF] (2 copies -   each parent fills out their own)</li>
+    <li><strong>Child Custody Jurisdiction Affidavit, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill-In PDF] (2 copies -   each parent fills out their own) </li>
+    <li>Choose 1 form below based on the parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)</li>
+    <ul>
+      <li><strong>Shared Custody Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill-In PDF] (if you have a   shared custody schedule)</li>
+      <li><strong>Divided Custody Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill-In PDF] (if you have a   divided custody schedule)</li>
+      <li><strong>Hybrid Custody Child Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill-In PDF] (if you are   asking for a hybrid custody schedule)</li>
+    </ul>
+  </ul>
+  <p>If you and the other parent agree, it is free to file a <strong>Joint Motion to Modify</strong>, but if you do not agree it costs $75 to file a <strong>Motion to Modify</strong>.</p>
 ---
 template: learn_reconsider_step
 subject: |
@@ -99,9 +172,24 @@ template: appeal_step
 subject: |
   Step ${ appeal_idx }: Decide if you want to file an appeal
 content: |
-  The civil appeals process is complicated, long and expensive. The process can take over two years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can, to discuss your case.
-
-  Learn about filing an appeal on the court's [Civil Appeal web page](https://courts.alaska.gov/shc/appeals/index.htm).
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
+  
+  The only information the Supreme Court looks at is:
+  
+  * the audio recording of the hearing or trial in the lower court,
+  * any items offered as evidence at the hearing or trial in the lower court,
+  * the documents in the lower court or agency record, and
+  * appeal briefs filed in the appeal to the Supreme Court. 
+  
+  To start an appeal, you must pay:
+  
+  * a $250 filing fee,
+  * a $750 bond or deposit for costs, and
+  * other costs like paying someone to make a transcript of your trial.
+  
+  If you cannot afford the cost of filing an Appeal, you can use **Motion for Waiver of Filing Fees and Costs, [SHS-AP 130](https://courts.alaska.gov/shc/appeals/docs/SHS_AP_130.doc)** to ask the court to waive the filing fee and costs.
+  
+  Learn more about filing an appeal on the court's web pages [Civil Appeal: Superior Court to Supreme Court](https://courts.alaska.gov/shc/appeals/index.htm).
 ---
 template: learn_set_aside_step
 subject: |
@@ -247,7 +335,7 @@ content: |
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
-  <li>The judge may grant your Motion to Set Aside - keep following the court order you have until the judge grants your motion</li> 
+  <li>The judge may grant your Motion to Set Aside. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
   <li>The  judge may deny your motion.</li>
   </ul> 
   <p>Either parent can decide to appeal the decision about the Motion to Set Aside if they believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
@@ -286,7 +374,12 @@ content: |
 ---
 template: file_step
 subject: |
-  Step ${ file_idx }: File your motion forms    
+  Step ${ file_idx }: 
+  % if defined('file_step_heading'):
+  ${ file_step_heading }
+  % else:
+  File your motion forms
+  % endif
 content: |
   ${ file_motion_to_set_aside }
   ${ file_motion_to_enforce }
