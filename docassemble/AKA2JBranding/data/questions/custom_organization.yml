@@ -1,6 +1,6 @@
 ---
 comment: |
-  Alaska Guided Assistants-specific package. 
+  Alaska Guided Assistants-specific package
   
   This package can include things like your list of courts. This package combines
   all of the common files into one package to quickly see the things you need to modify.
