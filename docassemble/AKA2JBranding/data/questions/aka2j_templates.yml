@@ -375,7 +375,7 @@ content: |
 template: file_step
 subject: |
   Step ${ file_idx }: 
-  %if defined(file_step_heading):
+  % if defined(file_step_heading):
   ${ file_step_heading }
   % else:
   File your motion forms
