@@ -172,7 +172,7 @@ template: appeal_step
 subject: |
   Step ${ appeal_idx }: Decide if you want to file an appeal
 content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
   
   The only information the Supreme Court looks at is:
   
