@@ -1,0 +1,191 @@
+template: respond_to_reconsider_step
+subject: |
+  Step ${ respond_to_reconsider_idx }: If the court asks, respond in writing to the Motion for Reconsideration
+content: |
+  <div class="step-subheading">Respond in writing to the Motion for Reconsideration</div>
+  <ul>
+  <li>A <strong>Motion for Reconsideration</strong> asks a judge to change a decision or order that made in the last 10 days. </li>
+  <li>Do not respond to a <strong>Motion for Reconsideration</strong> unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.</li>
+  <li>There will not be a hearing.</li>
+  <li>The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, <strong>whichever is later</strong>, the <strong>Motion for Reconsideration</strong> is denied, which means the original decision is not changed.</li>
+  <li>If the court grants the a <strong>Motion for Reconsideration</strong>, it will either enter a new order or ask both sides for more information.</li>
+  </ul>
+  <div class="step-subheading">If the court asks for a response</div>
+  <p>If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
+  <ul>
+  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810</a> Response to Motion</li>
+  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820</a> Order on Motion</li>
+  </ul>
+---
+template: let_court_party_know_you_agree_step
+subject: |
+  Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the **${ modify_or_aside }**
+content: |
+  <div class="step-subheading">Options</div>
+  % if respond_to_custody  == 'agree':
+  If ${ other_party_in_case } files a motion to modify the parenting plan and custody order or the child support order, and you agree, you have options. 
+  % elif respond_to_set_aside  == 'agree':
+  A Motion to Set Aside Judgment or Order asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
+  % endif
+  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
+    <ul>
+    <li>Fill out a response that states you agree, file it with the court, and give ${ other_party_in_case } a copy. See Steps ${ respond_in_writing_idx } and ${ file_response_idx }.<br><br>
+    <strong>Or</strong</li>
+    <li>Contact ${ other_party_in_case } and put your agreement in writing together to file with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
+    </ul>
+---
+template: respond_in_writing_step
+subject: |
+  Step ${ respond_in_writing_idx }: Respond in writing and tell the court you
+  % if respond_to_custody == 'agree' or respond_to_set_aside == 'agree':
+  and ${ other_party_in_case } agree
+   % endif
+  % if respond_to_custody in('agree to some', 'agree to none') or respond_to_set_aside in('agree to some', 'agree to none'):
+  do not agree on the **${ modify_or_aside }**
+  % endif
+content: |
+  % if respond_to_custody == 'agree' or respond_to_set_aside == 'agree':
+  If you agree with everything ${ other_party_in_case } wrote in the **${ modify_or_aside }**, you can state that in your response.
+  % endif
+  % if respond_to_custody in('agree to some', 'agree to none'):
+  If you do not agree with what ${ other_party_in_case } asked for in the **Motion to Modify**, you can respond in writing.  State what you do and do not agree with.  
+  
+  Make sure you respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.
+  Fill out:
+  <div class="step-subheading">Forms</div>
+  <ul>
+  <li><strong>Response to Motion,<a href="https://public.courts.alaska.gov/web/forms/docs/dr-725.pdf">DR-725</a></strong></li>
+  <li><strong>Child Support Guidelines Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong> [Fill-In PDF]<br>
+  Each parent files their own</li>
+  <li><strong>Child Custody Jurisdiction Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf ">DR-150</a></strong> [Fill-In PDF]<br>Each parent files their own</li>
+  </ul>
+  <div class="step-subheading">Optional forms depending on your situation</div>
+  Choose 1 form below based on the parenting schedule if it is not a primary custody calculation where children are with 1 parent for at least 256 overnights/year.
+  <ul>
+  <li><strong>Shared Custody Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf"></a>DR-306</strong> [Fill-In PDF]</li>
+  <li><strong>Divided Custody Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a></strong> [Fill-In PDF]</li>
+  <li><strong>Hybrid Custody Child Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a></strong> [Fill-In PDF]</li>
+  </ul>
+  % endif
+  % if respond_to_set_aside in('agree to some', 'agree to none'):
+  A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.
+   If you do not agree with what ${ other_party_in_case } asked to set aside, you can fill out and file a response. State what you do and do not agree with. 
+   Make sure you respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.   
+  Fill out:
+  <ul>
+  <li><strong><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810 Response to Motion</a></strong></li>
+  <li><strong><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820 Order on Motion</a></strong></li>
+  </ul>
+  % endif
+---
+template: contact_other_party_step
+subject: |
+  Step ${ contact_other_party_idx }: Contact  ${ other_party_in_case } the other parent, and write out your agreement
+content: |
+  If you and the other parent agree, and are able to work together to write out the agreement, you can fill out and file with the court:
+  % if respond_to_custody == 'agree':
+  If you are changing the custody and parenting plan, Choose 1 parenting plan order. Do **not** sign the ORDER section:
+  <ul>
+  <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
+
+  <li><strong>Agreement &amp; Order for Custody and Visitation, SHC-1126</strong> <br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126.docx">Word file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
+
+  <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong> <br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+  </ul>
+  <div class="step-subheading">If you are changing child support</div>
+  <ul>
+  <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]<br>
+  If you are changing child support. Do <strong>not</strong> sign the Order section.</li>
+
+  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill-In PDF]<br>
+  Each parent files their own</li>
+
+  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill-In PDF]<br>
+  Each parent files their own</li>
+
+  <li>Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
+  <ul>
+  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill-In PDF]</li>
+  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill-In PDF]</li>
+  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill-In PDF]</li>
+  </ul></li>
+  </ul>
+  % endif
+  % if respond_to_set_aside == 'agree':
+  <ul>
+  <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+  <li><strong>Agreement &amp; Order, SHC-1061</strong><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
+  </ul>
+  % endif
+---
+comment: |
+  See [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
+template: file_response_step
+subject: |
+  Step ${ file_response_idx }: File and serve your response within 10 or 13 days
+content: |
+  If ${other_party_in_case } mailed a copy of the motion to you, you have 13 days to file and serve your response. Use the date of the postmark on the envelope.
+  If they served you another way, you have 10 days to file and serve your response.
+  <ol>    
+  <li>Make 2 copies of your response and any other documents you include with it.</li>
+  <li>File the original version of your response and documents with the court where the motion was filed. You can:
+  <ul>
+  <li>Deliver the documents to the court yourself.</li>
+  <li>Mail the documents by first-class mail.</li>
+  <li>Use the Court's <a href="https://courts.alaska.gov/efile/">TrueFile  eFiling system</a> to send the documents to the court electronically.</li>
+  </ul>
+  </li>
+  
+  <li>Keep 1 copy for your own records.</li>
+  <li>Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your <strong>Certificate of Service</strong>.<br>
+  Read Step ${ serve_idx }: Serve ${ other_party_in_case }.</li>
+  </ol>
+---
+template: file_agreement_step
+subject: |
+  Step ${ file_agreement_idx }: File your agreement with the court within 10 or 13 days
+content: |
+  You have 13 days to file your agreement if the motion was mailed to you, 10 days if you were served another way.
+  <ul>
+  <li>Make 2 copies of the forms you filled out stating your agreement -<br>
+  1 copy for each of you.</li>
+  <li>File the originals with the court where the motion was filed. File by the deadline - 10 or 13 days. If the deadline is a weekend or holiday, your reply is due the next day the court is open.  For example, if the deadline is a Saturday, and the court is open Monday, your reply is due Monday.</li>
+  </ul>
+---
+comment: |
+  Based on [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
+template: expect_after_response_step
+subject: |
+  Step ${ expect_after_response_idx }: What to expect after you respond to a ${ motion_type }
+content: |
+  <div class='step-subheading'>${ capitalize(other_party_in_case) } may file a **Reply** to your response</div>
+  <p>If you served ${ other_party_in_case } with your response: 
+  <ul>
+  <li>by hand-delivery, email, or TrueFile, they have 5 days to reply to the court in writing,</li> 
+  <li>by mail, they have 8 days.</li>
+  </ul></p>
+  <p>They must send you a copy of any reply they send to the court.</p>
+  ${ expect_after_motion }
+  <div class='step-subheading'>Judge’s decision</div>
+  After the deadlines for response and reply have passed, the judge decides the motion. If the judge believes a hearing is necessary before they decide the motion, the court schedules a hearing.
+  
+  The court will notify you of:
+  * the time, 
+  * date and 
+  * location of the hearing. 
+  Also they will probably, tell you if the hearing will be an "evidentiary hearing" followed by "oral argument" or just "oral argument":
+  <ul>
+  <li>At an "evidentiary hearing," ${ other_party_in_case } must prove their reasons mean the judge should agree to the order the motion asks for.  ${ capitalize(other_party_in_case) } must present evidence, which may include their own testimony or other witnesses' testimony. <br>
+  You may present similar evidence for points where you disagree.</li>
+  <li>At "oral argument," each of you explains what you want and answer any questions the judge might have. No further testimony or witnesses are presented.</li>
+  </ul>

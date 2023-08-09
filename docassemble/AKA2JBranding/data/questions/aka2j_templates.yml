@@ -19,15 +19,15 @@ content: |
 ---
 template: parents_agree_step
 subject: |
-  Step ${ parents_agree_idx }: Find out if you and ${ other_other_party_in_your_case } agree
+  Step ${ parents_agree_idx }: Find out if you and ${ other_party_in_case } agree
 content: |
-  <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_other_party_in_your_case }. See if you agree about the change or if you both want to try to reach an agreement in one of these ways:</p>
+  <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_party_in_case }. See if you agree about the change or if you both want to try to reach an agreement in one of these ways:</p>
   <ul>
     <li>Talk more with each other until you can agree.</li>
     <li>Mediation.</li>
     <li>Collaborative Law.</li>
   </ul>
-  <div class="step-subheading">Talk with ${ other_other_party_in_your_case } about settling your case without a trial</div>
+  <div class="step-subheading">Talk with ${ other_party_in_case } about settling your case without a trial</div>
   <p>Some people are able to talk to each other and agree about the issues they need to work out. They do not need a judge to decide for them. Sometimes a friend or family member can help you figure out an agreement.</p>
   <div class="step-subheading">Mediation</div>
   <p>Mediation is an informal, voluntary, and confidential way   to resolve disagreements without giving the decision-making power to someone   else, like a judge. A neutral person, called the mediator, helps people outside the court process:</p>
@@ -384,7 +384,7 @@ template: expect_after_motion_step
 subject: |
   Step ${ expect_after_motion_idx }: What to expect after you file a ${ motion_type }
 content: |
-  <div class='step-subheading'>The other parent may file a response or "opposition"</div>
+  <div class='step-subheading'>${ capitalize(other_party_in_case) } may file a response or "opposition"</div>
   <p>If you serve ${ other_party_in_case }: 
   <ul>
   <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li> 
