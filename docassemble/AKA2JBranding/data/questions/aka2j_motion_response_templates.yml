@@ -22,7 +22,7 @@ subject: |
   Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the **${ modify_or_aside }**
 content: |
   <div class="step-subheading">Options</div>
-  % if respond_to_custody  == 'agree':
+  % if type_of_response['custody'] and respond_to_custody  == 'agree':
   If ${ other_party_in_case } files a motion to modify the parenting plan and custody order or the child support order, and you agree, you have options. 
   % elif respond_to_set_aside  == 'agree':
   A Motion to Set Aside Judgment or Order asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
@@ -37,17 +37,17 @@ content: |
 template: respond_in_writing_step
 subject: |
   Step ${ respond_in_writing_idx }: Respond in writing and tell the court you
-  % if respond_to_custody == 'agree' or respond_to_set_aside == 'agree':
+  % if (type_of_response['custody'] and respond_to_custody == 'agree') or (type_of_response['set aside'] and respond_to_set_aside == 'agree'):
   and ${ other_party_in_case } agree
    % endif
-  % if respond_to_custody in('agree to some', 'agree to none') or respond_to_set_aside in('agree to some', 'agree to none'):
+  % if (type_of_response['custody'] and respond_to_custody in('agree to some', 'agree to none')) or (type_of_response['set aside'] and respond_to_set_aside in('agree to some', 'agree to none')):
   do not agree on the **${ modify_or_aside }**
   % endif
 content: |
-  % if respond_to_custody == 'agree' or respond_to_set_aside == 'agree':
+  % if (type_of_response['custody'] and respond_to_custody == 'agree') or (type_of_response['set aside'] and respond_to_set_aside == 'agree'):
   If you agree with everything ${ other_party_in_case } wrote in the **${ modify_or_aside }**, you can state that in your response.
   % endif
-  % if respond_to_custody in('agree to some', 'agree to none'):
+  % if type_of_response['custody'] and respond_to_custody in('agree to some', 'agree to none'):
   If you do not agree with what ${ other_party_in_case } asked for in the **Motion to Modify**, you can respond in writing.  State what you do and do not agree with.  
   
   Make sure you respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.
@@ -67,7 +67,7 @@ content: |
   <li><strong>Hybrid Custody Child Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a></strong> [Fill-In PDF]</li>
   </ul>
   % endif
-  % if respond_to_set_aside in('agree to some', 'agree to none'):
+  % if type_of_response['set aside'] and respond_to_set_aside in('agree to some', 'agree to none'):
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.
    If you do not agree with what ${ other_party_in_case } asked to set aside, you can fill out and file a response. State what you do and do not agree with. 
    Make sure you respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.   
@@ -83,7 +83,7 @@ subject: |
   Step ${ contact_other_party_idx }: Contact  ${ other_party_in_case } the other parent, and write out your agreement
 content: |
   If you and the other parent agree, and are able to work together to write out the agreement, you can fill out and file with the court:
-  % if respond_to_custody == 'agree':
+  % if type_of_response['custody'] and respond_to_custody == 'agree':
   If you are changing the custody and parenting plan, Choose 1 parenting plan order. Do **not** sign the ORDER section:
   <ul>
   <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong><br>
@@ -117,7 +117,7 @@ content: |
   </ul></li>
   </ul>
   % endif
-  % if respond_to_set_aside == 'agree':
+  % if type_of_response['set aside'] and respond_to_set_aside == 'agree':
   <ul>
   <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
