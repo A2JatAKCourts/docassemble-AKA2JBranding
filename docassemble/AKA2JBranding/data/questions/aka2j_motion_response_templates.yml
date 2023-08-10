@@ -19,7 +19,7 @@ content: |
 ---
 template: let_court_party_know_you_agree_step
 subject: |
-  Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the **${ modify_or_aside }**
+  Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the ${ modify_or_aside }
 content: |
   <div class="step-subheading">Options</div>
   % if type_of_response['custody'] and respond_to_custody  == 'agree':
