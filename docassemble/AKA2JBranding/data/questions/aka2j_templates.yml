@@ -3,6 +3,7 @@ objects:
   - service_cert_reconsider_set_aside_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_reconsider_set_aside.png', alt_text="Certificate of Service box")
   - service_cert_modify_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_modify.png', alt_text="Certificate of Service box")
   - service_cert_enforce_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_enforce.png', alt_text="Certificate of Service box")
+  - service_cert_motion_shc_1300_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_motion_shc_1300.png', alt_text="Certificate of Service box")
   - service_cert_respond_dr_motion_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_mod_motion_response_dr_725.PNG', alt_text="Certificate of Service at the end of Response to Change Custody, Support, and Visitation")
   - service_cert_respond_civ_motion_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_motion_response_civ_810.PNG', alt_text="Certificate of Service box at the end of Response to Motion")
   - service_cert_reply_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_enforce.png', alt_text="Certificate of Service at the bottom of the Reply form")
@@ -476,8 +477,8 @@ content: |
   <br>
   (907) 264-0851 or<br>  
   (866) 279-0851.</li>
-  <li>See the court’s <a href="https://courts.alaska.gov/shc/family">family law self-help webpages</a>.</li>
-  <ul>
+  <li>See the court’s <a href="https://courts.alaska.gov/shc/family">Family Law Self-Help Center web pages</a>.</li>
+  </ul>
   
   Many lawyers offer free or flat fee consultations without having to hire them for the whole case. [Find a Lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
   
