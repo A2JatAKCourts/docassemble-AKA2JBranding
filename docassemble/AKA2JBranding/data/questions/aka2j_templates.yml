@@ -283,6 +283,169 @@ content: |
   <div class='step-subheading'>Watch</div>
   <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
 ---
+comment: |
+  Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
+template: modify_step
+subject: |
+  Step ${ modify_idx }:
+    % if user_need == 'change custody':
+    Learn about motions to modify
+    % elif user_need == 'change divorce':
+    Learn about a Motion to Modify your Parenting Plan
+    % endif
+content: |
+  Changing your parenting plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
+  The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a parenting plan if there is a "substantial change of circumstances". A "substantial change in circumstances" means something has happened so that the old custody or parenting plan is no longer in the children's best interest.
+
+  <div class="step-subheading">Some examples</div>
+  <ul>
+  <li>The current parenting plan order started when your child was an infant. They move between parents at noon Mondays, Wednesdays, and Fridays. Your child is starting kindergarten so the current schedule will not work.</li>
+  <li>Under the current parenting plan order, your children spend one week with you and the next week with the other parent.  You are going to move out of state so the current schedule is impossible.</li>
+  <li>Your children spend overnights with you and the other parent.  The other parent just went to jail for 2 years so the existing schedule is impossible.</li>
+  <li>There was a new act of domestic violence between you and the other parent when you were exchanging the children.</li>
+  </ul>
+  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See Step ${ file_idx }, ${ file_step }.
+Comment: |
+  % if (final_order_date_within_10_days or final_order_date_within_15_days) and modify_within_15_days:
+  <div class="step-subheading">Timing</div>
+  <p>A court will rarely grant a <strong>Motion to Modify </strong>made within 15 days of when the court made its final custody order unless something unexpected happened. Examples of why a court may grant a <strong>Motion to Modify</strong> are listed below.
+  % endif
+---
+template: fill_modify_step
+subject: |
+  Step ${ fill_modify_idx }: Fill out the Motion to Modify forms 
+content: |
+  <div class='step-subheading'>Use</div>
+    <ul>
+    <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, [SHC-PAC12](https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12)<br>
+    3 of the forms in this packet are affidavits:
+    <ul>
+    <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
+    <li>The court clerk can do this for free.
+    <li>Bring a valid photo ID with you
+    <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use:<br>
+    <strong>Self-Certification (No Notary Available) TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf>Fill-In PDF</a>]
+  </li>
+  </ul>
+  </li>
+  </ul>
+  <div class='step-subheading'>Watch</div>
+  <ul>
+  <li><a href="https://www.youtube.com/watch?v=2irmxT0_0EA">Motions Part 1: How to Ask the Court For Something</a></li>
+  </ul>
+---
+template: calculate_child_support_step
+subject: |
+  Step ${ calculate_child_support_idx }:
+  % if user_need == 'change custody':
+    Fill out your child support forms
+    % elif user_need == 'change divorce':
+    Learn about a Motion to Modify your Parenting Plan
+    % elif user_need == 'change child support':
+    Calculate your new child support amount
+    % endif
+  
+content: |
+  Figure out the new child support amount using the new schedule and any new income information.  
+    
+    1. Calculate the percent of overnights your children spend with you and with the other parent. For example, if your child spends 4 nights each week with you and 3 nights each week with their other parent, they spend 209 overnights each year with you and 156 nights each year with the other parent.  This is 57% of overnights with you and 43% of overnights with the other parent.
+  
+  <strong>For example</strong>
+  
+  If your child spends 4 nights each week with you and 3 nights each week with their other parent, they spend 209 overnights each year with you and 156 nights each year with the other parent.
+  
+  209 divided by 365 nights in a year is .57, or 57% of overnights with you.
+  
+  156 divided by 365 nights in a year is .43, or 43% of overnights with the other parent
+
+    2. Use the percentages to fill out the <strong>Child Support Guidelines Affidavit</strong>, [<strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong>]. Read [How to Fill out the Child Support Guidelines Affidavit](https://courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf) to help you fill out this form.
+    3. The <strong>Child Support Guidelines Affidavit</strong> tells you the new child support amount for a If your children have a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
+    <ul>
+  <li><strong>Shared Custody Support Calculation, [DR-306]</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>]<br>
+  Use this if the children spend at least 110 overnights with each parent.</li>
+  <li><strong>Hybrid Custody Child Support Calculation, [DR-308]</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">PDF</a>] Use this if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
+  <li><strong>Divided Custody Child Support Calculation, [DR-307]</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">PDF</a>] Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
+  </ul>
+---
+template: dont_wait_modify_custody_divorce_step
+subject: |
+  Step ${ dont_wait_modify_custody_divorce_idx }: Do not wait to file your Motion to Modify 
+content: |
+  If you and the other parent agree to change the schedule, or have already permanently changed your schedule, file your **[Uncontested Motion to Modify Custody](https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac11)** as soon as you can.  
+  
+  Until you file your motion with the court, **the parent who owes child support still owes the amount in your current order**. 
+  
+  **For example**
+  <ul>
+  <li>Under your current order, the children spend Sunday to Friday with you and Friday after school until Sunday after dinner with the other parent.</li>
+  <li>Child support was calculated based on the children being with you 5 overnights each week, and with the other parent 2 overnights each week.</li>
+  <li>You decide to change to a schedule where the children will spend a week with you and then a week with the other parent.  You start March 1.</li>
+  <li>Child support will probably change because the percentage of overnights the children spend with each parent has changed.</li>
+  <li>You file an Uncontested Motion to Modify Custody and Child Support June 21.</li>
+  <li>The judge agrees with your motion and signs a new custody and child support order September 1.</li>
+  <li>The new order says that the new child support amount starts July 1.</li>
+  <li>Because you did not file your motion until June, the <strong>original</strong> child support amount still applies from March until July 1.</li>
+  </ul>
+---
+template: compare_child_support_step
+subject: |
+  Step ${ compare_child_support_idx }: Compare the new calculation with the current amount
+content: |
+  <div class='step-subheading'>Compare your current child support to the new amount to see if there is a "material change in circumstances"</div>
+    If the new child support amount is 15% more or less than the old amount, there is a presumption that there is a material change in circumstances.
+    
+   <strong>For example</strong>
+   
+   If the old child support amount was $100 per month, there would be a material change if the new amount is:
+    * $85 or less, or
+    * $115 or more.
+---
+template: dont_wait_modify_child_support_step
+subject: |
+  Step ${ dont_wait_modify_child_support_idx }: Do not wait to file your Motion to Modify 
+content: |
+  File your <strong>Motion to Modify Child Support</strong> and give the other parent a copy of your motion as soon as you can after there is a “material change of circumstances.”
+
+  Until you file your motion with the court, <strong>the parent who owes child support still owes the amount in your current order</strong>. 
+  
+  If the judge agrees to change the amount of your child support, the judge will sign a new child support order.  The new order includes the date the amount changed. This date is usually in the past. It will not be earlier than the date you filed your motion and gave a copy to the other parent.
+
+  <strong>For example</strong>
+
+    * The other parent gets a new job making a lot more money on March 1.
+    * You recalculate child support.  The other parent will owe you more child support each month.
+    * You file a motion to modify child support with the court and give the other parent a copy June 21.
+    * The judge agrees to change your child support and grants your motion.
+    * The judge signs a new child support order on September 1.
+    * The court cannot order child support to be changed before you filed your motion and gave a copy to the other parent.
+    * The new order says that the new child support amount starts July 1.
+    * Because you did not file your motion until June, the other parent only has to pay the old amount of child support from March 1 to July 1.
+---
+template: fill_modify_step
+subject: |
+  Step ${ fill_modify_idx }: 
+  % if user_need in('change child support','change custody'):
+  Fill out the Motion to Modify forms
+  % else:
+  Fill out the Motion to Modify Custody forms
+  % endif
+content: |
+  <div class='step-subheading'>Use</div>
+    <ul>
+    <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, <a href="https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12">SHC-PAC12</a><br>
+    3 of the forms in this packet are affidavits:
+  <ul>
+  <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
+  <li>The other parent has 10 days to file a response (13 if you mail it).</li>
+  <li>The court clerk can do this for free.</li>
+  <li>Bring a valid photo ID with you.</li>
+  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: <strong>Self-Certification (No Notary Available) <a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">TF-835</a></strong>[Fill-In PDF]</li>
+  </ul></li></ul>
+  <div class='step-subheading'>Watch </div>
+  <ul>
+  <li><a href="https://www.youtube.com/watch?v=2irmxT0_0EA">Motions Part 1: How to Ask the Court For Something</a></li>
+  </ul>
+---
 template: cert_of_service_step
 subject: |
   Step ${ cert_of_service_idx }: Fill out the Certificate of Service
