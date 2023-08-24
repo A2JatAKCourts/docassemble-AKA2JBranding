@@ -47,7 +47,6 @@ features:
     - collapse.css
 ---
 id: basic questions intro screen
-decoration: form-lineal
 question: |
   ${interview_short_title}: Guided Assistant
 subquestion: |
