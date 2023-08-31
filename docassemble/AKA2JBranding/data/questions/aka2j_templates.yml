@@ -288,9 +288,9 @@ comment: |
 template: modify_step
 subject: |
   Step ${ modify_idx }:
-    % if user_need == 'change custody':
+    % if user_need in('change custody order', 'change foreign custody order'):
     Learn about motions to modify
-    % elif user_need == 'change custody order':
+    % elif user_need == 'change divorce custody order':
     Learn about a Motion to Modify your Parenting Plan
     % endif
 content: |
