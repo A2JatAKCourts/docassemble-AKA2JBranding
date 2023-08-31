@@ -290,7 +290,7 @@ subject: |
   Step ${ modify_idx }:
     % if user_need == 'change custody':
     Learn about motions to modify
-    % elif user_need == 'change divorce':
+    % elif user_need == 'change custody order':
     Learn about a Motion to Modify your Parenting Plan
     % endif
 content: |
