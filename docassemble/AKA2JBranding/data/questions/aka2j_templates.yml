@@ -304,7 +304,9 @@ content: |
   <li>Your children spend overnights with you and the other parent.  The other parent just went to jail for 2 years so the existing schedule is impossible.</li>
   <li>There was a new act of domestic violence between you and the other parent when you were exchanging the children.</li>
   </ul>
+  % if not middle_of_case:
   The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See Step ${ file_idx }, Serve the other parent.
+  % endif
 Comment: |
   % if (final_order_date_within_10_days or final_order_date_within_15_days) and modify_within_15_days:
   <div class="step-subheading">Timing</div>
