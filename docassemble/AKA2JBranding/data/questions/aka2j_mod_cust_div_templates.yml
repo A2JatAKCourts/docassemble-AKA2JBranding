@@ -1,0 +1,129 @@
+---
+template: standing_order_step
+subject: |
+  Step ${ standing_order_idx }: Ask the court to change the Standing Order or a similar decision<br>
+content: |
+  <div class="step-subheading">Background</div>
+  <ul>
+    <li>When your case was opened, the court issued an   order, usually called a <strong>Standing Order</strong> or a <strong>Domestic Relations Procedural Order</strong>.  The court expects both parents to follow it.</li>
+    <li>Sometimes a parent wants to do something not allowed under the Standing Order.  For   example, the Standing Order says that parents cannot remove the children from Alaska during the case.  A parent may   want to take the children to a family reunion in Washington.</li>
+    <li>If you want to do something different than what is allowed under this kind of order, you can ask the other parent and try to agree.</li>
+    <li>If you do not agree, you can ask the court to change one of the orders by filing a document called a &quot;motion&quot;.</li>
+  </ul>
+---
+template: motion_forms_step
+subject: |
+   Step ${ motion_forms_idx }: Fill out your motion forms
+content: |
+  <p>A motion is how a parent in a custody case asks the court to order something.</p>
+  <div class = "step-subheading">Fill out these forms</div>
+  <p><strong>Motion, SHC-1300</strong> <br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300.doc">Word file</a><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300n.pdf">PDF</a></p>
+  <p><strong>Affidavit &amp; Memorandum, SHC-1301</strong><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1301.doc">Word file</a><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1301n.pdf">PDF</a></p>
+  <p><strong>Order on Motion, SHC-1302</strong><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1302.doc">Word file</a><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1302n.pdf">PDF</a></p>
+---
+template: foreign_order_step
+subject: |
+  Step ${ foreign_order_idx }: Ask the court to change your custody and Parenting Plan or child support order from another state
+content: |
+  
+  <p>There are 3 steps to ask an Alaska court to change a custody and parenting plan or child support order from another state:</p>
+  <ol>
+  <li>Make sure the Alaska court has jurisdiction (authority) to change the order. See Step ${ ak_jurisdiction_idx }.</li>
+  <li>Register the out-of-state order in Alaska. See Step ${ register_order_idx }.</li>
+  <li>Ask the Alaska court to change the order by filing a Motion to Modify. See Step ${ modify_idx }.</li>
+  </ol>
+---
+template: ak_jurisdiction_step
+subject: |
+  Step ${ ak_jurisdiction_idx }: Make sure that the Alaska court has the authority to change the order
+content: |
+  <ul>
+  <li>A court must have the authority called jurisdiction to issue an order about a custody or parenting plan or a child support order.</li>
+  <li>Generally, only the court in the state where the child has lived for the last 6 months can make decisions, enter a parenting plan, or order child support. This is called the child's &quot;home state.&quot;</li>
+  <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://courts.alaska.gov/shc/shclawyer.htm">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
+  </ul>
+---
+template: register_order_step
+subject: |
+ Step ${ register_order_idx }: Register the out-of-state order
+content: |
+  <div class="step-subheading">Submit the following packet to the Alaska court</div>
+  1. One certified copy of the original order.
+  2. One photocopy of the certified original order.
+  <div class="step-subheading">3. For Custody</div>
+  <ul>
+  <li><strong>Request to </strong><strong>Register Child Custody Order of Another State or Country, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-482.pdf">DR-482</a><strong> </strong>[Fill-In PDF]</li>
+  <li><strong>Notice of Registration of Child Custody Order of Another State or Country, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-483.pdf">DR-483</a> [Fill-In PDF] <br>
+  (Completed except for the date and clerk's signature)</li>
+  <li><strong>Affidavit for Child </strong><strong>Custody Registration, SHC-1510 <br>
+  </strong>as a<strong> </strong><a href="http://courts.alaska.gov/shc/family/docs/shc-1510.doc">Word file</a><br>
+  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1510n.pdf">PDF</a></li>
+  <li><strong>Child Custody Jurisdiction Affidavit, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill-In PDF]</li>
+  <li><strong>Request for Hearing on Registered Child Custody Order, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-484.pdf">DR-484</a> [Fill-In PDF]<br>
+  (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)<strong></strong></li>
+  <li><strong>Confirmation of Registered</strong> <strong>Child Custody Order</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-485.pdf">DR-485</a> [Fill-In PDF]<br>
+  (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)</li>
+  </ul>
+  <div class="step-subheading">3. For Child Support</div>
+  <ul>
+  <li><strong>Instructions - Registration of Support Order Issued by Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-341.pdf">DR-341</a> [Fill-In PDF]</li>
+  <li><strong>Petition to Register a Support Order from Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-342.pdf">DR-342</a> [Fill-In PDF]</li>
+  <li><strong>Confidential Information Sheet - Support Order from Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-343.pdf">DR-343</a> [Fill-In PDF]</li>
+  <li><strong>Notice of Registration of Another State's Support Order, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-344.pdf">DR-344</a> [Fill-In PDF]<br>
+  (Completed except for the date and clerk's signature)</li>
+  <li><strong>Request for Hearing About Registered Child Support Order, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-345.pdf">DR-345</a> [Fill-In PDF]<br>
+  (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)</li>
+  <li><strong>Confirmation of Registered Support Order</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-347.pdf">DR-347</a> [Fill-In PDF]</li>
+  </ul>
+  <div class="step-subheading">4. You need to tell the court how you want it to deliver the documents to the other parent.</div>
+  The options are:
+  <ul>
+  <li><strong>1st class US mail</strong> (which is free): <br>
+  Give the clerk at the court:
+  <ul>
+  <li>the packet of forms to register a foreign order</li>
+  <li>envelope(s) addressed to the opposing party</li>
+  <li>a copy of all documents you are filling <strong>plus</strong> a <strong>Request for Hearing</strong> form for the opposing party</li>
+  </ul></li>
+  <li><strong>Certified mail</strong> (which you have to pay for): 
+  <ul>
+  <li>Before coming to court,
+  <ul>
+  <li>go to the Post Office and get the forms for &quot;certified mail&quot;, &quot;restricted delivery&quot;, &quot;return receipt requested.&quot;</li>
+  <li>Figure out how much it will cost to mail the forms by this method, and </li>
+  <li>Put the stamps on the envelope. <br>
+  If you do not provide the correct stamped envelope, your paperwork may be rejected. </li>
+  </ul></li>
+  <li>Give the clerk at the court:
+  <ul>
+  <li>the packet of forms to register a foreign order</li>
+  <li>envelope(s) addressed to the opposing party</li>
+  <li>a copy of all documents you are filling PLUS a Request for Hearing form for the opposing party</li>
+  <li>the filled-out mailing forms for certified mail, restricted delivery, return receipt requested from the Post Office for each of the people listed in the certificate of distribution on the Notice of Registration Order. <br>
+  On the green card, fill out your return address so you get the green card back later.</li>
+  <li>enough postage for the court to serve by certified mail, restricted delivery, return receipt requested.</li>
+  </ul></li>
+  </ul></li>
+  <li><strong>Process server</strong> (which you have to arrange and pay for):
+  Give the clerk:
+  <ul>
+  <li>the packet of forms to register a foreign order</li>
+  <li>service instructions for the specific process server you want the court to use. Read the instructions about &quot;Personal Service By Process Server&quot; in CIV-106.</li>
+  </ul></li>
+  </ul>
+
+  <div class="step-subheading">5. The filing fee of $250 </div>
+  If you are registering <strong>both</strong> a foreign child custody order and a foreign support order together, or <strong>only</strong> a child custody order.
+
+  If you cannot afford $250, you can file a <strong>Request for Exemption for Payment of Fees</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf">TF-920</a>.
+
+  If you are registering <strong>only</strong> a foreign support order, it is <strong>free</strong>.
+
+  <div class="step-subheading">6. Case description form, <a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">CIV-125S</a></div>
+---
