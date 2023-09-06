@@ -275,7 +275,7 @@ content: |
 ---
 template: tell_supreme_court_step
 subject: |
-  Step ${ tell_supreme_court_idx }: Tell the Supreme Court
+  Step ${ tell_supreme_court_idx }: Tell the Alaska Supreme Court
 content: |
   <ul>
   <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc"> </a>(Word document).</li>
