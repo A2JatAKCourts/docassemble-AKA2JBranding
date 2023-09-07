@@ -1,21 +1,33 @@
 ---
 template: standing_order_step
 subject: |
-  Step ${ standing_order_idx }: Ask the court to change the Standing Order or a similar decision<br>
+  Step ${ standing_order_idx }: Ask the court to change the Standing Order or a similar decision
 content: |
   <div class="step-subheading">Background</div>
-  <ul>
-    <li>When your case was opened, the court issued an   order, usually called a <strong>Standing Order</strong> or a <strong>Domestic Relations Procedural Order</strong>.  The court expects both parents to follow it.</li>
-    <li>Sometimes a parent wants to do something not allowed under the Standing Order.  For   example, the Standing Order says that parents cannot remove the children from Alaska during the case.  A parent may   want to take the children to a family reunion in Washington.</li>
-    <li>If you want to do something different than what is allowed under this kind of order, you can ask the other parent and try to agree.</li>
-    <li>If you do not agree, you can ask the court to change one of the orders by filing a document called a &quot;motion&quot;.</li>
-  </ul>
+  
+    When your case was opened, the court issued an order, usually called a **Standing Order** or a **Domestic Relations Procedural Order (DRPO)**.
+  % if user_need == 'change divorce order':
+  The court expects both spouses to follow it.
+  % else:
+  The court expects both parents to follow it.
+  % endif    
+  Sometimes a parent wants to do something the **Standing Order** does not allow.  For example, A parent may want to take the children to a family reunion in another state. But the **Standing Order** says parents cannot remove the children from Alaska during the case.
+  % if user_need == 'change divorce order':
+  The **Standing Order** or **(DRPO)** in a divorce case also says your spouse must agree or you must get permission from the court to:
+  
+  * sell marital property, or
+  * cancel or change the terms of any insurance policy.
+  % endif
+  
+  If you want to do something different from what the order allows, you can ask {{ other_party_in_case }} to agree to it.
+  
+  If they do not agree, you can ask the court to change one of the orders by filing a "motion".
 ---
 template: motion_forms_step
 subject: |
    Step ${ motion_forms_idx }: Fill out your motion forms
 content: |
-  <p>A motion is how a parent in a custody case asks the court to order something.</p>
+  A motion is the way to ask the court to order something in a custody or divorce case.
   <div class = "step-subheading">Fill out these forms</div>
   <p><strong>Motion, SHC-1300</strong> <br>
   as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300.doc">Word file</a><br>
