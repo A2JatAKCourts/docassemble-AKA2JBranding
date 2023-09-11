@@ -25,9 +25,19 @@ content: |
 ---
 template: motion_forms_step
 subject: |
-   Step ${ motion_forms_idx }: Fill out your motion forms
+   Step ${ motion_forms_idx }: 
+   % if  type_of_interim_order == 'standing order':
+  Fill out your motion forms
+  % else:
+  Ask the judge to change an interim order
+  % endif
 content: |
-  A motion is the way to ask the court to order something in a custody or divorce case.
+  % if  type_of_interim_order == 'motion':
+  If you or your spouse filed a motion and the judge made an interim order, but  things have changed,  you can file another motion.
+  Tell the judge what has changed and why you need a new order.
+  % else:
+  A motion is the way to ask the court to order something.
+  % endif
   <div class = "step-subheading">Fill out these forms</div>
   <p><strong>Motion, SHC-1300</strong> <br>
   as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300.doc">Word file</a><br>
