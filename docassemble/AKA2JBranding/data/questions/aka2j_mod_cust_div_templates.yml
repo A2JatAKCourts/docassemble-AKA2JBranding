@@ -6,22 +6,27 @@ content: |
   <div class="step-subheading">Background</div>
   
     When your case was opened, the court issued an order, usually called a **Standing Order** or a **Domestic Relations Procedural Order (DRPO)**.
+    
   % if user_need == 'change divorce order':
-  The court expects both spouses to follow it.
+  The court expects both spouses to follow the order.
   % else:
-  The court expects both parents to follow it.
-  % endif    
-  Sometimes a parent wants to do something the **Standing Order** does not allow.  For example, A parent may want to take the children to a family reunion in another state. But the **Standing Order** says parents cannot remove the children from Alaska during the case.
+  The court expects both parents to follow the order.
+  % endif
+  
+  Sometimes you or ${other_party_in_case} wants to do something the **Standing Order** does not allow.
+  
+  For example, you may want to take your children to a family reunion in another state. But the **Standing Order** says parents cannot remove the children from Alaska during the case.
   % if user_need == 'change divorce order':
+  
   The **Standing Order** or **(DRPO)** in a divorce case also says your spouse must agree or you must get permission from the court to:
   
   * sell marital property, or
   * cancel or change the terms of any insurance policy.
   % endif
   
-  If you want to do something different from what the order allows, you can ask {{ other_party_in_case }} to agree to it.
+  If you want to do something different from what the order allows, you can ask ${other_party_in_case} to agree to it.
   
-  If they do not agree, you can ask the court to change one of the orders by filing a "motion".
+  If they do not agree, you can ask the court to change the order by filing a "motion".
 ---
 template: motion_forms_step
 subject: |
@@ -33,7 +38,7 @@ subject: |
    % endif
 content: |
   % if  type_of_interim_order == 'motion':
-  If you or your spouse filed a motion and the judge made an interim order, but  things have changed,  you can file another motion.
+  If you or your spouse filed a motion and the judge made an interim order, but things have changed,  you can file another motion.
   Tell the judge what has changed and why you need a new order.
   % else:
   A motion is the way to ask the court to order something.
