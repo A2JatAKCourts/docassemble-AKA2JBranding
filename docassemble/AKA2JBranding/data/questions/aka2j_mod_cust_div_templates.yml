@@ -27,10 +27,10 @@ template: motion_forms_step
 subject: |
    Step ${ motion_forms_idx }: 
    % if  type_of_interim_order == 'standing order':
-  Fill out your motion forms
-  % else:
-  Ask the judge to change an interim order
-  % endif
+   Fill out your motion forms
+   % else:
+   Ask the judge to change an interim order
+   % endif
 content: |
   % if  type_of_interim_order == 'motion':
   If you or your spouse filed a motion and the judge made an interim order, but  things have changed,  you can file another motion.
