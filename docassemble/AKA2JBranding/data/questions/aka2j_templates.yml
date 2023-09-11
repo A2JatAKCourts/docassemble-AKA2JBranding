@@ -93,7 +93,9 @@ content: |
       <li><strong>Hybrid Custody Child Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill-In PDF] (if you are   asking for a hybrid custody schedule)</li>
     </ul>
   </ul>
-  <p>If you and the other parent agree, it is free to file a <strong>Joint Motion to Modify</strong>, but if you do not agree it costs $75 to file a <strong>Motion to Modify</strong>.</p>
+  % if middle_of_case == 'no':
+  If you and the other parent agree, it is free to file a <strong>Joint Motion to Modify</strong>, but if you do not agree it costs $75 to file a <strong>Motion to Modify</strong>.
+  % endif
 ---
 template: learn_reconsider_step
 subject: |
