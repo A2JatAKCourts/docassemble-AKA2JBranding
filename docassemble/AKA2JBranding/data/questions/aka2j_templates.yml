@@ -15,7 +15,15 @@ template: pick_a_step_step
 subject: |
   Step ${ pick_a_step_idx}: Decide the steps you want to take
 content: |
- You have more than one way to ask the judge to change your custody or parenting plan order. 
+  % if user_need == 'change a custody order':
+  You have more than one way to ask the judge to change your custody or parenting plan order.
+  % if user_need == 'change a divorce order':
+  % if middle_of_case == 'yes':
+  You have more than one way to ask the judge to change an order in your divorce case.
+  % elif middle_of_case == 'no':
+  You have more than one way to ask the judge to change the order from your divorce case.
+  % endif
+  % endif
  
   Read each of the following steps.
   
