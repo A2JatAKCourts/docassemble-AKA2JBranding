@@ -349,10 +349,8 @@ content: |
 template: calculate_child_support_step
 subject: |
   Step ${ calculate_child_support_idx }:
-  % if user_need in('change custody order', 'change foreign custody order'):
+    % if user_need in('change custody order', 'change foreign custody order', 'change divorce order'):
     Fill out your child support forms
-    % elif user_need == 'change divorce order':
-    Learn about a Motion to Modify your Parenting Plan
     % elif user_need == 'change child support':
     Calculate your new child support amount
     % endif
