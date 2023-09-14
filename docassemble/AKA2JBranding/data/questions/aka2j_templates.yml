@@ -15,7 +15,7 @@ template: pick_a_step_step
 subject: |
   Step ${ pick_a_step_idx}: Decide the steps you want to take
 content: |
-  % if user_need == 'change a custody order':
+  % if user_need == 'change custody order':
   You have more than one way to ask the judge to change your custody or parenting plan order.
   % elif user_need == 'change a divorce order':
   % if middle_of_case == 'yes':
@@ -323,29 +323,6 @@ Comment: |
   <p>A court will rarely grant a <strong>Motion to Modify </strong>made within 15 days of when the court made its final custody order unless something unexpected happened. Examples of why a court may grant a <strong>Motion to Modify</strong> are listed below.
   % endif
 ---
-template: fill_modify_step
-subject: |
-  Step ${ fill_modify_idx }: Fill out the Motion to Modify forms 
-content: |
-  <div class='step-subheading'>Use</div>
-    <ul>
-    <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, [SHC-PAC12](https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12)<br>
-    3 of the forms in this packet are affidavits:
-    <ul>
-    <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
-    <li>The court clerk can do this for free.
-    <li>Bring a valid photo ID with you
-    <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use:<br>
-    <strong>Self-Certification (No Notary Available) TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf>Fill-In PDF</a>]
-  </li>
-  </ul>
-  </li>
-  </ul>
-  <div class='step-subheading'>Watch</div>
-  <ul>
-  <li><a href="https://www.youtube.com/watch?v=2irmxT0_0EA">Motions Part 1: How to Ask the Court For Something</a></li>
-  </ul>
----
 template: calculate_child_support_step
 subject: |
   Step ${ calculate_child_support_idx }:
@@ -434,7 +411,7 @@ content: |
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
-  % if user_need in('change child support','change custody'):
+  % if user_need in('change child support','change custody order'):
   Fill out the Motion to Modify forms
   % else:
   Fill out the Motion to Modify Custody forms
@@ -587,60 +564,6 @@ content: |
   <p>Either one of you can decide to appeal the decision about the <strong>{{ motion_type }}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
   <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
 ---
-template: expect_set_aside_step
-subject: |
-  Step ${ expect_set_aside_idx }: What to expect after you file a Motion to Set Aside
-content: |
-  <div class='step-subheading'>The other parent may file a response or "opposition"</div>
-  <p>If you serve ${ other_party_in_case }: 
-  <ul>
-  <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li> 
-  <li>by mail, they have 13 days.</li>
-  </ul></p>
-  <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>   <div class='step-subheading'>You can reply to their response</div>
-  <p>If ${ other_party_in_case } files a response you can file a reply. If they serve you:
-  <ul>
-  <li>By hand delivery, email or TrueFile, you have 5 days to file,</li> 
-  <li>By mail, you have 8 days.</li>
-  <li>If the due date is a weekend or holiday, your reply is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, your reply is due Monday.</li>
-  <li>Watch a video about replies: <a href="https://youtube.com/watch?v=egoBeRFB_Uw">Motions Part 3: Preparing a Reply</a></li>
-  <li>Use: Reply to Opposition to Motion, SHC-1305 [<a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">Fill in PDF</a>].</li>
-  </ul></p>
-  <div class='step-subheading'>The judge will issue an order</div>
-  <ul>
-  <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
-  <li>The judge may grant your Motion to Set Aside. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
-  <li>The  judge may deny your motion.</li>
-  </ul> 
-  <p>Either parent can decide to appeal the decision about the Motion to Set Aside if they believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
-  <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
----
-template: expect_step
-subject: |
-  Step ${ expect_idx }: What to expect after you file
-content: |
-  <div class='step-subheading'>${ capitalize(other_party_in_case) } may file a response or “opposition”</div>
-  If you serve ${ other_party_in_case }:
-  <ul>
-  <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li>
-  <li>by mail, they have 13 days.</li>
-  </ul>
-  ${ expect_after_motion }
-  The documents ${ other_party_in_case } files after you serve them is their “response” or “opposition.”
-  <div class='step-subheading'>You can reply to their response</div>
-  If ${ other_party_in_case } files a response you can file a reply. If they serve you:
-  <ul>
-  <li>By hand delivery, email or TrueFile, you have 5 days to file,</li>
-  <li>By mail, you have 8 days.</li>
-  </ul>
-  If the due date is a weekend or holiday, your reply is due the next day the court is open. For example, if your reply is due on a Saturday, and the court is open Monday, your reply is due Monday.
-  
-  Watch a video about replies: [Motions Part 3: Preparing a Reply](https://www.youtube.com/watch?v=egoBeRFB_Uw)
-  
-  Use: <strong>Reply, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC – 1305</a></strong>.
-  
-  Read more about [motions](https://courts.alaska.gov/shc/family/motions.htm#order) and [replying](https://courts.alaska.gov/shc/family/motions.htm#reply) on the court’s webpage
----
 template: get_help
 subject: |
   Step ${ get_help_idx }: Get more information or help
@@ -659,12 +582,3 @@ content: |
   
   Depending on your income and circumstances, you may qualify for a free lawyer from [Alaska Legal Services](https://alsc-law.org/apply-for-services).
 ---
-template: file_and_serve_step
-subject: |
-  Step ${ file_and_serve_idx }: Old File and serve step
-content: |
-  Placeholder until we can replace with:
-  Cert of Service
-  File
-  Serve
-  Expect
