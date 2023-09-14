@@ -247,9 +247,9 @@ content: |
 ---
 template: appeal_contact_parent_step
 subject: |
-  Step ${ appeal_contact_parent_idx }: Contact the other parent
+  Step ${ appeal_contact_parent_idx }: Contact ${ other_party_in_case }
 content: |
-  If you agree with the appeal, you can contact and tell the other parent. You can both do the following:
+  If you agree with the appeal, you can contact and tell ${ other_party_in_case }. You can both do the following:
   <div class="step-subheading">In the Alaska Supreme Court appeal case</div>
   <ul>
   <li>The person who started the appeal can file:</li>
