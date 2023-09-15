@@ -19,14 +19,14 @@ content: |
 template: let_court_party_know_you_agree_step
 subject: |
   Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the 
-  % if type_of_response =='custody':
+  % if type_of_response in('custody', divorce, 'all divorce'):
   proposed changes
   % elif type_of_response =='set aside':
   Motion to Set Aside Judgment or Order
   % endif
 content: |
   <div class="step-subheading">Options</div>
-  % if type_of_response =='custody' and respond_to_custody  == 'agree':
+  % if type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody  == 'agree':
   If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order, and you agree, you have options. 
   % endif
   % if type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
@@ -46,14 +46,14 @@ subject: |
   do not agree with the proposed changes
   % elif (type_of_response == 'custody' and respond_to_custody in('some', 'none')) or (type_of_response == 'set aside' and respond_to_set_aside in('some', 'none')):
   do not agree with the Motion to Set Aside Judgment or Order
-   % elif (type_of_response =='custody' and respond_to_custody == 'agree') or (type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
+   % elif (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
   and ${ other_party_in_case } agree
   % endif
 content: |
   % if (type_of_response == 'custody' and respond_to_custody == 'agree') or (type_of_response =='set aside' and respond_to_set_aside == 'agree'):
   If you agree with everything ${ other_party_in_case } wrote in their **${ motion_type }**, you can state that in your response.
   % endif
-  % if type_of_response =='custody' and respond_to_custody in('some', 'none'):
+  % if type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody in('some', 'none'):
   If you do not agree with what ${ other_party_in_case } asked for in their **Motion to Modify**, you can respond in writing.  State what you do and do not agree with.  
   % endif
   % if type_of_response == 'custody':
