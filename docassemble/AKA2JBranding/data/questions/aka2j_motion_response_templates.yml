@@ -42,7 +42,7 @@ content: |
 template: respond_in_writing_step
 subject: |
   Step ${ respond_in_writing_idx }: Respond in writing and tell the court you
-  % if (type_of_response == 'custody' and respond_to_custody in('some', 'none')):
+  % if type_of_response in('custody','divorce','all divorce') and respond_to_custody in('some', 'none'):
   do not agree with the proposed changes
   % elif (type_of_response == 'custody' and respond_to_custody in('some', 'none')) or (type_of_response == 'set aside' and respond_to_set_aside in('some', 'none')):
   do not agree with the Motion to Set Aside Judgment or Order
