@@ -558,10 +558,10 @@ content: |
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
-  <li>The judge may grant your <strong>{{ motion_type }}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
+  <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
   <li>The judge may deny your motion.</li>
   </ul> 
-  <p>Either one of you can decide to appeal the decision about the <strong>{{ motion_type }}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
+  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
   <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
 ---
 template: get_help
