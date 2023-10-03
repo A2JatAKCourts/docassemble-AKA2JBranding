@@ -81,10 +81,13 @@ subject: |
  Step ${ register_order_idx }: Register the out-of-state order
 content: |
   <div class="step-subheading">Submit the following packet to the Alaska court</div>
-  1. One certified copy of the original order.
-  2. One photocopy of the certified original order.
-  <div class="step-subheading">3. For Custody</div>
   <ul>
+  <li>1 <strong>certified</strong> copy of the original order.</li>
+  <li>1 <strong>photocopy</strong> of the certified original order.</li>
+  <li><strong>Case description form</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">CIV-125S</a></li>
+  <ul>
+  <div class="step-subheading">For Custody</div>
+  
   <li><strong>Request to </strong><strong>Register Child Custody Order of Another State or Country, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-482.pdf">DR-482</a><strong> </strong>[Fill-In PDF]</li>
   <li><strong>Notice of Registration of Child Custody Order of Another State or Country, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-483.pdf">DR-483</a> [Fill-In PDF] <br>
   (Completed except for the date and clerk's signature)</li>
@@ -96,19 +99,19 @@ content: |
   (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)<strong></strong></li>
   <li><strong>Confirmation of Registered</strong> <strong>Child Custody Order</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-485.pdf">DR-485</a> [Fill-In PDF]<br>
   (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)</li>
-  </ul>
-  <div class="step-subheading">3. For Child Support</div>
-  <ul>
+  
+  <div class="step-subheading">For Child Support</div>
+  
   <li><strong>Instructions - Registration of Support Order Issued by Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-341.pdf">DR-341</a> [Fill-In PDF]</li>
   <li><strong>Petition to Register a Support Order from Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-342.pdf">DR-342</a> [Fill-In PDF]</li>
   <li><strong>Confidential Information Sheet - Support Order from Another State, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-343.pdf">DR-343</a> [Fill-In PDF]</li>
   <li><strong>Notice of Registration of Another State's Support Order, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-344.pdf">DR-344</a> [Fill-In PDF]<br>
   (Completed except for the date and clerk's signature)</li>
   <li><strong>Request for Hearing About Registered Child Support Order, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-345.pdf">DR-345</a> [Fill-In PDF]<br>
-  (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank)</li>
+  (Only fill in the Petitioner's and Respondent's names in the caption at the top left and leave the rest blank.)</li>
   <li><strong>Confirmation of Registered Support Order</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-347.pdf">DR-347</a> [Fill-In PDF]</li>
   </ul>
-  <div class="step-subheading">4. You need to tell the court how you want it to deliver the documents to the other parent.</div>
+  <div class="step-subheading">Tell the court how you want it to deliver the documents to the other parent.</div>
   The options are:
   <ul>
   <li><strong>1st class US mail</strong> (which is free): <br>
@@ -122,22 +125,22 @@ content: |
   <ul>
   <li>Before coming to court,
   <ul>
-  <li>go to the Post Office and get the forms for &quot;certified mail&quot;, &quot;restricted delivery&quot;, &quot;return receipt requested.&quot;</li>
+  <li>Go to the Post Office and get the forms for &quot;certified mail&quot;, &quot;restricted delivery&quot;, &quot;return receipt requested.&quot;</li>
   <li>Figure out how much it will cost to mail the forms by this method, and </li>
   <li>Put the stamps on the envelope. <br>
   If you do not provide the correct stamped envelope, your paperwork may be rejected. </li>
   </ul></li>
   <li>Give the clerk at the court:
   <ul>
-  <li>the packet of forms to register a foreign order</li>
-  <li>envelope(s) addressed to the opposing party</li>
-  <li>a copy of all documents you are filling PLUS a Request for Hearing form for the opposing party</li>
+  <li>the packet of forms to register a foreign order,</li>
+  <li>envelope(s) addressed to the opposing party, and</li>
+  <li>a copy of all documents you are filling <strong>plus</strong> a <strong>Request for Hearing</strong> form for the opposing party</li>
   <li>the filled-out mailing forms for certified mail, restricted delivery, return receipt requested from the Post Office for each of the people listed in the certificate of distribution on the Notice of Registration Order. <br>
   On the green card, fill out your return address so you get the green card back later.</li>
   <li>enough postage for the court to serve by certified mail, restricted delivery, return receipt requested.</li>
   </ul></li>
   </ul></li>
-  <li><strong>Process server</strong> (which you have to arrange and pay for):
+  <li><strong>Process server</strong> (which you have to arrange and pay for):<br>  
   Give the clerk:
   <ul>
   <li>the packet of forms to register a foreign order</li>
@@ -145,12 +148,10 @@ content: |
   </ul></li>
   </ul>
 
-  <div class="step-subheading">5. The filing fee of $250 </div>
-  If you are registering <strong>both</strong> a foreign child custody order and a foreign support order together, or <strong>only</strong> a child custody order.
+  <div class="step-subheading">Pay the filing fee of $150 or ask the court to waive it</div>
+  <p>If you are registering <strong>both</strong> a foreign child custody order and a foreign support order together, or <strong>only</strong> a child custody order, the filing fee is $150.</p>
 
-  If you cannot afford $250, you can file a <strong>Request for Exemption for Payment of Fees</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf">TF-920</a>.
+  <p>If you cannot afford $150, you can file a <strong>Request for Exemption for Payment of Fees</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf">TF-920</a>.</p>
 
-  If you are registering <strong>only</strong> a foreign support order, it is <strong>free</strong>.
-
-  <div class="step-subheading">6. Case description form, <a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">CIV-125S</a></div>
+  <p>If you are registering <strong>only</strong> a foreign support order, it is <strong>free</strong>.</p>
 ---
