@@ -504,7 +504,17 @@ template: appeal_step
 subject: |
   Step ${ appeal_idx }: Decide if you want to file an appeal
 content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
+  To ask the Alaska Supreme Court to change the court order in your case, file an Appeal.
+  
+  % if user_need == 'change custody order' or (user_need == 'change divorce order' and type_of_final_order['custody order'] and why_change == 'problem'):
+  You have only 15 days from the day the court sent the order to you.
+  % else: 
+  You have only 30 days from the day the court sent the order to you.
+  % endif
+  
+  If you cannot file on time, call the Appellate Courts Customer Service: (907) 264-0612. They may be able to help you file late.
+  
+  An appeal is not a new trial or a chance to give a judge new evidence or information.  In an appeal you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
   
   The only information the Supreme Court looks at is:
   
