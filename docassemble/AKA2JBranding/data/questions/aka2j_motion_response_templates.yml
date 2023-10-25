@@ -97,7 +97,8 @@ subject: |
 content: |
   If you and the other parent agree, and are able to work together to write out the agreement, you can fill out and file with the court:
   % if type_of_response == 'custody' and respond_to_custody == 'agree':
-  If you are changing the custody and parenting plan, choose 1 parenting plan order. Do **not** sign the ORDER section:
+  <div class="step-subheading">If you are changing the custody and parenting plan</div
+  Choose 1 parenting plan order. Do **not** sign the ORDER section:
   <ul>
   <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word file</a><br>

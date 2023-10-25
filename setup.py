@@ -44,7 +44,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.AKA2JBranding',
-      version='23.10.24',
+      version='23.10.25',
       description=("Package to customize Alaska jurisdiction's needs"),
       long_description="# docassemble.ALGenericJurisdiction\r\n\r\nCustomized package for Alaska jurisdiction's need\r\n\r\n## Author\r\n\r\nCaroline Robinson, crobinson@akcourts.gov\r\n\r\n",
       long_description_content_type='text/markdown',
