@@ -17,7 +17,7 @@ subject: |
 content: |
   % if user_need == 'change custody order':
   You have more than one way to ask the judge to change your custody or parenting plan order.
-  % elif user_need == 'change a divorce order':
+  % elif user_need == 'change divorce order':
   % if middle_of_case == 'yes':
   You have more than one way to ask the judge to change an order in your divorce case.
   % elif middle_of_case == 'no':

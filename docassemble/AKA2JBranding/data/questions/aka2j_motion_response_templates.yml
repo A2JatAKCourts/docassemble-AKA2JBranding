@@ -18,7 +18,7 @@ content: |
 ---
 template: let_court_party_know_you_agree_step
 subject: |
-  Step ${ let_court_party_know_you_agree_idx}: Let ${ other_party_in_case } and the court know you agree with the 
+  Step ${ let_court_party_know_you_agree_idx }: Let ${ other_party_in_case } and the court know you agree with the 
   % if type_of_response in('custody', 'divorce', 'all divorce'):
   proposed changes
   % elif type_of_response =='set aside':
@@ -26,31 +26,35 @@ subject: |
   % endif
 content: |
   <div class="step-subheading">Options</div>
-  % if type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody  == 'agree':
+  % if type_of_response == 'custody':
   If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order, and you agree, you have options. 
-  % endif
-  % if type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
+  % elif type_of_response == 'divorce':
+  If ${ other_party_in_case } files a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options.
+  % elif type_of_response == 'all divorce':
+  If ${ other_party_in_case } files a  a **Motion to Modify** the parenting plan and custody order or the child support order and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options. 
+  % elif type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
   % endif
-  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
-    <ul>
-    <li>Fill out a response that states you agree, file it with the court, and give ${ other_party_in_case } a copy. See Steps ${ respond_in_writing_idx } and ${ file_response_idx }.<br>
-    <strong>Or</strong></li>
-    <li>Contact ${ other_party_in_case } and put your agreement in writing together to file with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
-    </ul>
+  For both options:
+  You must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
+  <ul>
+  <li>Fill out a response that states you agree, file it with the court, and give ${ other_party_in_case } a copy. See Steps ${ respond_in_writing_idx } and ${ file_response_idx }.<br>
+  <strong>Or</strong></li>
+  <li>Contact ${ other_party_in_case } and put your agreement in writing together to file with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
+  </ul>
 ---
 template: respond_in_writing_step
 subject: |
   Step ${ respond_in_writing_idx }: Respond in writing and tell the court you
   % if type_of_response in('custody','divorce','all divorce') and respond_to_custody in('some', 'none'):
   do not agree with the proposed changes
-  % elif (type_of_response == 'custody' and respond_to_custody in('some', 'none')) or (type_of_response == 'set aside' and respond_to_set_aside in('some', 'none')):
+  % elif type_of_response == 'set aside' and respond_to_set_aside in('some', 'none'):
   do not agree with the Motion to Set Aside Judgment or Order
    % elif (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
   and ${ other_party_in_case } agree
   % endif
 content: |
-  % if (type_of_response == 'custody' and respond_to_custody == 'agree') or (type_of_response =='set aside' and respond_to_set_aside == 'agree'):
+  % if (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response =='set aside' and respond_to_set_aside == 'agree'):
   If you agree with everything ${ other_party_in_case } wrote in their **${ motion_type }**, you can state that in your response.
   % endif
   % if type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody in('some', 'none'):
@@ -172,7 +176,10 @@ content: |
   <ul>
   <li>Make 2 copies of the forms you filled out stating your agreement -<br>
   1 copy for each of you.</li>
-  <li>File the originals with the court where the motion was filed. File by the deadline - 10 or 13 days. If the deadline is a weekend or holiday, your agreement is due the next day the court is open.  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.</li>
+  <li>File the originals with the court where the motion was filed. </li>
+  <li>File by the deadline - 10 or 13 days.<br>
+  If the deadline is a weekend or holiday, your agreement is due the next day the court is open.<br>
+  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.</li>
   </ul>
 ---
 comment: |
@@ -227,20 +234,20 @@ content: |
   % if respond_to_appeal == 'agree':
   The Alaska Court System </a><a href="https://courts.alaska.gov/shc/appeals/appeals.htm">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
   <div class="step-subheading">Agreement</div>
-  If you agree with what the other parent is asking for in the appeal, you have some options.
+  If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
   <ul>
-  <li>Contact the other parent and write out your agreement. See Step ${ appeal_contact_parent_idx }.</li>
+  <li>Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.</li>
   <li>Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.</li>
   </ul>
   % else:
   <div class="step-subheading">Timeline</div>
   You can review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
   <div class="step-subheading">Process</div>
-  If you receive papers saying the other parent filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
+  If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
   <ul>
-  <li>after receiving the papers from the other parent that start the appeal;</li>
+  <li>after receiving the papers from ${ other_party_in_case } that start the appeal;</li>
   <li>when deciding whether to file your own appeal too which is called a "cross appeal;"</li>
-  <li>when writing a response called a brief to the other parent's opening brief (written argument why the trial court decision should be changed); and</li>
+  <li>when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed); and</li>
   <li>when preparing for oral argument where both sides appear in the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#supremecourt">Supreme Court</a> and each side argues their case and the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#justice">justices</a> may ask questions.</li>
   </ul>
   This Alaska Court System <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
@@ -253,7 +260,7 @@ content: |
   If you agree with the appeal, you can contact and tell ${ other_party_in_case }. You can both do the following:
   <div class="step-subheading">In the Alaska Supreme Court appeal case</div>
   <ul>
-  <li>The person who started the appeal can file:</li>
+  <li>The person who started the case can file:</li>
   <ul>
   <li><strong>Motion</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_400.doc">SHS-AP 400</a><br>
   Name it "Motion to Dismiss because of Settlement Agreement;" </li>
