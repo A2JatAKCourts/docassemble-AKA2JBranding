@@ -190,9 +190,9 @@ subject: |
   Step ${ expect_after_response_idx }: What to expect after you respond to the ${ motion_type }
 content: |
   <ul>
-  <li>If the {{ motion_type }} is not granted or is denied, the parents are supposed to follow the Judgment or Order and the parent who received the original order or judgment can enforce it.</li>
-  <li>If the{{ motion_type }} is granted, the court will notify both parents about the next step in the case.</li>
-  <li>Either parent can appeal the decision about the {{ motion_type }} if they believe the judge made a legal mistake.</li>
+  <li>If the ${ motion_type } is not granted or is denied, the parents are supposed to follow the Judgment or Order and the parent who received the original order or judgment can enforce it.</li>
+  <li>If the ${ motion_type } is granted, the court will notify both parents about the next step in the case.</li>
+  <li>Either parent can appeal the decision about the ${ motion_type } if they believe the judge made a legal mistake.</li>
   </ul>
 ---
 template: appeal_response_step
