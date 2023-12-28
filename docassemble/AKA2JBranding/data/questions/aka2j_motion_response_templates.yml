@@ -141,9 +141,8 @@ content: |
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case. If granted, the case will move ahead as if the judgment had not been made. If you do not agree with what {{ other_party_in_case }} asked to set aside, you can fill out and file a response. Be sure to state what you do and do not agree with. Remember, you must respond within **10 days** from the day it was hand delivered to you or 13 days from the day it was mailed (you can see this date on the postmark of the envelope). Fill out
   % endif
   * [CIV-810](https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf) Response to Motion
-  * CIV-820](https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf) **Order on Motion**
+  * [CIV-820](https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf) **Order on Motion**
   % endif
-  ---
 ---
 template: contact_other_party_step
 subject: |
