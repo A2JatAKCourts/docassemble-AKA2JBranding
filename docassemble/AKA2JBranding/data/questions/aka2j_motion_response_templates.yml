@@ -150,7 +150,7 @@ subject: |
   Step ${ contact_other_party_idx }: Contact  ${ other_party_in_case }, and write out your agreement
 content: |
   If you and the other parent agree, and are able to work together to write out the agreement, you can fill out and file with the court:
-  % if type_of_response == 'custody' and respond_to_custody == 'agree':
+  % if type_of_response in('custody', 'all divorce') and respond_to_custody == 'agree':
   <div class="step-subheading">If you are changing the custody and parenting plan</div
   Choose 1 parenting plan order. Do **not** sign the ORDER section:
   <ul>
@@ -158,14 +158,16 @@ content: |
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word file</a><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
 
-  <li><strong>Agreement &amp; Order for Custody and Visitation, SHC-1126</strong> <br>
+  <li><strong>Agreement &amp; Order for Custody and Visitation, SHC-1126</strong><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126.docx">Word file</a><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
 
-  <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong> <br>
+  <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
   </ul>
+  % endif
+  % if type_of_response in('custody', 'child support', 'all divorce') and respond_to_custody == 'agree':
   <div class="step-subheading">If you are changing child support</div>
   <ul>
   <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]<br>
@@ -185,6 +187,18 @@ content: |
   </ul></li>
   </ul>
   % endif
+  % if type_of_response == 'divorce' and respond_to_custody == 'agree':
+  <ul>
+  <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+  % endif
+  % if type_of_response in('divorce', 'all divorce') and respond_to_custody == 'agree':
+  <li><strong>Agreement & Order, SHC-1061</strong> <br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
+  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
+  </ul>
+  % endif  
   % if type_of_response =='set aside' and respond_to_set_aside == 'agree':
   <ul>
   <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong><br>
