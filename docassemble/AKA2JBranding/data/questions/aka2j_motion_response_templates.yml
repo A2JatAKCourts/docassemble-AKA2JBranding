@@ -334,5 +334,5 @@ content: |
   <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc">SHS-AP 260</a> (Word document).</li>
   <li>Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.</li>
   <li>You can write on the Notice that you agree with ${ other_party_in_case }.</li>
-  <li>${ other_party_in_case } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
+  <li>${ capitalize('other_party_in_case') } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
   </ul>
