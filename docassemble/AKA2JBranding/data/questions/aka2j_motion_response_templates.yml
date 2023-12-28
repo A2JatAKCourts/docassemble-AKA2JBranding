@@ -147,9 +147,9 @@ content: |
 ---
 template: contact_other_party_step
 subject: |
-  Step ${ contact_other_party_idx }: Contact  ${ other_party_in_case }, and write out your agreement
+  Step ${ contact_other_party_idx }: Contact ${ other_party_in_case }, and write out your agreement
 content: |
-  If you and the other parent agree, and are able to work together to write out the agreement, you can fill out and file with the court:
+  If you and ${ other_party_in_case } agree, and are able to work together to write out the agreement, you can fill out and file with the court:
   % if type_of_response in('custody', 'all divorce') and respond_to_custody == 'agree':
   <div class="step-subheading">If you are changing the custody and parenting plan</div
   Choose 1 parenting plan order. Do **not** sign the ORDER section:
