@@ -267,7 +267,7 @@ subject: |
   Respond in writing to the Appeal
   % endif
 content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
   
   The only information the Supreme Court looks at is:
   
@@ -331,8 +331,8 @@ subject: |
   Step ${ tell_supreme_court_idx }: Tell the Alaska Supreme Court
 content: |
   <ul>
-  <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc"> </a>(Word document).</li>
-  <li>Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for the other parent.</li>
-  <li>You can write on the Notice that you agree with the other parent.</li>
-  <li>The other person may want to file a motion to dismiss to stop the appeal from continuing. </li>
+  <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc">SHS-AP 260</a> (Word document).</li>
+  <li>Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.</li>
+  <li>You can write on the Notice that you agree with ${ other_party_in_case }.</li>
+  <li>${ other_party_in_case } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
   </ul>
