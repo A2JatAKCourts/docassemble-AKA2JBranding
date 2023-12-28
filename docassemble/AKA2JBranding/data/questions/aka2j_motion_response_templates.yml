@@ -27,21 +27,20 @@ subject: |
 content: |
   <div class="step-subheading">Options</div>
   % if type_of_response == 'custody':
-  If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order, and you agree, you have options. 
+  If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order, and you agree, you have options:
   % elif type_of_response == 'divorce':
-  If ${ other_party_in_case } files a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options.
+  If ${ other_party_in_case } files a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
   % elif type_of_response == 'all divorce':
-  If ${ other_party_in_case } files a  a **Motion to Modify** the parenting plan and custody order or the child support order and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options. 
+  If ${ other_party_in_case } files a  a **Motion to Modify** the parenting plan and custody order or the child support order and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
   % elif type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
   % endif
-  For both options:
-  You must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
   <ul>
   <li>Fill out a response that states you agree, file it with the court, and give ${ other_party_in_case } a copy. See Steps ${ respond_in_writing_idx } and ${ file_response_idx }.<br>
   <strong>Or</strong></li>
   <li>Contact ${ other_party_in_case } and put your agreement in writing together to file with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
   </ul>
+  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
 ---
 template: respond_in_writing_step
 subject: |
@@ -50,50 +49,101 @@ subject: |
   do not agree with the proposed changes
   % elif type_of_response == 'set aside' and respond_to_set_aside in('some', 'none'):
   do not agree with the Motion to Set Aside Judgment or Order
-   % elif (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
+  % elif (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
   and ${ other_party_in_case } agree
   % endif
 content: |
-  % if (type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody == 'agree') or (type_of_response =='set aside' and respond_to_set_aside == 'agree'):
-  If you agree with everything ${ other_party_in_case } wrote in their **${ motion_type }**, you can state that in your response.
+  % if (type_of_response in('custody','child_support','divorce','all divorce') and respond_to_custody == 'agree') or (type_of_response =='set aside' and respond_to_set_aside == 'agree'):
+  If you agree with everything ${ other_party_in_case } wrote in their **${ motion_type }**, you can state that in your response. Fill out:
   % endif
-  % if type_of_response in('custody', 'divorce', 'all divorce') and respond_to_custody in('some', 'none'):
-  If you do not agree with what ${ other_party_in_case } asked for in their **Motion to Modify**, you can respond in writing.  State what you do and do not agree with.  
+  % if type_of_response in('custody','child support', 'divorce', 'all divorce') and respond_to_custody in('some', 'none'):  
+  If a parent files a motion to modify child support, custody, or your parenting plan order, the judge first decides if there has been a change in circumstances.
+  
+  If the judge decides there is a change, the judge will
+  % if type_of_response in('custody', 'all divorce'):
+  order a new parenting plan in the children's best interest.
+  
+  If the new parenting plan changes the amount of child support, the judge will also issue a new child support order.
   % endif
+  % if type_of_response =='child support':
+  issue a new child support order.
+  % endif
+  % if type_of_response == 'divorce':
+  The judge first decides if there has been a change in circumstances. If the judge decides there is a change, the judge will issue a new spousal support order.
+  % endif
+  % if type_of_response == 'all divorce':
+  If the judge decides circumstances have changed enough, the judge will also issue a new spousal support order.
+  % endif
+  
+  % if type_of_response in('custody','all divorce'):
+  **For custody**, a change in circumstances means something has happened so that the old parenting plan is no longer in the children's best interest. Examples include:
+
+  * The original plan was for an infant and now the child is 5 years old and will start kindergarten so the old schedule of 10 am exchanges does not work.
+  * One parent is moving out of state so the existing schedule of week on / week off is impossible.
+  * The parent the children were living with 4 days a week went to jail, so the existing schedule is impossible.
+  * An act of domestic violence between the parents when returning the children.
+  % endif
+  % if type_of_response in('custody','child support','all divorce'):
+  
+  **For child support**, there needs to be:
+
+  * A 15% change in the amount of child support ordered. So that when you calculate support based on the parents' current income, the amount is 15% more or less than the current support order.
+
+  **Or**
+
+  * A change in the parenting plan that affects the child support formula. For example, changing from a primary custody to shared custody plan will probably change the amount of child support. The [FAQs on the court's Child Support webpages](https://courts.alaska.gov/shc/family/supportfaq.htm) help you decide if you want to file a **Motion to Modify Child Support**.
+  % endif
+  
+  The Alaska Supreme Court has issued many [decisions](https://courts.alaska.gov/shc/family/shclaws.htm#cases) about what types of circumstances amount to a change of circumstances allowing a modification.
+
+  If you think there has not been a change in circumstances, or you do not agree with 
   % if type_of_response == 'custody':
-  Respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.
+  the parenting plan or child support order
+  % endif
+  % if type_of_response == 'child_support':
+  the child support order
+  % endif
+  % if type_of_response == 'divorce':
+  the spousal support or property and debt division order
+  % endif
+  % if type_of_response == 'all divorce':
+  the parenting plan, child support, spousal support, or property and debt division order
+  % endif
+  the other parent asked for in their **Motion to Modify**, you can respond in writing. In your response, explain why you disagree.
+
+  State what you do and do not agree with.
+
+  You must respond within 10 days from the day the motion  was hand-delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope. 
   Fill out:
+  % endif
+  % if type_of_response in('custody', 'child support', 'divorce', 'all divorce'):
   <div class="step-subheading">Forms</div>
-  <ul>
-  <li><strong>Response to Motion,<a href="https://public.courts.alaska.gov/web/forms/docs/dr-725.pdf">DR-725</a></strong></li>
-  <li><strong>Child Support Guidelines Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong> [Fill-In PDF]<br>
-  Each parent files their own</li>
-  <li><strong>Child Custody Jurisdiction Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf ">DR-150</a></strong> [Fill-In PDF]<br>Each parent files their own</li>
-  </ul>
+  **Response to Motion**, [DR-725](https://public.courts.alaska.gov/web/forms/docs/dr-725.pdf)
+  
+  **Child Support Guidelines Affidavit, DR-305** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf)]</br>
+  Each parent files their own
+  
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf)]</br>
+  Each parent files their own
+ 
   <div class="step-subheading">Optional forms depending on your situation</div>
   Choose 1 form below based on the parenting schedule if it is not a primary custody calculation where children are with 1 parent for at least 256 overnights/year.
-  <ul>
-  <li><strong>Shared Custody Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf"></a>DR-306</strong> [Fill-In PDF]</li>
-  <li><strong>Divided Custody Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a></strong> [Fill-In PDF]</li>
-  <li><strong>Hybrid Custody Child Support Calculation, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a></strong> [Fill-In PDF]</li>
-  </ul>
-  % endif
-  % if type_of_response =='set aside' and respond_to_set_aside in('some', 'none'):
-  A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  
   
-  If granted, the case will move ahead as if the judgment had not been made.
+  **Shared Custody Support Calculation, DR-306** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf)]
   
-   If you do not agree with what ${ other_party_in_case } asked to set aside, you can fill out and file a response. State what you do and do not agree with.
-   
+  **Divided Custody Support Calculation, DR-307** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf)]
+  
+  **Hybrid Custody Child Support Calculation, DR-308** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf)]
   % endif
-   % if type_of_response =='set aside':
-   Respond within 10 days from the day it was hand delivered to you or 13 days from the day it was mailed. You can see this date on the postmark of the envelope.   
-  Fill out:
-  <ul>
-  <li><strong><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810 Response to Motion</a></strong></li>
-  <li><strong><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820 Order on Motion</a></strong></li>
-  </ul>
+
+  % if type_of_response =='set aside':
+  % if respond_to_set_aside in('some', 'none'):
+  A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case. If granted, the case will move ahead as if the judgment had not been made. If you do not agree with what {{ other_party_in_case }} asked to set aside, you can fill out and file a response. Be sure to state what you do and do not agree with. Remember, you must respond within **10 days** from the day it was hand delivered to you or 13 days from the day it was mailed (you can see this date on the postmark of the envelope). Fill out
   % endif
+  * [CIV-810](https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf) Response to Motion
+  * CIV-820](https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf) **Order on Motion**
+  % endif
+  ---
 ---
 template: contact_other_party_step
 subject: |
