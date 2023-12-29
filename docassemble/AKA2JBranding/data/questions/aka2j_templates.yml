@@ -56,13 +56,12 @@ content: |
   <div class="step-subheading">Collaborative Law</div>
   <p>The Alaska Association of Collaborative Professionals helps people resolve parenting issues outside of the court process without a judge making decisions.  Learn more about the <a href="https://www.alaskacollaborative.org">Association</a>.</p>
     
-    <div class="step-subheading">If you both agree, you can change things on your own.</div>
-    <p>Whether or not you must tell the court depends on the type of change you make.</p>
+    <div class="step-subheading">If you both agree, you can change some things on your own.</div>
   <ul>
-    <li>If you make a minor change, such as changing a pick-up time by an hour, or a change to the holiday schedule, you do not have   to tell the court.</li>
-    <li>If you make a change about something big, like changing the parenting schedule from weekends with one parent to week on / week   off, tell the court in writing.</li>
-    <li>If you want to be sure you are both bound by the   new agreement, tell the court in writing so the judge can make the agreement   part of the court order in your case.</li>
-    <li>If you want to change child support because   either the parenting schedule or a parent's income changes, you should always   tell the court in writing so the judge can decide whether the child support   amount should change.  The parent who   owes money under the child support order you want to change continues to owe that amount until the judge signs a new order.</li>
+    <li>You do not have to tell the court about every change you make. But you must tell the court about <strong>some</strong> changes. If you make a minor change, like changing a pick-up time by an hour, or a change to the holiday schedule, you do not have to tell the court.</li>
+    <li>If you make a change about something big, like changing the parenting schedule from weekends with one parent to week on / week off, you must tell the court in writing.</li>
+    <li>If you want to be sure that both of you must follow the new agreement, tell the court so the judge can make the agreement part of your court order.</li>
+    <li>If you want to change child support because the parenting schedule or a parent's income changes, you must tell the court in writing so the judge can decide if the child support amount should change.  The parent who owes money under the child support order you want to change continues to owe that amount until the judge signs a new order.</li>
   </ul>
 ---
 template: tell_the_court_step
@@ -109,8 +108,8 @@ template: learn_reconsider_step
 subject: |
   Step ${ learn_reconsider_idx }: Learn about Motions to Reconsider
 content: |
-  <p>To ask your trial judge to reconsider a  decision, file a <strong>Motion to Reconsider</strong></p>
-  <p>You have only 10 days after the date the  court sent your child support order to you. </p>
+  <p>To ask your judge to reconsider a decision, file a <strong>Motion to Reconsider</strong></p>
+  <p>You have only 10 days after the date the court sent your ${ case_type } order to you. </p>
   <p>Look at the last page of the order. The date to count from is in the box at the bottom of the page. It looks something like this.</p>
   
   % for image_data in distribution_certificate_list:
