@@ -20,7 +20,7 @@ content: |
   % elif user_need == 'change divorce order':
   % if middle_of_case == 'yes':
   You have more than one way to ask the judge to change an order in your divorce case.
-  % elif middle_of_case == 'no':
+  % elif middle_of_case == 'no' and not defined('unknown_final_date'):
   You have more than one way to ask the judge to change the order from your divorce case.
   % endif
   % endif
@@ -56,9 +56,9 @@ content: |
   <div class="step-subheading">Collaborative Law</div>
   <p>The Alaska Association of Collaborative Professionals helps people resolve parenting issues outside of the court process without a judge making decisions.  Learn more about the <a href="https://www.alaskacollaborative.org">Association</a>.</p>
     
-    <div class="step-subheading">If you both agree, you can change some things on your own.</div>
+    <div class="step-subheading">If you both agree, you can change some things on your own</div>
   <ul>
-    <li>You do not have to tell the court about every change you make. But you must tell the court about <strong>some</strong> changes. If you make a minor change, like changing a pick-up time by an hour, or a change to the holiday schedule, you do not have to tell the court.</li>
+    <li>You do not have to tell the court about every change you make. But you must tell the court about <strong>some</strong> changes. If you make a small change, like changing pick-up time by an hour, or a change to your holiday schedule, you do not have to tell the court.</li>
     <li>If you make a change about something big, like changing the parenting schedule from weekends with one parent to week on / week off, you must tell the court in writing.</li>
     <li>If you want to be sure that both of you must follow the new agreement, tell the court so the judge can make the agreement part of your court order.</li>
     <li>If you want to change child support because the parenting schedule or a parent's income changes, you must tell the court in writing so the judge can decide if the child support amount should change.  The parent who owes money under the child support order you want to change continues to owe that amount until the judge signs a new order.</li>
@@ -149,7 +149,7 @@ content: |
       </ul>
     </li>
   </ol>
-  <p>See <a href="https://courts.alaska.gov/rules/docs/civ.pdf">Alaska Rule of Civil Procedure</a> 77(k) to read the court rules about the <strong>4 reasons</strong> you can ask the court to reconsider a judge's decision:</p>
+  <p>See <a href="https://courts.alaska.gov/rules/docs/civ.pdf">Alaska Rule of Civil Procedure</a> 77(k) to read the court rules about the <strong>4 reasons</strong> you can ask the court to reconsider a judge's decision.</p>
 ---
 template: fill_reconsider_step
 subject: |
