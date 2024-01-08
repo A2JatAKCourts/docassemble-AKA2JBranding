@@ -4,10 +4,10 @@ subject: |
 content: |
   A <strong>Motion to Reconsider</strong> asks a judge to change a decision or order they made in the last 10 days.
   <ul>
-  <li>Do not respond to a <strong>Motion to reconsider</strong> unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.</li>
+  <li>Do not respond to a <strong>Motion to Reconsider</strong> unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.</li>
   <li>There will not be a hearing.</li>
-  <li>The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, <strong>whichever is later</strong>, the <strong>Motion to reconsider</strong> is denied, which means the original decision is not changed.</li>
-  <li>If the court grants the a <strong>Motion to reconsider</strong>, it will either enter a new order or ask both sides for more information.</li>
+  <li>The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, <strong>whichever is later</strong>, the <strong>Motion to Reconsider</strong> is denied, which means the original decision is not changed.</li>
+  <li>If the court grants the <strong>Motion to Reconsider</strong>, it will either enter a new order or ask both sides for more information.</li>
   </ul>
   <div class="step-subheading">If the court asks for a response</div>
   <p>If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
@@ -40,7 +40,7 @@ content: |
   <strong>Or</strong></li>
   <li>Contact ${ other_party_in_case } and put your agreement in writing together to file with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
   </ul>
-  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
+  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you, or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
 ---
 template: respond_in_writing_step
 subject: |
@@ -170,7 +170,7 @@ content: |
   <div class="step-subheading">If you are changing child support</div>
   <ul>
   <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]<br>
-  If you are changing child support. Do <strong>not</strong> sign the Order section.</li>
+  Do <strong>not</strong> sign the Order section.</li>
 
   <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill-In PDF]<br>
   Each parent files their own</li>
@@ -277,7 +277,7 @@ content: |
   * appeal briefs filed in the appeal to the Supreme Court.
   
   % if respond_to_appeal == 'agree':
-  The Alaska Court System </a><a href="https://courts.alaska.gov/shc/appeals/appeals.htm">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
+  The Alaska Court System </a><a href="https://courts.alaska.gov/shc/appeals/index.htm">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
   <div class="step-subheading">Agreement</div>
   If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
   <ul>
@@ -308,7 +308,7 @@ content: |
   <li>The person who started the case can file:</li>
   <ul>
   <li><strong>Motion</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_400.doc">SHS-AP 400</a><br>
-  Name it "Motion to Dismiss because of Settlement Agreement;" </li>
+  Name it "Motion to Dismiss because of Settlement Agreement" </li>
   <li><strong>Affidavit &amp; Memorandum</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_410.doc">SHS-AP 410</a>, and </li>
   <li><strong>Order</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_420.doc">SHS-AP 420</a> telling the court the case can be dismissed. </li>
   </ul>
@@ -334,5 +334,5 @@ content: |
   <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc">SHS-AP 260</a> (Word document).</li>
   <li>Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.</li>
   <li>You can write on the Notice that you agree with ${ other_party_in_case }.</li>
-  <li>${ capitalize('other_party_in_case') } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
+  <li>${ capitalize(other_party_in_case) } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
   </ul>
