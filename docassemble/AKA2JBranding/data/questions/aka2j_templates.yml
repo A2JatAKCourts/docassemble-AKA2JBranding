@@ -572,7 +572,10 @@ content: |
   </ul>
   <li>Use: <strong>Reply to Opposition to Motion, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC-1305</a></strong> [Fill in PDF].</li>
   </ul></p>
-  ${ service_cert_reply_image }
+  % for image_data in reply_certificate_list:
+  ${ image_data['text'] }
+  ${ image_data['image'].show(width='100%') }
+  % endfor
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
