@@ -570,6 +570,8 @@ content: |
   <li><a href="https://youtube.com/watch?v=egoBeRFB_Uw">Motions Part 3: Preparing a Reply</a>, and</li>
   <li><a href="https://www.youtube.com/watch?v=YQvG7GEGeoo">Motions Part 4: Mailings and Deadlines</a>.</li>
   </ul>
+  <li>Read <a href="https://courts.alaska.gov/shc/family/motions.htm#reply">How do I reply to an opposition?</a> on the court’s website.</li>
+
   <li>Use: <strong>Reply to Opposition to Motion, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC-1305</a></strong> [Fill in PDF].</li>
   </ul></p>
   % for image_data in reply_certificate_list:
@@ -582,8 +584,7 @@ content: |
   <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
   <li>The judge may deny your motion.</li>
   </ul> 
-  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
-  <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
+  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.</p>
 ---
 template: get_help
 subject: |
