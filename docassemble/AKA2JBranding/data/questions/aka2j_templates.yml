@@ -6,7 +6,7 @@ objects:
   - service_cert_motion_shc_1300_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_motion_shc_1300.png', alt_text="Certificate of Service box")
   - service_cert_respond_dr_motion_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_mod_motion_response_dr_725.PNG', alt_text="Certificate of Service at the end of Response to Change Custody, Support, and Visitation")
   - service_cert_respond_civ_motion_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_motion_response_civ_810.PNG', alt_text="Certificate of Service box at the end of Response to Motion")
-  - service_cert_reply_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_enforce.png', alt_text="Certificate of Service at the bottom of the Reply form")
+  - service_cert_reply_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice_reply.PNG', alt_text="Certificate of Service at the bottom of the Reply form")
   - distrib_cert_child_support_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistr_interim_child_support.png', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
   - distrib_cert_custody_divorce_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_divorce_custody.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
   - distrib_cert_dissolution_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_dissolution.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
@@ -33,7 +33,7 @@ template: parents_agree_step
 subject: |
   Step ${ parents_agree_idx }: Find out if you and ${ other_party_in_case } agree
 content: |
-  <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_party_in_case }. See if you agree about the change or if you both want to try to reach an agreement in one of these ways:</p>
+  <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_party_in_case }. See if you agree about the change or if you both want to try to reach an agreement one of these ways:</p>
   <ul>
     <li>Talk more with each other until you can agree.</li>
     <li>Mediation.</li>
@@ -339,7 +339,7 @@ subject: |
 content: |
   Figure out the new child support amount using the new schedule and any new income information.  
     
-    1. Calculate the percent of overnights your children spend with you and with the other parent. For example, if your child spends 4 nights each week with you and 3 nights each week with their other parent, they spend 209 overnights each year with you and 156 nights each year with the other parent.  This is 57% of overnights with you and 43% of overnights with the other parent.
+    1. Calculate the percent of overnights your children spend with you and with the other parent. To get this percent, divide 365 (the number of overnights in a year), by the number of overnights the child spends with each parent.
   
   <strong>For example</strong>
   
@@ -427,7 +427,6 @@ content: |
     3 of the forms in this packet are affidavits:
   <ul>
   <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
-  <li>The other parent has 10 days to file a response (13 if you mail it).</li>
   <li>The court clerk can do this for free.</li>
   <li>Bring a valid photo ID with you.</li>
   <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: <strong>Self-Certification (No Notary Available) <a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">TF-835</a></strong>[Fill-In PDF]</li>
@@ -566,17 +565,26 @@ content: |
   <li>By hand delivery, email or TrueFile, you have 5 days to file,</li> 
   <li>By mail, you have 8 days.</li>
   <li>If the due date is a weekend or holiday, your reply is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, your reply is due Monday.</li>
-  <li>Watch a video about replies: <a href="https://youtube.com/watch?v=egoBeRFB_Uw">Motions Part 3: Preparing a Reply</a></li>
+  <li>Watch 2 videos:
+  <ul>
+  <li><a href="https://youtube.com/watch?v=egoBeRFB_Uw">Motions Part 3: Preparing a Reply</a>, and</li>
+  <li><a href="https://www.youtube.com/watch?v=YQvG7GEGeoo">Motions Part 4: Mailings and Deadlines</a>.</li>
+  </ul>
+  <li>Read <a href="https://courts.alaska.gov/shc/family/motions.htm#reply">How do I reply to an opposition?</a> on the court’s website.</li>
+
   <li>Use: <strong>Reply to Opposition to Motion, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC-1305</a></strong> [Fill in PDF].</li>
   </ul></p>
+  % for image_data in reply_certificate_list:
+  ${ image_data['text'] }
+  ${ image_data['image'].show(width='100%') }
+  % endfor
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
   <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
   <li>The judge may deny your motion.</li>
   </ul> 
-  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals/appeals.htm">filing an appeal</a>.</p>
-  <p>Read the court's webpage <a href="https://courts.alaska.gov/shc/family/after-judgment.htm#options">Options after you get a judge's decision</a>.</p>
+  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.</p>
 ---
 template: get_help
 subject: |

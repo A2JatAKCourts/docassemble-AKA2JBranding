@@ -2,6 +2,14 @@
   background-color: transparent !important;
   border: none;
 }
+
+.al_collapse_template a.al_toggle,
+.al_display_template a.al_toggle {
+  color: #0d6efd; /* Same as daterm in Assembly Line */
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
 .pdcaretopen, .pdcaretclosed, a[data-bs-toggle="collapse"]  {
   font-size: 1.7rem;
   text-decoration: none;
