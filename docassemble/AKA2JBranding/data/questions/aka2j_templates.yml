@@ -573,6 +573,9 @@ content: |
   <li>Read <a href="https://courts.alaska.gov/shc/family/motions.htm#reply">How do I reply to an opposition?</a> on the court’s website.</li>
 
   <li>Use: <strong>Reply to Opposition to Motion, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC-1305</a></strong> [Fill in PDF].</li>
+  <ul>
+  <li>Remember to fill out the section that tells the court how and when you deliver your reply to {{ other_party_in_case }}.</li>
+  </ul>
   </ul></p>
   % for image_data in reply_certificate_list:
   ${ image_data['text'] }
