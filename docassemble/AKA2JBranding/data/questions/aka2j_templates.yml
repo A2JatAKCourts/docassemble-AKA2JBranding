@@ -71,22 +71,15 @@ content: |
   <p>If you reach an agreement, fill out these forms:</p>
   <div class="step-subheading">Forms to ask to modify</div>
   <ul>
-    <li><strong>Joint Motion, SHC-1310</strong>.  Title it "Joint Motion to Modify."<br>
-        As a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310.doc">Word</a> file<br>
-        as a  <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310n.pdf">PDF</a> file</li>
-    <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063<br>
-        </strong>as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> file<br>
-      as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+    <li><strong>Joint Motion, SHC-1310</strong>.  Title it "Joint Motion to Modify." <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310n.pdf">PDF</a></li>
+    <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
   </ul>
   <div class="step-subheading">If you are changing the Parenting Plan</div>
   <p>Choose 1 parenting plan order. Do <strong>not</strong> sign the Order section:</p>
   <ul>
     <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128<br>
-        </strong>as a<strong> </strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> file<br>
-      as a  <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
-    <li><strong>Agreement   &amp; Order for Custody and Visitation, SHC-1126<br>
-        as a </strong> <a href="https://www.courts.alaska.gov/shc/family/docs/shc-1126.doc">Word</a> file<br>
-      as a <a href="https://courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
+        </strong>as a<strong> </strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
+    <li><strong>Agreement   &amp; Order for Custody and Visitation, SHC-1126</strong> <a href="https://www.courts.alaska.gov/shc/family/docs/shc-1126.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
   </ul>
   <div class="step-subheading">If you are changing child support</div>
   <ul>
@@ -159,9 +152,11 @@ content: |
   <ul>
     <li><strong>Motion and Affidavit to Reconsider, SHC-1545</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1545.doc" target="_blank">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1545n.pdf" target="_blank">PDF</a></li>
     <ul>
-      <li>Put everything you want the judge to know and  think about in your motion. You will not be able to tell the judge in person  because they rarely hold a hearing for a <strong>Motion  to Reconsider</strong>.</li>
+      <li>Put everything you want the judge to know and think about in your motion. You will not be able to tell the judge in person because they rarely hold a hearing for a <strong>Motion to Reconsider</strong>.</li>
       <li>Your <strong>Motion to Reconsider</strong> must be no  more than 5 pages, including attachments.</li>
-      <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public. The court clerk can do this for free.  Bring a valid photo ID with you.</li>
+      <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.</li>
+      <li>The court clerk can do this for free.</li>
+      <li>Bring a valid photo ID with you.</li>
       <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify&quot;. Use</li>
       <ul>
         <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
@@ -177,18 +172,22 @@ content: |
   <p>A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to</a></p>
   % if user_need == 'change AK order':
     <ul>
-    <li>Set aside or undo the final child support  decision in your case, and</li>
+    <li>Set aside or undo the final child support decision in your case, and</li>
     <li>Start the child support part of your case over  again.</li>
   </ul>
-  % elif user_need in('change custody order','respond to custody'):
+  % elif user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order in('property or debt', 'spousal support'):
   <ul>
-    <li>Set aside or undo the final custody, parenting plan or child support decision in your case, and</li>
-    <li>Start the child support part of your case over again.</li>
+    <li>Set aside or undo the final decision in your case, and</li>
+    <li>Start your case all over again.</li>
   </ul>
   % else:
   <ul>
-    <li>Set aside or undo the final decision in your case, and</li>
-    <li>Start the case all over again.</li>
+    <li>Set aside or undo the final custody decision in your case, and</li>
+  % if user_need in('change custody order','respond to custody'):
+    <li>Start your case all over again.</li>
+  % else:
+    <li>Start that part of your case all over again.</li>
+  % endif
   </ul>
   % endif
   <p>Judges rarely agree to do this.</p>
@@ -215,7 +214,7 @@ content: |
   </ul>
   <p><strong>Civil  Rule 60(b)</strong></p>
   <p>The court made a mistake listed below.</p>
-  <p>For the first 3 types of mistake, you must file your <strong>Motion to Set Aside</strong></p>
+  <p>For the first 3 types of mistakes, you must file your <strong>Motion to Set Aside</strong></p>
   <ul>
     <li>Within <strong>1 year</strong> of the date the court sent  the order to you, <strong>and</strong></li>
     <li>The amount of time before you file must be  &quot;reasonable."</li>
@@ -246,7 +245,7 @@ content: |
       <p>One spouse forges an appraisal of the marital home and uses it as  evidence at the divorce trial to argue the value of the house.</p>
     </li>
   </ol>
-  <p>For  the next 3 types of mistake, the amount of time before you file must be  &quot;reasonable."</p>
+  <p>For the next 3 types of mistakes, the amount of time before you file must be  &quot;reasonable."</p>
   <ol>
     <li>The judgment is  void.
       <p><strong>For example</strong></p>
@@ -277,18 +276,21 @@ content: |
   If you decide to file a **Motion to Set Aside** because it fits your case:
   <div class='step-subheading'>Use</div>
   <ul>
-  <li><strong>Motion and Affidavit to Set Aside the Judgment or Order, SHC-1548</strong> [<a href="https://courts.alaska.gov/shc/family/docs/shc-1548.doc">Word</a>] |[<a href="https://courts.alaska.gov/shc/family/docs/shc-1548n.pdf">PDF</a>]</li>
+  <li><strong>Motion and Affidavit to Set Aside the Judgment or Order, SHC-1548</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1548.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1548n.pdf">PDF</a></li>
     <ul>
-  <li>Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.</li>
-  <li>Wait to sign the form until you can sign in front of a notary or someone who has the power to take oaths, like a court clerk or a postal employee. You can do this for free at the court. Bring a photo ID.</li>
-  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use
+    <li>Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.</li>
+    <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.</li>
+    <li>The court clerk can do this for free.</li>
+    <li>Bring a valid photo ID with you.</li>
+    <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify&quot;. Use</li>
       <ul>
-  <li><strong>Self-Certification (No Notary Available) TF-835</strong> [<a href="">Fill-In PDF</a>]</li>
-      </ul></li>
+      <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
+      </ul>
+    </li>
     </ul>
-  <li><strong>Proposed Order on Motion, SHC-1302</strong> [<a href="https://courts.alaska.gov/shc/family/docs/shc-1302.doc">Word</a>] | [<a href="https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf">PDF</a>]</li>
-  <li><strong>Notice of Motion, SHC-1630</strong> [<a href="http://courts.alaska.gov/shc/family/docs/shc-1630.doc">Word</a> | [<a href="http://courts.alaska.gov/shc/family/docs/shc-1630n.pdf">PDF</a></li>
-    </ul>
+  <li><strong>Proposed Order on Motion, SHC-1302</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1302.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf">PDF</a></li>
+  <li><strong>Notice of Motion, SHC-1630</strong> <a href="http://courts.alaska.gov/shc/family/docs/shc-1630.doc">Word</a> | <a href="http://courts.alaska.gov/shc/family/docs/shc-1630n.pdf">PDF</a></li>
+  </ul>
   <div class='step-subheading'>Watch</div>
   <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
 ---
@@ -304,7 +306,7 @@ subject: |
     % endif
 content: |
   Changing your parenting plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
-  The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a parenting plan if there is a "substantial change of circumstances". A "substantial change in circumstances" means something has happened so that the old custody or parenting plan is no longer in the children's best interest.
+  The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a parenting plan if there is a "substantial change in circumstances." A "substantial change in circumstances" means something has happened so that the old custody or parenting plan is no longer in the children's best interest.
 
   <div class="step-subheading">Some examples</div>
   <ul>
@@ -347,10 +349,10 @@ content: |
   
   209 divided by 365 nights in a year is .57, or 57% of overnights with you.
   
-  156 divided by 365 nights in a year is .43, or 43% of overnights with the other parent
+  156 divided by 365 nights in a year is .43, or 43% of overnights with the other parent.
 
     2. Use the percentages to fill out the <strong>Child Support Guidelines Affidavit</strong>, [<strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong>]. Read [How to Fill out the Child Support Guidelines Affidavit](https://courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf) to help you fill out this form.
-    3. The <strong>Child Support Guidelines Affidavit</strong> tells you the new child support amount for a If your children have a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
+    3. The <strong>Child Support Guidelines Affidavit</strong> gives you the new child support amount for a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
     <ul>
   <li><strong>Shared Custody Support Calculation, [DR-306]</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>]<br>
   Use this if the children spend at least 110 overnights with each parent.</li>
@@ -429,7 +431,7 @@ content: |
   <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
   <li>The court clerk can do this for free.</li>
   <li>Bring a valid photo ID with you.</li>
-  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: <strong>Self-Certification (No Notary Available) <a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">TF-835</a></strong>[Fill-In PDF]</li>
+  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: <strong>Self-Certification (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
   </ul></li></ul>
   <div class='step-subheading'>Watch </div>
   <ul>
@@ -450,7 +452,7 @@ content: |
   <li>If you use the court’s TrueFile eFiling system, TrueFile serves ${ other_party_in_case } for you.</li>
   </ul></li>
   <li>Decide the date you will serve ${ other_party_in_case }.</li>
-  <li>Fill out the <strong>Certificate of Service</strong> at the end of your motion. The certificate tells the court when and how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }.
+  <li>Fill out the <strong>Certificate of Service</strong> at the end of your motion. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }.
   <br>
     <strong>Important</strong><br>
       Be sure you can serve ${ other_party_in_case } on the date and the way you put in the <strong>Certificate of Service</strong>.
@@ -479,11 +481,11 @@ content: |
   ${ file_motion_to_set_aside }
   ${ file_motion_to_enforce }
   <ol>
-  <li>Make 2 copies of all the documents you are going to give the court.</li>
+  <li>Make 2 copies of everything you are going to give the court.</li>
   <li>Give the original version of your documents to the court. This is called "filing" your  documents. You can:
     <ul>
       <li>Deliver the documents to the court yourself.</li>
-      <li>Mail the document by first-class mail.</li>
+      <li>Mail the documents by first-class mail.</li>
       <li>Use the Court's <a href="https://courts.alaska.gov/efile/">TrueFile  eFiling system</a> to send the documents to the court electronically.</li>
     </ul>
   </li>
@@ -497,9 +499,9 @@ template: serve_step
 subject: |
   Step ${ serve_idx }: Serve ${ other_party_in_case }
 content: |
-  <p>Give a copy of all your documents to ${ other_party_in_case } the way you  put on the <strong>Certificate of Service</strong>.</p>
+  <p>Give a copy of all your documents to ${ other_party_in_case } the way you put on the <strong>Certificate of Service</strong>.</p>
   <p>Serve them on the date you put in the <strong>Certificate of Service</strong>.</p>
-  <p>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a>.</p>
+  <p>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a>.</p>
   <p>File the new certificate with the court.</p>
 
 ---
@@ -584,7 +586,7 @@ content: |
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
-  <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
+  <li>The judge may grant your <strong>${motion_type}</strong>. Keep following the court order you have unless the judge grants your motion and issues a new order.</li> 
   <li>The judge may deny your motion.</li>
   </ul> 
   <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.</p>
@@ -601,7 +603,7 @@ content: |
   <li>See the court’s <a href="https://courts.alaska.gov/shc/family">Family Law Self-Help Center web pages</a>.</li>
   </ul>
   
-  Many lawyers offer free or flat fee consultations without having to hire them for the whole case. [Find a Lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
+  Many lawyers offer free or flat fee consultations. You do not have to hire them for the whole case. [Find a Lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
   
   Depending on your income, you may qualify for [Alaska Free Legal Answers](https://alaska.freelegalanswers.org).
   
