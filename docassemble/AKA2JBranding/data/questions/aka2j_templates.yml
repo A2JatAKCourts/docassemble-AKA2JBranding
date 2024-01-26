@@ -154,9 +154,11 @@ content: |
     <ul>
       <li>Put everything you want the judge to know and think about in your motion. You will not be able to tell the judge in person because they rarely hold a hearing for a <strong>Motion to Reconsider</strong>.</li>
       <li>Your <strong>Motion to Reconsider</strong> must be no  more than 5 pages, including attachments.</li>
-      <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.</li>
+      <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.
+      <ul>
       <li>The court clerk can do this for free.</li>
       <li>Bring a valid photo ID with you.</li>
+      </ul></li>
       <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify&quot;. Use</li>
       <ul>
         <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
@@ -279,9 +281,11 @@ content: |
   <li><strong>Motion and Affidavit to Set Aside the Judgment or Order, SHC-1548</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1548.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1548n.pdf">PDF</a></li>
     <ul>
     <li>Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.</li>
-    <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.</li>
+    <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.
+    <ul>
     <li>The court clerk can do this for free.</li>
     <li>Bring a valid photo ID with you.</li>
+    </ul></li>
     <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify&quot;. Use</li>
       <ul>
       <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
@@ -428,11 +432,15 @@ content: |
     <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, <a href="https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12">SHC-PAC12</a><br>
     3 of the forms in this packet are affidavits:
   <ul>
-  <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.</li>
+  <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.
+  <ul>
   <li>The court clerk can do this for free.</li>
   <li>Bring a valid photo ID with you.</li>
-  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: <strong>Self-Certification (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
-  </ul></li></ul>
+  </ul></li>
+  <li>If you cannot get to a notary public or someone who has the power to take oaths, you can "self-certify".  Use: 
+  <ul><li><strong>Self-Certification (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
+  </ul></li>
+  </ul>
   <div class='step-subheading'>Watch </div>
   <ul>
   <li><a href="https://www.youtube.com/watch?v=2irmxT0_0EA">Motions Part 1: How to Ask the Court For Something</a></li>
