@@ -26,7 +26,7 @@ content: |
   
   If you want to do something different from what the order allows, you can ask ${other_party_in_case} to agree to it.
   
-  If they do not agree, you can ask the court to change the order by filing a "motion".
+  If they do not agree, you can ask the court to change the order by filing a "motion."
 ---
 template: motion_forms_step
 subject: |
