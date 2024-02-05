@@ -77,19 +77,19 @@ content: |
   <div class="step-subheading">If you are changing the Parenting Plan</div>
   <p>Choose 1 parenting plan order. Do <strong>not</strong> sign the Order section:</p>
   <ul>
-    <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128 <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
+    <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
     <li><strong>Agreement   &amp; Order for Custody and Visitation, SHC-1126</strong> <a href="https://www.courts.alaska.gov/shc/family/docs/shc-1126.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
   </ul>
   <div class="step-subheading">If you are changing child support</div>
   <ul>
-    <li><strong>Order for Modification of Child Support, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]</li>
-    <li><strong>Child Support Guidelines Affidavit, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill-In PDF] (2 copies -   each parent fills out their own)</li>
-    <li><strong>Child Custody Jurisdiction Affidavit, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill-In PDF] (2 copies -   each parent fills out their own) </li>
+    <li><strong>Order for Modification of Child Support, DR-301</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">Fill-In PDF</a>]</li>
+    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">Fill-In PDF</a>] (2 copies -   each parent fills out their own)</li>
+    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">Fill-In PDF</a>] (2 copies -   each parent fills out their own) </li>
     <li>Choose 1 form below based on the parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)</li>
     <ul>
-      <li><strong>Shared Custody Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill-In PDF] (if you have a   shared custody schedule)</li>
-      <li><strong>Divided Custody Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill-In PDF] (if you have a   divided custody schedule)</li>
-      <li><strong>Hybrid Custody Child Support Calculation, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill-In PDF] (if you are   asking for a hybrid custody schedule)</li>
+      <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>] (if you have a   shared custody schedule)</li>
+      <li><strong>Divided Custody Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">Fill-In PDF</a>] (if you have a   divided custody schedule)</li>
+      <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">Fill-In PDF</a>] (if you are asking for a hybrid custody schedule)</li>
     </ul>
   </ul>
   % if middle_of_case == 'no':
