@@ -359,8 +359,8 @@ content: |
     <ul>
   <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>]<br>
   Use this if the children spend at least 110 overnights with each parent.</li>
-  <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">PDF</a>] Use this if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
-  <li><strong>Divided Custody Child Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">PDF</a>] Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
+  <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">Fill-In PDF</a>] Use this if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
+  <li><strong>Divided Custody Child Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">Fill-In PDF</a>] Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
   </ul>
 ---
 template: dont_wait_modify_custody_divorce_step
@@ -377,7 +377,7 @@ content: |
   <li>Child support was calculated based on the children being with you 5 overnights each week, and with the other parent 2 overnights each week.</li>
   <li>You decide to change to a schedule where the children will spend a week with you and then a week with the other parent.  You start March 1.</li>
   <li>Child support will probably change because the percentage of overnights the children spend with each parent has changed.</li>
-  <li>You file an Uncontested Motion to Modify Custody and Child Support June 21.</li>
+  <li>You file an **Uncontested Motion to Modify Custody and Child Support** June 21.</li>
   <li>The judge agrees with your motion and signs a new custody and child support order September 1.</li>
   <li>The new order says that the new child support amount starts July 1.</li>
   <li>Because you did not file your motion until June, the <strong>original</strong> child support amount still applies from March until July 1.</li>
@@ -581,7 +581,7 @@ content: |
   </ul>
   <li>Read <a href="https://courts.alaska.gov/shc/family/motions.htm#reply">How do I reply to an opposition?</a> on the court’s website.</li>
 
-  <li>Use: <strong>Reply to Opposition to Motion, <a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">SHC-1305</a></strong> [Fill in PDF].</li>
+  <li>Use: <strong>Reply to Opposition to Motion, SHC-1305</strong> [<a href="https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf">Fill in PDF</a>].</li>
   <ul>
   <li>Remember to fill out the section that tells the court how and when you deliver your reply to ${ other_party_in_case }.</li>
   </ul>
