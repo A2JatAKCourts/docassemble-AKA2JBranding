@@ -20,7 +20,7 @@ content: |
   % elif user_need == 'change divorce order':
   % if middle_of_case == 'yes':
   You have more than one way to ask the judge to change an order in your divorce case.
-  % elif middle_of_case == 'no' and not defined('unknown_final_date'):
+  % elif middle_of_case == 'no':
   You have more than one way to ask the judge to change the order from your divorce case.
   % endif
   % endif
@@ -378,7 +378,7 @@ content: |
   <li>Child support was calculated based on the children being with you 5 overnights each week, and with the other parent 2 overnights each week.</li>
   <li>You decide to change to a schedule where the children will spend a week with you and then a week with the other parent.  You start March 1.</li>
   <li>Child support will probably change because the percentage of overnights the children spend with each parent has changed.</li>
-  <li>You file an **Uncontested Motion to Modify Custody and Child Support** June 21.</li>
+  <li>You file an <strong>Uncontested Motion to Modify Custody and Child Support</strong> June 21.</li>
   <li>The judge agrees with your motion and signs a new custody and child support order September 1.</li>
   <li>The new order says that the new child support amount starts July 1.</li>
   <li>Because you did not file your motion until June, the <strong>original</strong> child support amount still applies from March until July 1.</li>
@@ -457,7 +457,7 @@ content: |
   <li>You can send the copy you made for them by regular, 1st class mail, or hand-deliver it.</li>
   <li>If they file anything in court that says they agree to service by email, you can email the copy you made for them.
   <li>If they have a lawyer, email, mail, or hand-deliver the copy to their lawyer.</li>
-  <li>If you use the court’s TrueFile eFiling system, TrueFile serves ${ other_party_in_case } for you.</li>
+  <li>If you use the court’s <a href="https://courts.alaska.gov/efile/index.htm">TrueFile eFiling system</a>, <a href="https://courts.alaska.gov/efile/index.htm">TrueFile</a> serves ${ other_party_in_case } for you.</li>
   </ul></li>
   <li>Decide the date you will serve ${ other_party_in_case }.</li>
   <li>Fill out the <strong>Certificate of Service</strong> at the end of your motion. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }.
