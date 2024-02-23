@@ -599,8 +599,10 @@ content: |
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
   <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
   <li>The judge may deny your motion.</li>
-  </ul> 
-  <p>Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.</p>
+  </ul>
+  % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and  middle_of_case == 'no'):
+  Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.
+  % endif
 ---
 template: get_help
 subject: |
