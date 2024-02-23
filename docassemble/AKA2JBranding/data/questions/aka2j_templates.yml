@@ -570,11 +570,14 @@ content: |
   <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>
   ${ expect_after_motion }
   <div class='step-subheading'>You can reply to their response</div>
-  <p>If ${ other_party_in_case } files a response you can file a reply. If they serve you:
+  <p>If ${ other_party_in_case } files a response you can file a reply.</p>
+  <p>If they serve you:
   <ul>
   <li>By hand delivery, email or TrueFile, you have 5 days to file,</li> 
   <li>By mail, you have 8 days.</li>
-  <li>If the due date is a weekend or holiday, your reply is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, your reply is due Monday.</li>
+  </ul>
+  If the due date is a weekend or holiday, your reply is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, your reply is due Monday.</p>
+  <ul>
   <li>Watch 2 videos:
   <ul>
   <li><a href="https://youtube.com/watch?v=egoBeRFB_Uw">Motions Part 3: Preparing a Reply</a>, and</li>
@@ -586,7 +589,7 @@ content: |
   <ul>
   <li>Remember to fill out the section that tells the court how and when you deliver your reply to ${ other_party_in_case }.</li>
   </ul>
-  </ul></p>
+  </ul>
   % for image_data in reply_certificate_list:
   ${ image_data['text'] }
   ${ image_data['image'].show(width='100%') }
