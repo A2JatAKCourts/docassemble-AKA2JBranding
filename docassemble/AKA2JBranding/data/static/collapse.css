@@ -20,6 +20,13 @@
   color: #0A2A78;
 }
 
+
+.example {
+  font-weight: bold;
+  color: #0A2A78;
+}
+
+
 .al_table, .al_table#al_user_bundle {
   margin-top: 2em;
   margin-bottom: 2em;
