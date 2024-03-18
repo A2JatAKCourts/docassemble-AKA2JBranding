@@ -109,8 +109,8 @@ content: |
   ${ image_data['image'].show(width='100%') }
   % endfor
   
-  <p> If the 10th day is a  weekend or holiday, your motion is due the next day the court is open. For example, if the 10th day is a Saturday,  and the court is open Monday, your motion is due Monday. If Monday is a holiday, your motion is due Tuesday.</p>
-  <div class='step-subheading'>You can ask a judge to reconsider  their decision for 4 reasons </div>
+  <p> If the <strong>10th</strong> day is a  weekend or holiday, your motion is due the next day the court is open. For example, if the 10th day is a Saturday,  and the court is open Monday, your motion is due Monday. If Monday is a holiday, your motion is due Tuesday.</p>
+  <div class='step-subheading'>You can ask a judge to reconsider their decision for 4 reasons</div>
   <ol>
     <li>The judge overlooked, misapplied or failed to  consider a statute, decision or principle directly controlling. This means the  judge made a mistake when they applied the law in your case.
       <p><strong>For example</strong></p>
@@ -517,7 +517,7 @@ template: appeal_step
 subject: |
   Step ${ appeal_idx }: Decide if you want to file an appeal
 content: |
-  To ask the Alaska Supreme Court to change the court order in your case, file an Appeal.
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case.
   
   % if user_need == 'change custody order' or (user_need == 'change divorce order' and type_of_final_order.all_true('custody order', exclusive = True) and why_change == 'problem'):
   You have only 15 days from the day the court sent the order to you.
