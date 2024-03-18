@@ -295,7 +295,7 @@ content: |
   <li>when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed); and</li>
   <li>when preparing for oral argument where both sides appear in the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#supremecourt">Supreme Court</a> and each side argues their case and the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#justice">justices</a> may ask questions.</li>
   </ul>
-  This Alaska Court System <a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
+  The Alaska Court System <a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
   % endif
 ---
 template: appeal_contact_parent_step
