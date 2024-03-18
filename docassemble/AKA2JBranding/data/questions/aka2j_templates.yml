@@ -596,8 +596,12 @@ content: |
   % endfor
   <div class='step-subheading'>The judge will issue an order</div>
   <ul>
-  <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li> 
-  <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li> 
+  <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li>
+  % if not user_need == 'child support':
+  <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li>
+  % else:
+  <li>The judge may grant your <strong>${motion_type}</strong>.</li>
+  % endif
   <li>The judge may deny your motion.</li>
   </ul>
   % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and  middle_of_case == 'no'):
