@@ -110,10 +110,10 @@ content: |
   % endfor
   
   <p> If the <strong>10th</strong> day is a  weekend or holiday, your motion is due the next day the court is open. For example, if the 10th day is a Saturday,  and the court is open Monday, your motion is due Monday. If Monday is a holiday, your motion is due Tuesday.</p>
-  <div class='step-subheading'>You can ask a judge to reconsider their decision for 4 reasons</div>
+  <div class="step-subheading">You can ask a judge to reconsider their decision for 4 reasons</div>
   <ol>
     <li><p>The judge overlooked, misapplied or failed to  consider a statute, decision or principle directly controlling. This means the  judge made a mistake when they applied the law in your case.<p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>Rule 90.3 states that if a child spends at least  256 nights with one parent, that parent has primary custody and the other  parent pays 20% of their adjusted annual  income for child support to the parent the child lives with.</li>
@@ -122,7 +122,7 @@ content: |
       </div>
     </li>
     <li><p>The judge overlooked or misconceived some  material fact or proposition of law. This means the judge got an important fact  wrong.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>The parents agree that mom makes $25,000 every  year. They file the forms to tell the judge they agree. The judge calculated  child support using $35,000 for mom's income. </li>
@@ -131,7 +131,7 @@ content: |
       </div>
     </li>
     <li><p>The judge overlooked or misconceived a material  question in the case. This means the judge misunderstood what you were asking for.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>A child changed from living full time with their  mom to living full time with their dad. Under the child support formula, dad  used to pay child support to mom based on the primary custody child support  calculation. Now, mom should pay child support to dad based on the primary  custody child support calculation. Dad filed a motion to modify child support.  The judge denied dad's motion because the parents' incomes did not change.</li>
@@ -140,7 +140,7 @@ content: |
       </div>
     </li>
     <li><p>The law applied in the ruling was changed by a later  court decision or statute. This means the judge used a rule or law that  changed.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>On April 15, 2018, Civil Rule 90.3 changed to  allow a parent to deduct the cost of their own health insurance from their  gross income, up to 10% of the parent's gross income.</li>
@@ -155,7 +155,7 @@ template: fill_reconsider_step
 subject: |
   Step ${ fill_reconsider_idx }: Fill out the Motion to Reconsider forms
 content: |
-  <div class='step-subheading'>Use</div>
+  <div class="step-subheading">Use</div>
   <ul>
     <li><strong>Motion and Affidavit to Reconsider, SHC-1545</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1545.doc" target="_blank">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1545n.pdf" target="_blank">PDF</a></li>
     <ul>
@@ -213,16 +213,18 @@ content: |
   % endfor
 
   <p>Act quickly! The judge defines"reasonable" and "in a reasonable time." The judge  may refuse to set aside the order if you file <strong>after</strong> a "reasonable time" has passed, even if your reason  for filing is a good one.</p>
-  <div class='step-subheading'>Reasons you may file a Motion to Set Aside  Judgment or Order</div>
+  <div class="step-subheading">Reasons you may file a Motion to Set Aside  Judgment or Order</div>
   <p><strong>Civil Rule 60(a)</strong> <br>
-    The  court made a clerical mistake or accidentally left something out of a document. </p>
-  <div class = "example'>
-      <p class = "heading">For example</p>
+    The  court made a clerical mistake or accidentally left something out of a document.</p>
+    
+  <div class="example">
+      <p class="heading">For example</p>
   <ul>
     <li>The order has the wrong birthday for one of your  children. Or</li>
     <li>The order was sent to both parents on January 4, <strong>2023</strong>, but the date on the order is  January 4, <strong>2022</strong>.</li>
   </ul>
   </div>
+  
   <p><strong>Civil  Rule 60(b)</strong></p>
   <p>The court made a mistake listed below.</p>
   <p>For the first 3 types of mistakes, you must file your <strong>Motion to Set Aside</strong></p>
@@ -237,8 +239,8 @@ content: |
         <li>An unexpected action, sudden confusion or an  unanticipated event - surprise, or </li>
         <li>A legitimate excuse for failing to take required  action - excusable neglect.</li>
       </ul>
-      <div class = "example'>
-      <p class = "heading">For example</p>
+      <div class="example">
+      <p class="heading">For example</p>
       <p>You ask the judge to set aside the decision  made at a hearing you missed because: </p>
       <ul>
         <li>You had a heart attack the day before, and </li>
@@ -247,8 +249,8 @@ content: |
       </div>
     </li>
     <li><p>Newly  discovered evidence which could not have been discovered by taking reasonable  steps within the 10 days allowed to request a new trial.</p>
-      <div class = "example'>
-      <p class = "heading">For example</p>
+      <div class="example">
+      <p class="heading">For example</p>
       <ul>
         <li>You gave your spouse $1,000 before the trial to pay the property  taxes on your marital home, and</li>
         <li>1 month after trial you learn your spouse did not pay the taxes.</li>
@@ -256,7 +258,7 @@ content: |
       </div>
     </li>
     <li><p>Fraud,  misrepresentation, or other misconduct from the other side.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <p>One spouse forges an appraisal of the marital home and uses it as  evidence at the divorce trial to argue the value of the house.</p>
       </div>
@@ -265,7 +267,7 @@ content: |
   <p>For the next 3 types of mistakes, the amount of time before you file must be  &quot;reasonable."</p>
   <ol>
     <li><p>The judgment is  void.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>An Alaska court generally does not have the authority or &quot;jurisdiction&quot; to make a parenting  plan for a child who has lived in another state for the past 6 or more  months. </li>
@@ -276,7 +278,7 @@ content: |
       </div>
     </li>
     <li><p>The judgment has been satisfied, released or  discharged, or a prior judgment upon which it is based has been reversed or  otherwise vacated or it is no longer fair that the judgment should apply at  this time.</p>
-      <div class = "example'>
+      <div class = "example">
       <p class = "heading">For example</p>
       <ul>
         <li>The court orders a parent to pay child support. The child files  for Emancipation and the judge grants it. Parents do not have to support their  emancipated child. The child support judgment   would be released or discharged.</li>
@@ -314,7 +316,7 @@ content: |
   <li><strong>Proposed Order on Motion, SHC-1302</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1302.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf">PDF</a></li>
   <li><strong>Notice of Motion, SHC-1630</strong> <a href="http://courts.alaska.gov/shc/family/docs/shc-1630.doc">Word</a> | <a href="http://courts.alaska.gov/shc/family/docs/shc-1630n.pdf">PDF</a></li>
   </ul>
-  <div class='step-subheading'>Watch</div>
+  <div class="step-subheading">Watch</div>
   <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
 ---
 comment: |
@@ -408,7 +410,7 @@ template: compare_child_support_step
 subject: |
   Step ${ compare_child_support_idx }: Compare the new calculation with the current amount
 content: |
-  <div class='step-subheading'>Compare your current child support to the new amount to see if there is a "material change in circumstances"</div>
+  <div class="step-subheading">Compare your current child support to the new amount to see if there is a "material change in circumstances"</div>
     If the new child support amount is 15% more or less than the old amount, there is a presumption that there is a material change in circumstances.
     
    <strong>For example</strong>
@@ -447,7 +449,7 @@ subject: |
   Fill out the Motion to Modify Custody forms
   % endif
 content: |
-  <div class='step-subheading'>Use</div>
+  <div class="step-subheading">Use</div>
     <ul>
     <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, <a href="https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12">SHC-PAC12</a><br>
     3 of the forms in this packet are affidavits:
@@ -461,7 +463,7 @@ content: |
   <ul><li><strong>Self-Certification (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill-In PDF</a>]</li>
   </ul></li>
   </ul>
-  <div class='step-subheading'>Watch </div>
+  <div class="step-subheading">Watch</div>
   <ul>
   <li><a href="https://www.youtube.com/watch?v=2irmxT0_0EA">Motions Part 1: How to Ask the Court For Something</a></li>
   </ul>
@@ -581,7 +583,7 @@ template: expect_after_motion_step
 subject: |
   Step ${ expect_after_motion_idx }: What to expect after you file a ${ motion_type }
 content: |
-  <div class='step-subheading'>${ capitalize(other_party_in_case) } may file a response or "opposition"</div>
+  <div class="step-subheading">${ capitalize(other_party_in_case) } may file a response or "opposition"</div>
   <p>If you serve ${ other_party_in_case }: 
   <ul>
   <li>by hand-delivery, email, or TrueFile, they have 10 days to respond to the court in writing,</li> 
@@ -589,7 +591,7 @@ content: |
   </ul></p>
   <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>
   ${ expect_after_motion }
-  <div class='step-subheading'>You can reply to their response</div>
+  <div class="step-subheading">You can reply to their response</div>
   <p>If ${ other_party_in_case } files a response you can file a reply.</p>
   <p>If they serve you:
   <ul>
@@ -614,7 +616,7 @@ content: |
   ${ image_data['text'] }
   ${ image_data['image'].show(width='100%') }
   % endfor
-  <div class='step-subheading'>The judge will issue an order</div>
+  <div class="step-subheading">The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li>
   % if not user_need == 'child support':
