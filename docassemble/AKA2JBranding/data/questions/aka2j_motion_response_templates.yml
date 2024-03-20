@@ -12,8 +12,8 @@ content: |
   <div class="step-subheading">If the court asks for a response</div>
   <p>If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
   <ul>
-  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810</a> Response to Motion</li>
-  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820</a> Order on Motion</li>
+  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810</a> <strong>Response to Motion</strong></li>
+  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820</a> <strong>Order on Motion</strong></li>
   </ul>
 ---
 template: let_court_party_know_you_agree_step
