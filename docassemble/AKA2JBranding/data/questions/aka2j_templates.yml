@@ -235,7 +235,7 @@ content: |
   <ol>
     <li>Inadvertence,  surprise or excusable neglect:
       <ul>
-        <li>A parent made a mistake or did not pay close  attention -inadvertence,</li>
+        <li>A parent made a mistake or did not pay close  attention - inadvertence,</li>
         <li>An unexpected action, sudden confusion or an  unanticipated event - surprise, or </li>
         <li>A legitimate excuse for failing to take required  action - excusable neglect.</li>
       </ul>
@@ -367,24 +367,28 @@ subject: |
 content: |
   Figure out the new child support amount using the new schedule and any new income information.  
     
-    1. Calculate the percent of overnights your children spend with you and with the other parent. To get this percent, divide 365 (the number of overnights in a year), by the number of overnights the child spends with each parent.
+    <ol>
+    <li><p>Calculate the percent of overnights your children spend with you and with the other parent. To get this percent, divide 365 (the number of overnights in a year), by the number of overnights the child spends with each parent.</p>
   
-  <strong>For example</strong>
-  
-  If your child spends 4 nights each week with you and 3 nights each week with their other parent, they spend 209 overnights each year with you and 156 nights each year with the other parent.
-  
-  209 divided by 365 nights in a year is .57, or 57% of overnights with you.
-  
-  156 divided by 365 nights in a year is .43, or 43% of overnights with the other parent.
-
-    2. Use the percentages to fill out the <strong>Child Support Guidelines Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong>. Read [How to Fill out the Child Support Guidelines Affidavit](https://courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf) to help you fill out this form.
-    3. The <strong>Child Support Guidelines Affidavit</strong> gives you the new child support amount for a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
+  <div class = "example">
+      <p class = "heading">For example</p>
+  <ul>
+  <li>If your child spends 4 nights each week with you and 3 nights each week with their other parent, they spend 209 overnights each year with you and 156 nights each year with the other parent.</li>  
+  <li>209 divided by 365 nights in a year is .57, or 57% of overnights with you.</li>
+  <li>156 divided by 365 nights in a year is .43, or 43% of overnights with the other parent.</li>
+  </ul>
+  </div>
+    </li>
+    <li> Use the percentages to fill out the <strong>Child Support Guidelines Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong>. Read <a href="courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf">How to Fill out the Child Support Guidelines Affidavit</a> to help you fill out this form.</li>
+    <li> The <strong>Child Support Guidelines Affidavit</strong> gives you the new child support amount for a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
     <ul>
   <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>]<br>
   Use this if the children spend at least 110 overnights with each parent.</li>
   <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">Fill-In PDF</a>] Use this if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
   <li><strong>Divided Custody Child Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">Fill-In PDF</a>] Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
   </ul>
+  </li>
+  </ol>
 ---
 template: dont_wait_modify_custody_divorce_step
 subject: |
@@ -392,9 +396,10 @@ subject: |
 content: |
   If you and the other parent agree to change the schedule, or have already permanently changed your schedule, file your **[Uncontested Motion to Modify Custody](https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac11)** as soon as you can.  
   
-  Until you file your motion with the court, **the parent who owes child support still owes the amount in your current order**. 
+  <p>Until you file your motion with the court, <strong>the parent who owes child support still owes the amount in your current order</strong>.</p>
   
-  **For example**
+  <div class = "example">
+      <p class = "heading">For example</p>
   <ul>
   <li>Under your current order, the children spend Sunday to Friday with you and Friday after school until Sunday after dinner with the other parent.</li>
   <li>Child support was calculated based on the children being with you 5 overnights each week, and with the other parent 2 overnights each week.</li>
@@ -405,6 +410,7 @@ content: |
   <li>The new order says that the new child support amount starts July 1.</li>
   <li>Because you did not file your motion until June, the <strong>original</strong> child support amount still applies from March until July 1.</li>
   </ul>
+  </div>
 ---
 template: compare_child_support_step
 subject: |
@@ -482,10 +488,10 @@ content: |
   <li>If you use the court’s <a href="https://courts.alaska.gov/efile/index.htm">TrueFile eFiling system</a>, <a href="https://courts.alaska.gov/efile/index.htm">TrueFile</a> serves ${ other_party_in_case } for you.</li>
   </ul></li>
   <li>Decide the date you will serve ${ other_party_in_case }.</li>
-  <li>Fill out the <strong>Certificate of Service</strong> at the end of your motion. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }.
-  <br>
-    <strong>Important</strong><br>
-      Be sure you can serve ${ other_party_in_case } on the date and the way you put in the <strong>Certificate of Service</strong>.
+  <li><p>Fill out the <strong>Certificate of Service</strong> at the end of your motion. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }.</p>
+  <div class = "example">
+    <p class = "heading">Important</p>
+      <p>Be sure you can serve ${ other_party_in_case } on the date and the way you put in the <strong>Certificate of Service</strong>.</p>
   </li>
   <li>If you do not fill out the <strong>Certificate of Service</strong>:
   <ul>
@@ -619,15 +625,19 @@ content: |
   <div class="step-subheading">The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li>
-  % if not user_need == 'child support':
+  % if not user_need == 'child support':  
+  % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and middle_of_case == 'no'):
   <li>The judge may grant your <strong>${motion_type}</strong>. Keep following your court order unless the judge grants your motion and issues a new order.</li>
+  % else:  
+  <li>The judge may grant your <strong>${motion_type}</strong>.</li>
+  % endif
   % else:
   <li>The judge may grant your <strong>${motion_type}</strong>.</li>
   % endif
   <li>The judge may deny your motion.</li>
   </ul>
   % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and  middle_of_case == 'no'):
-  Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.
+  Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about filing an appeal - see <a href="https://courts.alaska.gov/shc/appeals">the court's Self-Help Services: Appeals web pages</a>.
   % endif
 ---
 template: get_help
