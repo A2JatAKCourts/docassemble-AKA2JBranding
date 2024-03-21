@@ -449,7 +449,7 @@ content: |
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
-  % if user_need == 'change child support':
+  % if user_need in('change child support','change custody order'):
   Fill out the Motion to Modify forms
   % else:
   Fill out the Motion to Modify Custody forms
