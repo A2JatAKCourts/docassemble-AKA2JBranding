@@ -193,7 +193,7 @@ content: |
   % else:
   <ul>
     <li>Set aside or undo the final custody decision in your case, and</li>
-  % if user_need in('change custody order','respond to custody'):
+  % if user_need in('change custody order','respond to motion in custody'):
     <li>Start your case all over again.</li>
   % else:
     <li>Start that part of your case all over again.</li>
