@@ -192,7 +192,7 @@ content: |
   % else:
   <ul>
     <li>Set aside or undo the final custody decision in your case, and</li>
-  % if user_need in('change custody order','respond to custody'):
+  % if user_need in('change custody order','respond to motion in custody'):
     <li>Start your case all over again.</li>
   % else:
     <li>Start that part of your case all over again.</li>
@@ -548,9 +548,9 @@ content: |
   An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case.
   
   % if user_need == 'change custody order' or (user_need == 'change divorce order' and type_of_final_order.all_true('custody order', exclusive = True) and why_change == 'problem'):
-  You have only 15 days from the day the court sent the order to you.
+  You have only **15 days** from the day the court sent the order to you.
   % else: 
-  You have only 30 days from the day the court sent the order to you.
+  You have only **30 days** from the day the court sent the order to you.
   % endif
   
   If you cannot file on time, call the Appellate Courts Customer Service: (907) 264-0612. They may be able to help you file late.
