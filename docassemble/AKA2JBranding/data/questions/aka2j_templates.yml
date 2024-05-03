@@ -179,7 +179,7 @@ template: learn_set_aside_step
 subject: |
   Step ${ learn_set_aside_idx }: Learn about the Motion to Set Aside Judgment or Order
 content: |
-  <p>A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to</a></p>
+  A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to:
   % if user_need == 'change AK order':
     <ul>
     <li>Set aside or undo the final child support decision in your case, and</li>
@@ -200,23 +200,25 @@ content: |
   % endif
   </ul>
   % endif
-  <p>Judges rarely agree to do this.</p>
-  <p>Civil Rule 60(a) and (b) describe the  reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong> if: </p>
+  Judges rarely agree to do this.
+  
+  Civil Rule 60(a) and (b) describe the  reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong> if:
   <ul>
     <li>The final order has a problem listed in Civil  Rule 60(a) or (b). The problems are  described below. And</li>
     <li>You can file within a &quot;reasonable  time&quot; after the date the court sent your child support order to you. For any of the first 3 reasons in Civil Rule  60(b), you must file within <strong>1 year</strong> of the date the court sent the order to you.</li>
   </ul>
-  <p>The date the court sent the order to you is at the bottom of the last page of your order.</p>
   
+  The date the court sent the order to you is at the bottom of the last page of your order.  
   % for image_data in distribution_certificate_list:
   ${ image_data['text'] }
   ${ image_data['image'].show(width='100%') }
   % endfor
 
-  <p>Act quickly! The judge defines"reasonable" and "in a reasonable time." The judge  may refuse to set aside the order if you file <strong>after</strong> a "reasonable time" has passed, even if your reason  for filing is a good one.</p>
+  Act quickly! The judge defines"reasonable" and "in a reasonable time." The judge  may refuse to set aside the order if you file <strong>after</strong> a "reasonable time" has passed, even if your reason  for filing is a good one.
   <div class="step-subheading">Reasons you may file a Motion to Set Aside  Judgment or Order</div>
-  <p><strong>Civil Rule 60(a)</strong> <br>
-    The  court made a clerical mistake or accidentally left something out of a document.</p>
+  
+  <strong>Civil Rule 60(a)</strong><br>
+    The court made a clerical mistake or accidentally left something out of a document.
     
   <div class="example">
       <p class="heading">For example</p>
@@ -461,7 +463,7 @@ content: |
     <li><strong>Motion to Modify Custody, Visitation & Support Packet</strong>, <a href="https://courts.alaska.gov/shc/family/shcforms.htm#shc-pac12">SHC-PAC12</a><br>
     3 of the forms in this packet are affidavits:
   <ul>
-  <li>Wait to sign them until you are in front of someone who has the power to take oaths, like a notary public.
+  <li>**Wait** to sign them until you are in front of someone who has the power to take oaths, like a notary public.
   <ul>
   <li>The court clerk can do this for free.</li>
   <li>Bring a valid photo ID with you.</li>
@@ -641,6 +643,73 @@ content: |
   Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about filing an appeal - see <a href="https://courts.alaska.gov/shc/appeals">the court's Self-Help Services: Appeals web pages</a>.
   % endif
 ---
+template: file_complaint_step
+subject: |
+  Step ${ file_complaint_idx }: What to expect after you file your Complaint
+content: |
+  For help with forms or understanding the process:
+---
+template: file_answer_step
+subject: |
+  Step ${ file_answer_idx }: Get more information or help
+content: |
+  For help with forms or understanding the process:
+---
+template: expect_after_complaint_step
+subject: |
+  Step ${ expect_after_complaint_idx }: What to expect after you file your Complaint
+content: |
+  <div class="step-subheading">{{ other_party_in_case }} may file an Answer</div
+  
+  They have 20 days to file an Answer.
+  
+  The Answer is their response to what you put in your Complaint.
+  
+  <div class="step-subheading">If they do not file an Answer in 20 days, you can ask for a default judgment</div>
+  
+  A default judgment is when the court decides your case without hearing from the other side.
+  
+  % if not default_info:
+  Read the court's web page, [Filing for Default in Divorce and Custody Cases](https://courts.alaska.gov/shc/family/shcdefault.htm).
+  % else:
+  See Step ${ default_info_idx }File for default if your spouse does not respond within 20 days.
+  % endif
+  
+  If {{ other_party_in_case }} does not file an Answer and you do nothing, the court will close your case after 120 days.
+  
+  <div class="step-subheading">The court will set a hearing and send you a notice with the date and time.</div>
+  
+  % if user_need == 'divorce':
+  Within 45 days of your spouse filing their answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
+  
+  * **Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
+  * **Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
+
+  Read the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm)
+  % endif
+
+---
+template: expect_after_answer_step
+subject: |
+  Step ${ expect_after_answer_idx }: What to expect after you file your Answer
+content: |
+  The court will set a hearing and send you a notice with the date and time.  
+  % if user_need == 'divorce':
+  Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
+  
+  *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
+  *	**Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
+  
+  See the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm) 
+  % endif  
+---
+
+
+
+
+
+
+
 template: get_help
 subject: |
   Step ${ get_help_idx }: Get more information or help

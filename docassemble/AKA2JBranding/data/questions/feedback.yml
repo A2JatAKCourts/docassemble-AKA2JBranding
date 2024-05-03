@@ -93,8 +93,9 @@ fields:
       - Friend or family member of person needing help
       - Social worker
       - Attorney or paralegal
+      - FLSHC
       - Other: other
-    required: False
+  #  required: False
   - Other (please specify): user_type
     show if:
       variable: user_type
