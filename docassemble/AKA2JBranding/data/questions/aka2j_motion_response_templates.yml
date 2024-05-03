@@ -252,11 +252,25 @@ template: expect_after_response_step
 subject: |
   Step ${ expect_after_response_idx }: What to expect after you respond to the ${ motion_type }
 content: |
-  <ul>
-  <li>If the <strong>${ motion_type }</strong> is not granted or is denied, the parents are supposed to follow the Judgment or Order and the parent who received the original order or judgment can enforce it.</li>
-  <li>If the <strong>${ motion_type }</strong> is granted, the court will notify both parents about the next step in the case.</li>
-  <li>Either parent can appeal the decision about the <strong>${ motion_type }</strong> if they believe the judge made a legal mistake.</li>
-  </ul>
+  div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
+  
+  If you serve ${ other_party_in_case } with your response:
+
+  * by hand-delivery, email, or TrueFile, they have 5 days to reply to the court in writing,
+  * by mail, they have 8 days.
+  
+  The documents ${ other_party_in_case } files after you serve them with your response is their "reply."  A Reply is not required.  
+  
+  div class="step-subheading">The judge will issue an order</div>
+  
+  * The judge may set a date for a hearing, but they may decide the motion without a hearing. The judge may grant the ${ motion_type }.
+  % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and middle_of_case == 'no'):
+  * Keep following your court order unless the judge grants your motion and issues a new order.
+  % endif
+  * The judge may deny the motion.
+  % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and middle_of_case == 'no'):
+  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about filing an appeal - see the court's [Self-Help Services: Appeals](https://courts.alaska.gov/shc/appeals) web pages.
+  % endif  
 ---
 template: appeal_response_step
 subject: |
