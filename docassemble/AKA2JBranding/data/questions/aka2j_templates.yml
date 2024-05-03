@@ -209,6 +209,10 @@ template: get_help
 subject: |
   Step ${ get_help_idx }: Get more information or help
 content: |
+  % if user_need == 'enforce custody order':
+  Read more about enforcing orders. [Enforcing your order](http://www.courts.alaska.gov/shc/family/shcenforce.htm).
+  % endif
+  
   For help with forms or understanding the process:
   <ul><li>Call the Family Law Self-Help Center
   <br>
