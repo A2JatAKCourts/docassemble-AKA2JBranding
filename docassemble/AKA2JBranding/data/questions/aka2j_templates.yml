@@ -110,6 +110,8 @@ content: |
   </li>
   </ol>
 ---
+comment: |
+  Delete this step after saving updating all interviews to file_motion_step in aka2j_mod_cust_div_templates.yml.
 template: file_step
 subject: |
   Step ${ file_idx }: 
@@ -136,6 +138,8 @@ content: |
   Read Step ${ serve_idx }: Serve ${ other_party_in_case }.</li>
   </ol>
 ---
+comment: |
+  Delete this step after saving updating all interviews to file_motion_step in aka2j_mod_cust_div_templates.yml.
 template: serve_step
 subject: |
   Step ${ serve_idx }: Serve ${ other_party_in_case }
