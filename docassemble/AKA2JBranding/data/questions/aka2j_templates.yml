@@ -384,7 +384,7 @@ content: |
 ---
 template: default_info_step
 subject: |
-  Step ${ default_info_idx }: File for default if your spouse does not respond within 20 days
+  Step ${ default_info_idx }: File for default if ${ other_party_in_case } does not respond within 20 days
 content: |
   <div class='step-subheading'>Wait for 20 days</div>
   If ${ other_party_in_case } does not file an Answer within 20 days of being served your complaint, you may ask the court to “default” ${ other_party_in_case } and grant you everything you asked for. To do this, you must have proof that you served ${ other_party_in_case } according to the rules.
