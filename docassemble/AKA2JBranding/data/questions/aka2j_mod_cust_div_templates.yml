@@ -652,7 +652,7 @@ content: |
   <li>Count weekends and holidays.</li> 
   <li>If the due date is a weekend or holiday, the ${ other_party_in_case }‘s response  is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, their response is due Monday.</li> 
   </ul></p>
-  % if user_need == 'child support' and existing_case == "none" or (existing_case == "unknown" and after_courtview == "none"):
+  % if user_need == 'child support' and (existing_case == "none" or (existing_case == "unknown" and after_courtview == "none")):
   If you file your **Motion for Interim Child Support** with your complaint, the other parent does not have to respond until they respond to the complaint. This is usually 20 days after they get the complaint.
   % endif
   <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>
