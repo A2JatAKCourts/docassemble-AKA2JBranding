@@ -252,7 +252,7 @@ template: expect_after_response_step
 subject: |
   Step ${ expect_after_response_idx }: What to expect after you respond to the ${ motion_type }
 content: |
-  div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
+  <div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
   
   If you serve ${ other_party_in_case } with your response:
 
@@ -261,7 +261,7 @@ content: |
   
   The documents ${ other_party_in_case } files after you serve them with your response is their "reply."  A Reply is not required.  
   
-  div class="step-subheading">The judge will issue an order</div>
+  <div class="step-subheading">The judge will issue an order</div>
   
   * The judge may set a date for a hearing, but they may decide the motion without a hearing. The judge may grant the ${ motion_type }.
   % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and middle_of_case == 'no'):
