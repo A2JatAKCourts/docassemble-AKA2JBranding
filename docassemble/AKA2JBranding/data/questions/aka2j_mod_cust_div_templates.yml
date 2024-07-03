@@ -435,12 +435,7 @@ content: |
   <li>There was a new act of domestic violence between you and the other parent when you were exchanging the children.</li>
   </ul>
   % if user_need == 'change foreign custody order' or middle_of_case == 'no':
-  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See Step ${ file_motion_idx }: 
-  % if defined('file_step_heading'):
-  ${ file_step_heading }.
-  % else:
-  File your motion forms.
-  % endif
+  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See the step for filing.
   % endif
 Comment: |
   % if (final_order_date_within_10_days or final_order_date_within_15_days) and modify_within_15_days:
