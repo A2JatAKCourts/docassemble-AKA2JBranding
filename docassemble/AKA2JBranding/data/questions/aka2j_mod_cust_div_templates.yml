@@ -32,7 +32,7 @@ content: |
 ---
 template: standing_order_step
 subject: |
-  Step ${ standing_order_idx }: Ask the court to change the Standing Order or a similar decision
+  Step ${ standing_order_idx }: Ask the court to change the Standing Order or a similar order
 content: |
   <div class="step-subheading">Background</div>
   
