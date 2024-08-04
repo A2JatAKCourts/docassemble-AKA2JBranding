@@ -412,6 +412,7 @@ content: |
   <div class="step-subheading">Watch</div>
   <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
 ---
+---
 comment: |
   Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
 template: modify_step
@@ -421,10 +422,18 @@ subject: |
     Learn about motions to modify
     % elif user_need == 'change divorce order':
     Learn about a Motion to Modify your Parenting Plan
+    % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
+    Learn about motions to modify custody or a Parenting Plan order
+    % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+    Learn about motions to modify a child support order
     % endif
 content: |
+  % if not user_need in('respond to motion in custody', 'respond to motion in divorce'):
   Changing your parenting plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
-  
+  % elif user_need in('respond to motion in custody', 'respond to motion in divorce'):
+  Your judge will decide the motion based on {{ other_party_in_case }}'s request, your response, and the law. Learning about the law can help you decide what to write in your response.
+  % endif
+  % if user_need == 'change foreign custody order' or (user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'modify' and type_of_modification['custody']):  
   The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a parenting plan if there is a "substantial change in circumstances." A "substantial change in circumstances" means something has happened so that the old custody or parenting plan is no longer in the children's best interest.
 
   <div class="step-subheading">Some examples</div>
@@ -434,9 +443,33 @@ content: |
   <li>Your children spend overnights with you and the other parent.  The other parent just went to jail for 2 years so the existing schedule is impossible.</li>
   <li>There was a new act of domestic violence between you and the other parent when you were exchanging the children.</li>
   </ul>
-  % if user_need == 'change foreign custody order' or middle_of_case == 'no':
-  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See the step for filing.
+  % if user_need == 'change foreign custody order' or (not user_need in('respond to motion in custody', 'respond to motion in divorce') and middle_of_case == 'no'):
+  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See the Step ${ file_motion_idx }: ${ file_step_heading }.
   % endif
+  
+  If the judge decides there is a substantial change of circumstances, the judge will order a new parenting plan in the children's best interest.
+  
+  If the judge changes the parenting plan, the judge may issue a new child support order.
+  % endif
+  
+  % if  user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+  The child support rule, [Alaska Rule of Civil Procedure 90.3](https://courts.alaska.gov/rules/docs/civ.pdf), states you need to prove there has been a “material change in circumstances” to modify child support. The most common changes in circumstances are:
+  
+  * Your children's schedule changes and they spend more or fewer overnights with you than they used to, or
+  * Your income or the other parent's income changes.
+  
+  There needs to be:
+  
+  * A 15% change in the amount of child support ordered. So that when you calculate support based on the parents' current income, the amount is 15% more or less than the current support order.
+  
+  Or
+  
+  *	A change in the parenting plan that affects the child support formula. For example, changing from a primary custody to shared custody plan will probably change the amount of child support.
+  
+  If the judge decides there is a material change of circumstances, the judge will calculate a new child support order.
+  % endif
+  The Alaska Supreme Court has issued many [decisions](https://courts.alaska.gov/shc/family/shclaws.htm#cases) about what types of circumstances amount to a change of circumstances allowing a modification.
+
 Comment: |
   % if (final_order_date_within_10_days or final_order_date_within_15_days) and modify_within_15_days:
   <div class="step-subheading">Timing</div>
@@ -560,11 +593,14 @@ content: |
   
   Learn more about filing an appeal on the court's web pages [Civil Appeal: Superior Court to Supreme Court](https://courts.alaska.gov/shc/appeals/index.htm).
 ---
-
----
 template: cert_of_service_step
 subject: |
-  Step ${ cert_of_service_idx }: Fill out the Certificate of Service
+  Step ${ cert_of_service_idx }:
+  % if user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'reconsider':
+  If the judge asks you to respond to the Motion to Reconsider, fill out the Certificate of Service
+  % else:
+  Fill out the Certificate of Service 
+  % endif
 content: |
   You must give ${ other_party_in_case } 1 copy of everything you file with the court. This is called “service.”
   <ol>
