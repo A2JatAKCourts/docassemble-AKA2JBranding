@@ -6,17 +6,20 @@ objects:
   - recaptcha_web: DAWeb
 ---
 code: |
-  def recaptcha_html():
-    return '<button class="btn btn-primary da-recaptcha">' + word("Continue") + '</button>'
----
-code: |
   def recaptcha_javascript():
     return """\
   <script>
-    $(".da-recaptcha").on('click', function(e){
-      e.preventDefault();
+    // Use a regular submit button to ask for recaptcha results
+    $("button[type='submit']").on('click', function(e) {
+      // Note: Avoid e.preventDefault(). It prevents the submit button
+      // from working as intended.
+      
+      // When the recapcha code is loaded and ready
       grecaptcha.ready(function() {
+        // Ask for the recaptcha results from the data google
+        // has already been tracking
         grecaptcha.execute('{{ recaptcha_site_key }}', {action: 'submit'}).then(function(token) {
+          // Tell docassemble what the results were
           da_action_perform('verify_recaptcha', {"token": token});
         });
       });
@@ -28,13 +31,17 @@ code: |
   try:
     result = recaptcha_web.post('https://www.google.com/recaptcha/api/siteverify', data={'secret': '{{ recaptcha_secret_key }}', 'response': action_argument('token')}, on_failure='raise', json_body=False)
   except DAWebError as err:
-    log("recaptcha error: " + err.response_text)
+    log("Recaptcha error: " + err.response_text)
     result = None
   if result is not None:
     if result.get('success'):
+      log("Recaptcha thinks this is a human")
       recaptcha_success = True
     else:
-      log("recaptcha error: " + json.dumps(result))
+      log("Recaptcha thinks this is a robot")
+      recaptcha_success = False
+  else:
+    log("Recaptcha has no results")
   del result
 ---
 code: |
