@@ -593,11 +593,14 @@ content: |
   
   Learn more about filing an appeal on the court's web pages [Civil Appeal: Superior Court to Supreme Court](https://courts.alaska.gov/shc/appeals/index.htm).
 ---
-
----
 template: cert_of_service_step
 subject: |
-  Step ${ cert_of_service_idx }: Fill out the Certificate of Service
+  Step ${ cert_of_service_idx }:
+  % if user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'reconsider':
+  If the judge asks you to respond to the Motion to Reconsider, fill out the Certificate of Service
+  % else:
+  Fill out the Certificate of Service 
+  % endif
 content: |
   You must give ${ other_party_in_case } 1 copy of everything you file with the court. This is called “service.”
   <ol>
