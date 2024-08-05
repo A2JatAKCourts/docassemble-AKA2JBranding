@@ -70,7 +70,7 @@ content: |
   
   In your response, explain why you disagree.
 
-  If the {{ other_party_in_case }} served you:
+  If the ${ other_party_in_case } served you:
   
   * by hand-delivery, email, or TrueFile, you have 10 days to respond to the court in writing.
   * by mail, you have 13 days.
