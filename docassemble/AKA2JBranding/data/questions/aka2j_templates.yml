@@ -126,45 +126,6 @@ content: |
     * This form tells you the things you must do to try to find ${other_party_in_case} before you can aks for alternate service.
     * **Wait** to sign this form until you are in front of someone who has the power to take oaths, like a notary public. The court clerk can do this for free. Bring a valid photo ID with your signature on it with you.
 ---
-comment: |
-  Delete this step after saving updating all interviews to file_motion_step in aka2j_mod_cust_div_templates.yml.
-template: file_step
-subject: |
-  Step ${ file_idx }: 
-  % if defined('file_step_heading'):
-  ${ file_step_heading }
-  % else:
-  File your motion forms
-  % endif
-content: |
-  ${ file_motion_to_set_aside }
-  ${ file_motion_to_enforce }
-  <ol>
-  <li>Make 2 copies of everything you are going to give the court.</li>
-  <li>Give the original version of your documents to the court. This is called "filing" your  documents. You can:
-    <ul>
-      <li>Deliver the documents to the court yourself.</li>
-      <li>Mail the documents by first-class mail.</li>
-      <li>Use the Court's <a href="https://courts.alaska.gov/efile/">TrueFile  eFiling system</a> to send the documents to the court electronically.</li>
-    </ul>
-  </li>
-  ${ file_modify_filing_fee }
-  <li>Keep 1 copy for your own records.</li>
-  <li>Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your <strong>Certificate of Service</strong>.<br>
-  Read Step ${ serve_idx }: Serve ${ other_party_in_case }.</li>
-  </ol>
----
-comment: |
-  Delete this step after saving updating all interviews to file_motion_step in aka2j_mod_cust_div_templates.yml.
-template: serve_step
-subject: |
-  Step ${ serve_idx }: Serve ${ other_party_in_case }
-content: |
-  <p>Give a copy of all your documents to ${ other_party_in_case } the way you put on the <strong>Certificate of Service</strong>.</p>
-  <p>Serve them on the date you put in the <strong>Certificate of Service</strong>.</p>
-  <p>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a>.</p>
-  <p>File the new certificate with the court.</p>
----
 template: file_complaint_step
 subject: |
   Step ${ file_complaint_idx }: File the original with your local court
