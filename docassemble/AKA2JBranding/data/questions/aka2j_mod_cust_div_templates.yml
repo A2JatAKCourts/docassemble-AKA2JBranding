@@ -431,7 +431,7 @@ content: |
   % if not user_need in('respond to motion in custody', 'respond to motion in divorce'):
   Changing your parenting plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
   % elif user_need in('respond to motion in custody', 'respond to motion in divorce'):
-  Your judge will decide the motion based on {{ other_party_in_case }}'s request, your response, and the law. Learning about the law can help you decide what to write in your response.
+  Your judge will decide the motion based on ${ other_party_in_case }'s request, your response, and the law. Learning about the law can help you decide what to write in your response.
   % endif
   % if user_need == 'change foreign custody order' or (user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'modify' and type_of_modification['custody']):  
   The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a parenting plan if there is a "substantial change in circumstances." A "substantial change in circumstances" means something has happened so that the old custody or parenting plan is no longer in the children's best interest.
