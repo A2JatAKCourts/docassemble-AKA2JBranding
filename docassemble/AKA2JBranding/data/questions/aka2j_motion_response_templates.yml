@@ -222,7 +222,7 @@ content: |
 ---
 comment: |
   Based on [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
-  Replaced older version with newer, easier to read version see GitHub issue [expect_after_response_step #3](https://github.com/A2JatAKCourts/docassemble-ChangingDivorceOrderInterviewIssues/issues/3)
+  Replaced older version with newer, easier to read version see GitHub issue [after_response_step #3](https://github.com/A2JatAKCourts/docassemble-ChangingDivorceOrderInterviewIssues/issues/3)
 template: expect_after_response_step
 subject: |
   Step ${ expect_after_response_idx }: What to expect after you respond to the ${ motion_type }
