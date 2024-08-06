@@ -748,7 +748,7 @@ content: |
   <li>The judge may grant your <strong>${motion_type}</strong> If they do, you will get a copy of the new order.</li>
   <li>The judge may deny your motion. If they do, you will get an order denying the motion.</li>
   % if user_need != 'child support':  
-  % if user_need =='change foreign custody order' or (user_need in('change custody order', 'change divorce order') and middle_of_case == 'no'):
+  % if user_need =='change foreign custody order' or (user_need in('change AK order','change custody order', 'change divorce order') and middle_of_case == 'no' ):
   <li>Keep following your court order unless the judge grants your motion and issues a new order.</li>
   </ul>
   Either one of you can decide to appeal the decision about the <strong>${motion_type}</strong> if you believe the judge made a legal mistake. Learn more about <a href="https://courts.alaska.gov/shc/appeals">filing an appeal</a>.
