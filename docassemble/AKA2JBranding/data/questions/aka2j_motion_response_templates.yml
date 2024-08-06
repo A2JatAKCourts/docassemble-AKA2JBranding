@@ -238,13 +238,12 @@ content: |
   
   <div class="step-subheading">The judge will issue an order</div>
   
-  * The judge may set a date for a hearing, but they may decide the motion without a hearing:
-
-   The judge may grant the ${ motion_type }.
-  * The judge may deny the motion.
-  * Keep following your court order unless the judge grants your motion and issues a new order.
+  * The judge may set a date for a hearing, but they may decide the motion without a hearing
+  * The judge may grant the ${ motion_type }. If they do, you will get a copy of the new order.
+  * The judge may deny the motion. If they do, you will get an order denying the motion.
   % if middle_of_case == 'no':
-  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about filing an appeal - see the court's [Self-Help Services: Appeals](https://courts.alaska.gov/shc/appeals) web pages.
+  * Keep following your court order unless the judge grants the motion and issues a new order.
+  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://courts.alaska.gov/shc/appeals).
   % endif  
 ---
 template: appeal_response_step
