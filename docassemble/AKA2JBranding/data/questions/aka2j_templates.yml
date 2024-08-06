@@ -138,7 +138,7 @@ content: |
   % else:
   Because
   % endif
-  you both signed the forms and both have a copy, you do not have to formally  &quot;serve&quot; ${ other_party_in_case } by mailing documents or using a process server.
+  both of you sign the forms and you each have a copy, you do not have to &quot;serve&quot; ${ other_party_in_case } by mailing documents or using a process server.
   % endif
   </li>
   <li>Find the closest Alaska court to file your paperwork on the <a href="http://courts.alaska.gov/courtdir/index.htm#trial">Court Directory</a>.</li>
@@ -146,7 +146,7 @@ content: |
   <ul>
   <li>Deliver the documents to the court yourself.</li>
   <li>Mail the documents by first-class mail.</li>
-  <li>Use the court's TrueFiling eFiling system to  send the documents to the court electronically, if your local court uses  TrueFiling. <a href="https://courts.alaska.gov/efile/index.htm#current-courts">See if your  court uses TrueFiling</a>.</li>
+  <li>Use the court's TrueFiling eFiling system to send the documents to the court electronically, if your local court uses  TrueFiling. <a href="https://courts.alaska.gov/efile/index.htm#current-courts">See if your  court uses TrueFiling</a>.</li>
   <li>File the documents by email, if your local court  accepts email filings. <a href="https://courts.alaska.gov/courtdir/efiling.htm">See if your court accepts  documents by email</a>. </li>
   </ul></li>
   <li>Pay  the $250 filing fee to start your case.<br>
@@ -161,10 +161,10 @@ content: |
   <p class = "heading">Note</p>
   <p>Check with your local court to make sure you understand the procedure to follow after the court decides whether or not to grant your exemption.</p>
   </ul></li>
-  <li>After  you pay the filing fee or the court says you can file for free, the court clerk will give  you 2 copies of:
+  <li>After you pay the filing fee or the court says you can file for free, the court clerk will give  you 2 copies of:
   <ul>
   <li>a "<strong>Summons</strong>" and</li>
-  <li>a "<strong>Standing Order</strong>." The Standing order has important information about your case. Usually the clerk will give you this order when you file.</li>
+  <li>a "<strong>Standing Order</strong>." The Standing order has important information about your case. Usually, the clerk will give you this order when you file.</li>
   </ul>
   1 copy is for you. The other copy is for ${ other_party_in_case }.</li>
   </ol>
