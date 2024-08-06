@@ -711,7 +711,6 @@ content: |
   If you file your **Motion for Interim Child Support** with your complaint, the other parent does not have to respond until they respond to the complaint. This is usually 20 days after they get the complaint.
   % endif
   <p>The documents ${ other_party_in_case } files after you serve them is their "response" or "opposition."</p>
-  ${ expect_after_motion }
   <div class="step-subheading">You can reply to their response</div>
   <p>If ${ other_party_in_case } files a response you can file a reply.</p>
   <p>If they serve you:
