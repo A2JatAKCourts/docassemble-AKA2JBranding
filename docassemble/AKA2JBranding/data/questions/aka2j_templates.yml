@@ -1,3 +1,6 @@
+objects:
+  - service_cert_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice.png', alt_text="Certificate of Service box")
+---
 template: ak_jurisdiction_step
 subject: |
   Step ${ ak_jurisdiction_idx }: Make sure that the Alaska court has the authority to change the order
@@ -236,6 +239,84 @@ content: |
 
   <strong>Special situations</strong>
   Read more about [special situations](http://www.courts.alaska.gov/shc/family/serve.htm#11) like serving someone in a foreign country, the military or jail.
+---
+template: cert_of_service_step
+subject: |
+  Step ${ cert_of_service_idx }:
+  % if user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'reconsider':
+  If the judge asks you to respond to the Motion to Reconsider, fill out the Certificate of Service
+  % else:
+  Fill out the Certificate of Service 
+  % endif
+content: |
+  You must give ${ other_party_in_case } 1 copy of everything you file with the court. This is called “service.”
+  <ol>
+  <li>Decide on the way you will serve ${ other_party_in_case }, or their lawyer if they have one.
+  <ul>
+  <li>You can send the copy you made for them by regular, 1st class mail.</li>
+  <li>You can deliver it yourself, or through a messenger service.</li>
+  <li>If they file anything in court that says they agree to service by email, you can email the copy you made for them.
+  <li>If you use the court’s TrueFiling eFiling system,TrueFiling serves ${ other_party_in_case } for you.</li>
+  </ul></li>
+  <li>Decide the date you will serve ${ other_party_in_case }. Serve them the same day you file your documents with the court.</li>
+  <li><p>Fill out the <strong>Certificate of Service</strong> at the end of your court forms. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }. If you use TrueFiling, it serves the other parent for you and you do not need to fill out the Certificate of Service.</p>
+  <div class = "example">
+    <p class = "heading">Important</p>
+      <p>Be sure you can serve ${ other_party_in_case } on the date and the way you put in the <strong>Certificate of Service</strong>.</p>
+  </li>
+  <li>If you do not fill out the <strong>Certificate of Service</strong>:
+  <ul>
+  % if user_need in('answer custody', 'answer divorce', 'respond to motion in  custody', 'respond to motion in divorce'):
+  <li>The court will send you a <strong>Deficiency Notice</strong>, and</li>
+  <li>The judge may not get your paperwork.</li>
+  % else:
+  <li>The court may not accept your motion or may send you a <strong>Deficiency Notice</strong>, and</li>
+  <li>The judge may not see your motion or make a decision.</li>
+  % endif
+  </ul></li>
+  </li>
+  </ol>
+  % for image_data in images_list:
+  ${ image_data['text'] }
+  ${ image_data['image'].show(width='100%') }
+  % endfor
+---
+template: file_motion_step
+subject: |
+  Step ${ file_motion_idx }: 
+  % if defined('file_step_heading'):
+  ${ file_step_heading }
+  % else:
+  File your motion forms
+  % endif
+content: |
+  ${ file_motion_to_set_aside }
+  ${ file_motion_to_enforce }
+  <ol>
+  <li>Make 2 copies of everything you are going to give the court.</li>
+  <li>Give the original version of your documents to the court. This is called "filing" your  documents. You can:
+    <ul>
+      <li>Deliver the documents to the court yourself.</li>
+      <li>Mail the documents by first-class mail.</li>
+      <li>Use the Court's TrueFiling eFiling system</a> to send the documents to the court electronically, if your local court uses TrueFiling. <a href="https://courts.alaska.gov/efile/index.htm#current-courts">See if your court uses Truefiling</a>.</li>
+      <li>Email the documents, if your local court accepts email filings.  <a href="https://courts.alaska.gov/courtdir/efiling.htm">See if your court accepts documents by email</a>.</li>
+    </ul>
+  </li>
+  ${ file_modify_filing_fee }
+  <li>Keep 1 copy for your own records.</li>
+  <li>Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your <strong>Certificate of Service</strong>.<br>
+  Read Step ${ serve_motion_idx }: Serve ${ other_party_in_case }.</li>
+  </ol>
+---
+template: serve_motion_step
+subject: |
+  Step ${ serve_motion_idx }: Serve ${ other_party_in_case }
+content: |
+  <ul>
+  <li>Give a copy of all your documents to ${ other_party_in_case } the way you wrote on the <strong>Certificate of Service</strong>.</li>
+  <li>Serve them on the date you put in the <strong>Certificate of Service</strong>.</li>
+  <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
+  </ul>
 ---
 template: file_answer_step
 subject: |
