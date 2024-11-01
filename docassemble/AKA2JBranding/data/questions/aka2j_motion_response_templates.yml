@@ -160,7 +160,13 @@ content: |
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
   </ul>
-  % endif  
+  % endif
+  Be sure you agree with the change before sending it to the judge. If you tell the court you agree to a change and the judge signs the agreement, it is a new court order and you are required to follow it. It can only be changed if:
+  <ul>
+  <li>You and {{ other_party_in_case }} later agree to a new change. Or</li>
+  <li>You or {{ other_party_in_case }} follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.</li>
+  </ul>
+
 ---
 template: file_response_step
 subject: |
