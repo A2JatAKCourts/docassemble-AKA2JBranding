@@ -619,8 +619,27 @@ content: |
 ---
 template: expect_after_motion_step
 subject: |
+  Step ${ expect_after_motion_idx }: 
+  % if user_need in('answer custody', 'answer divorce') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
+  What to expect after you file your Answer  
+  % else:
   Step ${ expect_after_motion_idx }: What to expect after you file a ${ motion_type }
+  % endif
 content: |
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  
+  Every case is different, but sometimes it is clear only one court has jurisdiction over the case. When this happens, one state court may close its case.
+  
+  If it is not clear, the Alaska court will often hold a hearing and call the other court to talk about which case will move forward.
+  
+  Pay attention to what is happening in both cases until you know which state will decide the case.
+  
+  Jurisdiction can be very complicated. Talking to a lawyer can help you decide which is the best state for your case.
+  % endif  
+  
+  See [GitHub Motion to Dismiss issue #30](https://github.com/A2JatAKCourts/docassemble-DivorceIssues/issues/30)
+  
+  
   <div class="step-subheading">${ capitalize(other_party_in_case) } may file a response or "opposition"</div>
   <p>If you serve ${ other_party_in_case }: 
   <ul>
