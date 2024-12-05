@@ -617,6 +617,8 @@ content: |
   </ul>
   <p>Read the court's web  page <a href="https://courts.alaska.gov/shc/family/after-judgment.htm">Options  after you get a judge's decision</a>.</p>
 ---
+comment: |
+  Closed [GitHub Motion to Dismiss issue #30](https://github.com/A2JatAKCourts/docassemble-DivorceIssues/issues/30)
 template: expect_after_motion_step
 subject: |
   Step ${ expect_after_motion_idx }: 
@@ -635,10 +637,7 @@ content: |
   Pay attention to what is happening in both cases until you know which state will decide the case.
   
   Jurisdiction can be very complicated. Talking to a lawyer can help you decide which is the best state for your case.
-  % endif  
-  
-  See [GitHub Motion to Dismiss issue #30](https://github.com/A2JatAKCourts/docassemble-DivorceIssues/issues/30)
-  
+  % endif   
   
   <div class="step-subheading">${ capitalize(other_party_in_case) } may file a response or "opposition"</div>
   <p>If you serve ${ other_party_in_case }: 
