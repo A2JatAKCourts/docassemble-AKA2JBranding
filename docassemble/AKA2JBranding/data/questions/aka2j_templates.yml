@@ -192,14 +192,14 @@ subject: |
 content: |
   This is the first order from your judge that sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
   
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
+  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
     * Do not take your children out of Alaska.
   % endif
-  % if user_need in('divorce', 'answer divorce'):
+  % if user_need == 'divorce':
     * Do not sell or get rid of marital property.
   % endif
     * Do not cancel or change any insurance policy.
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
+  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
   Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
   % endif
   
@@ -326,11 +326,26 @@ content: |
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
   </ul>
 ---
+comment: | 
+    Move to aka2j Branding package and use for divorce also. 
 template: file_answer_step
 subject: |
-  Step ${ file_answer_idx }: Get more information or help
+  Step ${ file_answer_idx }: File the originals
 content: |
-  For help with forms or understanding the process:
+  You have **20 days** to file and serve ${ other_party_in_case } your **Answer**, **Affidavits**, **Information Sheet**
+  % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'still going') or (type_of_response['default'] and proper_service == 'neither'):
+  , **Motion to Dismiss**,
+  % endif
+  and other documents.
+  
+  1.	Make 2 copies of everything you are going to give the court.
+  2.	Give the original version of your documents to the court listed at the top of the complaint.</br>
+  Find the address on the court's [Court Directory](https://courts.alaska.gov/courtdir/index.htm#trial) web page and:
+    <ul><li>Give the documents to the clerk at the court yourself.</li>
+   <li>Mail the documents by first-class mail. or</li>
+   <li>Use the court's <a href="https://courts.alaska.gov/efile">TrueFile eFiling system</a> to send the documents to the court electronically.</li></ul>
+  3.	Keep 1 copy for your own records.
+  4.	Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your **Certificate of Service**. Read Step ${ serve_motion_idx }: Serve ${ other_party_in_case }.
 ---
 template: expect_after_complaint_step
 subject: |
