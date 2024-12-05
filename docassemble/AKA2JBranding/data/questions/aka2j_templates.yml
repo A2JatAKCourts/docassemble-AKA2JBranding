@@ -192,14 +192,14 @@ subject: |
 content: |
   This is the first order from your judge that sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
   
-  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
     * Do not take your children out of Alaska.
   % endif
-  % if user_need == 'divorce':
+  % if user_need in('divorce', 'answer divorce'):
     * Do not sell or get rid of marital property.
   % endif
     * Do not cancel or change any insurance policy.
-  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
   Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
   % endif
   
