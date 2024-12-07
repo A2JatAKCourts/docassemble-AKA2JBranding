@@ -199,6 +199,7 @@ content: |
     * Do not sell or get rid of marital property.
   % endif
     * Do not cancel or change any insurance policy.
+  
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
   Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
   % endif
