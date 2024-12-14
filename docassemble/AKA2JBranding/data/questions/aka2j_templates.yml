@@ -330,20 +330,36 @@ content: |
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
   </ul>
 ---
-comment: | 
-    Move to aka2j Branding package and use for divorce also. 
 template: file_answer_step
 subject: |
   Step ${ file_answer_idx }: File the originals
 content: |
-  You have **20 days** to file and serve ${ other_party_in_case } your **Answer**, **Affidavits**, **Information Sheet**
-  % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'still going') or (type_of_response['default'] and proper_service == 'neither'):
-  , **Motion to Dismiss**,
-  % endif
+  You have **20 days** to file and serve ${ other_party_in_case } your 
+  % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case in('ended with order', 'still going')) or (type_of_response['default'] and proper_service == 'neither'):
+  **Motion to Dismiss**
+  % else:
+  **Answer**, **Affidavits**, **Information Sheet**,
+  % endif  
   and other documents.
+
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  When you file copies your **Motion to Dismiss**, include copies of the
+  % if user_need == 'answer custody':  
+  custody order
+  % elif user_need == 'answer divorce' and minor_children:
+  divorce decree and custody order
+  % elif user_need == 'answer divorce' and not minor_children:
+  divorce decree
+  % endif
+  from the other state.
+  % endif
   
   1.	Make 2 copies of everything you are going to give the court.
-  2.	Give the original version of your documents to the court listed at the top of the complaint.</br>
+  2.	Give the original version of your documents
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+   and a copy of the order from the other state
+  % endif
+  to the court listed at the top of the complaint.</br>
   Find the address on the court's [Court Directory](https://courts.alaska.gov/courtdir/index.htm#trial) web page and:
     <ul><li>Give the documents to the clerk at the court yourself.</li>
    <li>Mail the documents by first-class mail. or</li>
