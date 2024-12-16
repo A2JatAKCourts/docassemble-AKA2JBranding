@@ -625,7 +625,7 @@ subject: |
   % if user_need in('answer custody', 'answer divorce') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
   What to expect after you file your Answer  
   % else:
-  Step ${ expect_after_motion_idx }: What to expect after you file a ${ motion_type }
+  What to expect after you file a ${ motion_type }
   % endif
 content: |
   % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
