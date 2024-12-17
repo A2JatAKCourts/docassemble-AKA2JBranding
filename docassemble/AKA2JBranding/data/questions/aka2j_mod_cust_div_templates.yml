@@ -621,12 +621,7 @@ comment: |
   Closed [GitHub Motion to Dismiss issue #30](https://github.com/A2JatAKCourts/docassemble-DivorceIssues/issues/30)
 template: expect_after_motion_step
 subject: |
-  Step ${ expect_after_motion_idx }: 
-  % if user_need in('answer custody', 'answer divorce') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
-  What to expect after you file your Answer  
-  % else:
-  What to expect after you file a ${ motion_type }
-  % endif
+  Step ${ expect_after_motion_idx }: What to expect after you file a ${ motion_type }
 content: |
   % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
   
@@ -688,7 +683,12 @@ content: |
   <div class="step-subheading">The judge will issue an order</div>
   <ul>
   <li>The judge may set a date for a hearing, but they may decide your motion without a hearing.</li>
-  <li>The judge may grant your <strong>${motion_type}</strong> If they do, you will get a copy of the new order.</li>
+  <li>The judge may grant your <strong>${motion_type}</strong> If they do, you will get a copy of the
+   % if user_need in('answer custody', 'answer divorce'):
+    order granting your motion.</li>
+   % else:
+    new order.</li>
+   % endif
   <li>The judge may deny your motion. If they do, you will get an order denying the motion.</li>
   % if user_need != 'child support':  
   % if user_need =='change foreign custody order' or (user_need in('change AK order','change custody order', 'change divorce order') and middle_of_case == 'no' ):

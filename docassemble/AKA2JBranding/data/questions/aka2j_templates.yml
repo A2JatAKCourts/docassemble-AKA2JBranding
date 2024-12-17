@@ -433,8 +433,20 @@ template: expect_after_answer_step
 subject: |
   Step ${ expect_after_answer_idx }: What to expect after you file your Answer
 content: |
-  The court will set a hearing and send you a notice with the date and time.  
-  % if user_need == 'divorce':
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  
+  Every case is different, but sometimes it is clear only one court has jurisdiction over the case. When this happens, one state court may close its case.
+  
+  If it is not clear, the Alaska court will often hold a hearing and call the other court to talk about which case will move forward.
+  
+  Pay attention to what is happening in both cases until you know which state will decide the case.
+  
+  Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
+  % endif   
+  <div class='step-subheading'>The court will set a hearing</div>
+
+  They will send you a notice with the date and time of the hearing. 
+  % if user_need == 'answer divorce':
   Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
   
   *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
