@@ -191,6 +191,8 @@ subject: |
   Step ${ read_drpo_idx }: Read the &ldquo;Domestic Relations Procedural Order&rdquo; or Standing Order
   % if user_need in('custody', 'divorce'):
    if the clerk gives you one when you file your case
+  % elif user_need in('answer custody', 'answer divorce'):
+   that was with the Complaint
   % endif
 content: |
   This is the first order from your judge that sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
@@ -268,7 +270,7 @@ content: |
   <li>You can send the copy you made for them by regular, 1st class mail.</li>
   <li>You can deliver it yourself, or through a messenger service.</li>
   <li>If they file anything in court that says they agree to service by email, you can email the copy you made for them.
-  <li>If you use the court’s TrueFiling eFiling system,TrueFiling serves ${ other_party_in_case } for you.</li>
+  <li>If you use the court’s TrueFiling eFiling system, TrueFiling serves ${ other_party_in_case } for you.</li>
   </ul></li>
   <li>Decide the date you will serve ${ other_party_in_case }. Serve them the same day you file your documents with the court.</li>
   <li><p>Fill out the <strong>Certificate of Service</strong> at the end of your court forms. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }. If you use TrueFiling, it serves the other parent for you and you do not need to fill out the Certificate of Service.</p>
@@ -332,7 +334,7 @@ content: |
 ---
 template: file_answer_step
 subject: |
-  Step ${ file_answer_idx }: File the originals
+  Step ${ file_answer_idx }: File the original your original with the court
 content: |
   You have **20 days** to file and serve ${ other_party_in_case } your 
   % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case in('ended with order', 'still going')) or (type_of_response['default'] and proper_service == 'neither'):
