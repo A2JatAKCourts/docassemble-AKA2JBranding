@@ -334,7 +334,7 @@ content: |
 ---
 template: file_answer_step
 subject: |
-  Step ${ file_answer_idx }: File the original your original with the court
+  Step ${ file_answer_idx }: File your original with the court
 content: |
   You have **20 days** to file and serve ${ other_party_in_case } your 
   % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case in('ended with order', 'still going')) or (type_of_response['default'] and proper_service == 'neither'):
