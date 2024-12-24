@@ -274,7 +274,7 @@ content: |
     <li>Set aside or undo the final child support decision in your case, and</li>
     <li>Start the child support part of your case over  again.</li>
   </ul>
-  % elif user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order in('property or debt', 'spousal support'):
+  % elif (user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order in('property or debt', 'spousal support')) or user_need in('answer custody','answer divorce'):
   <ul>
     <li>Set aside or undo the final decision in your case, and</li>
     <li>Start your case all over again.</li>

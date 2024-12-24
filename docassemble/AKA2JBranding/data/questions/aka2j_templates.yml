@@ -326,11 +326,11 @@ template: serve_motion_step
 subject: |
   Step ${ serve_motion_idx }: Serve ${ other_party_in_case }
 content: |
-  <ul>
+  <ol>
   <li>Give a copy of all your documents to ${ other_party_in_case } the way you wrote on the <strong>Certificate of Service</strong>.</li>
-  <li>Serve them on the date you put in the <strong>Certificate of Service</strong>.</li>
+  <li>Serve them on the date you said you would.</li>
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
-  </ul>
+  </ol>
 ---
 template: file_answer_step
 subject: |
