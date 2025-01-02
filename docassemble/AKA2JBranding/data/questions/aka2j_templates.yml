@@ -54,6 +54,64 @@ content: |
     </li>
   </ul>
 ---
+---
+comment: | 
+    This step is identical to uncontested_forms_step in https://github.com/A2JatAKCourts/docassemble-StartingChildCustodyActionPlan/tree/main but I cannot include that file with the same accordion_steps as in the responding to custody case interview. Need to update these steps https://github.com/A2JatAKCourts/docassemble-StartingChildCustodyCaseIssues/issues/29 
+template: uncontested_custody_forms_step
+subject: |
+  Step ${ uncontested_custody_forms_idx }: Fill out the forms to start your uncontested custody case
+content: |
+  <p>If you and the other parent agree on everything  (a parenting plan including decision-making and schedule, paternity, and child  support), you can fill out forms to start the case together.  This is called an uncontested case.</p>
+  <p>You will not know your case number until you file your  documents with the court.  You can write  the case number on all your forms then.</p>
+  <div class='step-subheading'>Required forms – 1 copy that both parents sign if signatures are needed</div>
+  <ul>
+    <li><strong>Uncontested  Complaint for Custody of Minor Children, SHC-118</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-118.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-118n.pdf">PDF</a></li>
+    <ul>
+      <li>Print your name, address, and phone number in the  upper left-hand corner of the first page.</li>
+      <li>In the caption, print your name above "Plaintiff" and the other parent's name above "Defendant."</li>
+      <li>Follow the directions on the form and fill out  every section.</li>
+    </ul>
+    <li><strong>Joint  Motion to Put Settlement on the Record, SHC-1063</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+    <li><strong>Case description form, CIV-125S</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">Fill-in PDF</a>]</li>
+  </ul>
+  <div class='step-subheading'>Required forms – 2 copies (each parent fills out and signs a separate copy)</div>
+  <ul>
+    <li><strong>Child  Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">Fill-In PDF</a>]<br>
+      2 copies -  each parent fills out their own</li>
+  </ul>
+  <p>and</p>
+  <ul>
+    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">Fill-In PDF</a>]</br>
+  (2 copies -  each parent fills out their own)
+      <ul>
+        <li>Answer each question completely.</li>
+        <li>See <a href="http://courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf">How to  Fill out the Child Support Guidelines Affidavit</a>.</li>
+        <li>Attach your most recent tax return and pay stubs  to the <strong>Child Support Guidelines  Affidavit</strong>.</li>
+        <li>Sign these forms in front of a notary, who will  need to see a picture ID.  Court staff  can notarize your signature for free.</li>
+      </ul>
+    </li>
+    <li><strong>Information Sheet,  DR-314</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-314.pdf">Fill-in PDF</a>]<br>
+      Fill in 1-3 with complete information for yourself, the children in the case,  the other parent if you know it, and then sign and date the form.</li>
+  </ul>
+  <div class='step-subheading'>Required forms - fill out but do <strong>not</strong> sign because the judge will sign them</div>
+  <ul>
+    <li><strong>Child Support Order, DR-300</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-300.pdf">Fill-in PDF</a>]</li>
+    <li><strong>Custody Findings of Fact &amp; Conclusions of Law, DR-460</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf">Fill-In PDF</a>]</li>
+    <li><strong>Custody Judgment and Decree, DR-465</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf">Fill-In PDF</a>]</li>
+  </ul>
+  <div class='step-subheading'>Optional forms depending on your situation</div>
+  <ul>
+    <li><strong>Choose</strong> 1 form based on the  parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)
+      <ul>
+        <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf" target="_blank">Fill-In PDF</a>]</li>
+        <li><strong>Divided Custody Support Calculation,DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf" target=blank">Fill-In  PDF</a>]</li>
+        <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf" target="_blank">Fill-In PDF</a>]</li>
+      </ul>
+    </li>
+    <li><strong>Application for Child Support Enforcement Division (CSED) Services</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-315.pdf">Fill-In PDF</a>]</li>
+  </ul>
+---
+---
 template: tell_the_court_step
 subject: |
   Step ${ tell_the_court_idx }: Tell the court about your agreement
