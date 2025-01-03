@@ -247,7 +247,7 @@ content: |
 template: read_drpo_step
 subject: |
   Step ${ read_drpo_idx }: Read the &ldquo;Domestic Relations Procedural Order&rdquo; or Standing Order
-  % if user_need in('custody', 'divorce') or (user_need in('custody', 'divorce') and type_of_response.all_false()):
+  % if user_need in('custody', 'divorce') or (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()):
    if the clerk gives you one when you file your case
   % elif user_need in('answer custody', 'answer divorce'):
    that was with the Complaint
