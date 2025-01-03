@@ -489,7 +489,11 @@ content: |
 ---
 template: expect_after_answer_step
 subject: |
+  % if type_of_response.any_true():
   Step ${ expect_after_answer_idx }: What to expect after you file your Answer
+  % elif type_of_response.all_false():
+  Step ${ expect_after_answer_idx }: What to expect after you file your Complaint
+  % endif
 content: |
   % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
   
