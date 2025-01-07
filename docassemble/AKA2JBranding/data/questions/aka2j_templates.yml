@@ -237,7 +237,7 @@ content: |
   </ul>
   1 copy is for you. The other copy is for ${ other_party_in_case }.</li>
   </ol>
-  % if (user_need == 'divorce' and  legal_separation_or_divorce == 'divorce' and  ((minor_children  and agree_or_settle_kids in('yes', 'do not know'))  or (not  minor_children and agree_or_settle in('no prop debt or pregnancy','agree','do  not know')))) or (user_need == 'custody' and which_forms  in('agree','both')):
+  % if (user_need == 'divorce' and  legal_separation_or_divorce == 'divorce' and  ((minor_children  and agree_or_settle_kids in('yes', 'do not know'))  or (not  minor_children and agree_or_settle in('no prop debt or pregnancy','agree','do  not know')))) or (user_need == 'custody' and which_forms  in('agree','both')) or (user_need == 'answer custody'):
   <div class = "example">
   <p class = "heading">Note</p>
   <p>If you file an uncontested complaint you may not get a <strong>Summons</strong>.</p>
