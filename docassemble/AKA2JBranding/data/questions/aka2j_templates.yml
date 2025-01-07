@@ -451,7 +451,7 @@ content: |
   % endif
   % endif
   
-  % if (user_need == 'divorce' and ((legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids == 'yes') or (not minor_children and agree_or_settle in('no prop debt or pregnancy','agree')))) or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes'))) or (user_need == 'custody' and which_forms == 'agree'):
+  % if (user_need == 'divorce' and ((legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids == 'yes') or (not minor_children and agree_or_settle in('no prop debt or pregnancy','agree')))) or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes'))) or (user_need == 'custody' and which_forms == 'agree') or (user_need == 'answer custody'):
   <div class="step-subheading">The court will set a hearing</div>
   They will send you a notice with the date and time of the hearing.
   % else:
