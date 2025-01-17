@@ -294,7 +294,13 @@ content: |
   Civil Rule 60(a) and (b) describe the  reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong> if:
   <ul>
     <li>The final order has a problem listed in Civil  Rule 60(a) or (b). The problems are  described below. And</li>
-    <li>You can file within a &quot;reasonable  time&quot; after the date the court sent your child support order to you. For any of the first 3 reasons in Civil Rule  60(b), you must file within <strong>1 year</strong> of the date the court sent the order to you.</li>
+    <li>You can file within a &quot;reasonable  time&quot; after the date the court sent 
+  % if user_need in('answer custody', 'answer divorce'):
+  the default judgment 
+  % else:
+  your child support order 
+  % endif 
+  to you. For any of the first 3 reasons in Civil Rule  60(b), you must file within <strong>1 year</strong> of the date the court sent the order to you.</li>
   </ul>
   
   The date the court sent the order to you is at the bottom of the last page of your order.  
