@@ -54,6 +54,64 @@ content: |
     </li>
   </ul>
 ---
+---
+comment: | 
+    This step is identical to uncontested_forms_step in https://github.com/A2JatAKCourts/docassemble-StartingChildCustodyActionPlan/tree/main but I cannot include that file with the same accordion_steps as in the responding to custody case interview. Need to update these steps https://github.com/A2JatAKCourts/docassemble-StartingChildCustodyCaseIssues/issues/29 
+template: uncontested_custody_forms_step
+subject: |
+  Step ${ uncontested_custody_forms_idx }: Fill out the forms to start your uncontested custody case
+content: |
+  <p>If you and the other parent agree on everything  (a parenting plan including decision-making and schedule, paternity, and child  support), you can fill out forms to start the case together.  This is called an uncontested case.</p>
+  <p>You will not know your case number until you file your  documents with the court.  You can write  the case number on all your forms then.</p>
+  <div class='step-subheading'>Required forms – 1 copy that both parents sign if signatures are needed</div>
+  <ul>
+    <li><strong>Uncontested  Complaint for Custody of Minor Children, SHC-118</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-118.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-118n.pdf">PDF</a></li>
+    <ul>
+      <li>Print your name, address, and phone number in the  upper left-hand corner of the first page.</li>
+      <li>In the caption, print your name above "Plaintiff" and the other parent's name above "Defendant."</li>
+      <li>Follow the directions on the form and fill out  every section.</li>
+    </ul>
+    <li><strong>Joint  Motion to Put Settlement on the Record, SHC-1063</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+    <li><strong>Case description form, CIV-125S</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">Fill-in PDF</a>]</li>
+  </ul>
+  <div class='step-subheading'>Required forms – 2 copies (each parent fills out and signs a separate copy)</div>
+  <ul>
+    <li><strong>Child  Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">Fill-In PDF</a>]<br>
+      2 copies -  each parent fills out their own</li>
+  </ul>
+  <p>and</p>
+  <ul>
+    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">Fill-In PDF</a>]</br>
+  (2 copies -  each parent fills out their own)
+      <ul>
+        <li>Answer each question completely.</li>
+        <li>See <a href="http://courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf">How to  Fill out the Child Support Guidelines Affidavit</a>.</li>
+        <li>Attach your most recent tax return and pay stubs  to the <strong>Child Support Guidelines  Affidavit</strong>.</li>
+        <li>Sign these forms in front of a notary, who will  need to see a picture ID.  Court staff  can notarize your signature for free.</li>
+      </ul>
+    </li>
+    <li><strong>Information Sheet,  DR-314</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-314.pdf">Fill-in PDF</a>]<br>
+      Fill in 1-3 with complete information for yourself, the children in the case,  the other parent if you know it, and then sign and date the form.</li>
+  </ul>
+  <div class='step-subheading'>Required forms - fill out but do <strong>not</strong> sign because the judge will sign them</div>
+  <ul>
+    <li><strong>Child Support Order, DR-300</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-300.pdf">Fill-in PDF</a>]</li>
+    <li><strong>Custody Findings of Fact &amp; Conclusions of Law, DR-460</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf">Fill-In PDF</a>]</li>
+    <li><strong>Custody Judgment and Decree, DR-465</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf">Fill-In PDF</a>]</li>
+  </ul>
+  <div class='step-subheading'>Optional forms depending on your situation</div>
+  <ul>
+    <li><strong>Choose</strong> 1 form based on the  parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)
+      <ul>
+        <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf" target="_blank">Fill-In PDF</a>]</li>
+        <li><strong>Divided Custody Support Calculation,DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf" target=blank">Fill-In  PDF</a>]</li>
+        <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf" target="_blank">Fill-In PDF</a>]</li>
+      </ul>
+    </li>
+    <li><strong>Application for Child Support Enforcement Division (CSED) Services</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-315.pdf">Fill-In PDF</a>]</li>
+  </ul>
+---
+---
 template: tell_the_court_step
 subject: |
   Step ${ tell_the_court_idx }: Tell the court about your agreement
@@ -179,7 +237,7 @@ content: |
   </ul>
   1 copy is for you. The other copy is for ${ other_party_in_case }.</li>
   </ol>
-  % if (user_need == 'divorce' and  legal_separation_or_divorce == 'divorce' and  ((minor_children  and agree_or_settle_kids in('yes', 'do not know'))  or (not  minor_children and agree_or_settle in('no prop debt or pregnancy','agree','do  not know')))) or (user_need == 'custody' and which_forms  in('agree','both')):
+  % if (user_need == 'divorce' and  legal_separation_or_divorce == 'divorce' and  ((minor_children  and agree_or_settle_kids in('yes', 'do not know'))  or (not  minor_children and agree_or_settle in('no prop debt or pregnancy','agree','do  not know')))) or (user_need == 'custody' and which_forms  in('agree','both')) or (user_need == 'answer custody'):
   <div class = "example">
   <p class = "heading">Note</p>
   <p>If you file an uncontested complaint you may not get a <strong>Summons</strong>.</p>
@@ -188,18 +246,24 @@ content: |
 ---
 template: read_drpo_step
 subject: |
-  Step ${ read_drpo_idx }: Read the &ldquo;Domestic Relations Procedural Order&rdquo; or Standing Order if the clerk gives you one when you file your case
+  Step ${ read_drpo_idx }: Read the &ldquo;Domestic Relations Procedural Order&rdquo; or Standing Order
+  % if user_need in('custody', 'divorce') or (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()):
+   if the clerk gives you one when you file your case
+  % elif user_need in('answer custody', 'answer divorce'):
+   that was with the Complaint
+  % endif
 content: |
   This is the first order from your judge that sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
   
-  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
     * Do not take your children out of Alaska.
   % endif
-  % if user_need == 'divorce':
+  % if user_need in('divorce', 'answer divorce'):
     * Do not sell or get rid of marital property.
   % endif
     * Do not cancel or change any insurance policy.
-  % if user_need == 'custody' or (user_need == 'divorce' and minor_children):
+  
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
   Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
   % endif
   
@@ -264,7 +328,7 @@ content: |
   <li>You can send the copy you made for them by regular, 1st class mail.</li>
   <li>You can deliver it yourself, or through a messenger service.</li>
   <li>If they file anything in court that says they agree to service by email, you can email the copy you made for them.
-  <li>If you use the court’s TrueFiling eFiling system,TrueFiling serves ${ other_party_in_case } for you.</li>
+  <li>If you use the court’s TrueFiling eFiling system, TrueFiling serves ${ other_party_in_case } for you.</li>
   </ul></li>
   <li>Decide the date you will serve ${ other_party_in_case }. Serve them the same day you file your documents with the court.</li>
   <li><p>Fill out the <strong>Certificate of Service</strong> at the end of your court forms. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }. If you use TrueFiling, it serves the other parent for you and you do not need to fill out the Certificate of Service.</p>
@@ -320,17 +384,48 @@ template: serve_motion_step
 subject: |
   Step ${ serve_motion_idx }: Serve ${ other_party_in_case }
 content: |
-  <ul>
+  <ol>
   <li>Give a copy of all your documents to ${ other_party_in_case } the way you wrote on the <strong>Certificate of Service</strong>.</li>
-  <li>Serve them on the date you put in the <strong>Certificate of Service</strong>.</li>
+  <li>Serve them on the date you said you would.</li>
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
-  </ul>
+  </ol>
 ---
 template: file_answer_step
 subject: |
-  Step ${ file_answer_idx }: Get more information or help
+  Step ${ file_answer_idx }: File your original with the court
 content: |
-  For help with forms or understanding the process:
+  You have **20 days** to file and serve ${ other_party_in_case } your 
+  % if (type_of_response['wrong state'] and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case in('ended with order', 'still going')) or (type_of_response['default'] and proper_service == 'neither'):
+  **Motion to Dismiss**
+  % else:
+  **Answer**, **Affidavits**, **Information Sheet**,
+  % endif  
+  and other documents.
+
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  When you file copies your **Motion to Dismiss**, include copies of the
+  % if user_need == 'answer custody':  
+  custody order
+  % elif user_need == 'answer divorce' and minor_children:
+  divorce decree and custody order
+  % elif user_need == 'answer divorce' and not minor_children:
+  divorce decree
+  % endif
+  from the other state.
+  % endif
+  
+  1.	Make 2 copies of everything you are going to give the court.
+  2.	Give the original version of your documents
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+   and a copy of the order from the other state
+  % endif
+  to the court listed at the top of the complaint.</br>
+  Find the address on the court's [Court Directory](https://courts.alaska.gov/courtdir/index.htm#trial) web page and:
+    <ul><li>Give the documents to the clerk at the court yourself.</li>
+   <li>Mail the documents by first-class mail. or</li>
+   <li>Use the court's <a href="https://courts.alaska.gov/efile">TrueFile eFiling system</a> to send the documents to the court electronically.</li></ul>
+  3.	Keep 1 copy for your own records.
+  4.	Give the 2nd copy to ${ other_party_in_case } on the date and way you wrote on your **Certificate of Service**. Read Step ${ serve_motion_idx }: Serve ${ other_party_in_case }.
 ---
 template: expect_after_complaint_step
 subject: |
@@ -356,7 +451,7 @@ content: |
   % endif
   % endif
   
-  % if (user_need == 'divorce' and ((legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids == 'yes') or (not minor_children and agree_or_settle in('no prop debt or pregnancy','agree')))) or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes'))) or (user_need == 'custody' and which_forms == 'agree'):
+  % if (user_need == 'divorce' and ((legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids == 'yes') or (not minor_children and agree_or_settle in('no prop debt or pregnancy','agree')))) or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes'))) or (user_need == 'custody' and which_forms == 'agree') or (user_need == 'answer custody'):
   <div class="step-subheading">The court will set a hearing</div>
   They will send you a notice with the date and time of the hearing.
   % else:
@@ -394,10 +489,26 @@ content: |
 ---
 template: expect_after_answer_step
 subject: |
+  % if type_of_response.any_true():
   Step ${ expect_after_answer_idx }: What to expect after you file your Answer
+  % elif type_of_response.all_false():
+  Step ${ expect_after_answer_idx }: What to expect after you file your Complaint
+  % endif
 content: |
-  The court will set a hearing and send you a notice with the date and time.  
-  % if user_need == 'divorce':
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  
+  Every case is different, but sometimes it is clear only one court has jurisdiction over the case. When this happens, one state court may close its case.
+  
+  If it is not clear, the Alaska court will often hold a hearing and call the other court to talk about which case will move forward.
+  
+  Pay attention to what is happening in both cases until you know which state will decide the case.
+  
+  Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
+  % endif   
+  <div class='step-subheading'>The court will set a hearing</div>
+
+  They will send you a notice with the date and time of the hearing. 
+  % if user_need == 'answer divorce':
   Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
   
   *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
