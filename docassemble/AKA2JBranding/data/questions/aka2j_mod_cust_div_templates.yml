@@ -604,24 +604,12 @@ subject: |
 content: |
   <p>A <strong>Motion to Reconsider</strong> is different from other motions.</p>
   <ul>
-  <li>${ capitalize(other_party_in_case) } does not respond to a <strong>Motion to Reconsider</strong> unless the court asks for a response, usually in a written order or notice.</li>
-  <li>The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, <strong>whichever is later</strong>, the <strong>Motion to Reconsider</strong> is denied. This means the original decision is not changed.</li>
-  <li>If the court grants the <strong>Motion to Reconsider</strong>, it will either enter a new order or ask both sides for more information</li>
-  </ul>
-  <p>Read the court's web  page <a href="https://courts.alaska.gov/shc/family/after-judgment.htm">Options  after you get a judge's decision</a>.</p>
----
-template: expect_reconsider_better_step
-subject: |
-  Step ${ expect_reconsider_better_idx }: What to expect after you file a Motion to Reconsider 
-content: |
-  <p>A <strong>Motion to Reconsider</strong> is different from other motions.</p>
-  <ul>
   <li>${ capitalize(other_party_in_case) } does not have to respond unless the judge sends a notice and asks ${ other_party_in_case } to respond in writing.</li>
   <li>If the judge agrees to reconsider their decision, they may ask ${ other_party_in_case } to respond in writing, or they may change the decision. Usually, the judge only changes their  decision after they ask ${ other_party_in_case } for a written response.</li>
   <li>If the judge does nothing for 30 days, it  means the judge is not going to grant your <strong>Motion  to Reconsider</strong>. You will not get anything in writing</a>. The original decision is not changed.</li>
   <li>The 30 days start when  you file your <strong>Motion to Reconsider</strong>.  If the judge asks ${ other_party_in_case } to respond in writing, the 30 days start over when ${ other_party_in_case } files their written response.</li>
   </ul>
-  <p>Read the court's web  page <a href="https://courts.alaska.gov/shc/family/after-judgment.htm">Options  after you get a judge's decision</a>.</p>
+  <p>Read <a href="https://courts.alaska.gov/shc/family/after-judgment.htm">Options after you get a judge's decision</a>.</p>
 ---
 comment: |
   Closed [GitHub Motion to Dismiss issue #30](https://github.com/A2JatAKCourts/docassemble-DivorceIssues/issues/30)
