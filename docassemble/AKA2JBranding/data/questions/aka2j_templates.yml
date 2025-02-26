@@ -621,6 +621,53 @@ content: |
   <div class='step-subheading'>File your application and ask about a hearing</div>
   File your forms and ask your local court if they will contact you, or you need to contact them to schedule a default hearing.
 ---
+comment: |
+  Only filing for custody, answering custody and answering divorce have this paternity_step. 
+  Child support has its own paternity_step which has different content and needs to be renamed.
+   Starting divorce has a paternity_testing_step. It is different enough it should be its own step.
+template: paternity_step
+subject: |
+  Step ${ paternity_idx }: Learn about paternity
+content: |
+  <div class='step-subheading'>General Paternity Information</div>
+  Establishing paternity means legally determining the biological  father of a child, and can make a big difference in a child's health, financial  outlook and sense of identity in knowing who both parents are. Once established, the father's name can be  placed on the child's birth certificate and he has legal and financial  responsibility for the child.  Disestablishing paternity is legally un-naming a man as the child's  biological father.
+  % if user_need in('custody', 'answer custody'):
+  <div class='step-subheading'>Establishing or disestablishing paternity in your custody case</div>
+  % elif user_need == 'answer divorce':
+  <div class='step-subheading'>Establishing or disestablishing paternity in a case to end your marriage</div>
+  % endif
+
+  % if user_need == 'custody':
+  When you file your complaint, state that paternity is an issue in section 3D of the complaint
+  % elif user_need in('answer custody', 'answer divorce'):
+  When you file your Answer, state that paternity is an issue in section 4 of the Counterclaims section of the Answer.
+  % endif
+ 
+  You can prove or disprove paternity several ways:
+  
+  <ul>
+    <li> Each  parent signs an affidavit stating the biological father.  Fill out:</li>
+    <ul>
+      <li><strong>Three-Way  Affidavit to Disestablish and Establish Paternity, SHC-151</strong> <a href="http://courts.alaska.gov/shc/family/docs/shc-151.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-151n.pdf">Fill-in PDF</a>,</li>
+    </ul>
+    <li> The  mother, child, and person who may be the father take a DNA test using a  painless swab inside the cheek. The whole process takes about 15 minutes and  the result is ready within about 3 weeks.  If someone is not cooperating or you want Child Support Services  Division to do the testing, fill out and attach these forms to your Answer:</li>
+    <ul>
+      <li><strong>Motion  &amp; Affidavit for Genetic (DNA) Testing, SHC-1370 </strong><a href="http://www.courts.alaska.gov/shc/family/docs/shc-1370.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1370n.pdf">PDF</a><strong></strong></li>
+      <li><strong>Order for Genetic (DNA) Testing, SHC-1375</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1375.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1375n.pdf">PDF</a></li>
+    </ul>
+    % if user_need =='custody':
+    <li>You can attach any DNA test results that have already been done to your complaint.</li>
+    % endif
+    % if user_need in ('answer custody','answer divorce'):
+    <li>The person filing the Complaint attaches any DNA test results that have already been done.</li>
+    % endif
+  </ul>
+  
+  <div class='step-subheading'>Change the Birth Certificate</div>
+  If the court decides that the biological father is someone not listed on the birth certificate, you must send a copy of the court order to the  Health Analytics &amp; Vital Records to change the birth certificate. 
+  
+  After the birth certificate is changed, the child is considered &quot;legitimated&quot; and the heir of that father. This means that if the child should be eligible for any medical or financial benefits connected to the father such as health insurance, or benefits based on  military service or being Alaska Native or American Indian. Also, if the father dies, the child will be able to inherit and collect financial or medical benefits that the child may be eligible for such as Social Security Children's  Insurance Benefits or military benefits. If you do not notify Health Analytics &amp; Vital Records to change the birth certificate, the child may miss out on these benefits.
+---
 template: get_help
 subject: |
   Step ${ get_help_idx }: Get more information or help
