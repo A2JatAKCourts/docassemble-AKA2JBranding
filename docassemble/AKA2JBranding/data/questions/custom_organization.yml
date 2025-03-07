@@ -1,6 +1,6 @@
 ---
 comment: |
-  Alaska Guided Assistants-specific package
+  Alaska Court Guides Action Plans -specific package
   
   This package can include things like your list of courts. This package combines
   all of the common files into one package to quickly see the things you need to modify.
@@ -18,9 +18,9 @@ objects:
 ---  
 metadata:
   title: |
-    Guided Assistant Feedback
+    Court Guides Action Plan Feedback
   short title: |
-    Guided Assistant Feedback
+    Feedback
   title url: https://courts.alaska.gov/forms
   exit url: |
     https://courts.alaska.gov/forms
