@@ -3,7 +3,7 @@ objects:
 ---
 template: ak_jurisdiction_step
 subject: |
-  Step ${ ak_jurisdiction_idx }: Make sure that the Alaska court has the authority to change the order
+  Step ${ ak_jurisdiction_idx }: Make sure the Alaska court has the authority to change the order
 content: |
   <ul>
   <li>A court must have the authority called jurisdiction to issue an order about a custody or parenting plan or a child support order.</li>

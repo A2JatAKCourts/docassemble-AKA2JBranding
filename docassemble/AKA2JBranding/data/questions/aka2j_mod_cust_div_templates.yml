@@ -262,133 +262,107 @@ content: |
     </ul>
     <li><strong>Proposed Order on Motion, SHC-1302</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1302.doc" target="_blank">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf" target="_blank">PDF</a>. Do <strong>not</strong> sign this form.</li>
   </ul>
----
-
+---  
 template: learn_set_aside_step
 subject: |
   Step ${ learn_set_aside_idx }: Learn about the Motion to Set Aside Judgment or Order
 content: |
-  A <strong>Motion to Set Aside Judgment or Order</strong> asks the judge to:
-  % if user_need == 'change AK order':
+  A **Motion to Set Aside Judgment or Order** asks the judge to:
+  
+  * fix a mistake (Civil Rule 60(a)), or
+  * set aside or undo the final decision in your case, and let you and ${ other_party_in_case } present the issue again
+  for a new decision (Civil Rule 60(b)). Judges rarely agree to undo a decision.
+  
+  <div class="step-subheading">Reasons you may file a Motion to Set Aside Judgment or Order</div>
+  
+  Civil Rule 60(a) and (b) describe the reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong>.
+  
+  **Civil Rule 60(a)**
+  
+  You can ask a judge to set aside a final judgment or order if the court made a clerical mistake or accidentally left something out of a document. If the judge agrees there was a clerical mistake, they will correct the problem. They will not set aside the entire judgment or order.
+  
+  <div class="example">
+    <p class="heading">Examples when the judge may agree to fix a mistake on an order</p>
     <ul>
-    <li>Set aside or undo the final child support decision in your case, and</li>
-    <li>Start the child support part of your case over  again.</li>
-  </ul>
-  % elif (user_need == 'change divorce order' and middle_of_case == 'no' and type_of_final_order in('property or debt', 'spousal support')) or user_need in('answer custody','answer divorce'):
-  <ul>
-    <li>Set aside or undo the final decision in your case, and</li>
-    <li>Start your case all over again.</li>
-  </ul>
-  % else:
-  <ul>
-    <li>Set aside or undo the final custody decision in your case, and</li>
-  % if user_need in('change custody order','respond to motion in custody'):
-    <li>Start your case all over again.</li>
-  % else:
-    <li>Start that part of your case all over again.</li>
-  % endif
-  </ul>
-  % endif
-  Judges rarely agree to do this.
+      <li>The order has the wrong birthday for one of your children.</li>
+      <li>The order was sent to both parents on January 4, <strong>2023</strong>, but the date on the order is January 4, <strong>2022</strong>.</li>
+    </ul>
+  </div> 
   
-  Civil Rule 60(a) and (b) describe the  reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong> if:
-  <ul>
-    <li>The final order has a problem listed in Civil  Rule 60(a) or (b). The problems are  described below. And</li>
-    <li>You can file within a &quot;reasonable  time&quot; after the date the court sent 
-  % if user_need in('answer custody', 'answer divorce'):
-  the default judgment 
-  % else:
-  your child support order 
-  % endif 
-  to you. For any of the first 3 reasons in Civil Rule  60(b), you must file within <strong>1 year</strong> of the date the court sent the order to you.</li>
-  </ul>
+  **Civil Rule 60(b)**
   
-  The date the court sent the order to you is at the bottom of the last page of your order.  
+  You can ask a judge to set aside a final judgment or order if there is a problem with it. The 6 types of problems are listed below
+  
+  For problems 1, 2, and 3, you must file your **Motion to Set Aside**:
+    
+    * **1 year** or less, from the date the court made the final orders in your case, and
+    * within a "reasonable time.” The judge decides if you filed your motion within a reasonable time. The judge may decide not to set aside the order if you file after a reasonable time has passed, even if your reason for filing is a good one.
+    
+  The date of the final orders is usually the date the court sent the order to you. It is in the box at the bottom of the last page of your order.
+  
   % for image_data in distribution_certificate_list:
   ${ image_data['text'] }
   ${ image_data['image'].show(width='100%') }
   % endfor
-
-  Act quickly! The judge defines"reasonable" and "in a reasonable time." The judge  may refuse to set aside the order if you file <strong>after</strong> a "reasonable time" has passed, even if your reason  for filing is a good one.
-  <div class="step-subheading">Reasons you may file a Motion to Set Aside  Judgment or Order</div>
   
-  <strong>Civil Rule 60(a)</strong><br>
-    The court made a clerical mistake or accidentally left something out of a document.
-    
+  Problem 1 (file within 1 year): Inadvertence, surprise, or excusable neglect:
+      
+    * A parent made a mistake or did not pay close attention - inadvertence,
+    * An unexpected action, sudden confusion, or an unanticipated event - surprise, or 
+    * A legitimate excuse for failing to take required action - excusable neglect.
+  
   <div class="example">
-      <p class="heading">For example</p>
-  <ul>
-    <li>The order has the wrong birthday for one of your  children. Or</li>
-    <li>The order was sent to both parents on January 4, <strong>2023</strong>, but the date on the order is  January 4, <strong>2022</strong>.</li>
-  </ul>
+    <p class="heading">An example when the judge may agree to set aside a judgment or order</p>
+    <p>The court entered a default judgment against you because you did not file any response in the case, but:</p>
+    <ul>
+      <li>you were not properly served the Complaint and other paperwork that started the case, and</li>
+      <li>you did not know about the case.</li>
+    </ul>
   </div>
   
-  <p><strong>Civil  Rule 60(b)</strong></p>
-  <p>The court made a mistake listed below.</p>
-  <p>For the first 3 types of mistakes, you must file your <strong>Motion to Set Aside</strong></p>
-  <ul>
-    <li>Within <strong>1 year</strong> of the date the court sent  the order to you, <strong>and</strong></li>
-    <li>The amount of time before you file must be  &quot;reasonable."</li>
-  </ul>
-  <ol>
-    <li>Inadvertence,  surprise or excusable neglect:
+  Problem 2 (file within 1 year): Newly discovered evidence which could not have been discovered by taking reasonable steps within the 10 days allowed to request a new trial.
+  <div class="example">
+      <p class="heading">An example when the judge may agree to set aside a judgment or order</p>
       <ul>
-        <li>A parent made a mistake or did not pay close  attention - inadvertence,</li>
-        <li>An unexpected action, sudden confusion or an  unanticipated event - surprise, or </li>
-        <li>A legitimate excuse for failing to take required  action - excusable neglect.</li>
+        <li>You gave your spouse $1,000 before the trial to pay the property taxes on your marital home, and</li>
+        <li>1 month after trial you get a letter from the IRS stating your spouse did not pay the taxes.</li>
       </ul>
-      <div class="example">
-      <p class="heading">For example</p>
-      <p>You ask the judge to set aside the decision  made at a hearing you missed because: </p>
+    </div>
+  
+  Problem 3 (file within 1 year): Fraud, misrepresentation, or other misconduct from the other side.
+    <div class="example">
+    <p class="heading">An example when the judge may agree to set aside a judgment or order</p>
+    <p>One spouse forges an appraisal of the marital home and uses it as evidence at the divorce trial to argue the value of the house.</p>
+  </div>
+ 
+   For problems 4, 5, and 6, you must file your **Motion to Set Aside** within a "reasonable time.” The judge decides if you filed your motion within a reasonable time. The judge may decide not to set aside the order if you file after a reasonable time has passed, even if your reason for filing is a good one.
+ 
+  Problem 4 (file within a reasonable time): The judgment is void.
+  
+  <div class="example">
+    <p class="heading">An example when the judge may agree to set aside a judgment or order</p>
+    <ul>
+      <li>An Alaska court generally does not have the authority or &quot;jurisdiction&quot; to make a parenting plan for a child who has lived in another state for the past 6 or more months. </li>
+      <li>If a child was living in Oregon for 6 months before the divorce case started, and</li>
+      <li>A parent hid this detail from the other parent and the court,</li>
+      <li>The parenting plan order would be void because the court did not have jurisdiction to decide the parenting plan.</li>
+    </ul>
+  </div>
+  
+  <p>Problem 5 (file within a reasonable time): The judgment has been satisfied, released or discharged, or a prior judgment upon which it is based has been reversed or otherwise vacated or it is no longer fair that the judgment should apply at this time.</p>
+  <div class="example">
+    <p class="heading">An example when the judge may agree to set aside a judgment or order</p>
+    <ul>
+      <li>The court orders a parent to pay child support.</li>
+      <li>The child files for Emancipation and the judge grants it.</li>
+    </ul>
+  <p>Parents do not have to support their emancipated child. The child support judgment may be released or discharged.</p>
+  </div>
+  <p>Problem 6 (file within a reasonable time): Any other reason justifying relief from the judgment.</p>
       <ul>
-        <li>You had a heart attack the day before, and </li>
-        <li>You were in the ICU, so you could not attend.</li>
+        <li> You may be able to come up with a different good reason the judge should start the case over again. But your
+          reason cannot be any of the 6 listed above - it must be something different.</li>
       </ul>
-      </div>
-    </li>
-    <li><p>Newly  discovered evidence which could not have been discovered by taking reasonable  steps within the 10 days allowed to request a new trial.</p>
-      <div class="example">
-      <p class="heading">For example</p>
-      <ul>
-        <li>You gave your spouse $1,000 before the trial to pay the property  taxes on your marital home, and</li>
-        <li>1 month after trial you learn your spouse did not pay the taxes.</li>
-      </ul>
-      </div>
-    </li>
-    <li><p>Fraud,  misrepresentation, or other misconduct from the other side.</p>
-      <div class = "example">
-      <p class = "heading">For example</p>
-      <p>One spouse forges an appraisal of the marital home and uses it as  evidence at the divorce trial to argue the value of the house.</p>
-      </div>
-    </li>
-  </ol>
-  <p>For the next 3 types of mistakes, the amount of time before you file must be  &quot;reasonable."</p>
-  <ol>
-    <li><p>The judgment is  void.</p>
-      <div class = "example">
-      <p class = "heading">For example</p>
-      <ul>
-        <li>An Alaska court generally does not have the authority or &quot;jurisdiction&quot; to make a parenting  plan for a child who has lived in another state for the past 6 or more  months. </li>
-        <li>If a child was living in Oregon for 6 months before the divorce  case started, and</li>
-        <li>A parent hid this detail from the other parent and the court, </li>
-        <li>The parenting plan order would be void because the court did not  have jurisdiction to decide the parenting plan.</li>
-      </ul>
-      </div>
-    </li>
-    <li><p>The judgment has been satisfied, released or  discharged, or a prior judgment upon which it is based has been reversed or  otherwise vacated or it is no longer fair that the judgment should apply at  this time.</p>
-      <div class = "example">
-      <p class = "heading">For example</p>
-      <ul>
-        <li>The court orders a parent to pay child support. The child files  for Emancipation and the judge grants it. Parents do not have to support their  emancipated child. The child support judgment   would be released or discharged.</li>
-      </ul>
-      </div>
-    </li>
-    <li>Any  other reason justifying relief from the judgment.
-      <ul>
-        <li> You may be able to come up with a different good reason the judge should  start the case over again. But your reason cannot be any of the 6 listed above – it must be  something different.</li>
-      </ul>
-    </li>
-  </ol>
 ---
 template: fill_set_aside_step
 subject: |
@@ -416,7 +390,6 @@ content: |
   </ul>
   <div class="step-subheading">Watch</div>
   <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
----
 ---
 comment: |
   Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
