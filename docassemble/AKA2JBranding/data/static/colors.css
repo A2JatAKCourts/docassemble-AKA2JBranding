@@ -65,3 +65,11 @@ blockquote p {
 .bg-dark {
     background-color: #0D6EFD !important;
 }
+
+.da-form-group.darequired[class*=" no-required-asterisk"] .dawidecol:before,
+.da-form-group.darequired[class*=" no-required-asterisk"] .dagridwide:before,
+.da-form-group.darequired[class*=" no-required-asterisk"] .danolabel:before,
+.da-form-group.darequired[class*=" no-required-asterisk"] .da-top-label:after,
+.da-form-group.darequired[class*=" no-required-asterisk"] .da-form-label:after {
+    display: none;
+} 
