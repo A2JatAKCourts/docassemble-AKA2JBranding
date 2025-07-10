@@ -364,9 +364,16 @@ content: |
           reason cannot be any of the 6 listed above - it must be something different.</li>
       </ul>
 ---
+comment: |
+  July 10 2025
 template: fill_set_aside_step
 subject: |
-  Step ${ fill_set_aside_idx }: Fill out forms if you want to file a Motion to Set Aside
+  Step ${ fill_set_aside_idx }: 
+  % if user_need in('answer custody', 'answer divorce'):
+  If you want to ask the court to set aside the default, fill out the forms
+  % else:
+  Fill out forms if you want to file a Motion to Set Aside
+  % endif
 content: |
   If you decide to file a **Motion to Set Aside** because it fits your case:
   <div class='step-subheading'>Use</div>
