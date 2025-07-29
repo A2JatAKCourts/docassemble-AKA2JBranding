@@ -44,7 +44,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.AKA2JBranding',
-      version='25.07.18',
+      version='25.07.19',
       description=("Package to customize Alaska jurisdiction's needs"),
       long_description="# docassemble.ALGenericJurisdiction\r\n\r\nCustomized package for Alaska jurisdiction's need\r\n\r\n## Author\r\n\r\nCaroline Robinson, crobinson@akcourts.gov\r\n\r\n",
       long_description_content_type='text/markdown',
@@ -53,7 +53,7 @@ setup(name='docassemble.AKA2JBranding',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
       packages=find_namespace_packages(),
-      install_requires=['docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main'],
+      install_requires=['docassemble.AssemblyLine>=3.5.1'],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/AKA2JBranding/', package='docassemble.AKA2JBranding'),
      )
