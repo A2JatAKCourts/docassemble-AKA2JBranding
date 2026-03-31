@@ -11,6 +11,96 @@ content: |
   <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://courts.alaska.gov/shc/shclawyer.htm">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
   </ul>
 ---
+comment: |
+  2025-09-23 version need to update other interviews this is divorce no jurisdiction or residency, where custody asks for jurisdiction
+template: proper_service_step
+subject: |
+  Step ${ proper_service_idx }:
+  Learn about 
+  % if (type_of_response['improper service'] and not type_of_response['default']) or (type_of_response['default'] and not proper_service):
+  proper service
+  % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('improper service', 'default') and not proper_service):
+  and 
+  % endif
+  % endif
+  % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('improper service', 'default') and not proper_service) or type_of_response['default']:
+  default judgment
+  % endif
+ 
+content: |
+  % if (type_of_response['improper service'] and not type_of_response['default']) or (type_of_response['default'] and not proper_service):
+  ${ capitalize(other_party_in_case) } started a ${ case_type } by filing documents with the court. They were supposed to give you a copy of the documents they filed one of these ways:
+   
+    * A process server delivered the court documents to you or a responsible person at your home or work, or
+    * You got the court documents by certified mail, restricted delivery, return receipt, and you had to sign your name to get the papers.
+
+  Giving you the court documents is called "serving you." 
+
+  After you are served, you have **20** days to file an Answer.
+
+  If you do not file an Answer in 20 days, ${ other_party_in_case } may ask the court for a default judgment.
+  % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response['default'] and proper_service) or (type_of_response.any_true('wrong state', 'case in 2 states') and not proper_service):
+  <div class="step-subheading">Default judgment</div>
+  % endif
+  % endif
+
+  % if type_of_response.all_true('improper service', exclusive = True) or type_of_response['default'] or (type_of_response.any_true('wrong state', 'case in 2 states') and not proper_service):
+  A default judgment is when the judge decides your case without hearing from you.
+  % endif
+  
+  % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('wrong state', 'case in 2 states') and not proper_service) and not type_of_response['default']:
+  If ${ other_party_in_case } thinks they served you correctly, they may ask the court for a default judgment if you do not file an Answer in 20 days. They are supposed to give you a copy of the **Default Application** if they file one with the court. If you want to make sure ${ other_party_in_case } has not filed for default, you can look up your case on [the court's CourtView webpage](https://records.courts.alaska.gov/eaccess/home.page.2).
+  % endif
+
+  % if type_of_response['default']:
+  % if stage_of_default in('application filed', 'hearing scheduled'):
+  If you do not file an Answer within 20 days of receiving the Complaint, ${ other_party_in_case } may ask the court for a default judgment.
+  % if not proper_service:
+  If you want to see what ${ other_party_in_case } filed for default, or if the judge entered any orders, you can look up your case on [the court's CourtView webpage](https://records.courts.alaska.gov/eaccess/home.page.2).
+  % endif
+
+  There are 3 steps to get a default judgment:
+    
+  1. ${ other_party_in_case } files a **Default Application** and gives you a copy by mailing it or by hand delivery.
+  2. The Clerk of Court enters an **Entry of Default** and sets a date and time for a "default hearing."
+  3. The Judge holds the **Default Hearing**. The judge may end your case without hearing from you and enter a default judgment order and other orders like a 
+  % if user_need == 'answer custody':
+  custody decree, parenting plan, and child support order
+  % elif user_need == 'answer divorce':
+  divorce decree and findings of fact and conclusions of law dividing your property and debt
+  % if minor_children:
+  , parenting plan, and child support order
+  % endif
+  % endif
+  .
+  % elif stage_of_default == 'judgment entered':
+  When a judge enters a default judgment, they usually also enter a 
+  % if user_need == 'answer custody':
+  custody decree, parenting plan, and child support order
+  % elif user_need == 'answer divorce':
+  divorce decree and findings of fact and conclusions of law dividing your property and debt
+  % if minor_children:
+  , parenting plan, and child support order
+  % endif
+  % endif
+  . These are final orders in the case.
+
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  If you have final orders in your Alaska case and an open case in another state, your situation is complicated. You should [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm) and let both courts know there are 2 cases going on.
+
+  If you want to ask the Alaska judge to undo the orders in your Alaska case you can file a **Motion to Set Aside** the Alaska orders.
+  % endif
+  % endif
+
+  % if military:
+  <div class = "step-subheading">Military Protections</div>
+  Under the **Servicemembers Civil Relief Act**, you may have some protections against default judgment if the case is filed while you were on active duty. You can learn more about the [Servicemembers Civil Relief Act](https://www.militaryonesource.mil/financial-legal/personal-finance/servicemembers-civil-relief-act) on the federal website, [Military OneSource](https://www.militaryonesource.mil).
+  % if type_of_response.all_true('default', exclusive = True) or (type_of_response['default'] and type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce') and stage_of_default in('application filed', 'hearing scheduled')) or (type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):
+  If the **Servicemembers Civil Relief Act** does not apply to your case to stop the default judgment, you have other options.
+  % endif
+  % endif
+  % endif
+---
 template: parents_agree_step
 subject: |
   Step ${ parents_agree_idx }: Find out if you and ${ other_party_in_case } agree
