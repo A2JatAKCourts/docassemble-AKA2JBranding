@@ -1,5 +1,5 @@
 comment: |
-  2026-03-27
+  2026-04-01
   2026-03-26 coding
   last updated 2026-02-10 meeting w Jeannie and Caroline
 ---
@@ -32,7 +32,7 @@ fields:
       is: yes
 ---
 comment: |
-  2026-03-25 CR building accordion step based on Google Sheet content from JS and CR meeting 2026-02-10
+  2026-04-01 added "your documents with the court" for answer for answer interviews
 template: truefiling_file_and_serve_step
 subject: |
   Step ${ truefiling_file_and_serve_idx }:
@@ -44,7 +44,7 @@ subject: |
   % else:
   File
   % endif
-  and serve ${ other_party_in_case }
+  your documents with the court and serve ${ other_party_in_case }
   % elif user_need in('custody', 'divorce'):
   File the original with your local court
   % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order'):
@@ -169,7 +169,7 @@ content: |
     * Hiring a Process Server
   See [How do I serve the summons and complaint?](https://ak-courts.info/servecomplaint).
   % endif
-  % if not user_need in ('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent'):
+  % if not user_need in('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent'):
   You need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”
   
   Keep a copy for your records. 
@@ -187,7 +187,7 @@ content: |
   % endif # answer custody or answer divorce
 
   % if not user_need in ('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent'):
-  If you and the ${ other_party_in_case } are both using TrueFiling, you can serve them through TrueFiling. Read [If I am using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#truefiling-serve)
+  If you and ${ other_party_in_case } are both using TrueFiling, you can serve them through TrueFiling. Read [If I am using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#truefiling-serve)
   % endif
 
   % if user_need in('answer custody', 'answer divorce'):
@@ -198,6 +198,8 @@ content: |
   Use TrueFiling to serve ${ other_party_in_case }. Read [If I am using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#truefiling-serve)
   % elif other_party_exempt == 'yes' and other_party_enter_email is False:
   Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling.
+   % elif other_party_exempt == 'yes' and other_party_enter_email:
+   Use TrueFiling to serve ${ other_party_in_case }. Follow the TrueFiling instructions to serve them at their email address. Read [If I am not using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm)
   % endif
   % elif type_of_response.any_true('improper service', 'default') and not proper_service and not have_complaint:
   If they are not using TrueFiling:
@@ -209,7 +211,7 @@ content: |
   If the ${ other_party_in_case } is not using TrueFiling and did not give an email, you cannot serve them through TrueFiling.
   % endif
 
-  % if user_need in ('answer custody', 'answer divorce') and (((type_of_response.any_true('improper service', 'default') and ((not proper_service and have_complaint) or proper_service)) or (type_of_response.all_false('improper service', 'default') and type_of_response.any_true('ak divorce case', 'wrong state', 'case in 2 states') and other_party_exempt == 'yes' and other_party_enter_email is False)) or (type_of_response.any_true('improper service', 'default') and not proper_service and not have_complaint )) or (user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order', 'respond to motion in custody', 'respond to motion in divorce')):
+  % if user_need in ('answer custody', 'answer divorce', 'child support', 'change AK order', 'change foreign order', 'change divorce order', 'change custody order', 'change foreign custody order', 'respond to motion in custody', 'respond to motion in divorce') and ((type_of_response.any_true('improper service', 'default') and not proper_service and not have_complaint) or (((type_of_response.any_true('improper service', 'default') and ((not proper_service and have_complaint) or proper_service)) or type_of_response.all_false('improper service', 'default')) and other_party_exempt == 'yes' and other_party_enter_email in (False, None))):
   1. Wait to file your document with the court until after you fill out the certificate of service and serve ${ other_party_in_case }.
   2. To serve ${ other_party_in_case }, send them a copy of all your documents by regular, 1st class mail, or hand-deliver it.
   3. Decide the date you will serve ${ other_party_in_case }. Try to serve ${ other_party_in_case } the same day you file your documents with the court.
