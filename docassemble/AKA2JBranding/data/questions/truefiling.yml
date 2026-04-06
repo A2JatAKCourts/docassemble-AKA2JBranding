@@ -101,7 +101,7 @@ content: |
   **If you are exempt and you choose not to use TrueFiling:**
   
     * Mark it on your form, or 
-    * Fill out **[TF-820 Notice of Change to Use of Email or TrueFiling](https://public.courts.alaska.gov/web/forms/docs/tf-820.pdf)**. 
+    * Fill out **TF-820 Notice of Change to Use of Email or TrueFiling** [[Fill-In PDF](https://ak-courts.info/dr822)]. 
     * Take all your forms to the court, or mail them by first-class mail.
   % if user_need in('custody', 'divorce'):
      Use the [Court Directory](https://ak-courts.info/edir) to find court addresses.
@@ -134,15 +134,15 @@ content: |
 
   After you pay the filing fee, or the court says you can file for free, the court clerk will give you 2 copies of:
 
-    * a “Summons,” and
-    * a “Standing Order” or “Domestic Relations Procedural Order.”  The Standing Order has important information about your case. Usually, the clerk will give you this order when you file.
+    * a **Summons**, and
+    * a “Standing Order” or **Domestic Relations Procedural Order**.  The Standing Order has important information about your case. Usually, the clerk will give you this order when you file.
 
     One copy is for you, the other copy is for ${ other_party_in_case }.
 
   % if user_need == 'divorce' and legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids in('yes', 'do not know')) or (not minor_children and agree_or_settle in('no prop debt or pregnancy', 'agree', 'do not know'))):
   <div class = "example">
   <p class = "heading">Note</p>
-  If you file an uncontested complaint you may not get a Summons.
+  If you file an uncontested complaint you may not get a **Summons**.
   </div>
   % endif
   % endif
@@ -179,7 +179,7 @@ content: |
 
   If you are using TrueFiling, read the information below about how to serve ${ other_party_in_case }
   
-  If you are exempt and choose not to use TrueFiling, read [If I am not using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#not-truefiling-serve) Add link after page fixed here: https://courts.alaska.gov/shc/family/serve.htm ]
+  If you are exempt and choose not to use TrueFiling, read [If I am not using TrueFiling, how do I serve the other side?](https://ak-courts.info/servecomplaint)
 
   % if type_of_response.any_true('improper service', 'default') and not proper_service and not have_complaint:
   If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling.
@@ -187,7 +187,7 @@ content: |
   % endif # answer custody or answer divorce
 
   % if not user_need in ('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent'):
-  If you and ${ other_party_in_case } are both using TrueFiling, you can serve them through TrueFiling. Read [If I am using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#truefiling-serve)
+  If you and ${ other_party_in_case } are both using TrueFiling, you can serve them through TrueFiling. Read [If I am using TrueFiling, how do I serve the other side?](https://ak-courts.info/servecomplaint)
   % endif
 
   % if user_need in('answer custody', 'answer divorce'):
