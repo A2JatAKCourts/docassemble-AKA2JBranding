@@ -1,19 +1,19 @@
 [build-system]
 requires = [
-    "setuptools==80.9.0",
+    "setuptools>=80.9.0",
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.AKA2JBranding"
-version = "26.04.14"
+version = "26.04.15"
 description = "Package to customize Alaska jurisdiction's needs"
 readme = "README.md"
 authors = [
     { name = "Caroline Robinson", email = "CRobinson@AKcourts.gov" },
 ]
 dependencies = [
-    "docassemble.AssemblyLine>=4.4.0",
+    "docassemble.AssemblyLine>=4.5.0",
 ]
 license = "MIT"
 license-files = [
