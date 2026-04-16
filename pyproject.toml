@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.AKA2JBranding"
-version = "26.04.15"
+version = "26.04.16"
 description = "Package to customize Alaska jurisdiction's needs"
 readme = "README.md"
 authors = [
