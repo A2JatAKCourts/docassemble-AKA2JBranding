@@ -92,7 +92,7 @@ content: |
   After you finish filling out your forms:
 
     * You need to send them to the court. This is called “filing.” 
-    * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”  Read Step ${ truefiling_serve_idx }: ${ truefiling_serve_step.subject }.  
+    * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”  Read ${ truefiling_serve_step.subject }.  
     *        Keep a copy for your records.
 
   % if user_need in('answer custody', 'answer divorce'):  
