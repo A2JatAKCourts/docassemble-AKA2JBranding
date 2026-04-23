@@ -125,7 +125,7 @@ content: |
 
   Alaska courts offer mediation in cases in which parents need to create a parenting plan. The mediator helps parents resolve disputes about access and visitation concerns and create workable co-parenting plans. There is no fee for this service unless parents wish to mediate additional issues or require more time than allowed by program.
 
-  Use **Request for Court-Sponsored Parenting Plan Dispute Resolution, MED-405** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/med-405.pdf)] to request mediation.
+  Use **Request for Court-Sponsored Parenting Plan Dispute Resolution, MED-405** [[Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/med-405.pdf)] to request mediation.
   
   <p>You can hire your own private mediator to help resolve any issue in your case.  If there was abuse or domestic violence in your relationship, be sure to hire someone with training and experience working with domestic violence. Tell your mediator if you want to bring a support person with you.  </p>
   [Read about mediation](https://courts.alaska.gov/mediation).
@@ -167,7 +167,7 @@ content: |
       <li>Follow the directions on the form and fill out  every section.</li>
     </ul>
     <li><strong>Joint  Motion to Put Settlement on the Record, SHC-1063</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
-    <li><strong>Case description form, CIV-125S</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">Fill-in PDF</a>]</li>
+    <li><strong>Case description form, CIV-125S</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/civ-125s.pdf">Fill-In PDF</a>]</li>
   </ul>
   <div class='step-subheading'>Required forms – 2 copies (each parent fills out and signs a separate copy)</div>
   <ul>
@@ -185,12 +185,12 @@ content: |
         <li>Sign these forms in front of a notary, who will  need to see a picture ID.  Court staff  can notarize your signature for free.</li>
       </ul>
     </li>
-    <li><strong>Information Sheet,  DR-314</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-314.pdf">Fill-in PDF</a>]<br>
+    <li><strong>Information Sheet,  DR-314</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-314.pdf">Fill-In PDF</a>]<br>
       Fill in 1-3 with complete information for yourself, the children in the case,  the other parent if you know it, and then sign and date the form.</li>
   </ul>
   <div class='step-subheading'>Required forms - fill out but do <strong>not</strong> sign because the judge will sign them</div>
   <ul>
-    <li><strong>Child Support Order, DR-300</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-300.pdf">Fill-in PDF</a>]</li>
+    <li><strong>Child Support Order, DR-300</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-300.pdf">Fill-In PDF</a>]</li>
     <li><strong>Custody Findings of Fact &amp; Conclusions of Law, DR-460</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf">Fill-In PDF</a>]</li>
     <li><strong>Custody Judgment and Decree, DR-465</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf">Fill-In PDF</a>]</li>
   </ul>
@@ -339,16 +339,19 @@ content: |
   </div>
   % endif
 ---
-template: read_drpo_step
+comment: |
+  2026-04-21 updated intro condtional sentence and deleted Domestic Relations Procedural Order
+  2026-04-17 removed parent education requirement
+template: read_standing_order_step
 subject: |
-  Step ${ read_drpo_idx }: Read the &ldquo;Domestic Relations Procedural Order&rdquo; or Standing Order
-  % if user_need in('custody', 'divorce') or (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()):
-   if the clerk gives you one when you file your case
-  % elif user_need in('answer custody', 'answer divorce'):
-   that was with the Complaint
-  % endif
+  Step ${ read_standing_order_idx }: Read the Standing Order
 content: |
-  This is the first order from your judge that sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
+  % if user_need in('custody', 'divorce'):
+  When you start a case, the clerk will give you a **Standing Order** with your **Summons**.
+  % elif user_need in('answer custody', ' answer divorce'):
+  The **Standing Order** is with the other forms ${ other_party_in_case } served on you.
+  % endif
+  The **Standing Order**  sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
   
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
     * Do not take your children out of Alaska.
@@ -358,9 +361,31 @@ content: |
   % endif
     * Do not cancel or change any insurance policy.
   
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
-  Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
+  If you want to do something the order forbids, and ${ other_party_in_case } will not agree, file a motion to ask the court for permission.
+
+  **Wait** for the court's answer before you act. Learn about motions. See [Motions: Requesting an Order from the Court; Opposing a Motion](https://courts.alaska.gov/shc/family/motions.htm).
+---
+comment: |
+  2026-04-21 updated intro condtional sentence and deleted Domestic Relations Procedural Order
+  2026-04-17 removed parent education requirement
+template: read_drpo_step
+subject: |
+  Step ${ read_drpo_idx }: Read the Standing Order
+content: |
+  % if user_need in('custody', 'divorce'):
+  When you start a case, the clerk will give you a **Standing Order** with your **Summons**.
+  % elif user_need in('answer custody', ' answer divorce'):
+  The **Standing Order** is with the other forms ${ other_party_in_case } served on you.
   % endif
+  The **Standing Order**  sets out the basic rules for you and ${ other_party_in_case }  to follow during the case.  Violating this order can affect the outcome of your case.  The order states, unless ${ other_party_in_case } agrees or the court gives permission:
+  
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
+    * Do not take your children out of Alaska.
+  % endif
+  % if user_need in('divorce', 'answer divorce'):
+    * Do not sell or get rid of marital property.
+  % endif
+    * Do not cancel or change any insurance policy.
   
   If you want to do something the order forbids, and ${ other_party_in_case } will not agree, file a motion to ask the court for permission.
 
@@ -612,11 +637,78 @@ content: |
   See the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm) 
   % endif  
 ---
+comment: |
+  2026-04-23 go back to combining after motion and answer 
+  2025-09-23 updated user_need == 'answer custody' template 
+  until we get this docassemble interview 
+  Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live,     
+  use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
+template: expect_after_motion_or_answer_step
+subject: |
+  % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Answer
+  % elif user_need == 'answer custody' and type_of_response.all_false():
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Complaint
+  % else:
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your documents
+  % endif
+content: |   
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  
+  Every case is different, but sometimes it is clear only one court has jurisdiction over the case. When this happens, one state court may close its case.
+  
+  If it is not clear, the Alaska court will often hold a hearing and call the other court to talk about which case will move forward.
+  
+  Pay attention to what is happening in both cases until you know which state will decide the case.
+  
+  Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
+  
+  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  <div class='step-subheading'>The court will set a hearing</div>
+
+  They will send you a notice with the date and time of the hearing.
+  
+  % if user_need == 'answer divorce':
+  Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
+  
+  *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
+  *	**Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
+  
+  See the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm) 
+  % endif  
+
+  % else:   
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  If you ask to dismiss the case, ${ other_party_in_case } may file a response or "opposition."
+  % else:
+  ${ capitalize(other_party_in_case) } may file a response or "opposition."
+  % endif
+  
+  If ${ other_party_in_case } files a response, you can file a reply to give the judge new information that answers their opposition. You do not need to repeat what you put in your original motion.
+
+  * Use **Reply to Opposition to Motion, SHC-1305** [[Fill in PDF](https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf)].
+  * Watch 2 videos:
+      * [Motions Part 3: Preparing a Reply](https://youtube.com/watch?v=egoBeRFB_Uw), and
+      *	[Motions Part 4: Mailings and Deadlines](https://www.youtube.com/watch?v=YQvG7GEGeoo).
+  * Read:
+      * [How do I reply to an opposition?](https://courts.alaska.gov/shc/family/motions.htm#reply) on the court's website.
+
+  The court may decide without a hearing or set a hearing about the motion.
+    
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  
+  **If the judge denies your motion to dismiss the case it is important to file an Answer.** If you do not file an Answer, ${ other_party_in_case } may ask for a default judgment and the judge may decide without hearing your side.
+  % endif 
+  % endif
+
+---
+comment: |
+  updated 2026-04-26
 template: learn_more_about_process_step
 subject: |
   Step ${ learn_more_about_process_idx }: Learn more about the process
 content: | 
-  <div class='step-subheading'>Read</div>
+  <div class='step-subheading'>Read${ "( although these are about divorce the process is the same)" if user_need == 'divorce' and legal_separation_or_divorce == 'legal separation' else "" }${ "( although these are about divorce the process is the same)" if user_need == 'answer divorce' and case_type == 'legal separation' else "" }</div>
   <ul>
     <li><strong>Flow Chart  for Case Process, SHC-185</strong> <br>
       as a <a href="http://courts.alaska.gov/shc/family/docs/shc-185.doc">Word</a> file<br>
@@ -743,7 +835,7 @@ content: |
   <ul>
     <li> Each  parent signs an affidavit stating the biological father.  Fill out:</li>
     <ul>
-      <li><strong>Three-Way  Affidavit to Disestablish and Establish Paternity, SHC-151</strong> <a href="http://courts.alaska.gov/shc/family/docs/shc-151.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-151n.pdf">Fill-in PDF</a>,</li>
+      <li><strong>Three-Way  Affidavit to Disestablish and Establish Paternity, SHC-151</strong> <a href="http://courts.alaska.gov/shc/family/docs/shc-151.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-151n.pdf">Fill-In PDF</a>,</li>
     </ul>
     <li> The  mother, child, and person who may be the father take a DNA test using a  painless swab inside the cheek. The whole process takes about 15 minutes and  the result is ready within about 3 weeks.  If someone is not cooperating or you want Child Support Services  Division to do the testing, fill out and attach these forms to your Answer:</li>
     <ul>

@@ -1,3 +1,5 @@
+comment: |
+  2026-04-23 removed duplicate appeal_response_step
 ---
 template: respond_to_reconsider_step
 subject: |
@@ -166,7 +168,6 @@ content: |
   <li>You and ${ other_party_in_case } later agree to a new change. Or</li>
   <li>You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.</li>
   </ul>
-
 ---
 template: file_response_step
 subject: |
@@ -251,46 +252,6 @@ content: |
   * Keep following your court order unless the judge grants the motion and issues a new order.
   * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://courts.alaska.gov/shc/appeals).
   % endif  
----
-template: appeal_response_step
-subject: |
-  Step ${ appeal_response_idx }:
-  % if respond_to_appeal == 'agree':
-  Let ${ other_party_in_case } know you agree with the Appeal and decide if you want to respond in writing
-  % else:
-  Respond in writing to the Appeal
-  % endif
-content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
-  
-  The only information the Supreme Court looks at is:
-  
-  * the audio recording of the hearing or trial in the lower court,
-  * any items offered as evidence at the hearing or trial in the lower court,
-  * the documents in the lower court or agency record, and
-  * appeal briefs filed in the appeal to the Supreme Court.
-  
-  % if respond_to_appeal == 'agree':
-  The Alaska Court System </a><a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
-  <div class="step-subheading">Agreement</div>
-  If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
-  <ul>
-  <li>Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.</li>
-  <li>Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.</li>
-  </ul>
-  % else:
-  <div class="step-subheading">Timeline</div>
-  You can review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
-  <div class="step-subheading">Process</div>
-  If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
-  <ul>
-  <li>after receiving the papers from ${ other_party_in_case } that start the appeal;</li>
-  <li>when deciding whether to file your own appeal too which is called a "cross appeal;"</li>
-  <li>when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed); and</li>
-  <li>when preparing for oral argument where both sides appear in the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#supremecourt">Supreme Court</a> and each side argues their case and the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#justice">justices</a> may ask questions.</li>
-  </ul>
-  The Alaska Court System <a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
-  % endif
 ---
 template: appeal_response_step
 subject: |
