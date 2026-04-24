@@ -48,7 +48,7 @@ fields:
     input type: radio
     choices:
       - "On a computer, tablet, or mobile device": electronically
-      - "A paper copy": no
+      - "A paper copy": paper
       - "I do not know yet": dunno
   - How are you filing your documents?: filing_method
     input type: radio
