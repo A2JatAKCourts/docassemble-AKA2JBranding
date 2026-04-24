@@ -295,7 +295,7 @@ content: |
   % endif
   % endif
   
-  % if filling_manner in('paper', 'dunno') or filing_method or ('mail or in person', 'dunno'):
+  % if filling_manner in('paper', 'dunno') or filing_method in ('mail or in person', 'dunno'):
   If you fill out paper copies of the forms, or do not file them with TrueFiling, read ${ sign_step.subject } before you sign any document.
   % endif
   
