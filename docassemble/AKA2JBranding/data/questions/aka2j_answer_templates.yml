@@ -93,20 +93,20 @@ content: |
   % endif
 ---
 comment: |
-  2026-04-16 - typo
+  2026-04-28 - fix step heading so it aligns in docx
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
   % if stage_of_default in('application filed', 'hearing scheduled'):
-    if ${ other_party_in_case } asked for a default judgment
-    % if type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
-      when you have case in 2 states
-    % endif
-    % if not proper_service:
-      and did not properly serve you
-    % endif
+  if ${ other_party_in_case } asked for a default judgment
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
+  when you have case in 2 states
+  % endif
+  % if not proper_service:
+  and did not properly serve you
+  % endif
   % else: 
-    when the judge entered a default judgment
+  when the judge entered a default judgment
   % endif
 content: | 
   % if type_of_response['default'] and stage_of_default == 'judgment entered':
