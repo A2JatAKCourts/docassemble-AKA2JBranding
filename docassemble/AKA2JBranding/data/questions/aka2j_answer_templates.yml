@@ -750,3 +750,116 @@ content: |
   % endif # endregion content.what_to_do_if_you_reach_agreement
   % endif # endregion content.some_benefits_are
 ---
+comment: |
+  last updated 2026-04-09 changed conditions so case_type is not asked if type_of_response.all_false()
+  last updated 2026-04-02 switch the order of respond to complaint to be inside children or no children in 2nd half of template.
+  2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
+  2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
+  compare this step with AKA2J domestic_violence_step  headings and content.
+  [Comparing domestic violence in answering divorce google sheet](https://docs.google.com/spreadsheets/d/1AUnHuheq_VsuTufg75G9cM5TGnd3OAa7-jd-RzIwnA4/edit?usp=sharing), tab for asking cust div and 
+template: answer_domestic_violence_step
+subject: |
+  Step ${ answer_domestic_violence_idx }:
+  % if type_of_response.all_false() or (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('yes', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
+  Abuse or domestic violence resources and reaching an agreement
+  % else: 
+  Abuse or domestic violence ${ 'resources' if not minor_children and wife_is_pregnant == 'not pregnant' else 'and parenting' } 
+  % endif 
+content: |
+  <div class="step-subheading">If you are in immediate danger, call 911</div>
+
+  % if user_need == 'custody':
+  People who have experienced domestic violence can be at greater risk when they start a court case.
+  % elif user_need == 'divorce':
+  People who have experienced domestic violence can be at greater risk when they separate from their spouse or start a court case to end their marriage.
+  % elif user_need in('answer custody', 'answer divorce'):
+  People who have experienced domestic violence can be at risk during a court case.
+  % endif
+   During this time, safety is very important. 
+  
+  The dynamics in a relationship with domestic violence may also cause people to feel pressured to agree to something they do not want. If this is your situation, these resources may help:
+  
+    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, 
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
+  resources for children, 
+  % endif
+  and help with court.
+    * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://docassemble.akcourts.gov/start/ProtectiveOrders).
+    * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors/) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
+  
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
+  
+  % if user_need == 'answer custody':
+  However, some parents in a relationship that includes domestic violence are comfortable reaching an agreement about a Parenting Plan for a variety of reasons.
+    
+  Sometimes, domestic violence does not make either parent uncomfortable or afraid to ask for what they want in the Parenting Plan.
+  
+  If the domestic violence does make a parent uncomfortable or afraid, provisions are used to make the process of trying to reach an agreement feel safer (having a support person present, having a mediator or a trusted third person help with discussions, not meeting in-person, meeting in different rooms, or talking about an agreement through email, text or telephone).
+    
+  Sometimes, one parent's main goal is to finish the case and be done in a safe manner so they are willing to give up some things in the agreement that they may be entitled to under the law.
+
+  % elif user_need == 'answer divorce':
+  However, some people in a marriage with domestic violence are comfortable reaching an agreement about 
+  % if minor_children or (not minor_children and wife_is_pregnant in('husband','not husband')):
+  a Parenting Plan and 
+  % endif 
+  dividing marital property and debt for a variety of reasons.
+  
+  Sometimes, domestic violence does not make either spouse uncomfortable or afraid to ask for what they want in the ${ "Parenting Plan or " if minor_children else "" }property & debt division.
+  
+  If the domestic violence does make a spouse uncomfortable or afraid, provisions are used to make the process of trying to reach an agreement feel safer (having a support person present, having a mediator or a trusted third person help with discussions, not meeting in-person, meeting in different rooms, or talking about an agreement through email, text or telephone).
+  
+  Sometimes, one spouse's main goal is to finish the case and be done in a safe manner so they are willing to give up some things in the agreement that they may be entitled to under the law.
+  % endif 
+  
+  You can decide if you are comfortable trying to reach an agreement with ${ other_party_in_case } based on the facts and circumstances of your case.
+  % endif 
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
+  If you want to try to reach an agreement about the Parenting Plan, your options may be limited if there has been domestic violence.
+
+  <div class='step-subheading'>Your Parenting Plan agreement may be limited if there is domestic violence</div>
+  % else:
+  <div class='step-subheading'>How domestic violence affects a ${case_type} case</div>
+  % endif
+
+  The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements. These may include completing a batterer's intervention or substance abuse treatment program.
+  
+  A "history of domestic violence" is defined by the law as either one incident of domestic violence that caused serious physical injury, or more than one incident. The parent's domestic violence behavior needs to fit under one of the domestic violence crimes in the law. There does not have to be a protective order or criminal case for the court to find a parent has a history of domestic violence. The court can find domestic violence based on one parent's testimony.
+  
+  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
+  <div class='step-subheading'>Considerations if you and ${ other_party_in_case } cannot agree</div>
+  % else:
+  <div class='step-subheading'>Contact between parent and children</div>
+  % endif
+
+  If you think ${ other_party_in_case } should not have any contact with your children, you need to convince the judge that it is in the children's best interest. 
+  
+  Generally, it is unusual for a judge in a ${ "custody" if user_need in('custody', 'answer custody') else "divorce or legal separation" } case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
+  
+  If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
+  
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
+  <div class="step-subheading">Tell the judge your concerns</div>
+  % endif 
+  The judge will only know about your domestic violence concerns if you state them in the documents you file and when you talk in court. If you have concerns for the children's safety when in the care of ${ other_party_in_case }, or for yourself when interacting with ${ other_party_in_case }, describe them to the judge. If the judge is going to allow ${ other_party_in_case } to have parenting time (visitation) with the children, you can suggest ways to address your concerns. Some options include:
+  
+    * no drugs or alcohol prior to or during the visits,
+    * drug or alcohol testing and/or treatment,
+    * no overnight visitation,
+    * no excessive discipline or spanking,
+    * no emotional abuse such as cursing at or name calling,
+    * no saying anything bad about you to or in front the children or letting anyone else do it,
+    * no inappropriate exposure to adult activities such as pornography,
+    * exchanges only at public or specified places,
+    * supervised exchanges by a willing and available third party who you trust,
+    * parenting time only occur in a public or specified place,
+    * supervised parenting time with a willing and available third party who you trust, or
+    * no contact between the children and specific individuals you are concerned about.
+  
+  If you think you or your children's health, safety, or liberty would be harmed by providing the information on the **Child Custody Jurisdiction Affidavit, DR-150** to ${ other_party_in_case }:
+  
+    * Do not give ${ other_party_in_case } a copy of the completed **Child Custody Jurisdiction Affidavit** after you file it with the court. and
+    * File  **Direction to Seal Child Custody Jurisdiction Affidavit**, [DR-151](https://public.courts.alaska.gov/web/forms/docs/dr-151.pdf).
+  % endif
+---

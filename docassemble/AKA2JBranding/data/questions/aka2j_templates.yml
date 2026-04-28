@@ -975,12 +975,59 @@ content: |
   File your forms and ask your local court if they will contact you, or you need to contact them to schedule a default hearing.
 ---
 comment: |
+  updated 2026-02-18 to be used in branding package also
+template: paternity_step
+subject: |
+  Step ${ paternity_idx }: Learn about paternity ${ 'testing' if user_need in ('custody', 'divorce') else '' }
+content: |
+  <div class='step-subheading'>General Paternity Information</div>
+  Establishing paternity means legally determining the biological  father of a child, and can make a big difference in a child's health, financial  outlook and sense of identity in knowing who both parents are. Once established, the father's name can be  placed on the child's birth certificate and he has legal and financial  responsibility for the child.  Disestablishing paternity is legally un-naming a man as the child's biological father.
+
+  % if user_need == 'divorce':
+  Courts use genetic testing, more commonly called "DNA testing," to establish or disestablish paternity. To take the test, a DNA sample is collected using a swab, similar to a Q-Tip, inside the cheek to pick up cells. Samples are collected from the mother, the child, and the person who may be the father. The testing is painless and the whole process takes about 15 minutes. Once all the samples have been collected, the result is ready within about 3 weeks.
+
+  If you are unsure, you can ask for a paternity test in court. Once you open a case to end your marriage, you can file a **Motion & Affidavit for Genetic (DNA) Testing, DR-530** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-530.pdf)].
+  % endif
+  % if user_need in('custody', 'answer custody','answer divorce'):
+  <div class='step-subheading'>${ 'Establishing or disestablishing' if user_need in('custody', 'answer custody') else 'Disestablishing'} paternity in your ${ case_type } case</div>
+  % if user_need == 'answer divorce':
+  If a parent thinks the husband is not the biological or adopted father of a child born during the marriage, that parent can ask the court to remove the husband’s rights and responsibilities for that child. This is called “disestablishing paternity.” You need clear and convincing evidence. There are different ways to do this depending on the situation so you need to figure out what will work in your case. Some options are:
+
+    * all of the people involved in the case sign affidavits: 
+  % else:
+   When you file your ${ 'complaint'  if user_need == 'custody' else 'Answer' }, state that paternity is an issue in  ${ 'section 3D of the Complaint' if user_need == 'custody' else '4 of the Counterclaims section of the Answer' }.
+
+  You can prove or disprove paternity several ways:
+
+    * Each parent signs an affidavit stating the biological father. Fill out a 
+  % endif  
+    **Three-Way  Affidavit to Disestablish and Establish Paternity, DR-521** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-521.pdf)]
+  % if user_need == 'answer divorce':
+      * the mother, the husband and the man who is the father say the husband is not the father and that the man is the biological father.
+      * the mother and the husband say the husband is not the father to disestablish the husband as the biological father.
+      * the mother and the man say he is the father to establish him as the biological father.
+      * the mother, only if others are not cooperating and she can provide convincing facts about the paternity.
+    * get genetic (DNA) testing of the child, the mother, the man believed to be the father, and the husband. The test results must be provided to the court. This can be done voluntarily if all of the people are cooperating or by court order. To ask for a court order, file: 
+  % else:
+
+    * The mother, child, and person who may be the father take a DNA test using a painless swab inside the cheek. The whole process takes about 15 minutes and the result is ready within about 3 weeks.<br>
+  If someone is not cooperating or you want the Child Support Enforcement Division to do the testing, fill out and attach to your ${ 'complaint' if user_need == 'custody' else 'Answer' } a
+  % endif
+  **Motion & Affidavit for Genetic (DNA) Testing, DR-530** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-530.pdf)].<br>
+  You can attach any DNA test results that have already been done to your ${ 'complaint'  if user_need == 'custody' else 'Answer' }.
+  % endif
+  <div class='step-subheading'>Change the Birth Certificate</div>
+  If the court decides the biological father is someone not listed on the birth certificate, you must send a copy of the court order to the [Health Analytics & Vital Records](https://health.alaska.gov/en/division-of-public-health/health-analytics-vital-records) to change the birth certificate. 
+  
+  After the birth certificate is changed, the child is considered "legitimated" and the heir of that father. This means that if the child should be eligible for any medical or financial benefits connected to the father such as health insurance, or benefits based on  military service or being Alaska Native or American Indian. Also, if the father dies, the child will be able to inherit and collect financial or medical benefits that the child may be eligible for such as Social Security Children's Insurance Benefits or military benefits. If you do not notify Health Analytics &amp; Vital Records to change the birth certificate, the child may miss out on these benefits.
+---
+comment: |
   Only filing for custody, answering custody and answering divorce have this paternity_step. 
   Child support has its own paternity_step which has different content and needs to be renamed.
    Starting divorce has a paternity_testing_step. It is different enough it should be its own step.
-template: paternity_step
+template: older_paternity_step
 subject: |
-  Step ${ paternity_idx }: Learn about paternity
+  Step ${ older_paternity_idx }: Learn about paternity
 content: |
   <div class='step-subheading'>General Paternity Information</div>
   Establishing paternity means legally determining the biological  father of a child, and can make a big difference in a child's health, financial  outlook and sense of identity in knowing who both parents are. Once established, the father's name can be  placed on the child's birth certificate and he has legal and financial  responsibility for the child.  Disestablishing paternity is legally un-naming a man as the child's  biological father.
