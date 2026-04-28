@@ -783,7 +783,7 @@ content: |
   
   Pay attention to what is happening in both cases until you know which state will decide the case.
   
-  Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
+  Jurisdiction can be very complicated. [Talking to a lawyer](https://ak-courts.info/findlawyer) can help you decide which is the best state for your case.
   % endif   
   <div class='step-subheading'>The court will set a hearing</div>
 
@@ -821,20 +821,22 @@ content: |
   
   Pay attention to what is happening in both cases until you know which state will decide the case.
   
-  Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
+  Jurisdiction can be very complicated. [Talking to a lawyer](https://ak-courts.info/findlawyer) can help you decide which is the best state for your case.
   
   % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
   <div class='step-subheading'>The court will set a hearing</div>
 
   They will send you a notice with the date and time of the hearing.
   
-  % if user_need == 'answer divorce':
+  % if user_need == 'answer divorce' and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')):
   Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
   
   *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
   *	**Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
   
-  See the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm) 
+  See the court's web page [Dividing Property & Debt](https://ak-courts.info/property) 
+
+  Watch [Marital Property and Debt](https://youtu.be/PTpeFwVSY-o?si=M8kis_SAeRHfylOZ)
   % endif  
 
   % else:   
@@ -846,12 +848,12 @@ content: |
   
   If ${ other_party_in_case } files a response, you can file a reply to give the judge new information that answers their opposition. You do not need to repeat what you put in your original motion.
 
-  * Use **Reply to Opposition to Motion, SHC-1305** [[Fill in PDF](https://courts.alaska.gov/shc/family/docs/shc-1305n.pdf)].
+  * Use *Reply Response, TF 708** [[Fill-In PDF](https://ak-courts.info/tf708)].
   * Watch 2 videos:
       * [Motions Part 3: Preparing a Reply](https://youtube.com/watch?v=egoBeRFB_Uw), and
       *	[Motions Part 4: Mailings and Deadlines](https://www.youtube.com/watch?v=YQvG7GEGeoo).
   * Read:
-      * [How do I reply to an opposition?](https://courts.alaska.gov/shc/family/motions.htm#reply) on the court's website.
+      * [How do I reply to an opposition?](https://ak-courts.info/motreply) on the court's website.
 
   The court may decide without a hearing or set a hearing about the motion.
     
