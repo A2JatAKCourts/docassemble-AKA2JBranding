@@ -269,9 +269,9 @@ content: |
   % endif
   % elif not minor_children and wife_is_pregnant == 'not pregnant':
   % if case_type == 'divorce':
-    **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837** [[Fill-In PDF](https://ak-courts.info/dr837)]
+  **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837** [[Fill-In PDF](https://ak-courts.info/dr837)]
   % elif case_type == 'legal separation':
-    **Answer & Counterclaim to Legal Separation Without Children, SHC-095** [Word](https://courts.alaska.gov/shc/family/docs/shc-095.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-095n.pdf)
+  **Answer & Counterclaim to Legal Separation Without Children, SHC-095** [Word](https://courts.alaska.gov/shc/family/docs/shc-095.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-095n.pdf)
   % endif
   % endif
   % endif
@@ -409,7 +409,7 @@ content: |
   % endif
   % if stage_of_default == 'hearing scheduled':
   Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late.
-  Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill-In PDF](https://ak-courts.info/tf858)].
+  Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill-In PDF](https://ak-courts.info/civ858)].
   
     * Explain why you did not reply in 20 days.
     * File it with your Answer.
