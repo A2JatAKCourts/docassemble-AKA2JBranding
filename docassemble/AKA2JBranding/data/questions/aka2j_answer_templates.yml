@@ -760,7 +760,7 @@ comment: |
 template: answer_domestic_violence_step
 subject: |
   Step ${ answer_domestic_violence_idx }:
-  % if type_of_response.all_false() or (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('yes', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
+  % if type_of_response.all_false() or (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
   Abuse or domestic violence resources and reaching an agreement
   % else: 
   Abuse or domestic violence ${ 'resources' if not minor_children and wife_is_pregnant == 'not pregnant' else 'and parenting' } 
