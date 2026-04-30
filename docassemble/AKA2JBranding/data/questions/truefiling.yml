@@ -57,6 +57,17 @@ fields:
       - "Mail or hand delivery": mail or in person
       - "I do not know yet": dunno
 ---
+---
+# as needed, we can also use this to make it clear there may be a delay before download screen. Especially important if you go right from a substantive question to download screen.
+id: patience, assembling
+continue button field: MLH_patience_assembling
+question: |
+  Almost done
+subquestion: |
+  After you tap **Next**, it may take a few minutes to finish putting together your Action Plan.
+
+  You **do not** need to refresh your screen. Hang in there!
+---
 comment: |
   2026-04-01 added "your documents with the court" for answer for answer interviews
 template: truefiling_file_and_serve_step
@@ -298,4 +309,3 @@ content: |
   % if filling_manner in('paper', 'dunno') or filing_method in ('mail or in person', 'dunno'):
   If you fill out paper copies of the forms, or do not file them with TrueFiling, read ${ sign_step.subject } before you sign any document.
   % endif
-  
