@@ -73,7 +73,7 @@ comment: |
 template: truefiling_file_and_serve_step
 subject: |
   Step ${ truefiling_file_and_serve_idx }:
-  % if user_need in('answer custody', 'answer divorce'):
+  % if user_need in('answer custody', 'answer divorce') and type_of_response.any_true():
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response['improper service'] and not proper_service and ((user_need == 'answer custody' and type_of_response['wrong state'] and jurisdiction) or (user_need == 'answer divorce' and type_of_response['wrong state']) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) or ((type_of_response['default'] and stage_of_default in ('application filed', 'hearing scheduled') and proper_service) and ((user_need == 'answer custody' and type_of_response['wrong state'] and jurisdiction) or (user_need == 'answer divorce' and type_of_response['wrong state']) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) or (type_of_response.all_true('default', exclusive=True) and stage_of_default in ('application filed', 'hearing scheduled') and proper_service):
   If you decide to move forward, file
   % elif type_of_response['default'] and stage_of_default == 'judgment entered':
@@ -82,7 +82,7 @@ subject: |
   File
   % endif
   your documents with the court and serve ${ other_party_in_case }
-  % elif user_need in('custody', 'divorce'):
+  % elif user_need in('custody', 'divorce') or (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()):
   File the original with your local court
   % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order'):
   % if defined('file_step_heading'):
