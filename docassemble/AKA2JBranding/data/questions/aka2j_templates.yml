@@ -22,7 +22,7 @@ subject: |
   % else:
   Learn if Alaska is the right state for your 
   % if user_need == 'answer custody':
-  ${ case_type }
+  ${ case_type } case
   % elif user_need == 'answer divorce':
   ${ case_type } case
   % endif
