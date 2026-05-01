@@ -175,8 +175,6 @@ content: |
   After you are served, you have **20** days to file a response.
   % else:
   After you are served, you have **20** days to file an Answer.
-
-  If you do not file an Answer in 20 days, ${ other_party_in_case } may ask the court for a default judgment.
   % endif
   % endif
   
@@ -213,13 +211,13 @@ content: |
 
   If you want to ask the Alaska judge to undo the orders in your Alaska case you can file a **Motion to Set Aside** the Alaska orders.
   % endif
-  % endif
 
   % if military:
   <div class = "step-subheading">Military protections</div>
   Under the **Servicemembers Civil Relief Act**, you may have some protections against default judgment if the case is filed while you were on active duty. You can learn more about the [Servicemembers Civil Relief Act](https://www.militaryonesource.mil/financial-legal/personal-finance/servicemembers-civil-relief-act) on the federal website, [Military OneSource](https://www.militaryonesource.mil).
   % if type_of_response.all_true('default', exclusive = True) or (type_of_response['default'] and type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce') and stage_of_default in('application filed', 'hearing scheduled')) or (type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):
   If the **Servicemembers Civil Relief Act** does not apply to your case to stop the default judgment, you have other options.
+  % endif
   % endif
   % endif
 ---
