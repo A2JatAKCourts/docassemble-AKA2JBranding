@@ -145,6 +145,7 @@ content: |
   % endif  # if else not case in 2 states ended with no order
 ---
 comment: |
+  2026-05-01 added user_need == 'answer divorce' as gateway to minor_children
   2026-03-25 fixing inline conditions for answer custody v answer divorce what judge will order in default hearings.
   2026-02-24 lower case 'p' in 'Military protections'
   2025-09-23 version need to update other interviews this is divorce no jurisdiction or residency, where custody asks for jurisdiction
@@ -201,9 +202,9 @@ content: |
     
   1. ${ other_party_in_case } files a **Default Application** and gives you a copy by mailing it or by hand delivery.
   2. The Clerk of Court enters an **Entry of Default** and sets a date and time for a "default hearing."
-  3. The Judge holds the **Default Hearing**. The judge may end your case without hearing from you and enter a default judgment order and other orders like a ${ "custody decree, Parenting Plan, and child support order" if user_need == 'answer custody' else "" }${ "divorce decree and findings of fact and conclusions of law dividing your property and debt" if user_need == 'answer divorce' else ""}${ ", Parenting Plan, and child support order" if minor_children else ""}${ ", Parenting Plan, and child support order" if not minor_children and wife_is_pregnant in ('husband', 'not husband') else ""}.
+  3. The Judge holds the **Default Hearing**. The judge may end your case without hearing from you and enter a default judgment order and other orders like a ${ "custody decree, Parenting Plan, and child support order" if user_need == 'answer custody' else "" }${ "divorce decree and findings of fact and conclusions of law dividing your property and debt" if user_need == 'answer divorce' else ""}${ ", Parenting Plan, and child support order" if user_need == 'answer divorce' and minor_children else ""}${ ", Parenting Plan, and child support order" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') else ""}.
   % elif stage_of_default == 'judgment entered':
-  When a judge enters a default judgment, they usually also enter a ${ "custody decree, Parenting Plan, and child support order" if user_need == 'answer custody' else "" }${ "divorce decree and findings of fact and conclusions of law dividing your property and debt" if user_need == 'answer divorce' else "" }${ ", Parenting Plan, and child support order" if minor_children else "" }${ ", Parenting Plan, and child support order" if not minor_children and wife_is_pregnant in ('husband', 'not husband') else "" }.
+  When a judge enters a default judgment, they usually also enter a ${ "custody decree, Parenting Plan, and child support order" if user_need == 'answer custody' else "" }${ "divorce decree and findings of fact and conclusions of law dividing your property and debt" if user_need == 'answer divorce' else "" }${ ", Parenting Plan, and child support order" if user_need == 'answer divorce' and minor_children else "" }${ ", Parenting Plan, and child support order" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') else "" }.
   % endif
   These are final orders in the case.
 

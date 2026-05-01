@@ -69,7 +69,7 @@ subquestion: |
   You **do not** need to refresh your screen. Hang in there!
 ---
 comment: |
-  2026-04-01 added "your documents with the court" for answer for answer interviews
+  2026-04-30 added "your documents with the court" for answer for answer interviews
 template: truefiling_file_and_serve_step
 subject: |
   Step ${ truefiling_file_and_serve_idx }:
@@ -103,10 +103,14 @@ content: |
   After you finish filling out your forms:
 
     * You need to send them to the court. This is called “filing.” 
+  % if user_need in('answer custody', 'answer divorce') and type_of_response.all_false():
+  Because both of you sign the forms and you each have a copy, you do not have to "serve" the other parent by mailing documents or using a process server.
+  % else:
     * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”  Read ${ truefiling_serve_step.subject }.  
     *        Keep a copy for your records.
+  % endif
 
-  % if user_need in('answer custody', 'answer divorce'):  
+  % if user_need in('answer custody', 'answer divorce') and type_of_response.any_true():  
   **Timing**: You have 20 days after you receive the Complaint to file your documents with the court and give a copy to ${ other_party_in_case }.
   % elif user_need in('respond to motion in custody', 'respond to motion in divorce'):
   **Timing**: If ${ other_party_in_case } mailed a copy of the motion to you, you have 13 days to file and give a copy to ${ other_party_in_case }. Use the date of the postmark on the envelope.
