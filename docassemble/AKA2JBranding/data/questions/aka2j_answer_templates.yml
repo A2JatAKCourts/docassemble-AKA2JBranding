@@ -751,7 +751,8 @@ content: |
   % endif # endregion content.some_benefits_are
 ---
 comment: |
-  last updated 2026-04-09 changed conditions so case_type is not asked if type_of_response.all_false()
+  last updated 2026-05-01 added gateway user_need == 'answer divorce'  for minor_children in subject - do not need to update docx.
+  2026-04-09 changed conditions so case_type is not asked if type_of_response.all_false()
   last updated 2026-04-02 switch the order of respond to complaint to be inside children or no children in 2nd half of template.
   2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
@@ -763,7 +764,7 @@ subject: |
   % if type_of_response.all_false() or (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
   Abuse or domestic violence resources and reaching an agreement
   % else: 
-  Abuse or domestic violence ${ 'resources' if not minor_children and wife_is_pregnant == 'not pregnant' else 'and parenting' } 
+  Abuse or domestic violence ${ 'resources' if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' else 'and parenting' } 
   % endif 
 content: |
   <div class="step-subheading">If you are in immediate danger, call 911</div>
