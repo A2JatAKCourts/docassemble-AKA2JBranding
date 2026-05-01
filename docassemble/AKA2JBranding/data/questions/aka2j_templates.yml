@@ -816,7 +816,7 @@ content: |
   
   Jurisdiction can be very complicated. [Talking to a lawyer](https://ak-courts.info/findlawyer) can help you decide which is the best state for your case.
   
-  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order') or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
   <div class='step-subheading'>The court will set a hearing</div>
 
   They will send you a notice with the date and time of the hearing.
