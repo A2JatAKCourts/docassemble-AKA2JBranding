@@ -199,6 +199,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-05-06 typo 
   2026-04-27 bitly links and move to branding package
   2026-04-17 format subject, replace the Joint Motion to Put Settlement on the Record, SHC-1063  with Request to Put Agreement on the Record, DR-264
   2026-04-14 removing no longer required forms, findings of fact and custody judgment
@@ -233,7 +234,7 @@ subject: |
   out the forms to answer the complaint${ " and respond within 20 days" if not (type_of_response.any_true('improper service', 'default') and not proper_service) else ""  }
   % endif
 content: |
-  ${ "When you are served properly, you" } if type_of_response.any_true('improper service', 'default') and not proper_service else "You" } have **20 days** from the date you get the complaint to:
+  ${ "When you are served properly, you" if type_of_response.any_true('improper service', 'default') and not proper_service else "You" } have **20 days** from the date you get the complaint to:
 
   1.	File an **Answer** and other required forms with the court to tell the judge what you want to happen in your case.
   2.	Give a copy of the forms to ${ other_party_in_case }. See ${ truefiling_serve_step.subject }.
