@@ -1,5 +1,6 @@
 ---
 comment: |
+  2026-05-05 added 'an' before open case
   2026-04-16 adding bitly links
   2026-04-10 updated ABA resources - no longer offer consumer guide, but do offer free legal answers in 41 states.
   2026-02-14 formatted
@@ -30,7 +31,7 @@ content: |
 
   % if stage_of_other_case == 'still going':
   % if not type_of_response['default']:
-    If you have open ${ case_type } case in 2 states, one state will close its case.
+    If you have an open ${ case_type } case in 2 states, one state will close its case.
   % endif
   You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state.
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
@@ -93,18 +94,14 @@ content: |
   % endif
 ---
 comment: |
+  2026-05-05 tried to make it better to get rid of soft returns in docx
   2026-04-28 - fix step heading so it aligns in docx
 template: default_options_step
 subject: |
-  Step ${ default_options_idx }: Options 
+  Step ${ default_options_idx }:
+  Options
   % if stage_of_default in('application filed', 'hearing scheduled'):
-  if ${ other_party_in_case } asked for a default judgment
-  % if type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
-  when you have case in 2 states
-  % endif
-  % if not proper_service:
-  and did not properly serve you
-  % endif
+  if ${ other_party_in_case } asked for a default judgment ${ "when you have case in 2 states" if type_of_response['case in 2 states'] and stage_of_other_case == 'still going' else ""}${ " and did not properly serve you" if not proper_service else "" }
   % else: 
   when the judge entered a default judgment
   % endif
@@ -185,7 +182,10 @@ content: |
   If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website.
   % if not proper_service:
     <div class="step-subheading">Option 2. Tell the judge you were not served the correct way and ask to dismiss the case</div>
-    If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. See ${ dismiss_step.subject }.
+    If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. 
+  % if user_need == 'answer divorce' or (user_need == 'answer custody' and not jurisdiction):
+  See ${ dismiss_step.subject }.
+  % endif 
   
     <div class="step-subheading">Option 3. Do nothing</div>
   % else:
@@ -226,19 +226,14 @@ subject: |
       or (type_of_response.all_true('default', exclusive = True) and stage_of_default in('application filed', 'hearing scheduled')):
   If you decide to move forward, fill
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled')) or type_of_response.all_false('default')):
-  If you decide to move forward in Alaska, fill 
+  If you decide to move forward in Alaska, fill
   % else:
   Fill
   % endif
-  out the forms to answer the complaint
-  % if type_of_response.all_true('improper service', exclusive = True) or (not (type_of_response.any_true('improper service', 'default') and not proper_service)):
-  and respond within 20 days
-  % endif
+  out the forms to answer the complaint${ " and respond within 20 days" if not (type_of_response.any_true('improper service', 'default') and not proper_service) else ""  }
   % endif
 content: |
-  % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
-  You have **20 days** from the date you get the complaint to:
-  % endif 
+  ${ "When you are served properly, you" } if type_of_response.any_true('improper service', 'default') and not proper_service else "You" } have **20 days** from the date you get the complaint to:
 
   1.	File an **Answer** and other required forms with the court to tell the judge what you want to happen in your case.
   2.	Give a copy of the forms to ${ other_party_in_case }. See ${ truefiling_serve_step.subject }.
@@ -249,18 +244,21 @@ content: |
   If you think Alaska is not the "home state," you can ask the court to dismiss your case:
   
     * Fill out your **Answer** and tell the Alaska court why you think the case should be in another state.
-    * Fill out the **Motion to Dismiss** forms that ask the court to dismiss your case. Read ${ dismiss_step.subject }.
+    * Fill out the **Motion to Dismiss** forms that ask the court to dismiss your case. 
+  % if type_of_response['default']:
+  Read ${ dismiss_step.subject }.
+  % endif
     * File the motion forms with your **Answer**.
   % endif
  
   <div class="step-subheading">Use</div>
   % if user_need == 'answer custody':
-   **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR CUSTODY OF MINOR CHILDREN, DR-450** [[Fill-In PDF](https://ak-courts.info/dr450)]
+   **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR CUSTODY OF MINOR CHILDREN, DR-450** [[Fill in PDF](https://ak-courts.info/dr450)]
   % endif
   % if user_need == 'answer divorce':
   % if minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')):
   % if case_type == 'divorce':
-     **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832** [[Fill-In PDF](https://ak-courts.info/dr832)]
+     **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832** [[Fill in PDF](https://ak-courts.info/dr832)]
   % elif case_type == 'legal separation':
     **Answer & Counterclaim to Legal Separation With Children, SHC-094** [Word](https://courts.alaska.gov/shc/family/docs/shc-094.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-094n.pdf)
   % endif
@@ -269,7 +267,7 @@ content: |
   % endif
   % elif not minor_children and wife_is_pregnant == 'not pregnant':
   % if case_type == 'divorce':
-  **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837** [[Fill-In PDF](https://ak-courts.info/dr837)]
+  **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837** [[Fill in PDF](https://ak-courts.info/dr837)]
   % elif case_type == 'legal separation':
   **Answer & Counterclaim to Legal Separation Without Children, SHC-095** [Word](https://courts.alaska.gov/shc/family/docs/shc-095.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-095n.pdf)
   % endif
@@ -403,13 +401,13 @@ content: |
   % if stage_of_default == 'application filed' and proper_service:
   Because you did not file an **Answer** within 20 days of getting the Complaint, ask the judge to accept your **Answer** even though it is late.
   
-    * Fill out a **TF-706 Motion (Request) and Affidavit** [[Fill-In PDF](https://ak-courts.info/tf706)].
+    * Fill out a **TF-706 Motion (Request) and Affidavit** [[Fill in PDF](https://ak-courts.info/tf706)].
       * Fill in the title, "accepting a late Answer". And
       * File it with your Answer.
   % endif
   % if stage_of_default == 'hearing scheduled':
   Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late.
-  Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill-In PDF](https://ak-courts.info/civ858)].
+  Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill in PDF](https://ak-courts.info/civ858)].
   
     * Explain why you did not reply in 20 days.
     * File it with your Answer.
@@ -453,7 +451,7 @@ content: |
   Do **not** sign the Order section.
   % endif
 
-  **Request to Put Agreement on the Record, DR-264** [[Fill-In PDF](https://ak-courts.info/dr264)]  
+  **Request to Put Agreement on the Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]  
   % endif
   % endif
 ---
@@ -466,7 +464,7 @@ comment: |
 template: dismiss_step
 subject: |
   Step ${ dismiss_idx }: 
-  % if type_of_response['wrong state'] and user_need == 'answer divorce':
+  % if type_of_response['wrong state'] and (user_need == 'answer divorce' or (user_need == 'answer custody' and not type_of_response['default'] and not jurisdiction)):
   If you think Alaska is the wrong state, file a motion to dismiss your Alaska case
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
   File a motion to dismiss your Alaska case
@@ -512,7 +510,7 @@ content: |
   Because ${ other_party_in_case } asked for a default judgment, it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order.
   % endif
   
-  If you choose to ask the judge to dismiss your case, use **Motion (Request) and Affidavit, TF-706** [[Fill-In PDF](https://ak-courts.info/tf706)]. Tell the judge why
+  If you choose to ask the judge to dismiss your case, use **Motion (Request) and Affidavit, TF-706** [[Fill in PDF](https://ak-courts.info/tf706)]. Tell the judge why
   % if type_of_response.any_true('wrong state', 'case in 2 states'):
   you think the court does not have jurisdiction and any other reason
   % endif
@@ -702,7 +700,7 @@ content: |
   % if type_of_response.any_true() and (user_need == 'answer custody' or (user_need == 'answer divorce' and minor_children)): # region content.alaska_courts_mediation_paragraph
   Alaska courts offer mediation in cases in which parents need to create a Parenting Plan. The mediator helps parents resolve disputes about access and visitation concerns and create workable co-Parenting Plans. There is no fee for this service unless parents wish to mediate additional issues or require more time than allowed by program.
   
-  The form, **Request for Court-Sponsored Parenting Plan Dispute Resolution, MED-405** [[Fill-In PDF](https://ak-courts.info/med405)], may be used to request mediation.
+  The form, **Request for Court-Sponsored Parenting Plan Dispute Resolution, MED-405** [[Fill in PDF](https://ak-courts.info/med405)], may be used to request mediation.
   % endif # endregion content.alaska_courts_mediation_paragraph
 
 

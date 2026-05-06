@@ -57,7 +57,6 @@ fields:
       - "Mail or hand delivery": mail or in person
       - "I do not know yet": dunno
 ---
----
 # as needed, we can also use this to make it clear there may be a delay before download screen. Especially important if you go right from a substantive question to download screen.
 id: patience, assembling
 continue button field: MLH_patience_assembling
@@ -142,7 +141,7 @@ content: |
   **If you are exempt and you choose not to use TrueFiling:**
   
     * Mark it on your form, or 
-    * Fill out **TF-820 Notice of Change to Use of Email or TrueFiling** [[Fill-In PDF](https://ak-courts.info/dr822)]. 
+    * Fill out **TF-820 Notice of Change to Use of Email or TrueFiling** [[Fill in PDF](https://ak-courts.info/dr822)]. 
     * Take all your forms to the court, or mail them by first-class mail.
   % if user_need in('custody', 'divorce'):
      Use the [Court Directory](https://ak-courts.info/edir) to find court addresses.
@@ -165,7 +164,7 @@ content: |
       (907)264-0851, or<br>
       (866)279-0851,<br>
       or
-    * Use Exemption From the Payment of Fees, TF-920 [[Fill-In PDF](https://ak-courts.info/tf920)].
+    * Use Exemption From the Payment of Fees, TF-920 [[Fill in PDF](https://ak-courts.info/tf920)].
   
   % if user_need in('custody', 'divorce'):
   <div class = "example">
@@ -258,7 +257,7 @@ content: |
   1. Wait to file your document with the court until after you fill out the certificate of service and serve ${ other_party_in_case }.
   2. To serve ${ other_party_in_case }, send them a copy of all your documents by regular, 1st class mail, or hand-deliver it.
   3. Decide the date you will serve ${ other_party_in_case }. Try to serve ${ other_party_in_case } the same day you file your documents with the court.
-  4. Fill out the Certificate of Service at the end of your court forms. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }. If the form does not have a Certificate of Service, use **Certificate of Service, TF-700** [[Fill-In PDF](https://ak-courts.info/tf700a)].
+  4. Fill out the Certificate of Service at the end of your court forms. The "certificate" tells the court how you are giving a copy of all the documents you file with the court to ${ other_party_in_case }. If the form does not have a Certificate of Service, use **Certificate of Service, TF-700** [[Fill in PDF](https://ak-courts.info/tf700a)].
   5. File your documents with the court. Include a copy of the Certificate of Service.
   <div class = "example">
   <p class = "heading">If you do not fill out the Certificate of Service</p>

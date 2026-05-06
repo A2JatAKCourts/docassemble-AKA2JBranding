@@ -87,20 +87,20 @@ content: |
   % if type_of_response == 'modify' and type_of_modification.any_true('custody', 'child support'):
   **Response to Motion**, [DR-725](https://public.courts.alaska.gov/web/forms/docs/dr-725.pdf) 
   
-  **Child Support Guidelines Affidavit, DR-305** [Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf)<br>   
+  **Child Support Guidelines Affidavit, DR-305** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf)<br>   
   Each parent files their own 
   
-  **Child Custody Jurisdiction Affidavit, DR-150** [Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf)<br>
+  **Child Custody Jurisdiction Affidavit, DR-150** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf)<br>
   Each parent files their own
   
    <div class="step-subheading">Optional forms depending on your situation</div>
   Choose 1 form below based on the parenting schedule if it is not a primary custody calculation where children are with 1 parent for at least 256 overnights/year.
   
-  **Shared Custody Support Calculation, DR-306** [Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf)
+  **Shared Custody Support Calculation, DR-306** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf)
   
-  **Divided Custody Support Calculation, DR-307** [Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf
+  **Divided Custody Support Calculation, DR-307** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf
   
-  **Hybrid Custody Child Support Calculation, DR-308** [Fill-In PDF](https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf)
+  **Hybrid Custody Child Support Calculation, DR-308** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf)
   
   % else:
   CIV-808(https://https://public.courts.alaska.gov/web/forms/docs/civ-808total.pdf)(Packet) **Response to Motion Packet for Civil Cases**
@@ -134,20 +134,20 @@ content: |
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
   <div class="step-subheading">If you are changing child support</div>
   <ul>
-  <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill-In PDF]<br>
+  <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill in PDF]<br>
   Do <strong>not</strong> sign the Order section.</li>
 
-  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill-In PDF]<br>
+  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill in PDF]<br>
   Each parent files their own</li>
 
-  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill-In PDF]<br>
+  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill in PDF]<br>
   Each parent files their own</li>
 
   <li>Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
   <ul>
-  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill-In PDF]</li>
-  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill-In PDF]</li>
-  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill-In PDF]</li>
+  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill in PDF]</li>
+  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill in PDF]</li>
+  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill in PDF]</li>
   </ul></li>
   </ul>
   % endif
