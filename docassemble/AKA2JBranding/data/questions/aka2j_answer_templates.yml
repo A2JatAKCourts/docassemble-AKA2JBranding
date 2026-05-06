@@ -231,7 +231,7 @@ subject: |
   % else:
   Fill
   % endif
-  out the forms to answer the complaint${ " and respond within 20 days" if not (type_of_response.any_true('improper service', 'default') and not proper_service) else ""  }
+  out the forms to answer the complaint${ " and respond within 20 days" if not (type_of_response.any_true('improper service', 'default') and not proper_service) else ""  }${ " and respond within 20 days" if type_of_response.all_true('improper service', exclusive = True) else "" }
   % endif
 content: |
   ${ "When you are served properly, you" if type_of_response.any_true('improper service', 'default') and not proper_service else "You" } have **20 days** from the date you get the complaint to:
