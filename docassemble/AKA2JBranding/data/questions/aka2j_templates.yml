@@ -181,7 +181,8 @@ content: |
   
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('improper service', 'default') and not proper_service):
   <div class="step-subheading">Default judgment</div>
-  
+  % endif
+  % if type_of_response['default']:
   A default judgment is when the judge decides your case without hearing from you.
   
   % endif
