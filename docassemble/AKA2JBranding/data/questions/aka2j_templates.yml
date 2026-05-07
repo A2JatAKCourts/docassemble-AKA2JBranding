@@ -145,6 +145,7 @@ content: |
   % endif  # if else not case in 2 states ended with no order
 ---
 comment: |
+  2026-05-07 take info about default judgment out if proper_service is True and not default, just moved % endif down a line.
   2026-05-01 added user_need == 'answer divorce' as gateway to minor_children
   2026-03-25 fixing inline conditions for answer custody v answer divorce what judge will order in default hearings.
   2026-02-24 lower case 'p' in 'Military protections'
@@ -180,10 +181,10 @@ content: |
   
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('improper service', 'default') and not proper_service):
   <div class="step-subheading">Default judgment</div>
-  % endif
   
   A default judgment is when the judge decides your case without hearing from you.
   
+  % endif
   
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.all_false('default') and type_of_response['improper service'] and not proper_service):
   If ${ other_party_in_case } thinks they served you correctly, they may ask the court for a default judgment if you do not file ${ "a response" if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order' else "an Answer" } in 20 days. They are supposed to give you a copy of the **Default Application** if they file one with the court. If you want to make sure ${ other_party_in_case } has not filed for default, you can look up your case on [the court's CourtView webpage](https://records.courts.alaska.gov/eaccess/home.page.2).
