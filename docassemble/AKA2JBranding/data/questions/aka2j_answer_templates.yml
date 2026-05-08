@@ -199,6 +199,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-05-08 take out limits around linking to dismiss step in wrong state and custody no jurisdiction like docx
   2026-05-06 typo 
   2026-04-27 bitly links and move to branding package
   2026-04-17 format subject, replace the Joint Motion to Put Settlement on the Record, SHC-1063  with Request to Put Agreement on the Record, DR-264
@@ -239,16 +240,17 @@ content: |
   1.	File an **Answer** and other required forms with the court to tell the judge what you want to happen in your case.
   2.	Give a copy of the forms to ${ other_party_in_case }. See ${ truefiling_serve_step.subject }.
 
+  % if type_of_response['default']:
+  ${ capitalize(other_party_in_case) } told the court they properly served you and then asked for a default judgment. You should file your Answer as soon as you can to stop the judge from deciding the case without hearing from you.
+  % endif
+
     ${ signing_paragraph }
   
   % if type_of_response['wrong state'] and (user_need == 'answer custody' and not jurisdiction):
   If you think Alaska is not the "home state," you can ask the court to dismiss your case:
   
     * Fill out your **Answer** and tell the Alaska court why you think the case should be in another state.
-    * Fill out the **Motion to Dismiss** forms that ask the court to dismiss your case. 
-  % if type_of_response['default']:
-  Read ${ dismiss_step.subject }.
-  % endif
+    * Fill out the **Motion to Dismiss** forms that ask the court to dismiss your case. Read ${ dismiss_step.subject }.
     * File the motion forms with your **Answer**.
   % endif
  
