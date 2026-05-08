@@ -6,7 +6,7 @@ subject: |
   Step ${ ak_jurisdiction_idx }: Make sure the Alaska court has the authority to change the order
 content: |
   <ul>
-  <li>A court must have the authority called jurisdiction to issue an order about a custody or parenting plan or a child support order.</li>
+  <li>A court must have the authority called "jurisdiction" to issue an order about a custody or parenting plan or a child support order.</li>
   <li>Generally, only the court in the state where the child has lived for the last 6 months can make decisions, enter a parenting plan, or order child support. This is called the child's &quot;home state.&quot;</li>
   <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://courts.alaska.gov/shc/shclawyer.htm">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
   </ul>
@@ -66,16 +66,16 @@ content: |
   * The state where one spouse is a resident. When filing for ${ case_type } in Alaska, a person is generally an Alaska resident if they are in Alaska and plan to stay.
   * The state where the military member claims legal residency (place where military member plans to live after discharge or retirement).
 
-  Although either spouse may file for ${ case_type } in any of these locations, the court may not have the authority, called jurisdiction, to take other actions.
+  Although either spouse may file for ${ case_type } in any of these locations, the court may not have the authority, called "jurisdiction," to take other actions.
 
   % else:
   The Alaska court can grant a ${ case_type } if either spouse is an Alaska resident. When filing for ${ case_type }, a person is generally an Alaska resident if they are in Alaska and plan to stay.
 
-  If you or your spouse meet this residency requirement, an Alaska court can grant you a ${ case_type } and end your marriage. But if one of you does not live in Alaska, the court may not have the authority, called jurisdiction, to take other actions.
+  If you or your spouse meet this residency requirement, an Alaska court can grant you a ${ case_type } and end your marriage. But if one of you does not live in Alaska, the court may not have the authority, called "jurisdiction," to take other actions.
 
   % endif # end military
 
-  <div class="step-subheading">The Court's power to divide property and debt ${ 'and enter a Parenting Plan or custody order ' if minor_children or wife_is_pregnant in ('husband', 'not husband') else '' }is based on the court's authority, called jurisdiction</div>
+  <div class="step-subheading">The Court's power to divide property and debt ${ 'and enter a Parenting Plan or custody order ' if minor_children or wife_is_pregnant in ('husband', 'not husband') else '' }is based on the court's authority, called "jurisdiction"</div>
 
   If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt.
 
