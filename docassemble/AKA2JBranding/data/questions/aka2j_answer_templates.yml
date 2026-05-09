@@ -405,7 +405,7 @@ content: |
   Because you did not file an **Answer** within 20 days of getting the Complaint, ask the judge to accept your **Answer** even though it is late.
   
     * Fill out a **TF-706 Motion (Request) and Affidavit** [[Fill in PDF](https://ak-courts.info/tf706)].
-      * Fill in the title, "accepting a late Answer". And
+      * Fill in the title, "accepting a late Answer." And
       * File it with your Answer.
   % endif
   % if stage_of_default == 'hearing scheduled':
