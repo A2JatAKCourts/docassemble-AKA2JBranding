@@ -182,10 +182,7 @@ content: |
   If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website.
   % if not proper_service:
     <div class="step-subheading">Option 2. Tell the judge you were not served the correct way and ask to dismiss the case</div>
-    If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. 
-  % if user_need == 'answer divorce' or (user_need == 'answer custody' and not jurisdiction):
-  See ${ dismiss_step.subject }.
-  % endif 
+    If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. See ${ dismiss_step.subject }.
   
     <div class="step-subheading">Option 3. Do nothing</div>
   % else:
@@ -459,7 +456,7 @@ content: |
   % endif
 ---
 comment: |
-  2026-05-09 add missing paragraph already in content.docx
+  2026-05-09 add missing paragraph already in content.docx, also took out what to put in dismiss step if case in other state ended with order, it's not in Jeannie's edits. matches content.docx 
   2026-04-21 - added 'stay married' in subject field
   last updated: 2026-02-14 from custody dismiss_step
   note 2025-06-04 - until we get this docassemble interview 
@@ -505,7 +502,7 @@ content: |
   % if type_of_response['default']:
   % if type_of_response['wrong state'] and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
       If the Alaska Court does not have jurisdiction and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you want to dismiss the case.
-   % elif type_of_response['case in 2 states'] and stage_of_other_case in( 'still going', 'ended with order') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
+   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
   If ${ other_party_in_case } asked for a default judgment, the judge may decide without hearing from you if you do not respond. You could end up with 2 different ${ "custody " if user_need == 'answer custody' else "" }orders from 2 different states. To prevent this, file a **Motion to Dismiss** to tell the Alaska judge${ ": (1)" if user_need == 'answer custody' else "" }${ ": (1)" if user_need == 'answer divorce' and minor_children else "" }${ ": (1)" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') else "" }${ ": (1)" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and not proper_service else "" } about the other case${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer custody' and proper_service else "" }${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer divorce' and minor_children and proper_service else "" }${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') and proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer custody' and not proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer divorce' and minor_children and not proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') and not proper_service else "" }${ ", and (2) that you were not served properly." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and not proper_service else "" }${ "." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and proper_service else "" }
     
   Tell the judge in the **other** state about the Alaska case.  
