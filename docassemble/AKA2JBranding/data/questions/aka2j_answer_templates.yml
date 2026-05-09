@@ -116,7 +116,7 @@ content: |
   <div class="step-subheading">Option 1. Ask to Set Aside the Default Judgment</div>
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" } orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
+  It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" } orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
   % else: # not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') but still (type_of_response['default'] and stage_of_default == 'judgment entered')
   % if not proper_service:
   If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
@@ -127,13 +127,13 @@ content: |
   Fill out and file the paperwork as soon as you can.
   % endif
   The longer you wait, the harder it is to set the judgment aside.
-  Read about asking the judge to set aside the default judgment in steps ${learn_set_aside_idx} and ${fill_set_aside_idx}.
+  Read about asking the judge to set aside the default judgment in ${learn_set_aside_step.subject} and ${fill_set_aside_step.subject}.
   <div class="step-subheading">Option 2. Do nothing</div>
 
   % if not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
   If you are okay with the judge's orders you do not need to do anything. 
   % endif
-  Be sure you know exactly what the judge ordered. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court’s website. 
+  Be sure you know exactly what the judge ordered. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website. 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
   If the Alaska order is different from the ${ "custody" if user_need == 'answer custody' else "court" } order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
   % endif # type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'
@@ -173,7 +173,7 @@ content: |
   % endif
     * You agree with ${ other_party_in_case } that there should be a case to 
   % if user_need == 'answer custody':
-  get a custody, Parenting Plan and child support order. Or
+  get a custody, Parenting Plan, and child support order. Or
   % elif user_need == 'answer divorce':
   end your marriage${ ' and get a custody, Parenting Plan, and child support order.' if minor_children or wife_is_pregnant in('husband', 'not husband') else '.' } Or
   % endif
