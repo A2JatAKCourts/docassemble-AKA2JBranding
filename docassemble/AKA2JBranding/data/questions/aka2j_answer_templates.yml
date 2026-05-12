@@ -464,7 +464,7 @@ comment: |
   use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 template: dismiss_step
 subject: |
-  Step ${ new_dismiss_idx }:
+  Step ${ dismiss_idx }:
   % if type_of_response['wrong state'] and (user_need == 'answer divorce' or (user_need == 'answer custody' and not type_of_response['default'] and not jurisdiction)):
   If you think Alaska is the wrong state, file a motion to dismiss your Alaska case
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
