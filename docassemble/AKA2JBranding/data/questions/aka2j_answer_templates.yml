@@ -464,7 +464,7 @@ comment: |
   use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 template: dismiss_step
 subject: |
-  Step ${ dismiss_idx }: 
+  Step ${ new_dismiss_idx }:
   % if type_of_response['wrong state'] and (user_need == 'answer divorce' or (user_need == 'answer custody' and not type_of_response['default'] and not jurisdiction)):
   If you think Alaska is the wrong state, file a motion to dismiss your Alaska case
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
@@ -475,7 +475,7 @@ subject: |
   % if (type_of_response['wrong state'] or (type_of_response.all_true('case in 2 states', 'default') and stage_of_default in('application filed', 'hearing scheduled') and stage_of_other_case == 'still going')) and (user_need == 'answer custody' and not jurisdiction):
   Fill out the forms to respond and tell the court Alaska is the wrong state
   % endif
-  % if (type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default', 'stay married', exclusive = True) or (type_of_response['default'] and ((type_of_response['wrong state'] and user_need == 'answer custody' and jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')))) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
+  % if (type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default', 'stay married', exclusive = True) or (type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order') or (type_of_response['default'] and type_of_response['wrong state'] and user_need == 'answer custody' and jurisdiction)) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
   Or, tell the judge you were not served the correct way and ask to dismiss the case
   % endif
   % endif
