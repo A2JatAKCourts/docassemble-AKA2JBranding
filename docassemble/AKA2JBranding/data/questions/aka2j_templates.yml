@@ -495,11 +495,13 @@ content: |
   % endif
 ---
 comment: |
+  2026-05-14 put heading on new line after Step X:
   2026-04-21 updated intro condtional sentence and deleted Domestic Relations Procedural Order
   2026-04-17 removed parent education requirement
 template: read_standing_order_step
 subject: |
-  Step ${ read_standing_order_idx }: Read the Standing Order
+  Step ${ read_standing_order_idx }: 
+  Read the Standing Order
 content: |
   % if user_need in('custody', 'divorce'):
   When you start a case, the clerk will give you a **Standing Order** with your **Summons**.
@@ -793,6 +795,7 @@ content: |
   % endif  
 ---
 comment: |
+  2026-05-14 put heading on new line after Step X:
   2026-04-23 go back to combining after motion and answer 
   2025-09-23 updated user_need == 'answer custody' template 
   until we get this docassemble interview 
@@ -800,12 +803,13 @@ comment: |
   use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 template: expect_after_motion_or_answer_step
 subject: |
+  Step ${ expect_after_motion_or_answer_idx }:
   % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
-  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Answer
+  What to expect after you file your Answer
   % elif user_need == 'answer custody' and type_of_response.all_false():
-  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Complaint
+  What to expect after you file your Complaint
   % else:
-  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your documents
+  What to expect after you file your documents
   % endif
 content: |   
   % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
@@ -860,15 +864,16 @@ content: |
 
 ---
 comment: |
-  updated 2026-04-26
+  updated 2026-05-14 put heading on new line after Step X:
 template: learn_more_about_process_step
 subject: |
+  Step ${ learn_more_about_process_idx }: 
   % if user_need in('answer custody', 'answer divorce') and (type_of_response.all_true('improper service', exclusive = True) or (type_of_response.all_true('default', exclusive=True) and stage_of_default in ('application filed', 'hearing scheduled'))):
-  Step ${ learn_more_about_process_idx }: If your case is moving forward, learn more about the process
+  If your case is moving forward, learn more about the process
   % elif user_need in('answer custody', 'answer divorce') and (type_of_response['wrong state'] or (type_of_response['case in 2 states'] and (stage_of_other_case =='still going' or (stage_of_other_case == 'ended with no order' and (type_of_response['improper service'] or (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'))))))):
-  Step ${ learn_more_about_process_idx }: If your case is moving forward in Alaska, learn more about the process
+  If your case is moving forward in Alaska, learn more about the process
   % else:
-  Step ${ learn_more_about_process_idx }: Learn more about the process
+  Learn more about the process
   % endif:
 content: | 
   <div class='step-subheading'>Read${ "( although these are about divorce the process is the same)" if user_need == 'divorce' and legal_separation_or_divorce == 'legal separation' else "" }${ "( although these are about divorce the process is the same)" if user_need == 'answer divorce' and case_type == 'legal separation' else "" }</div>
@@ -1083,9 +1088,12 @@ content: |
   
   After the birth certificate is changed, the child is considered &quot;legitimated&quot; and the heir of that father. This means that if the child should be eligible for any medical or financial benefits connected to the father such as health insurance, or benefits based on  military service or being Alaska Native or American Indian. Also, if the father dies, the child will be able to inherit and collect financial or medical benefits that the child may be eligible for such as Social Security Children's Insurance Benefits or military benefits. If you do not notify Health Analytics &amp; Vital Records to change the birth certificate, the child may miss out on these benefits.
 ---
+comment: |
+  2026-05-14 put heading on new line after Step X:
 template: get_help
 subject: |
-  Step ${ get_help_idx }: Get more information or help
+  Step ${ get_help_idx }: 
+  Get more information or help
 content: |
   % if user_need == 'enforce custody order':
   Read more about enforcing orders. [Enforcing your order](http://www.courts.alaska.gov/shc/family/shcenforce.htm).
