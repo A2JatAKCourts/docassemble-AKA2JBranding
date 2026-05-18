@@ -184,7 +184,8 @@ content: |
 
   <p>If you are registering <strong>only</strong> a foreign support order, it is <strong>free</strong>.</p>
 ---
----
+comment: |
+  update: 2026-05-18 ak-courts.info/civrules
 template: learn_reconsider_step
 subject: |
   Step ${ learn_reconsider_idx }: Learn about Motions to Reconsider
@@ -215,7 +216,7 @@ content: |
       <p class = "heading">For example</p>
       <ul>
         <li>The parents agree that mom makes $25,000 every  year. They file the forms to tell the judge they agree. The judge calculated  child support using $35,000 for mom's income. </li>
-        <li>The <strong>Motion  to Reconsider</strong> would state that the judge used the wrong income to calculate  child support.</li>
+        <li>The <strong>Motion to Reconsider</strong> would state that the judge used the wrong income to calculate  child support.</li>
       </ul>
       </div>
     </li>
@@ -238,8 +239,10 @@ content: |
       </div>
     </li>
   </ol>
-  <p>See <a href="https://courts.alaska.gov/rules/docs/civ.pdf">Alaska Rule of Civil Procedure</a> 77(k) to read the court rules about the <strong>4 reasons</strong> you can ask the court to reconsider a judge's decision.</p>
+  <p>See <a href="https://ak-courts.info/civrules">Alaska Rule of Civil Procedure</a> 77(k) to read the court rules about the <strong>4 reasons</strong> you can ask the court to reconsider a judge's decision.</p>
 ---
+comment: |
+  updated: 2026-05-18 replaced wait to sign with signing_paragraph and deleted proposed order from list of forms to use
 template: fill_reconsider_step
 subject: |
   Step ${ fill_reconsider_idx }: Fill out the Motion to Reconsider forms
@@ -250,18 +253,8 @@ content: |
     <ul>
       <li>Put everything you want the judge to know and think about in your motion. You will not be able to tell the judge in person because they rarely hold a hearing for a <strong>Motion to Reconsider</strong>.</li>
       <li>Your <strong>Motion to Reconsider</strong> must be no  more than 5 pages, including attachments.</li>
-      <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.
-      <ul>
-      <li>The court clerk can do this for free.</li>
-      <li>Bring a valid photo ID with you.</li>
-      </ul></li>
-      <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify.&quot; Use:</li>
-      <ul>
-        <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf">Fill in PDF</a>]</li>
-      </ul>
-    </ul>
-    <li><strong>Proposed Order on Motion, SHC-1302</strong> <a href="https://courts.alaska.gov/shc/family/docs/shc-1302.doc" target="_blank">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf" target="_blank">PDF</a>. Do <strong>not</strong> sign this form.</li>
   </ul>
+  ${ signing_paragraph }
 ---  
 template: learn_set_aside_step
 subject: |
