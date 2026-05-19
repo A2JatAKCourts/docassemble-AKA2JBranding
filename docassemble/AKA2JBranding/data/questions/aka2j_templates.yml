@@ -795,6 +795,7 @@ content: |
   % endif  
 ---
 comment: |
+  2026-05-19 adjust heading back to accommodate different motions
   2026-05-14 put heading on new line after Step X:
   2026-04-23 go back to combining after motion and answer 
   2025-09-23 updated user_need == 'answer custody' template 
@@ -808,6 +809,8 @@ subject: |
   What to expect after you file your Answer
   % elif user_need == 'answer custody' and type_of_response.all_false():
   What to expect after you file your Complaint
+  % elif user_need in ('change divorce order', 'change foreign custody order', 'change custody order'):
+  What to expect after you file your ${ motion_type }
   % else:
   What to expect after you file your documents
   % endif
