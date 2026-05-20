@@ -795,7 +795,7 @@ content: |
   % endif  
 ---
 comment: |
-  2026-05-19 adjust heading back to accommodate different motions
+  2026-05-19 adjust heading back to accommodate different motions and adding bitly for shc1010 
   2026-05-14 put heading on new line after Step X:
   2026-04-23 go back to combining after motion and answer 
   2025-09-23 updated user_need == 'answer custody' template 
@@ -825,7 +825,8 @@ content: |
   
   Jurisdiction can be very complicated. [Talking to a lawyer](https://ak-courts.info/findlawyer) can help you decide which is the best state for your case.
   
-  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order') or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
+  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (user_need in ('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order') or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
+
   <div class='step-subheading'>The court will set a hearing</div>
 
   They will send you a notice with the date and time of the hearing.
@@ -833,7 +834,7 @@ content: |
   % if user_need == 'answer divorce' and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')):
   Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
   
-  *	**Civil Rule 26.1 Questionnaire, SHC-1010** [Word](https://courts.alaska.gov/shc/family/docs/shc-1010.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1010n.pdf)
+  *	**Civil Rule 26.1 Questionnaire, SHC-1010** [[Fill in PDF](https://ak-courts.info/shc1010)]
   *	**Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
   
   See the court's web page [Dividing Property & Debt](https://ak-courts.info/property) 
