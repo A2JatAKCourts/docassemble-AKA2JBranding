@@ -805,7 +805,7 @@ comment: |
 template: expect_after_motion_or_answer_step
 subject: |
   Step ${ expect_after_motion_or_answer_idx }:
-  % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (user_need in ('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
   What to expect after you file your Answer
   % elif user_need == 'answer custody' and type_of_response.all_false():
   What to expect after you file your Complaint
