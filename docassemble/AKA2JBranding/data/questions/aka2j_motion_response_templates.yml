@@ -19,6 +19,8 @@ content: |
   <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820</a> <strong>Order on Motion</strong></li>
   </ul>
 ---
+comment: 
+  2026-05-20 some edits to accommodate TrueFiling changes
 template: let_court_party_know_you_agree_step
 subject: |
   Step ${ let_court_party_know_you_agree_idx }: Let ${ other_party_in_case } and the court know you agree with the 
@@ -39,12 +41,14 @@ content: |
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
   % endif
   <ul>
-  <li>Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See Steps ${ respond_in_writing_idx }, ${ respond_in_writing_idx }, ${ file_response_idx } and ${ serve_motion_response_idx }.<br>
+  <li>Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.<br>
   <strong>Or</strong></li>
-  <li>Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See Steps ${ contact_other_party_idx } and ${ file_agreement_idx}.</li>
+  <li>Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.</li>
   </ul>
-  For both options, you must file all documents with the court within 10 days from the day the motion was hand delivered to you, or 13 days from the day it was mailed to you. You can see this date on the postmark of the envelope.
+  For both options, If you were served through TrueFiling, email or any way other than the mail, within 10 days from the day you received the motion, you must file all your documents with the court. If the motions was mailed to you, you must respond within 13 days from the day the motion was mailed. You can see this date on the postmark of the envelope. 
 ---
+comment: |
+  2026-05-20-21 still needs bitlys, some TrueFiling edits
 template: respond_in_writing_step
 subject: |
   Step ${ respond_in_writing_idx }: Fill out a response that states you 
@@ -72,6 +76,8 @@ content: |
   
   In your response, explain why you disagree.
 
+  ${ signing_paragraph }
+
   If the ${ other_party_in_case } served you:
   
   * by hand-delivery, email, or TrueFile, you have 10 days to respond to the court in writing.
@@ -85,25 +91,25 @@ content: |
     
     <div class="step-subheading">Use</div>
   % if type_of_response == 'modify' and type_of_modification.any_true('custody', 'child support'):
-  **Response to Motion**, [DR-725](https://public.courts.alaska.gov/web/forms/docs/dr-725.pdf) 
+  **Response to Motion, DR-725]* [[Fill in PDF](https://ak-courts.info/dr725)]
   
-  **Child Support Guidelines Affidavit, DR-305** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf)<br>   
+  **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br> 
   Each parent files their own 
   
-  **Child Custody Jurisdiction Affidavit, DR-150** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf)<br>
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]<br>
   Each parent files their own
   
    <div class="step-subheading">Optional forms depending on your situation</div>
   Choose 1 form below based on the parenting schedule if it is not a primary custody calculation where children are with 1 parent for at least 256 overnights/year.
   
-  **Shared Custody Support Calculation, DR-306** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf)
+  **Shared Custody Support Calculation, DR-306** [[Fill in PDF](https://ak-courts.info/dr306)]
   
-  **Divided Custody Support Calculation, DR-307** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf
+  **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]
   
-  **Hybrid Custody Child Support Calculation, DR-308** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf)
+  **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   
   % else:
-  CIV-808(https://https://public.courts.alaska.gov/web/forms/docs/civ-808total.pdf)(Packet) **Response to Motion Packet for Civil Cases**
+  **Response to Motion Packet for Civil Cases, CIV-808**  [[Packet](https://https://public.courts.alaska.gov/web/forms/docs/civ-808total.pdf)]
   % endif
   
   <div class="step-subheading">Watch</div>
@@ -137,17 +143,17 @@ content: |
   <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill in PDF]<br>
   Do <strong>not</strong> sign the Order section.</li>
 
-  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a> [Fill in PDF]<br>
+  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://ak-courts.info/dr305">DR-305</a> [Fill in PDF]<br>
   Each parent files their own</li>
 
-  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">DR-150</a> [Fill in PDF]<br>
+  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://ak-courts.info/dr150">DR-150</a> [Fill in PDF]<br>
   Each parent files their own</li>
 
   <li>Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
   <ul>
-  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">DR-306</a> [Fill in PDF]</li>
-  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">DR-307</a> [Fill in PDF]</li>
-  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">DR-308</a> [Fill in PDF]</li>
+  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://ak-courts.info/dr306">DR-306</a> [Fill in PDF]</li>
+  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://ak-courts.info/dr307">DR-307</a> [Fill in PDF]</li>
+  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://ak-courts.info/dr308">DR-308</a> [Fill in PDF]</li>
   </ul></li>
   </ul>
   % endif
