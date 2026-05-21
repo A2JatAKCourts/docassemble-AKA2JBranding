@@ -244,7 +244,7 @@ content: |
   
   If you serve ${ other_party_in_case } with your response:
 
-  * by hand-delivery, email, or TrueFile, they have 5 days to reply to the court in writing,
+  * by TrueFiling, email or hand-delivery, they have 5 days to reply to the court in writing,
   * by mail, they have 8 days.
   
   The documents ${ other_party_in_case } files after you serve them with your response is their "reply."  A Reply is not required.  
@@ -256,7 +256,7 @@ content: |
   * The judge may deny the motion. If they do, you will get an order denying the motion.
   % if middle_of_case == 'no':
   * Keep following your court order unless the judge grants the motion and issues a new order.
-  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://courts.alaska.gov/shc/appeals).
+  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://ak-courts.info/appeals).
   % endif  
 ---
 template: appeal_response_step
@@ -268,7 +268,7 @@ subject: |
   Respond in writing to the Appeal
   % endif
 content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://courts.alaska.gov/shc/appeals/appealsresources.htm#1), if you can.
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://ak-courts.info/appeals/appealsresources.htm#1), if you can.
   
   The only information the Supreme Court looks at is:
   
@@ -278,7 +278,7 @@ content: |
   * appeal briefs filed in the appeal to the Supreme Court.
   
   % if respond_to_appeal == 'agree':
-  The Alaska Court System </a><a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
+  The Alaska Court System </a><a href="https://ak-courts.info/appeals">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
   <div class="step-subheading">Agreement</div>
   If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
   <ul>
@@ -287,7 +287,7 @@ content: |
   </ul>
   % else:
   <div class="step-subheading">Timeline</div>
-  You can review a <a href="https://courts.alaska.gov/shc/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
+  You can review a <a href="https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
   <div class="step-subheading">Process</div>
   If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
   <ul>
@@ -296,7 +296,7 @@ content: |
   <li>when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed); and</li>
   <li>when preparing for oral argument where both sides appear in the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#supremecourt">Supreme Court</a> and each side argues their case and the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#justice">justices</a> may ask questions.</li>
   </ul>
-  The Alaska Court System <a href="https://courts.alaska.gov/shc/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
+  The Alaska Court System <a href="https://ak-courts.info/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
   % endif
 ---
 template: appeal_contact_parent_step
