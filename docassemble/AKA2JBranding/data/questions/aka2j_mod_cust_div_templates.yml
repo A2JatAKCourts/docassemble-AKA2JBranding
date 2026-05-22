@@ -357,6 +357,7 @@ content: |
   </ul>
 ---
 comment: |
+  2026-05-22 added signing paragraph, replaced html with md
   July 10 2025
 template: fill_set_aside_step
 subject: |
@@ -369,24 +370,13 @@ subject: |
 content: |
   If you decide to file a **Motion to Set Aside** because it fits your case:
   <div class='step-subheading'>Use</div>
-  <ul>
-  <li><strong>Motion (Request) and Affidavit to Set Aside Judgment or Order, CIV-807</strong> [<a href="https:ak-courts.info/civ807">Fill in PDF</a>]</li>
-  <ul>
-  <li>Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.</li>
-  <li><strong>Wait</strong> to sign the form until you are in front of someone who has the power to take oaths, like a notary public.
-  <ul>
-  <li>The court clerk can do this for free.</li>
-  <li>Bring a valid photo ID with you.</li>
-  </ul></li>
-  <li>If you cannot get to a notary public or someone  who has the power to take oaths, you can &quot;self-certify.&quot; Use</li>
-  <ul>
-  <li><strong>Self-Certification  (No Notary Available), TF-835</strong> [<a href="https://ak_courts.info/tf835">Fill in PDF</a>]</li>
-  </ul>
-  </li>
-  </ul>
-  </ul>
+  **Motion (Request) and Affidavit to Set Aside Judgment or Order, CIV-807** [[Fill in PDF](https://ak-courts.info/civ807)]<br>
+  Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.
+
+  ${ signing_paragraph }
+  
   <div class="step-subheading">Watch</div>
-  <p><a href ="https://https://youtu.be/2irmxT0_0EA">Motions Part 1: How to Ask the Court for Something</a></p>
+  [Motions Part 1: How to Ask the Court for Something](https://https://youtu.be/2irmxT0_0EA)
 ---
 comment: |
   2026-05-15 adapting for TrueFiling and bitlys
