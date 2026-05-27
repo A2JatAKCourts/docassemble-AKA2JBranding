@@ -245,11 +245,27 @@ content: |
     * Hiring a Process Server
   See [How do I serve the summons and complaint?](https://ak-courts.info/servecomplaint).
   % endif
+  
+  % if user_need in('change foreign order', 'change foreign custody order'):
+  The court will send a copy of your registration to ${ other_party_in_case }, but you must send a copy of your modification papers to ${ other_party_in_case }.
+  To serve ${ other_party_in_case } a copy of your modification papers for a **child support order**, send a copy of the modification papers to the other party by regular first class mail.
+  
+  To serve ${ other_party_in_case } a copy of your modification papers for a **child custody order**, send a copy of the modification papers to the other party by:
 
-  % if not user_need in('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent'):
+    * certified mail, restricted delivery, return receipt; or
+    * hiring a process server.
+
+  To serve ${ other_party_in_case } a copy of your modification papers for both a **child support order** and a **child custody order**, send a copy of the modification papers to the other party by:
+
+    * certified mail, restricted delivery, return receipt; or
+    * hiring a process server
+  % endif
+
+  % if not user_need in('custody', 'divorce', 'want po', 'have po', 'register po', 'po respondent' 'change foreign order', 'change foreign custody order'):
   You need to give ${ other_party_in_case } a copy of everything you file with the court. This is called "service."
   Keep a copy for your records.
   % endif
+
 
   % if user_need in('answer custody', 'answer divorce'):
   If you are using TrueFiling, read the information below about how to serve ${ other_party_in_case }
