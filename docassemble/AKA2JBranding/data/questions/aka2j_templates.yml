@@ -263,10 +263,11 @@ content: |
   If neither you nor ${ other_party_in_case } files anything, the court will close your case.
 ---
 comment: |
-  2026-05-22 update some links with bitlys
+  2026-05-26 update some links with bitlys
 template: parents_agree_step
 subject: |
-  Step ${ parents_agree_idx }: Find out if you and ${ other_party_in_case } agree
+  Step ${ parents_agree_idx }: 
+  Find out if you and ${ other_party_in_case } agree
 content: |
   <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_party_in_case }. See if you agree about the change or if you both want to try to reach an agreement one of these ways:</p>
   <ul>
@@ -291,7 +292,7 @@ content: |
   Use **Request for Court-Sponsored Parenting Plan Dispute Resolution, MED-405** [[Fill in PDF](https://ak-courts.info/med405)] to request mediation.
   
   <p>You can hire your own private mediator to help resolve any issue in your case.  If there was abuse or domestic violence in your relationship, be sure to hire someone with training and experience working with domestic violence. Tell your mediator if you want to bring a support person with you.  </p>
-  [Read about mediation](https://courts.alaska.gov/mediation).
+  [Read about mediation](https://ak-courts.info/med).
   
   [Find a private mediator](https://pmoa.wildapricot.org/directory) on the Professional Mediators of  Alaska website. 
 
@@ -364,15 +365,17 @@ content: |
     <li><strong>Application for Child Support Enforcement Division (CSED) Services</strong> [<a href="https://ak-courts.info/dr315">Fill-In PDF</a>]</li>
   </ul>
 ---
+comment: |
+  update with bitlys: 2026-05-26
 template: tell_the_court_step
 subject: |
-  Step ${ tell_the_court_idx }: Tell the court about your agreement
+  Step ${ tell_the_court_idx }:
+  Tell the court about your agreement
 content: |
   <p>If you reach an agreement, fill out these forms:</p>
   <div class="step-subheading">Forms to ask to modify</div>
   <ul>
     <li><strong>Joint Motion, SHC-1310</strong>.  Title it "Joint Motion to Modify." <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310n.pdf">PDF</a></li>
-    <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
   </ul>
   <div class="step-subheading">If you are changing the Parenting Plan</div>
   <p>Choose 1 parenting plan order. Do <strong>not</strong> sign the Order section:</p>
