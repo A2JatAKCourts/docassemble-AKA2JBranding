@@ -1,29 +1,31 @@
 comment: |
   2026-04-23 removed duplicate appeal_response_step
 ---
+comment: |
+  2026-06-02 sync w content.docx
 template: respond_to_reconsider_step
 subject: |
-  Step ${ respond_to_reconsider_idx }: If the court asks, respond in writing to the Motion to Reconsider
+  Step ${ respond_to_reconsider_idx }:
+  If the court asks, respond in writing to the Motion for Reconsideration
 content: |
-  A <strong>Motion to Reconsider</strong> asks a judge to change a decision or order they made in the last 10 days.
-  <ul>
-  <li>Do not respond to a <strong>Motion to Reconsider</strong> unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.</li>
-  <li>There will not be a hearing.</li>
-  <li>The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, <strong>whichever is later</strong>, the <strong>Motion to Reconsider</strong> is denied, which means the original decision is not changed.</li>
-  <li>If the court grants the <strong>Motion to Reconsider</strong>, it will either enter a new order or ask both sides for more information.</li>
-  </ul>
+  A **Motion for Reconsideration** asks a judge to change a decision or order they made in the last 10 days.
+  
+    * Do not respond to a **Motion for Reconsideration** unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.
+    * There will not be a hearing.
+    * The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, **whichever is later**, the **Motion for Reconsideration** is denied, which means the original decision is not changed.
+    * If the court grants the **Motion for Reconsideration**, it will either enter a new order or ask both sides for more information.
+  
   <div class="step-subheading">If the court asks for a response</div>
-  <p>If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
-  <ul>
-  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-810.pdf">CIV-810</a> <strong>Response to Motion</strong></li>
-  <li><a href="https://public.courts.alaska.gov/web/forms/docs/civ-820.pdf">CIV-820</a> <strong>Order on Motion</strong></li>
-  </ul>
+  If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
+  **CIV-810 Response to Motion** [[Fill in PDF](https://ak-courts.info/civ810)]
 ---
 comment: 
+  2026-06-03 more TrueFiling edits - timing for service, but also awaiting answers to filing response when other party files 706? motion to modify something 'other' than custody or support either kind. 
   2026-05-20 some edits to accommodate TrueFiling changes
 template: let_court_party_know_you_agree_step
 subject: |
-  Step ${ let_court_party_know_you_agree_idx }: Let ${ other_party_in_case } and the court know you agree with the 
+  Step ${ let_court_party_know_you_agree_idx }:
+  Let ${ other_party_in_case } and the court know you agree with the 
   % if type_of_response == 'modify':
   proposed changes
   % elif middle_of_case == 'no' and type_of_response == 'set aside':
@@ -31,27 +33,30 @@ subject: |
   % endif
 content: |
   <div class="step-subheading">Options</div>
-  % if type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.all_false('spousal support','property or debt', 'other'):
-  If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order, and you agree, you have options:
-  % elif type_of_response == 'modify' and type_of_modification.any_true('spousal support', 'property or debt'):
+  % if type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.all_false('spousal support','other'):
+  If ${ other_party_in_case } files a **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support**, and you agree, you have options:
+  % elif type_of_response == 'modify' and type_of_modification['spousal support'] and type_of_modification.all_false('child support', 'custody'):
   If ${ other_party_in_case } files a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
-  % elif type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.any_true('spousal support','property or debt'):
+  % elif type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.any_true('spousal support','other'):
   If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
   % elif middle_of_case == 'no' and type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
-  A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options.  
+  A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options:  
   % endif
-  <ul>
-  <li>Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.<br>
-  <strong>Or</strong></li>
-  <li>Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.</li>
-  </ul>
-  For both options, If you were served through TrueFiling, email or any way other than the mail, within 10 days from the day you received the motion, you must file all your documents with the court. If the motions was mailed to you, you must respond within 13 days from the day the motion was mailed. You can see this date on the postmark of the envelope. 
+  
+    * Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.
+  
+  **Or**
+  
+    * Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.
+  
+  For both options, you must file all documents with the court within **10 days** from the day you were served the motion by TrueFiling, email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
 ---
 comment: |
   2026-05-20-21 still needs bitlys, some TrueFiling edits
 template: respond_in_writing_step
 subject: |
-  Step ${ respond_in_writing_idx }: Fill out a response that states you 
+  Step ${ respond_in_writing_idx }:
+  Fill out a response that states you 
   % if type_of_response == 'modify' and respond_to_modify in('some', 'none'):
   do not agree with the proposed changes
   % elif middle_of_case == 'no' and type_of_response == 'set aside' and respond_to_set_aside in('some', 'none'):
@@ -80,18 +85,18 @@ content: |
 
   If the ${ other_party_in_case } served you:
   
-  * by hand-delivery, email, or TrueFile, you have 10 days to respond to the court in writing.
+  * by TrueFiling, email, or hand-delivery, you have 10 days to respond to the court in writing.
   * by mail, you have 13 days.
   
   Counting:
   
-  *	Day 1 is the day after you delivered, emailed, or mailed it.  You can see the date something was mailed on the postmark of the envelope.
+  *	Day 1 is the day after it was delivered, emailed, or mailed.  You can see the date something was mailed on the postmark of the envelope.
   * Count weekends and holidays.
   * If the due date is a weekend or holiday your response  is due the next day the court is open.  For example, if it is due on a Saturday, and the court is open Monday, your response is due Monday.  
     
     <div class="step-subheading">Use</div>
   % if type_of_response == 'modify' and type_of_modification.any_true('custody', 'child support'):
-  **Response to Motion, DR-725]* [[Fill in PDF](https://ak-courts.info/dr725)]
+  **Response to Motion to Change Alaska Order about Parenting Plan and Child Support, DR-725** [[Fill in PDF](https://ak-courts.info/dr725)]
   
   **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br> 
   Each parent files their own 
@@ -117,7 +122,8 @@ content: |
 ---
 template: contact_other_party_step
 subject: |
-  Step ${ contact_other_party_idx }: Contact ${ other_party_in_case }, and write out your agreement
+  Step ${ contact_other_party_idx }:
+  Contact ${ other_party_in_case }, and write out your agreement
 content: |
   If you and ${ other_party_in_case } agree, and can work together, you can use these court forms to write out your agreement and file it with the court:
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
@@ -234,11 +240,13 @@ content: |
   </ul>
 ---
 comment: |
+  2026-06-03 sync w content.docx
   Based on [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
   Replaced older version with newer, easier to read version see GitHub issue [after_response_step #3](https://github.com/A2JatAKCourts/docassemble-ChangingDivorceOrderInterviewIssues/issues/3)
 template: expect_after_response_step
 subject: |
-  Step ${ expect_after_response_idx }: What to expect after you respond to the ${ motion_type }
+  Step ${ expect_after_response_idx }:
+  What to expect after you respond to the ${ motion_type }
 content: |
   <div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
   
@@ -259,6 +267,8 @@ content: |
   * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://ak-courts.info/appeals).
   % endif  
 ---
+comment: |
+  2026-06-04 sync w content.docx, still needs bitly for timeline
 template: appeal_response_step
 subject: |
   Step ${ appeal_response_idx }:
@@ -268,7 +278,7 @@ subject: |
   Respond in writing to the Appeal
   % endif
 content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://ak-courts.info/appeals/appealsresources.htm#1), if you can.
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://ak-courts.info/findlawyer), if you can.
   
   The only information the Supreme Court looks at is:
   
@@ -278,30 +288,32 @@ content: |
   * appeal briefs filed in the appeal to the Supreme Court.
   
   % if respond_to_appeal == 'agree':
-  The Alaska Court System </a><a href="https://ak-courts.info/appeals">Appeals</a> web pages have a lot of information about the process. You can also review a <a href="https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
+  The Alaska Court System [Appeals](https://ak-courts.info/appeals) web pages have a lot of information about the process. You can also review a [timeline for the steps in an appeal](https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf).
   <div class="step-subheading">Agreement</div>
   If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
-  <ul>
-  <li>Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.</li>
-  <li>Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.</li>
-  </ul>
+  
+    * Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.
+    * Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.
   % else:
   <div class="step-subheading">Timeline</div>
-  You can review a <a href="https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf">timeline for the steps in an appeal</a>.
+  You can review a [timeline for the steps in an appeal](https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf).
   <div class="step-subheading">Process</div>
   If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
-  <ul>
-  <li>after receiving the papers from ${ other_party_in_case } that start the appeal;</li>
-  <li>when deciding whether to file your own appeal too which is called a "cross appeal;"</li>
-  <li>when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed); and</li>
-  <li>when preparing for oral argument where both sides appear in the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#supremecourt">Supreme Court</a> and each side argues their case and the <a href="http://courts.alaska.gov/shc/appeals/appealsglossary.htm#justice">justices</a> may ask questions.</li>
-  </ul>
-  The Alaska Court System <a href="https://ak-courts.info/appeals">Appeals</a> web page has information about each of these steps and how you can prepare your side of the case.
+  
+  * after receiving the papers from ${ other_party_in_case } that start the appeal,
+  * when deciding whether to file your own appeal too which is called a "cross appeal,"
+  * when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed), and
+  * when preparing for oral argument where both sides appear in the Supreme Court and each side argues their case and the justices< may ask questions.
+  
+  The Alaska Court System[ Appeals web page](https://ak-courts.info/appeals) has information about each of these steps and how you can prepare your side of the case.
   % endif
 ---
+comment: |
+  2026-06-04 synced w content.docx still need bitlys
 template: appeal_contact_parent_step
 subject: |
-  Step ${ appeal_contact_parent_idx }: Contact ${ other_party_in_case }
+  Step ${ appeal_contact_parent_idx }:
+  Contact ${ other_party_in_case }
 content: |
   If you agree with the appeal, you can contact and tell ${ other_party_in_case }. You can both do the following:
   <div class="step-subheading">In the Alaska Supreme Court appeal case</div>
@@ -322,14 +334,15 @@ content: |
   <li><strong>Agreement</strong> <strong>&amp; Order, SHC-1061</strong><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
   as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
-  <li><strong>Joint Motion</strong> <strong>to Put Settlement on the Record, SHC-1063</strong> <br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
+  <li><strong>Request to Put Agreement on Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill in PDF</a>]</li>
   </ul>
 ---
+comment: |
+  2026-06-04 synced w content.docx still need bitly
 template: tell_supreme_court_step
 subject: |
-  Step ${ tell_supreme_court_idx }: Tell the Alaska Supreme Court
+  Step ${ tell_supreme_court_idx }:
+  Tell the Alaska Supreme Court
 content: |
   <ul>
   <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc">SHS-AP 260</a> (Word document).</li>
