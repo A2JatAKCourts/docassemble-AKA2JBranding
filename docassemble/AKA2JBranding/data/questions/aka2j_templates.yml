@@ -1,14 +1,17 @@
 objects:
   - service_cert_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice.png', alt_text="Certificate of Service box")
 ---
+comment: |
+  2026-05-27 synced w content.docx 
 template: ak_jurisdiction_step
 subject: |
-  Step ${ ak_jurisdiction_idx }: Make sure the Alaska court has the authority to change the order
+  Step ${ ak_jurisdiction_idx }:
+  Make sure the Alaska court has the authority to change the order
 content: |
   <ul>
   <li>A court must have the authority called "jurisdiction" to issue an order about a custody or parenting plan or a child support order.</li>
   <li>Generally, only the court in the state where the child has lived for the last 6 months can make decisions, enter a parenting plan, or order child support. This is called the child's &quot;home state.&quot;</li>
-  <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://courts.alaska.gov/shc/shclawyer.htm">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
+  <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://ak-courts.info/findlawyer">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
   </ul>
 ---
 comment: |
@@ -318,31 +321,32 @@ comment: |
     2026-04-30
 template: uncontested_custody_forms_step
 subject: |
-  Step ${ uncontested_custody_forms_idx }: Fill out the forms to start your uncontested custody case
+  Step ${ uncontested_custody_forms_idx }:
+  Fill out the forms to start your uncontested custody case
 content: |
   If you and the other parent agree on everything  (a parenting plan including decision-making and schedule, paternity, and child  support), you can fill out forms to start the case together.  This is called an uncontested case.
   
-  You will not know your case number until you file your  documents with the court.  You can write  the case number on all your forms then.
+  You will not know your case number until you file your documents with the court.  You can write  the case number on all your forms then.
   
   <div class='step-subheading'>Required forms – 1 copy that both parents sign if signatures are needed</div>
   <ul>
-    <li><strong>Uncontested  Complaint for Custody of Minor Children, SHC-118</strong> [<a href="https://ak-courts.info/tf400">Fill-In PDF</a>]</li>
+    <li><strong>Uncontested  Complaint for Custody of Minor Children, SHC-118</strong> [<a href="https://ak-courts.info/tf400">Fill in PDF</a>]</li>
     <ul>
       <li>Print your name, address, and phone number in the  upper left-hand corner of the first page.</li>
       <li>In the caption, print your name above "Plaintiff" and the other parent's name above "Defendant."</li>
       <li>Follow the directions on the form and fill out  every section.</li>
     </ul>
-    <li><strong>•	Request to Put Agreement on the Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill-In PDF</a>]</li>
-    <li><strong>Case description form, CIV-125S</strong> [<a href="https://ak-courts.info/civ125s">Fill-In PDF</a>]</li>
+    <li><strong>•	Request to Put Agreement on the Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill in PDF</a>]</li>
+    <li><strong>Case description form, CIV-125S</strong> [<a href="https://ak-courts.info/civ125s">Fill in PDF</a>]</li>
   </ul>
   <div class='step-subheading'>Required forms – 2 copies (each parent fills out and signs a separate copy)</div>
   <ul>
-    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://ak-courts.info/dr150">Fill-In PDF</a>]<br>
+    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://ak-courts.info/dr150">Fill in PDF</a>]<br>
       2 copies -  each parent fills out their own</li>
   </ul>
   <p>and</p>
   <ul>
-    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://ak-courts.info/dr305">Fill-In PDF</a>]</br>
+    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://ak-courts.info/dr305">Fill in PDF</a>]</br>
   (2 copies -  each parent fills out their own)
       <ul>
         <li>Answer each question completely.</li>
@@ -350,19 +354,19 @@ content: |
         <li>Attach your most recent tax return and pay stubs  to the <strong>Child Support Guidelines  Affidavit</strong>.</li>
       </ul>
     </li>
-    <li><strong>Information Sheet, DR-314</strong> [<a href="https://ak-courts.info/dr314">Fill-In PDF</a>]<br>
+    <li><strong>Information Sheet, DR-314</strong> [<a href="https://ak-courts.info/dr314">Fill in PDF</a>]<br>
       Fill in 1-3 with complete information for yourself, the children in the case,  the other parent if you know it, and then sign and date the form.</li>
   </ul>
   <div class='step-subheading'>Optional forms depending on your situation</div>
   <ul>
     <li><strong>Choose</strong> 1 form based on the  parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)
       <ul>
-        <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://ak-courts.info/dr306">Fill-In PDF</a>]</li>
-        <li><strong>Divided Custody Support Calculation,DR-307</strong> [<a href="https://ak-courts.info/dr307">Fill-In  PDF</a>]</li>
-        <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://ak-courts.info/dr308">Fill-In PDF</a>]</li>
+        <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://ak-courts.info/dr306">Fill in PDF</a>]</li>
+        <li><strong>Divided Custody Support Calculation,DR-307</strong> [<a href="https://ak-courts.info/dr307">Fill in  PDF</a>]</li>
+        <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://ak-courts.info/dr308">Fill in PDF</a>]</li>
       </ul>
     </li>
-    <li><strong>Application for Child Support Enforcement Division (CSED) Services</strong> [<a href="https://ak-courts.info/dr315">Fill-In PDF</a>]</li>
+    <li><strong>Application for Child Support Enforcement Division (CSED) Services</strong> [<a href="https://ak-courts.info/dr315">Fill in PDF</a>]</li>
   </ul>
 ---
 comment: |
@@ -385,20 +389,20 @@ content: |
   </ul>
   <div class="step-subheading">If you are changing child support</div>
   <ul>
-    <li><strong>Order for Modification of Child Support, DR-301</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">Fill-In PDF</a>]</li>
-    <li><strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">Fill-In PDF</a>] (2 copies -   each parent fills out their own)</li>
-    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-150.pdf">Fill-In PDF</a>] (2 copies -   each parent fills out their own) </li>
+    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://ak-courts.info/dr150">Fill in PDF</a>] (2 copies -   each parent fills out their own) </li>
     <li>Choose 1 form below based on the parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)</li>
     <ul>
-      <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>] (if you have a   shared custody schedule)</li>
-      <li><strong>Divided Custody Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">Fill-In PDF</a>] (if you have a   divided custody schedule)</li>
-      <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">Fill-In PDF</a>] (if you are asking for a hybrid custody schedule)</li>
+      <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://ak-courts.info/dr306">Fill in PDF</a>] (if you have a   shared custody schedule)</li>
+      <li><strong>Divided Custody Support Calculation, DR-307</strong> [<a href="https://ak-courts.info/dr307">Fill in PDF</a>] (if you have a   divided custody schedule)</li>
+      <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://ak-courts.info/dr308">Fill in PDF</a>] (if you are asking for a hybrid custody schedule)</li>
     </ul>
   </ul>
   % if middle_of_case == 'no':
   If you and the other parent agree, it is free to file a <strong>Joint Motion to Modify</strong>, but if you do not agree it costs $75 to file a <strong>Motion to Modify</strong>.
   % endif
 ---
+comment: |
+  2026-05-29 sync with content.docx
 template: calculate_child_support_step
 subject: |
   Step ${ calculate_child_support_idx }:
@@ -423,16 +427,18 @@ content: |
   </ul>
   </div>
     </li>
-    <li> Use the percentages to fill out the <strong>Child Support Guidelines Affidavit, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-305.pdf">DR-305</a></strong>. Read <a href="courts.alaska.gov/shc/family/docs/shc-dr305f-sample.pdf">How to Fill out the Child Support Guidelines Affidavit</a> to help you fill out this form.</li>
+    <li> Use the percentages to fill out the <strong>Child Support Guidelines Affidavit, DR-305</strong> [<a href="https://ak-courts.info/dr305">Fill in PDF</a>]. Read <a href="https://ak-courts.info/dr305howto">How to Fill out the Child Support Guidelines Affidavit</a> to help you fill out this form.</li>
     <li> The <strong>Child Support Guidelines Affidavit</strong> gives you the new child support amount for a <strong>primary custody child support</strong> schedule. A primary custody child support schedule is when the children spend 256 or more overnights with one parent. If you do not have a primary custody child support schedule, use one of these forms:
     <ul>
-  <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-306.pdf">Fill-In PDF</a>]<br>
-  Use this if the children spend at least 110 overnights with each parent.</li>
-  <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-308.pdf">Fill-In PDF</a>] Use this if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
-  <li><strong>Divided Custody Child Support Calculation, DR-307</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-307.pdf">Fill-In PDF</a>] Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
+  <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://ak-courts.info/dr306">[Fill in PDF]()</a>]<br>
+  Use this form if the children spend at least 110 overnights with each parent.</li>
+  <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://ak-courts.info/dr308">Fill in PDF</a>] Use this form if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.</li>
+  <li><strong>Divided Custody Child Support Calculation, DR-307</strong> [<a href="https://ak-courts.info/dr307">Fill in PDF</a>] Use this form if both parents have primary physical custody of one or more children and neither parent has shared custody of any children.</li>
   </ul>
   </li>
   </ol>
+
+  ${ signing_paragraph }
 ---
 template: alternate_service_step
 subject: |
@@ -480,7 +486,7 @@ content: |
     (907)264-0851, or</br>
     (866)279-0851,</br>
   or</li>
-  <li>Use <strong>Exemption From the Payment of Fees, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf" target="_blank"><strong>TF-920</strong></a> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf">Fill-In PDF</a>].</li>
+  <li>Use <strong>Exemption From the Payment of Fees, </strong><a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf" target="_blank"><strong>TF-920</strong></a> [<a href="https://public.courts.alaska.gov/web/forms/docs/tf-920.pdf">Fill in PDF</a>].</li>
   <div class = "example">
   <p class = "heading">Note</p>
   <p>Check with your local court to make sure you understand the procedure to follow after the court decides whether or not to grant your exemption.</p>
@@ -711,7 +717,8 @@ content: |
 ---
 template: expect_after_complaint_step
 subject: |
-  Step ${ expect_after_complaint_idx }: What to expect after you file your Complaint
+  Step ${ expect_after_complaint_idx }:
+  What to expect after you file your Complaint
 content: |
   % if (user_need == 'divorce' and not know_spouse_whereabouts) or (user_need == 'custody' and alternate_service):
     * Now you wait.
@@ -909,7 +916,8 @@ content: |
 ---
 template: default_info_step
 subject: |
-  Step ${ default_info_idx }: File for Default if ${ other_party_in_case } does not respond within 20 days
+  Step ${ default_info_idx }:
+  File for Default if ${ other_party_in_case } does not respond within 20 days
 content: |
   <div class='step-subheading'>Wait for 20 days</div>
   If ${ other_party_in_case } does not file an Answer within 20 days of being served your complaint, you may ask the court to “default” ${ other_party_in_case } and grant you everything you asked for. To do this, you must have proof that you served ${ other_party_in_case } according to the rules.
@@ -989,7 +997,8 @@ comment: |
   updated 2026-04-29 should match content.docx
 template: paternity_step
 subject: |
-  Step ${ paternity_idx }: Learn about paternity ${ 'testing' if user_need in ('custody', 'divorce') else '' }
+  Step ${ paternity_idx }:
+  Learn about paternity ${ 'testing' if user_need in ('custody', 'divorce') else '' }
 content: |
   <div class='step-subheading'>General Paternity Information</div>
   Establishing paternity means legally determining the biological  father of a child, and can make a big difference in a child's health, financial  outlook and sense of identity in knowing who both parents are. Once established, the father's name can be  placed on the child's birth certificate and he has legal and financial  responsibility for the child.  Disestablishing paternity is legally un-naming a man as the child's biological father.
@@ -1078,11 +1087,11 @@ content: |
   <ul>
     <li> Each  parent signs an affidavit stating the biological father.  Fill out:</li>
     <ul>
-      <li><strong>Three-Way Affidavit to Disestablish and Establish Paternity, DR-521</strong> [<a href="https://ak-courts.info/dr521">Fill-In PDF</a>]</li>
+      <li><strong>Three-Way Affidavit to Disestablish and Establish Paternity, DR-521</strong> [<a href="https://ak-courts.info/dr521">Fill in PDF</a>]</li>
     </ul>
     <li> The  mother, child, and person who may be the father take a DNA test using a  painless swab inside the cheek. The whole process takes about 15 minutes and  the result is ready within about 3 weeks.  If someone is not cooperating or you want Child Support Services  Division to do the testing, fill out and attach these forms to your Answer:</li>
     <ul>
-      <li><strong>Motion  &amp; Affidavit for Genetic (DNA) Testing, DR-530</strong> [<a href="https://ak-courts.info/dr530">Fill-In PDF</a>]</li>
+      <li><strong>Motion  &amp; Affidavit for Genetic (DNA) Testing, DR-530</strong> [<a href="https://ak-courts.info/dr530">Fill in PDF</a>]</li>
     </ul>
     % if user_need =='custody':
     <li>You can attach any DNA test results that have already been done to your complaint.</li>
@@ -1116,7 +1125,7 @@ content: |
   <li>See the court’s <a href="https://courts.alaska.gov/shc/family">Family Law Self-Help Center web pages</a>.</li>
   </ul>
   
-  Many lawyers offer free or flat fee consultations. You do not have to hire them for the whole case. [Find a Lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
+  Many lawyers offer free or flat fee consultations. You do not have to hire them for the whole case. [Find a Lawyer](https://ak-courts.info/findlawyer).
   
   Depending on your income, you may qualify for [Alaska Free Legal Answers](https://alaska.freelegalanswers.org).
   

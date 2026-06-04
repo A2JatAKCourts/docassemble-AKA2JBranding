@@ -6,7 +6,8 @@ comment: |
   2026-02-14 formatted
 template: case_in_2_states_step
 subject: |
-  Step ${ case_in_2_states_idx }: Options 
+  Step ${ case_in_2_states_idx }: 
+  Options 
   % if type_of_response['default']:
   if ${ other_party_in_case } asked for default judgment 
   % endif
