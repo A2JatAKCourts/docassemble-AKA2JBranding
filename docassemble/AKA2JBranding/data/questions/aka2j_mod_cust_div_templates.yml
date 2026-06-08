@@ -117,6 +117,7 @@ content: |
   </ol>
 ---
 comment: |
+  2026-06-08 formatting
   2026-05-28 still need to update w bitlys
 template: register_order_step
 subject: |
@@ -124,15 +125,16 @@ subject: |
  Register the out-of-state order
 content: |
   <div class="step-subheading">Submit the following packet to the Alaska court</div>
-  <ul>
-  <li>1 <strong>certified</strong> copy of the original order.</li>
-  <li>1 <strong>photocopy</strong> of the certified original order.</li>
-  <li><strong>Case description form</strong>, <a href="https://ak-courts.info/civ125s">CIV-125S</a></li>
-  <ul>
+  
+    * 1 **certified** copy of the original order.
+    * 1 **photocopy** of the certified original order.
+    * **Case description form, CIV-125S** [[Fill in PDF](https://ak-courts.info/civ125s)]
+  
   <div class="step-subheading">For Custody</div>
 
   ${ signing_paragraph }
   
+  <ul>
   <li><strong>Request to Register Child Custody Order of Another State or Country, DR-482<strong> </strong>[<a href="https://public.courts.alaska.gov/web/forms/docs/dr-482.pdf">Fill in PDF</a>]</li>
   <li><strong>Notice of Registration of Child Custody Order of Another State or Country, DR-483</strong> [<a href="https://public.courts.alaska.gov/web/forms/docs/dr-483.pdf">Fill in PDF</a>] <br>
   Completed except for the date and clerk's signature</li>
