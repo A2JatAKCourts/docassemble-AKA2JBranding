@@ -2,6 +2,7 @@ comment: |
   2026-04-23 removed duplicate appeal_response_step
 ---
 comment: |
+  2026-06-05 Replace CIV-810 Response to Motion for civil cases w Response to Motion TF-707 for family law cases - and sync w content.docx
   2026-06-02 sync w content.docx
 template: respond_to_reconsider_step
 subject: |
@@ -17,7 +18,7 @@ content: |
   
   <div class="step-subheading">If the court asks for a response</div>
   If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
-  **CIV-810 Response to Motion** [[Fill in PDF](https://ak-courts.info/civ810)]
+  **Response to Motion, TF-707** [[Fill in PDF](https://ak-courts.info/tf707)]
 ---
 comment: 
   2026-06-03 more TrueFiling edits - timing for service, but also awaiting answers to filing response when other party files 706? motion to modify something 'other' than custody or support either kind. 
@@ -32,7 +33,9 @@ subject: |
   Motion to Set Aside Judgment or Order
   % endif
 content: |
+  % if middle_of_case == 'no':
   <div class="step-subheading">Options</div>
+   % endif
   % if type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.all_false('spousal support','other'):
   If ${ other_party_in_case } files a **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support**, and you agree, you have options:
   % elif type_of_response == 'modify' and type_of_modification['spousal support'] and type_of_modification.all_false('child support', 'custody'):
@@ -43,15 +46,18 @@ content: |
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options:  
   % endif
   
-    * Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.
+  ${ "  * " if middle_of_case == 'no' else ""}Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.
+  % if middle_of_case == 'no':
   
   **Or**
   
     * Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.
   
-  For both options, you must file all documents with the court within **10 days** from the day you were served the motion by TrueFiling, email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
+  % endif
+  ${ "For both options, you" if middle_of_case == 'no' else "You"} must file all documents with the court within **10 days** from the day you were served the motion by email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
 ---
 comment: |
+  2026-06-05 taking out options for responding in middle of case, just use responding form, don't talk about filing an agreement - after disscussion w Abbey. 
   2026-05-20-21 still needs bitlys, some TrueFiling edits
 template: respond_in_writing_step
 subject: |
@@ -83,7 +89,7 @@ content: |
 
   ${ signing_paragraph }
 
-  If the ${ other_party_in_case } served you:
+  If ${ other_party_in_case } served you:
   
   * by TrueFiling, email, or hand-delivery, you have 10 days to respond to the court in writing.
   * by mail, you have 13 days.
@@ -120,66 +126,46 @@ content: |
   <div class="step-subheading">Watch</div>
   [Motions Part 2: How to File an Opposition to a Motion](https://www.youtube.com/watch?v=E7cYJyRciBg)
 ---
+comment: |
+  2026-06-05 Update form numbers and add 'Or' in step heading for middle_of_case == 'no' to indicate this is the other option if user chooses not to use family law Response to Motion DR-707 from discussion w Abbey
 template: contact_other_party_step
 subject: |
   Step ${ contact_other_party_idx }:
-  Contact ${ other_party_in_case }, and write out your agreement
+  Or, contact ${ other_party_in_case }, and write out your agreement
 content: |
   If you and ${ other_party_in_case } agree, and can work together, you can use these court forms to write out your agreement and file it with the court:
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
-  <div class="step-subheading">If you are changing the custody and parenting plan</div
-  Choose 1 parenting plan order. Do **not** sign the ORDER section:
-  <ul>
-  <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
 
-  <li><strong>Agreement &amp; Order for Custody and Visitation, SHC-1126</strong><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126.docx">Word file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
+  **Joint Motion, DR-704** [[Fill in PDF](https://ak-courts.info/dr704)]
+  
+  **Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
 
-  <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
-  </ul>
+  <div class="step-subheading">If you are changing the Parenting Plan and custody order</div
+  
+  **Parenting Plan, DR-475** [[Fill in PDF](https://ak-courts.info/dr475)]
+  
   % endif
+  
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
   <div class="step-subheading">If you are changing child support</div>
-  <ul>
-  <li><strong>Order for Modification of Child Support</strong>, <a href="https://public.courts.alaska.gov/web/forms/docs/dr-301.pdf">DR-301</a> [Fill in PDF]<br>
-  Do <strong>not</strong> sign the Order section.</li>
-
-  <li><strong>Child Support Guidelines Affidavit</strong>, <a href="https://ak-courts.info/dr305">DR-305</a> [Fill in PDF]<br>
+  
+  **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br>
   Each parent files their own</li>
 
-  <li><strong>Child Custody Jurisdiction Affidavit</strong>, <a href="https://ak-courts.info/dr150">DR-150</a> [Fill in PDF]<br>
-  Each parent files their own</li>
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
+  Each parent files their own
 
-  <li>Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
-  <ul>
-  <li><strong>Shared Custody Support Calculation</strong>, <a href="https://ak-courts.info/dr306">DR-306</a> [Fill in PDF]</li>
-  <li><strong>Divided Custody Support Calculation</strong>, <a href="https://ak-courts.info/dr307">DR-307</a> [Fill in PDF]</li>
-  <li><strong>Hybrid Custody Child Support Calculation</strong>, <a href="https://ak-courts.info/dr308">DR-308</a> [Fill in PDF]</li>
-  </ul></li>
-  </ul>
+  Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
+  **Shared Custody Support Calculation, DR-306** [[Fill in PDF](https://ak-courts.info/dr306)]
+  **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]
+  **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   % endif
-  % if (type_of_response == 'modify' and type_of_modification.any_true('spousal support','property or debt','other') and respond_to_modify == 'agree') or (middle_of_case == 'no' and  type_of_response =='set aside' and respond_to_set_aside == 'agree'):
-  <ul>
-  <li><strong>Joint Motion to Put Settlement on the Record, SHC-1063</strong><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063n.pdf">PDF</a></li>
-  % endif
-  % if (type_of_response == 'modify' and respond_to_modify == 'agree') or (middle_of_case == 'no' and  type_of_response =='set aside' and respond_to_set_aside == 'agree'):
-  <li><strong>Agreement & Order, SHC-1061</strong> <br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
-  </ul>
-  % endif
+  
   Be sure you agree with the change before sending it to the judge. If you tell the court you agree to a change and the judge signs the agreement, it is a new court order and you are required to follow it. It can only be changed if:
-  <ul>
-  <li>You and ${ other_party_in_case } later agree to a new change. Or</li>
-  <li>You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.</li>
-  </ul>
+  
+    * You and ${ other_party_in_case } later agree to a new change. Or
+    * You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.
+
 ---
 template: file_response_step
 subject: |

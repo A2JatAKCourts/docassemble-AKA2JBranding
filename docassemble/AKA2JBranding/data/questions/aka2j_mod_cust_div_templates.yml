@@ -262,12 +262,13 @@ content: |
   <p>See <a href="https://ak-courts.info/civrules">Alaska Rule of Civil Procedure</a> 77(k) to read the court rules about the <strong>4 reasons</strong> you can ask the court to reconsider a judge's decision.</p>
 ---
 comment: |
+  2026-06-04 update step heading to match new title of form "for Reconsideration" from "to Reconsider"
   2026-06-01 sync w content.docx
   updated: 2026-05-18 replaced wait to sign with signing_paragraph and deleted proposed order from list of forms to use
 template: fill_reconsider_step
 subject: |
   Step ${ fill_reconsider_idx }:
-  Fill out the Motion to Reconsider forms
+  Fill out the Motion for Reconsideration forms
 content: |
   <div class="step-subheading">Use</div>
   **Motion for Reconsideration, CIV-806** [[Fill in PDF](https://ak-courts.info/civ806)
@@ -613,8 +614,8 @@ content: |
 
     * ${ capitalize(other_party_in_case) } does not have to respond unless the judge sends a notice and asks ${ other_party_in_case } to respond in writing.
     * If the judge agrees to reconsider their decision, they may ask ${ other_party_in_case } to respond in writing, or they may change the decision. Usually, the judge only changes their  decision after they ask ${ other_party_in_case } for a written response.
-    * If the judge does nothing for 30 days, it  means the judge is not going to grant your <strong>Motion  to Reconsider</strong>. You will not get anything in writing</a>. The original decision is not changed.
-    * The 30 days start when  you file your <strong>Motion to Reconsider</strong>.  If the judge asks ${ other_party_in_case } to respond in writing, the 30 days start over when ${ other_party_in_case } files their written response.
+    * If the judge does nothing for 30 days, it  means the judge is not going to grant your **Motion for Reconsideration**. You will not get anything in writing</a>. The original decision is not changed.
+    * The 30 days start when  you file your **Motion for Reconsideration**.  If the judge asks ${ other_party_in_case } to respond in writing, the 30 days start over when ${ other_party_in_case } files their written response.
 
   Read the court's web page [Options after you get a judge's decision](https://ak-courts.info/afterjudgment).
 ---
