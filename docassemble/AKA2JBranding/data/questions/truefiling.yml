@@ -100,6 +100,7 @@ subquestion: |
   You **do not** need to refresh your screen. Hang in there!
 ---
 comment: |
+  2026-06-09 fixing links and making sure bitly's exist and are correct synced w docx
   2026-05-20 adapting for divorce-changing mostly filing fee conditions
   2026-04-30 added "your documents with the court" for answer for answer interviews
 template: truefiling_file_and_serve_step
@@ -174,7 +175,7 @@ content: |
   **If you are exempt and you choose not to use TrueFiling:**
   
     * Mark it on your form, or 
-    * Fill out **TF-820 Notice of Change to Use of Email or TrueFiling** [[Fill in PDF](https://ak-courts.info/dr822)]. 
+    * Fill out **TF-820 Notice of Change to Use of Email or TrueFiling** [[Fill in PDF](https://ak-courts.info/tf820)]. 
     * Take all your forms to the court, or mail them by first-class mail.
   % if user_need in('custody', 'divorce'):
      Use the [Court Directory](https://ak-courts.info/edir) to find court addresses.
@@ -251,12 +252,12 @@ content: |
   The court will send a copy of your registration to ${ other_party_in_case }, but you must send a copy of your modification papers to ${ other_party_in_case }.
   To serve ${ other_party_in_case } a copy of your modification papers for a **child support order**, send a copy of the modification papers to the other party by regular first class mail.
   
-  To serve ${ other_party_in_case } a copy of your modification papers for a **child custody order**, send a copy of the modification papers to the other party by:
+  To serve ${ other_party_in_case } a copy of your modification papers for a **child custody order**, send a copy of the modification papers to ${ other_party_in_case } by:
 
     * certified mail, restricted delivery, return receipt; or
     * hiring a process server.
 
-  To serve ${ other_party_in_case } a copy of your modification papers for both a **child support order** and a **child custody order**, send a copy of the modification papers to the other party by:
+  To serve ${ other_party_in_case } a copy of your modification papers for both a **child support order** and a **child custody order**, send a copy of the modification papers to ${ other_party_in_case } by:
 
     * certified mail, restricted delivery, return receipt; or
     * hiring a process server
@@ -287,7 +288,7 @@ content: |
   % if user_need in('answer custody', 'answer divorce'):
   % if (type_of_response.any_true('improper service', 'default') and ((not proper_service and have_complaint) or proper_service)) or (type_of_response.all_false('improper service', 'default') and type_of_response.any_true('ak custody case', 'ak divorce case', 'wrong state', 'case in 2 states')):
   % if other_party_exempt == 'none' or (other_party_exempt == 'yes' and other_party_enter_email is None):
-  Look at their complaint to see if they checked they were exempt. If not, they are using TrueFiling. Even if they checked they are exempt, look to see if they put their email anywhere on the complaint. If they put an email, you can serve them through TrueFiling. Read [Serving the Other Side](https://courts.alaska.gov/shc/family/serve.htm).
+  Look at their complaint to see if they checked they were exempt. If not, they are using TrueFiling. Even if they checked they are exempt, look to see if they put their email anywhere on the complaint. If they put an email, you can serve them through TrueFiling. Read [Serving the Other Side](https://ak-courts.info/serve).
   % elif other_party_exempt == 'no':
   Use TrueFiling to serve ${ other_party_in_case }. Read [If I am using TrueFiling, how do I serve the other side?](https://courts.alaska.gov/shc/family/serve.htm#truefiling-serve)
   % endif

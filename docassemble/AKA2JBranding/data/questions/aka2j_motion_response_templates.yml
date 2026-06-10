@@ -21,6 +21,7 @@ content: |
   **Response to Motion, TF-707** [[Fill in PDF](https://ak-courts.info/tf707)]
 ---
 comment: 
+  2026-06-05 keep option writing out an agreement for responding in middle of case. And use TF-707 response form for family law situations, not CIV-808 for civil responses. 
   2026-06-03 more TrueFiling edits - timing for service, but also awaiting answers to filing response when other party files 706? motion to modify something 'other' than custody or support either kind. 
   2026-05-20 some edits to accommodate TrueFiling changes
 template: let_court_party_know_you_agree_step
@@ -33,9 +34,8 @@ subject: |
   Motion to Set Aside Judgment or Order
   % endif
 content: |
-  % if middle_of_case == 'no':
   <div class="step-subheading">Options</div>
-   % endif
+  
   % if type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.all_false('spousal support','other'):
   If ${ other_party_in_case } files a **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support**, and you agree, you have options:
   % elif type_of_response == 'modify' and type_of_modification['spousal support'] and type_of_modification.all_false('child support', 'custody'):
@@ -46,15 +46,14 @@ content: |
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options:  
   % endif
   
-  ${ "  * " if middle_of_case == 'no' else ""}Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.
-  % if middle_of_case == 'no':
-  
+  * Fill out a response that states you agree. File your response with the court, and give ${ other_party_in_case } a copy. See ${ respond_in_writing_step.subject }, ${ truefiling_file_and_serve_step.subject } and ${ truefiling_serve_step.subject }.
+   
   **Or**
   
     * Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.
   
-  % endif
-  ${ "For both options, you" if middle_of_case == 'no' else "You"} must file all documents with the court within **10 days** from the day you were served the motion by email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
+  
+  For both options, you must file all documents with the court within **10 days** from the day you were served the motion by email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
 ---
 comment: |
   2026-06-05 taking out options for responding in middle of case, just use responding form, don't talk about filing an agreement - after disscussion w Abbey. 
