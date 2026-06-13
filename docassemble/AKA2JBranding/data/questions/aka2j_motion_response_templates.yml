@@ -2,7 +2,8 @@ comment: |
   2026-04-23 removed duplicate appeal_response_step
 ---
 comment: |
-  2026-06-05 Replace CIV-810 Response to Motion for civil cases w Response to Motion TF-707 for family law cases - and sync w content.docx
+  2026-06-11 sync w content.docx
+  2026-06-05 Replace CIV-810 Response to Motion for civil cases w Response to Motion TF-707 for family law cases
   2026-06-02 sync w content.docx
 template: respond_to_reconsider_step
 subject: |
@@ -21,7 +22,7 @@ content: |
   **Response to Motion, TF-707** [[Fill in PDF](https://ak-courts.info/tf707)]
 ---
 comment: 
-  2026-06-05 keep option writing out an agreement for responding in middle of case. And use TF-707 response form for family law situations, not CIV-808 for civil responses. 
+  2026-06-05 keep option writing out an agreement for responding in middle of case.
   2026-06-03 more TrueFiling edits - timing for service, but also awaiting answers to filing response when other party files 706? motion to modify something 'other' than custody or support either kind. 
   2026-05-20 some edits to accommodate TrueFiling changes
 template: let_court_party_know_you_agree_step
@@ -40,8 +41,10 @@ content: |
   If ${ other_party_in_case } files a **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support**, and you agree, you have options:
   % elif type_of_response == 'modify' and type_of_modification['spousal support'] and type_of_modification.all_false('child support', 'custody'):
   If ${ other_party_in_case } files a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
-  % elif type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification.any_true('spousal support','other'):
-  If ${ other_party_in_case } files a **Motion to Modify** the parenting plan and custody order or the child support order and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
+  % elif type_of_response == 'modify' and type_of_modification.any_true('child support', 'custody') and type_of_modification['spousal support']:
+  If ${ other_party_in_case } files a **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support** and a **Request to Modify Order or Decree Concerning Spousal Maintenance or Property**, and you agree, you have options:
+  % elif type_of_response == 'modify' and type_of_modification.all_true('other', exclusive = True):
+  If ${ other_party_in_case } files a **Motion to Modify**, and you agree, you have options:
   % elif middle_of_case == 'no' and type_of_response == 'set aside' and respond_to_set_aside  == 'agree':
   A **Motion to Set Aside Judgment or Order** asks the trial court to set aside or "undo" a judgment or final order in a case.  If granted, the case will move ahead as if the judgment had not been made.  If you agree with what ${ other_party_in_case } asked to set aside in the motion, you have options:  
   % endif
@@ -56,7 +59,7 @@ content: |
   For both options, you must file all documents with the court within **10 days** from the day you were served the motion by email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
 ---
 comment: |
-  2026-06-05 taking out options for responding in middle of case, just use responding form, don't talk about filing an agreement - after disscussion w Abbey. 
+  2026-06-10 sync w content.docx 
   2026-05-20-21 still needs bitlys, some TrueFiling edits
 template: respond_in_writing_step
 subject: |
@@ -103,11 +106,15 @@ content: |
   % if type_of_response == 'modify' and type_of_modification.any_true('custody', 'child support'):
   **Response to Motion to Change Alaska Order about Parenting Plan and Child Support, DR-725** [[Fill in PDF](https://ak-courts.info/dr725)]
   
-  **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br> 
-  Each parent files their own 
-  
-  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]<br>
+  **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]
+  % if (type_of_response == 'modify' and respond_to_modify == 'agree') or (middle_of_case == 'no' and type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
   Each parent files their own
+  % endif
+  
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
+  % if (type_of_response == 'modify' and respond_to_modify == 'agree') or (middle_of_case == 'no' and type_of_response == 'set aside' and respond_to_set_aside == 'agree'):
+  Each parent files their own
+  % endif
   
    <div class="step-subheading">Optional forms depending on your situation</div>
   Choose 1 form below based on the parenting schedule if it is not a primary custody calculation where children are with 1 parent for at least 256 overnights/year.
@@ -119,7 +126,7 @@ content: |
   **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   
   % else:
-  **Response to Motion Packet for Civil Cases, CIV-808**  [[Packet](https://https://public.courts.alaska.gov/web/forms/docs/civ-808total.pdf)]
+  **Response to Motion (Request) for, TF-707**  [[Fill in PDF](https://ak-courts.info/tf707]
   % endif
   
   <div class="step-subheading">Watch</div>
@@ -135,7 +142,7 @@ content: |
   If you and ${ other_party_in_case } agree, and can work together, you can use these court forms to write out your agreement and file it with the court:
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
 
-  **Joint Motion, DR-704** [[Fill in PDF](https://ak-courts.info/dr704)]
+  **Joint Motion, TF-704** [[Fill in PDF](https://ak-courts.info/tf704)]
   
   **Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
 
@@ -143,9 +150,6 @@ content: |
   
   **Parenting Plan, DR-475** [[Fill in PDF](https://ak-courts.info/dr475)]
   
-  % endif
-  
-  % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
   <div class="step-subheading">If you are changing child support</div>
   
   **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br>
@@ -159,10 +163,14 @@ content: |
   **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]
   **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   % endif
-  
+  % if (type_of_modification.any_true('spousal support', 'other') and type_of_modification.all_false('child support', 'custody')) or (middle_of_case == 'no' and type_of_response =='set aside'):
+
+    *	**Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
+  % endif
+
   Be sure you agree with the change before sending it to the judge. If you tell the court you agree to a change and the judge signs the agreement, it is a new court order and you are required to follow it. It can only be changed if:
   
-    * You and ${ other_party_in_case } later agree to a new change. Or
+    * You and ${ other_party_in_case } later agree to a new change. **Or**
     * You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.
 
 ---
@@ -210,19 +218,20 @@ content: |
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
   </ul>
 ---
+comment: |
+  2026-06-04 synced w content.docx
 template: file_agreement_step
 subject: |
   Step ${ file_agreement_idx }: File your agreement with the court within 10 or 13 days
 content: |
   You have 13 days to file your agreement if the motion was mailed to you, 10 days if you were served another way.
-  <ul>
-  <li>Make 2 copies of the forms you filled out stating your agreement -<br>
-  1 copy for each of you.</li>
-  <li>File the originals with the court where the motion was filed. </li>
-  <li>File by the deadline - 10 or 13 days.<br>
+ 
+    * Make 2 copies of the forms you filled out stating your agreement -<br>
+  1 copy for each of you.
+    * File the originals with the court where the motion was filed. </li>
+    * File by the deadline - 10 or 13 days.<br>
   If the deadline is a weekend or holiday, your agreement is due the next day the court is open.<br>
-  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.</li>
-  </ul>
+  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.
 ---
 comment: |
   2026-06-03 sync w content.docx
@@ -253,7 +262,7 @@ content: |
   % endif  
 ---
 comment: |
-  2026-06-04 sync w content.docx, still needs bitly for timeline
+  2026-06-11 sync w content.docx, still needs bitly for timeline
 template: appeal_response_step
 subject: |
   Step ${ appeal_response_idx }:
@@ -273,7 +282,7 @@ content: |
   * appeal briefs filed in the appeal to the Supreme Court.
   
   % if respond_to_appeal == 'agree':
-  The Alaska Court System [Appeals](https://ak-courts.info/appeals) web pages have a lot of information about the process. You can also review a [timeline for the steps in an appeal](https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf).
+  The Alaska Court System [Appeals](https://ak-courts.info/appeals) web pages have a lot of information about the process. You can also review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
   <div class="step-subheading">Agreement</div>
   If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
   
@@ -281,7 +290,7 @@ content: |
     * Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.
   % else:
   <div class="step-subheading">Timeline</div>
-  You can review a [timeline for the steps in an appeal](https://ak-courts.info/appeals/docs/SHS_AP_1000.pdf).
+  You can review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
   <div class="step-subheading">Process</div>
   If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
   
@@ -294,7 +303,7 @@ content: |
   % endif
 ---
 comment: |
-  2026-06-04 synced w content.docx still need bitlys
+  2026-06-11 synced w content.docx still need bitlys created
 template: appeal_contact_parent_step
 subject: |
   Step ${ appeal_contact_parent_idx }:
@@ -305,33 +314,28 @@ content: |
   <ul>
   <li>The person who started the case can file:</li>
   <ul>
-  <li><strong>Motion</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_400.doc">SHS-AP 400</a><br>
+  <li><strong>Motion, SHS-AP 400</strong> [<a href="https://ak-courts.info/shsap400">Word document</a>]<br>
   Name it "Motion to Dismiss because of Settlement Agreement" </li>
-  <li><strong>Affidavit &amp; Memorandum</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_410.doc">SHS-AP 410</a>, and </li>
-  <li><strong>Order</strong> <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_420.doc">SHS-AP 420</a> telling the court the case can be dismissed. </li>
+  <li><strong>Affidavit &amp; Memorandum, SHS-AP 410</strong> [<a href="https://ak-courts.info/shsap410">Word document</a>], and </li>
+  <li><strong>Order, SHS-AP 420</strong> [<a href="https://ak-courts.info/shsap420">Word document</a>] telling the court the case can be dismissed. </li>
   </ul>
-  <li>You can file a <strong>response</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_440.doc">SHS-AP 440</a>, telling the court you agree.<br>
+  <li>You can file a <strong>Response, SHS-AP 440</strong>, [<a href="https://ak-courts.info/shsap440">Word document</a>], telling the court you agree.<br>
   </li>
   </ul>
   <div class="step-subheading">In the trial court, where you had your custody case</div>
   If your agreement about the appeal changes the current court order, you both should fill out and file:
   <ul>
-  <li><strong>Agreement</strong> <strong>&amp; Order, SHC-1061</strong><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061.doc">Word</a> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1063.docx">file</a><br>
-  as a <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1061n.pdf">PDF</a></li>
   <li><strong>Request to Put Agreement on Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill in PDF</a>]</li>
   </ul>
 ---
 comment: |
-  2026-06-04 synced w content.docx still need bitly
+  2026-06-04 synced w content.docx still need bitly to be created
 template: tell_supreme_court_step
 subject: |
   Step ${ tell_supreme_court_idx }:
   Tell the Alaska Supreme Court
 content: |
-  <ul>
-  <li>Fill out and file: <strong>Notice of Decision Not to File Appellee Brief</strong>, <a href="http://www.courts.alaska.gov/shc/appeals/docs/SHS_AP_260.doc">SHS-AP 260</a> (Word document).</li>
-  <li>Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.</li>
-  <li>You can write on the Notice that you agree with ${ other_party_in_case }.</li>
-  <li>${ capitalize(other_party_in_case) } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing. </li>
-  </ul>
+    * Fill out and file: **Notice of Decision Not to File Appellee Brief, SHS-AP 260** [[Word document](https://ak-courts.info/shsap260)].
+    * Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.
+    * You can write on the Notice that you agree with ${ other_party_in_case }.
+    * ${ capitalize(other_party_in_case) } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing.

@@ -11,6 +11,8 @@ objects:
   - distrib_cert_custody_divorce_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_divorce_custody.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
   - distrib_cert_dissolution_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:CertOfDistrib_dissolution.PNG', alt_text="Certificate of Distribution shows the date the court sent your order to you.")
 ---
+comment: |
+  2026-05-26 synced w content.docx
 template: pick_a_step_step
 subject: |
   Step ${ pick_a_step_idx}:
@@ -64,6 +66,7 @@ content: |
   If they do not agree, you can ask the court to change the order by filing a "motion."
 ---
 comment: |
+  2026-06-10 after meeting w Jeannie today use TF-706 synced w content.docx
   2026-06-01 - waiting for form number decisions and bitlys matches content.docx for now mvp
 template: motion_forms_step
 subject: |
@@ -80,13 +83,8 @@ content: |
   % else:
   A motion is the way to ask the court to order something.
   % endif
-  <div class = "step-subheading">Fill out these forms</div>
-  <p><strong>Motion, SHC-1300</strong> <br>
-  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300.doc">Word file</a><br>
-  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1300n.pdf">PDF</a></p>
-  <p><strong>Affidavit &amp; Memorandum, SHC-1301</strong><br>
-  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1301.doc">Word file</a><br>
-  as a <a href="http://courts.alaska.gov/shc/family/docs/shc-1301n.pdf">PDF</a></p>
+  <div class = "step-subheading">Use</div>
+  Motion (Request) & Affidavit for, TF-706 [[Fill in PDF](https://https://ak-courts.info/tf706)]
 
   ${ signing_paragraph }
  
@@ -273,6 +271,8 @@ content: |
   
   ${ signing_paragraph }
 ---  
+comment: |
+  2026-04-09 synced with content.docx
 template: learn_set_aside_step
 subject: |
   Step ${ learn_set_aside_idx }:
@@ -375,6 +375,7 @@ content: |
   </ul>
 ---
 comment: |
+  2026-06-10 bitlys and synced w content.docx
   2026-05-22 added signing paragraph, replaced html with md
   July 10 2025
 template: fill_set_aside_step
@@ -397,6 +398,7 @@ content: |
   [Motions Part 1: How to Ask the Court for Something](https://https://youtu.be/2irmxT0_0EA)
 ---
 comment: |
+  2026-06-10 deleted duplicate fee paragraph synced w yaml
   2026-05-15 adapting for TrueFiling and bitlys
   Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
 template: modify_step
@@ -421,15 +423,11 @@ content: |
   The courts want children to have a regular schedule without a lot of changes. The courts will generally only change a Parenting Plan if there is a "substantial change in circumstances." A "substantial change in circumstances" means something has happened so that the old custody or Parenting Plan is no longer in the children's best interest.
 
   <div class="step-subheading">Some examples</div>
-  <ul>
-  <li>The current Parenting Plan order started when your child was an infant. They move between parents at noon Mondays, Wednesdays, and Fridays. Your child is starting kindergarten so the current schedule will not work.</li>
-  <li>Under the current Parenting Plan order, your children spend one week with you and the next week with the other parent.  You are going to move out of state so the current schedule is impossible.</li>
-  <li>Your children spend overnights with you and the other parent.  The other parent just went to jail for 2 years so the existing schedule is impossible.</li>
-  <li>There was a new act of domestic violence between you and the other parent when you were exchanging the children.</li>
-  </ul>
-  % if user_need == 'change foreign custody order' or (not user_need in('respond to motion in custody', 'respond to motion in divorce') and middle_of_case == 'no'):
-  The court charges $75 to file this motion. If you cannot afford the fee, you may be able to get the court to waive it. See ${ truefiling_file_and_serve_step.subject }.
-  % endif
+  
+    * The current Parenting Plan order started when your child was an infant. They move between parents at noon Mondays, Wednesdays, and Fridays. Your child is starting kindergarten so the current schedule will not work.
+    * Under the current Parenting Plan order, your children spend one week with you and the next week with the other parent.  You are going to move out of state so the current schedule is impossible.
+    * Your children spend overnights with you and the other parent.  The other parent just went to jail for 2 years so the existing schedule is impossible.
+    * There was a new act of domestic violence between you and the other parent when you were exchanging the children.
   
   If the judge decides there is a substantial change of circumstances, the judge will order a new Parenting Plan in the children's best interest.
   
@@ -453,7 +451,7 @@ content: |
   If the judge decides there is a material change of circumstances, the judge will calculate a new child support order.
   % endif
   
-  % if user_need == 'change foreign custody order' or (user_need in('change AK order', 'change custody order',' change divorce order') and middle_of_case == 'no'):
+  % if user_need == 'change foreign custody order' or (user_need in('change AK order', 'change custody order','change divorce order') and middle_of_case == 'no'):
   The court charges $75 to file a **Motion to Modify**. If you cannot afford the fee, you may be able to get the court to waive it. See ${ truefiling_file_and_serve_step.subject }.
   % endif
   
@@ -466,14 +464,21 @@ Comment: |
   % endif
 ---
 comment: |
+  2026-06-12 had to update condition for if parents_agree not asked in user_need == 'change foreign custody order' synced with content.docx
   2026-06-01 synced with content.docx, after meeting with JS and AO today led to rid Uncontested Motion to Modify SJC-1505 pdf that lists the forms.  
 template: dont_wait_modify_custody_divorce_step
 subject: |
   Step ${ dont_wait_modify_custody_divorce_idx }:
   Do not wait to file your Motion to Modify 
 content: |
-  If you and ${ other_party_in_case } agree to change the schedule, or have already permanently changed your schedule, file your **Joint Motion to Change** packet as soon as you can.
-  % if parents_agree:
+  If you and ${ other_party_in_case } agree to change the schedule, or have already permanently changed your schedule, file your 
+  % if user_need == 'change foreign custody order' or (user_need != 'change foreign custody order' and not parents_agree):
+  <strong>Motion to Change Custody, Visitation, & Support</strong>
+  % else:
+  <strong>Joint Motion to Change</strong>
+  % endif 
+  packet as soon as you can.
+  % if not user_need == 'change foreign custody order' and parents_agree:
   See ${tell_the_court_step.subject}.
   % endif
   
@@ -486,7 +491,13 @@ content: |
   <li>Child support was calculated based on the children being with you 5 overnights each week, and with the other parent 2 overnights each week.</li>
   <li>You decide to change to a schedule where the children will spend a week with you and then a week with the other parent.  You start March 1.</li>
   <li>Child support will probably change because the percentage of overnights the children spend with each parent has changed.</li>
-  <li>You file your <strong>${ "Joint Motion to Change" if parents_agree else "Motion to Change Custody, Visitation, & Support" }</strong> packet June 21.</li>
+  <li>You file your
+  % if user_need == 'change foreign custody order' or (user_need != 'change foreign custody order' and not parents_agree):
+  <strong>Motion to Change Custody, Visitation, & Support</strong>
+  % else:
+  <strong>Joint Motion to Change</strong>
+  % endif 
+  packet June 21.</li>
   <li>The judge agrees with your motion and signs a new custody and child support order September 1.</li>
   <li>The new order says that the new child support amount starts July 1.</li>
   <li>Because you did not file your motion until June, the <strong>original</strong> child support amount still applies from March until July 1.</li>
@@ -536,7 +547,7 @@ content: |
   </div>
 ---
 comment: |
-  2026-05-29 sync w content.docx
+  2026-06-10 sync w content.docx still needs some bitlys created
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
@@ -547,11 +558,11 @@ subject: |
   % endif
 content: |
   <div class="step-subheading">Use</div>
-  **Instructions for Motion to Change Custody, Visitation or Child Support, SHC-1502** [Word](https://courts.alaska.gov/shc/family/docs/shc-1502.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1502n.pdf)
+  **Instructions for Motion to Change Custody, Visitation or Child Support, DR-701** [[Fill in PDF](https://ak-courts.info/dr701)]
 
   **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support, DR-705** [[Fill in PDF](https://ak-courts.info/dr705)]
 
-  **Notice of Motion to Change parenting Plan or Child Support, DR-710** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-710.pdf)]
+  **Notice of Motion to Change Parenting Plan or Child Support, DR-710** [[Fill in PDF](https://ak-courts.info/dr710)]
 
   **Child Custody Jurisdiction Affidavit, DR-150 [[Fill in PDF](https://ak-courts.info/dr150)]
 
@@ -563,7 +574,7 @@ content: |
   [Motions Part 1: How to Ask the Court For Something](https://www.youtube.com/watch?v=2irmxT0_0EA)
 ---
 comment: |
-  2026-06-01 sync w content.docx
+  2026-06-02 added bitly's Abbey's email and synced w content.docx
 template: appeal_step
 subject: |
   Step ${ appeal_idx }:
@@ -594,7 +605,7 @@ content: |
   * a $750 bond or deposit for costs, and
   * other costs like paying someone to make a transcript of your trial.
   
-  If you cannot afford the cost of filing an Appeal, you can use **Motion for Waiver of Filing Fees and Costs, SHS-AP 130** [[Word]](https://courts.alaska.gov/shc/appeals/docs/SHS_AP_130.doc) and **Order Waiving Fees and / or Costs SHS-AP-135** [[Word](https://courts.alaska.gov/shc/appeals/docs/SHS_AP_135.doc)] to ask the court to waive the filing fee and costs.
+  If you cannot afford the cost of filing an Appeal, you can use **Motion for Waiver of Filing Fees and Costs, SHS-AP 130** [[Word]](https://ak-courts.info/shsap130) and **Order Waiving Fees and / or Costs SHS-AP-135** [[Word](https://ak-courts.info/shsap135)] to ask the court to waive the filing fee and costs.
   
   Learn more about filing an appeal on the court's web pages [Civil Appeal: Superior Court to Supreme Court](https://ak-courts.info/appeals).
 ---

@@ -8,11 +8,9 @@ subject: |
   Step ${ ak_jurisdiction_idx }:
   Make sure the Alaska court has the authority to change the order
 content: |
-  <ul>
-  <li>A court must have the authority called "jurisdiction" to issue an order about a custody or parenting plan or a child support order.</li>
-  <li>Generally, only the court in the state where the child has lived for the last 6 months can make decisions, enter a parenting plan, or order child support. This is called the child's &quot;home state.&quot;</li>
-  <li>Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. <a href="https://ak-courts.info/findlawyer">Talking to a lawyer</a> can help you decide which is the best state for your case.</li>
-  </ul>
+    * A court must have the authority called "jurisdiction" to issue an order about a custody or parenting plan or a child support order.
+    * Generally, only the court in the state where the child has lived for the last 6 months can make decisions, enter a parenting plan, or order child support. This is called the child's &quot;home state.&quot;
+    * Jurisdiction can be very complicated. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." This is one example of an exception when the Alaska court may be able to decide issues about a child that hasn't lived here for 6 months. [Talking to a lawyer](ak-courts.info/findlawyer) can help you decide which is the best state for your case.
 ---
 comment: |
   2026-03-02
@@ -370,33 +368,42 @@ content: |
   </ul>
 ---
 comment: |
+  2026-06-10 synced w yml
   update with bitlys: 2026-05-26
 template: tell_the_court_step
 subject: |
   Step ${ tell_the_court_idx }:
   Tell the court about your agreement
 content: |
-  <p>If you reach an agreement, fill out these forms:</p>
-  <div class="step-subheading">Forms to ask to modify</div>
-  <ul>
-    <li><strong>Joint Motion, SHC-1310</strong>.  Title it "Joint Motion to Modify." <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310.doc">Word</a> | <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1310n.pdf">PDF</a></li>
-  </ul>
+  If you reach an agreement, fill out these forms:
+  
+    * **Joint Motion, TF-704** [[Fill in PDF]("https://ak-courts.info/tf704)]
+  
   <div class="step-subheading">If you are changing the Parenting Plan</div>
-  <p>Choose 1 parenting plan order. Do <strong>not</strong> sign the Order section:</p>
-  <ul>
-    <li><strong>Parenting Plan Agreement &amp; Order, SHC-1128</strong> <a href="http://www.courts.alaska.gov/shc/family/docs/shc-1128.docx">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf">PDF</a></li>
-    <li><strong>Agreement   &amp; Order for Custody and Visitation, SHC-1126</strong> <a href="https://www.courts.alaska.gov/shc/family/docs/shc-1126.doc">Word</a> | <a href="https://courts.alaska.gov/shc/family/docs/shc-1126n.pdf">PDF</a></li>
-  </ul>
+  
+    * **Parenting Plan, DR-475** [[Fill in PDF](https://ak-courts.info/dr475)]
+  
   <div class="step-subheading">If you are changing child support</div>
-  <ul>
-    <li><strong>Child Custody Jurisdiction Affidavit, DR-150</strong> [<a href="https://ak-courts.info/dr150">Fill in PDF</a>] (2 copies -   each parent fills out their own) </li>
-    <li>Choose 1 form below based on the parenting schedule if it is not a primary custody calculation (where children are with 1 parent for at least 256 overnights/year)</li>
-    <ul>
-      <li><strong>Shared Custody Support Calculation, DR-306</strong> [<a href="https://ak-courts.info/dr306">Fill in PDF</a>] (if you have a   shared custody schedule)</li>
-      <li><strong>Divided Custody Support Calculation, DR-307</strong> [<a href="https://ak-courts.info/dr307">Fill in PDF</a>] (if you have a   divided custody schedule)</li>
-      <li><strong>Hybrid Custody Child Support Calculation, DR-308</strong> [<a href="https://ak-courts.info/dr308">Fill in PDF</a>] (if you are asking for a hybrid custody schedule)</li>
-    </ul>
-  </ul>
+  
+    * **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br>
+  2 copies - each parent fills out their own.
+  
+    * **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]<br>
+  2 copies - each parent fills out their own.
+  
+    * Choose 1 form below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
+  
+      * **Shared Custody Support Calculation, DR-306** [[Fill in PDF](https://ak-courts.info/dr306)]<br>
+  if you have a shared custody schedule.
+  
+      * **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]<br>
+  if you have a divided custody schedule.
+  
+      * **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]<br>
+  if you are asking for a hybrid custody schedule.
+
+  ${ signing_paragraph }
+  
   % if middle_of_case == 'no':
   If you and the other parent agree, it is free to file a <strong>Joint Motion to Modify</strong>, but if you do not agree it costs $75 to file a <strong>Motion to Modify</strong>.
   % endif
@@ -440,6 +447,8 @@ content: |
 
   ${ signing_paragraph }
 ---
+comment: 
+  2026-06-11 need one more bitly from Abbey synced with content.docx
 template: alternate_service_step
 subject: |
   Step ${ alternate_service_idx }: 
@@ -452,9 +461,11 @@ content: |
   When you start a case you must give ${other_party_in_case} a copy of every form you file with the court.  This is called “service.” If you do not know where ${other_party_in_case} is, you can ask the court to let you use “alternate service.” 
   
   1. Read: [Tips on Locating People](https://courts.alaska.gov/shc/family/shctips.htm).
-  2.	Review and fill out the **Request to Serve Defendant by Posting or Alternative Service, and Affidavit of Diligent Inquiry, CIV-145** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/civ-145.pdf)
-    * This form tells you the things you must do to try to find ${other_party_in_case} before you can aks for alternate service.
-    * **Wait** to sign this form until you are in front of someone who has the power to take oaths, like a notary public. The court clerk can do this for free. Bring a valid photo ID with your signature on it with you.
+  2. Review and fill out the **Request to Serve Defendant by Posting or Alternative Service, and Affidavit of Diligent Inquiry, CIV-145** [[Fill in PDF](https://ak-courts.info/civ145)]<br>
+  This form tells you the things you must do to try to find ${other_party_in_case} before you can aks for alternate service.
+
+  ${signing_paragraph}
+  
 ---
 template: file_complaint_step
 subject: |
@@ -807,6 +818,7 @@ content: |
   % endif  
 ---
 comment: |
+  2026-06-10 synced w content.docx
   2026-05-19 adjust heading back to accommodate different motions and adding bitly for shc1010 
   2026-05-14 put heading on new line after Step X:
   2026-04-23 go back to combining after motion and answer 
@@ -846,8 +858,8 @@ content: |
   % if user_need == 'answer divorce' and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')):
   Within 45 days of filing your answer, both of you are supposed to tell each other about all your property and debt. Fill out and give your spouse:
   
-  *	**Civil Rule 26.1 Questionnaire, SHC-1010** [[Fill in PDF](https://ak-courts.info/shc1010)]
-  *	**Property & Debt Worksheet, SHC-1000** [Word](https://courts.alaska.gov/shc/family/docs/shc-1000.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1000n.pdf)
+  *	**Civil Rule 26.1 Questionnaire, DR-890** [[Fill in PDF](https://ak-courts.info/dr890)]
+  *	**Property & Debt Worksheet, SHC-1000** [[PDF](https://ak-courts.info/dr960)]
   
   See the court's web page [Dividing Property & Debt](https://ak-courts.info/property) 
 
@@ -1131,83 +1143,3 @@ content: |
   
   Depending on your income and circumstances, you may qualify for a free lawyer from [Alaska Legal Services](https://alsc-law.org/apply-for-services).
 ---
-comment: |
-    2026-04-21 - added 'stay married' in subject field
-    last updated: 2026-02-14 from custody dismiss_step
-    note 2025-06-04 - until we get this docassemble interview 
-    Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live,     
-    use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
-template: dismiss_step
-subject: |
-  Step ${ dismiss_idx }: 
-  % if type_of_response['wrong state'] and user_need == 'answer divorce':
-  If you think Alaska is the wrong state, file a motion to dismiss your Alaska case
-  % elif type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  File a motion to dismiss your Alaska case
-  % elif type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
-  If you decide to move forward in the other state, file a motion to dismiss your Alaska case
-  % else:
-  % if (type_of_response['wrong state'] or (type_of_response.all_true('case in 2 states', 'default') and stage_of_default in('application filed', 'hearing scheduled') and stage_of_other_case == 'still going')) and (user_need == 'answer custody' and not jurisdiction):
-  Fill out the forms to respond and tell the court Alaska is the wrong state
-  % endif
-  % if (type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default', 'stay married', exclusive = True) or (type_of_response['default'] and ((type_of_response['wrong state'] and user_need == 'answer custody' and jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')))) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
-  Or, tell the judge you were not served the correct way and ask to dismiss the case
-  % endif
-  % endif
-content: |
-  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  % if type_of_response['default'] or (type_of_response['improper service'] and not proper_service):
-  Your situation is complicated. You may want to [talk to a lawyer](https://ak-courts.info/findlawyer). If you do not respond to the Alaska case, the Alaska judge may enter a ${ case_type } order. This could be very complicated if you already have a ${ case_type } order in another state. It is best to file a **Motion to Dismiss** your Alaska case to tell the Alaska judge 
-  % if proper_service:
-    about the order from the other state.
-  % else:
-    (1) about the order from the other state and (2) that you were not served properly.
-  % endif
-  % else:
-  If the case in the other state is over and the other court issued final orders, you can file a **Motion to Dismiss** your Alaska case.
-  % endif
-  
-  File a copy of the final orders from the other state, and any other documents that support your request.
-  % endif
-
-  % if (type_of_response['improper service'] and not proper_service) or type_of_response['default']:
-  If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website. 
-  % endif
-
-  % if type_of_response['default']:
-  % if type_of_response['wrong state'] and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
-      If the Alaska Court does not have jurisdiction and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you want to dismiss the case.
-   % elif type_of_response['case in 2 states'] and stage_of_other_case in( 'still going', 'ended with order') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
-  If ${ other_party_in_case } asked for a default judgment, the judge may decide without hearing from you if you do not respond. You could end up with 2 different ${ "custody " if user_need == 'answer custody' else "" }orders from 2 different states. To prevent this, file a **Motion to Dismiss** to tell the Alaska judge${ ": (1)" if user_need == 'answer custody' else "" }${ ": (1)" if user_need == 'answer divorce' and minor_children else "" }${ ": (1)" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') else "" }${ ": (1)" if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and not proper_service else "" } about the other case${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer custody' and proper_service else "" }${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer divorce' and minor_children and proper_service else "" }${ ", and (2) your children have not lived in Alaska for the last 6 months." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') and proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer custody' and not proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer divorce' and minor_children and not proper_service else "" }${ ", (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant in ('husband', 'not husband') and not proper_service else "" }${ ", and (2) that you were not served properly." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and not proper_service else "" }${ "." if user_need == 'answer divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and proper_service else "" }
-    
-  Tell the judge in the **other** state about the Alaska case.  
-  % endif
-  
-  Because ${ other_party_in_case } asked for a default judgment, it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order.
-  % endif
-  
-  If you choose to ask the judge to dismiss your case, use **Motion (Request) and Affidavit, TF-706** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/tf-706.pdf)]. Tell the judge why
-  % if type_of_response.any_true('wrong state', 'case in 2 states'):
-  you think the court does not have jurisdiction and any other reason
-  % endif
-  you think the case should be dismissed.
-
-  **Wait** to sign your motion until you are in front of someone who has the power to take oaths, like a notary public.
-  
-  * The court clerk can do this for free.
-  * Bring a valid photo ID with you.
-  * If you cannot get to a notary or someone with the power to take oaths, you can "self-certify." Use:<br>
-    **Self-Certification (No Notary Available), TF-835** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/tf-835.pdf)
-  
-  <div class="step-subheading">Learn more</div>
-
-  Watch: [Motions Part 1: How to Ask the Court For Something](https://www.youtube.com/watch?v=2irmxT0_0EA).
-
-  Read: **Getting Your Message to the Judge, SHC-1380** [Word](https://courts.alaska.gov/shc/family/docs/shc-1380.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1302n.pdf).
-
-  Learn about motions: See [Motions: Requesting an Order from the Court; Opposing a Motion](https://courts.alaska.gov/shc/family/motions.htm).
-
-  % if type_of_response.all_true('default', exclusive = True) or (type_of_response['default'] and ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
-  If ${ other_party_in_case } serves you properly in the future, the court may decide not to dismiss your case.   
-  Read ${ answer_step.subject }.
-  % endif

@@ -261,7 +261,7 @@ content: |
   % if case_type == 'divorce':
      **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832** [[Fill in PDF](https://ak-courts.info/dr832)]
   % elif case_type == 'legal separation':
-    **Answer & Counterclaim to Legal Separation With Children, SHC-094** [Word](https://courts.alaska.gov/shc/family/docs/shc-094.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-094n.pdf)
+  **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867** [[Fill in PDF](https://ak-courts.info/dr867)]
   % endif
   % if not minor_children and wife_is_pregnant in('husband', 'not husband'):
     You must use this form because wife is pregnant.
@@ -270,7 +270,7 @@ content: |
   % if case_type == 'divorce':
   **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837** [[Fill in PDF](https://ak-courts.info/dr837)]
   % elif case_type == 'legal separation':
-  **Answer & Counterclaim to Legal Separation Without Children, SHC-095** [Word](https://courts.alaska.gov/shc/family/docs/shc-095.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-095n.pdf)
+  **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872** [[Fill in PDF](https://ak-courts.info/dr872)]
   % endif
   % endif
   % endif
@@ -448,8 +448,7 @@ content: |
   % endif
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
   
-  **Parenting Plan Agreement & Order, SHC-1128** [Word](https://courts.alaska.gov/shc/family/docs/shc-1128.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf)<br>
-  Do **not** sign the Order section.
+  **Parenting Plan, DR-475** [[Fill in PDF](https://ak-courts.info/dr475)]
   % endif
 
   **Request to Put Agreement on the Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]  
@@ -457,6 +456,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-06-11 added bitly for getting message to judge synced w content.docx
   2026-05-09 add missing paragraph already in content.docx, also took out what to put in dismiss step if case in other state ended with order, it's not in Jeannie's edits. matches content.docx 
   2026-04-21 - added 'stay married' in subject field
   last updated: 2026-02-14 from custody dismiss_step
@@ -528,7 +528,7 @@ content: |
 
   Watch: [Motions Part 1: How to Ask the Court For Something](https://www.youtube.com/watch?v=2irmxT0_0EA).
 
-  Read: **Getting Your Message to the Judge, SHC-1380** [Word](https://courts.alaska.gov/shc/family/docs/shc-1380.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1380n.pdf).
+  Read: **Getting Your Message to the Judge, SHC-1380** [[PDF](https://ak-courts.info/shc1380)].
 
   Learn about motions: See [Motions: Requesting an Order from the Court; Opposing a Motion](https://ak-courts.info/mot).
 
@@ -538,6 +538,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-06-11 add bitly synced w content.docx
   2026-04-24 adjusting for 'stay married' and added sure you don't want to respond question
   2026-04-16 some code is still a little different between docx and this mako step
   2026-04-08 dont ask for response_to_complaint if type_of_response.all_false()
@@ -726,7 +727,7 @@ content: |
   * Each side makes offers about what they want and the judge comments on whether it meets the legal requirements and is reasonable.
   * The judge has no official power to make the parties settle at this stage, but usually strongly encourages settlement by critiquing the parties' trial positions.
   * The judge also indicates how a judge would likely rule on disputed issues during the trial.
-  * If both parties want a judge to help settle the issues, file a **Joint Motion for a Settlement Conference, SHC 1062** [Word](http://www.courts.alaska.gov/shc/family/docs/shc-1062.doc) | [PDF](http://www.courts.alaska.gov/shc/family/docs/shc-1062n.pdf).
+  * If both parties want a judge to help settle the issues, file a **Joint Motion for a Settlement Conference, DR-270** [[Fill in PDF](https://ak-courts.info/dr270)].
   % endif # endregion content.settlement_conference_section
   
   <div class='step-subheading'>Collaborative Law</div>
@@ -755,7 +756,8 @@ content: |
   % endif # endregion content.some_benefits_are
 ---
 comment: |
-  last updated 2026-05-01 added gateway user_need == 'answer divorce'  for minor_children in subject - do not need to update docx.
+  last updated 2026-06-11 added bitly in step, bolded form in content.docx synced now.
+  2026-05-01 added user_need == 'answer divorce'  for minor_children in subject - do not need to update docx.
   2026-04-09 changed conditions so case_type is not asked if type_of_response.all_false()
   last updated 2026-04-02 switch the order of respond to complaint to be inside children or no children in 2nd half of template.
   2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
@@ -865,6 +867,6 @@ content: |
   If you think you or your children's health, safety, or liberty would be harmed by providing the information on the **Child Custody Jurisdiction Affidavit, DR-150** to ${ other_party_in_case }:
   
     * Do not give ${ other_party_in_case } a copy of the completed **Child Custody Jurisdiction Affidavit** after you file it with the court. and
-    * File  **Direction to Seal Child Custody Jurisdiction Affidavit**, [DR-151](https://public.courts.alaska.gov/web/forms/docs/dr-151.pdf).
+    * File  **Direction to Seal Child Custody Jurisdiction Affidavit**, [DR-151](https://ak-courts.info/dr151).
   % endif
 ---
