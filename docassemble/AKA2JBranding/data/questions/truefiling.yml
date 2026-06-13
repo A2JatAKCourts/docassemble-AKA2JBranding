@@ -1,4 +1,5 @@
 comment: |
+  2026-06-12 adusting file and serve step for changing custody order and sync with content.docx
   2026-05-27 fixing content field in serve step to pass 'answer' tests
   2026-05-15 adapting for divorce-changing
   2026-04-21 - deleted "Domestic Relations Procedural Order" from filing (complaint) step
@@ -99,7 +100,8 @@ subquestion: |
 
   You **do not** need to refresh your screen. Hang in there!
 ---
-comment: |
+comment: |  
+  2026-06-12 condition for changing custody order and sync with content.docx
   2026-06-09 fixing links and making sure bitly's exist and are correct synced w docx
   2026-05-20 adapting for divorce-changing mostly filing fee conditions
   2026-04-30 added "your documents with the court" for answer for answer interviews
@@ -185,7 +187,7 @@ content: |
   
     * [Create an account](https://ak-courts.info/tflogin) and file your documents. Read about [TrueFiling](https://ak-courts.info/truefile)
 
-  % if user_need in('custody', 'divorce','change foreign custody order') or (user_need in ('change AK order', 'change divorce order', 'change custody order') and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (user_need == 'change divorce order' and type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))):
+  % if user_need in ('custody', 'divorce','change foreign custody order') or (user_need in ('change AK order', 'change custody order') and middle_of_case == 'no' and why_change in('review', 'schedule')) or (user_need =='change divorce order' and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))):
   % if user_need in('custody', 'divorce'):
   Pay the $250 filing fee to start your case.
   % elif user_need in('change AK order', 'change divorce order', 'change custody order', 'change foreign custody order'):
