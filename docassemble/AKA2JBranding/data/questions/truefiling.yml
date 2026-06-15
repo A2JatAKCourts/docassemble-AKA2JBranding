@@ -100,7 +100,8 @@ subquestion: |
 
   You **do not** need to refresh your screen. Hang in there!
 ---
-comment: |  
+comment: | 
+  2026-06-15 responding step heading from "to Reconsider" to "for Reconsideration"
   2026-06-12 condition for changing custody order and sync with content.docx
   2026-06-09 fixing links and making sure bitly's exist and are correct synced w docx
   2026-05-20 adapting for divorce-changing mostly filing fee conditions
@@ -127,7 +128,7 @@ subject: |
   % endif
   % elif user_need in('respond to motion in custody', 'respond to motion in divorce'):
   % if type_of_response == 'reconsider':
-  If the judge asks you to respond to the Motion to Reconsider, file your response
+  If the judge asks you to respond to the Motion for Reconsideration, file your response
   % else:
   File and serve your response within 10 or 13 days
   % endif
@@ -233,7 +234,7 @@ template: truefiling_serve_step
 subject: |
   Step ${ truefiling_serve_idx }:
   % if user_need in('respond to motion in custody', 'respond to motion in divorce') and type_of_response == 'reconsider':
-  If the judge asks you to respond to the Motion to Reconsider, serve ${ other_party_in_case }
+  If the judge asks you to respond to the Motion for Reconsideration, serve ${ other_party_in_case }
   % else:
   Serve ${ other_party_in_case }
   % endif
