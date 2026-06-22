@@ -16,12 +16,13 @@ yesno: have_complaint
 ---
 id: truefiling questions 1 and 2 exempt and email
 comment: |
+  2026-06-22 added respond to motion in custody in step heading
   2026-05-19 subquestion conditional
   first true filing as long as proper_service is True or unasked in Answer interviews
 question: |
   % if user_need in('answer custody', 'answer divorce'):
   Is ${ other_party_in_case } exempt from using TrueFiling?
-  % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order', 'respond to motion in divorce' ):
+  % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order', 'respond to motion in custody', 'respond to motion in divorce' ):
   Is ${ other_party_in_case } using TrueFiling?
   % endif
 subquestion: |

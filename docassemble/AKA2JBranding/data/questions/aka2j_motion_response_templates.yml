@@ -133,6 +133,7 @@ content: |
   [Motions Part 2: How to File an Opposition to a Motion](https://www.youtube.com/watch?v=E7cYJyRciBg)
 ---
 comment: |
+  2026-06-22 add type_of_response == 'modify' before asking for type_of_modification so interview only asks for type_of_modification if type_of_response == 'modify'
   2026-06-05 Update form numbers and add 'Or' in step heading for middle_of_case == 'no' to indicate this is the other option if user chooses not to use family law Response to Motion DR-707 from discussion w Abbey
 template: contact_other_party_step
 subject: |
@@ -163,7 +164,7 @@ content: |
   **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]
   **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   % endif
-  % if (type_of_modification.any_true('spousal support', 'other') and type_of_modification.all_false('child support', 'custody')) or (middle_of_case == 'no' and type_of_response =='set aside'):
+  % if (type_of_response =='modify' and type_of_modification.any_true('spousal support', 'other') and type_of_modification.all_false('child support', 'custody')) or (middle_of_case == 'no' and type_of_response =='set aside'):
 
     *	**Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
   % endif
@@ -172,7 +173,6 @@ content: |
   
     * You and ${ other_party_in_case } later agree to a new change. **Or**
     * You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.
-
 ---
 template: file_response_step
 subject: |
