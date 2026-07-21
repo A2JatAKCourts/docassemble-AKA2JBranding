@@ -1,4 +1,5 @@
 comment: |
+  2026-07-20 work around for filing step content calling serve step subject when parents agree in changing orders.
   2026-06-12 adusting file and serve step for changing custody order and sync with content.docx
   2026-05-27 fixing content field in serve step to pass 'answer' tests
   2026-05-15 adapting for divorce-changing
@@ -140,8 +141,8 @@ content: |
   After you finish filling out your forms:
 
     * You need to send them to the court. This is called “filing.” 
-  % if user_need in('answer custody', 'answer divorce') and type_of_response.all_false():
-  Because both of you sign the forms and you each have a copy, you do not have to "serve" the other parent by mailing documents or using a process server.
+  % if (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()) or (user_need in('change AK order', 'change custody order', 'change divorce order') and parents_agree):
+  Because both of you sign the forms and you each have a copy, you do not have to "serve" ${ other_party_in_case } ${ "by mailing documents or using a process server" if user_need in('answer custody', 'answer divorce') and type_of_response.all_false() else ""}.
   % else:
     * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”  Read ${ truefiling_serve_step.subject }.  
     *        Keep a copy for your records.
