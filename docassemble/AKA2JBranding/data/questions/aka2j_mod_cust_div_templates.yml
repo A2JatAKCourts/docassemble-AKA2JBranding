@@ -574,6 +574,7 @@ content: |
   [Motions Part 1: How to Ask the Court For Something](https://www.youtube.com/watch?v=2irmxT0_0EA)
 ---
 comment: |
+  2026-07-25 broadened appeal deadline from custody order exclusive to simply divorce order that includes a custody order. 
   2026-06-02 added bitly's Abbey's email and synced w content.docx
 template: appeal_step
 subject: |
@@ -582,7 +583,7 @@ subject: |
 content: |
   An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case.
   
-  % if user_need == 'change custody order' or (user_need == 'change divorce order' and type_of_final_order.all_true('custody order', exclusive = True) and why_change == 'problem'):
+  % if user_need == 'change custody order' or (user_need == 'change divorce order' and type_of_final_order['custody order'] and why_change == 'problem'):
   You have only **15 days** from the day the court sent the order to you.
   % else: 
   You have only **30 days** from the day the court sent the order to you.
