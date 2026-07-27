@@ -1,5 +1,5 @@
 comment: |
-  2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income' in file_and_serve template
+  2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income' in file_and_serve template and then add 'enforce AK order' to get file_step heading
   2026-07-22 updating for changing foreign orders and foreign custody orders
   2026-07-20 work around for filing step content calling serve step subject when parents agree in changing orders.
   2026-06-12 adusting file and serve step for changing custody order and sync with content.docx
@@ -104,7 +104,7 @@ subquestion: |
   You **do not** need to refresh your screen. Hang in there!
 ---
 comment: | 
-  2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income'
+  2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income', add 'enforce AK order' to get file_step heading
   2026-06-15 responding step heading from "to Reconsider" to "for Reconsideration"
   2026-06-12 condition for changing custody order and sync with content.docx
   2026-06-09 fixing links and making sure bitly's exist and are correct synced w docx
@@ -124,7 +124,7 @@ subject: |
   your documents with the court and serve ${ other_party_in_case }
   % elif user_need in('custody', 'divorce') or (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()):
   File the original with your local court
-  % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order'):
+  % elif user_need in('child support', 'change AK order', 'change foreign order','change divorce order', 'change custody order', 'change foreign custody order', 'enforce AK order'):
   % if defined('file_step_heading'):
   ${ file_step_heading }
   % else:
