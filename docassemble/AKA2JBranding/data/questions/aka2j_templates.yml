@@ -818,6 +818,7 @@ content: |
   % endif  
 ---
 comment: |
+  2026-07-27 add 'change AK order' to get step heading from changing child support interview.
   2026-06-10 synced w content.docx
   2026-05-19 adjust heading back to accommodate different motions and adding bitly for shc1010 
   2026-05-14 put heading on new line after Step X:
@@ -833,7 +834,7 @@ subject: |
   What to expect after you file your Answer
   % elif user_need == 'answer custody' and type_of_response.all_false():
   What to expect after you file your Complaint
-  % elif user_need in ('change divorce order', 'change foreign custody order', 'change custody order'):
+  % elif user_need in ('change divorce order', 'change foreign custody order', 'change custody order', 'change AK order'):
   What to expect after you file your ${ motion_type }
   % else:
   What to expect after you file your documents
