@@ -1,27 +1,28 @@
-comment: |
-  2026-04-23 removed duplicate appeal_response_step
+  # 2026-08-07 sync w content.docxes
 ---
 comment: |
+  2026-08-07 sync w content.docx and changed most 'courts' to 'judge'
   2026-06-11 sync w content.docx
   2026-06-05 Replace CIV-810 Response to Motion for civil cases w Response to Motion TF-707 for family law cases
   2026-06-02 sync w content.docx
 template: respond_to_reconsider_step
 subject: |
   Step ${ respond_to_reconsider_idx }:
-  If the court asks, respond in writing to the Motion for Reconsideration
+  If the judge asks, respond in writing to the Motion for Reconsideration
 content: |
   A **Motion for Reconsideration** asks a judge to change a decision or order they made in the last 10 days.
   
-    * Do not respond to a **Motion for Reconsideration** unless the court asks you for a response, usually in a written order or notice. The court usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to the parents.
+    * Do not respond to a **Motion for Reconsideration** unless the judge asks you for a response, usually in a written order or notice. The judge usually sets a deadline for a response. If no deadline is set, the response is due 10 days from the date the court distributed it to you. You can find this date by looking at the end of the written order or decision to see when the clerk emailed or mailed it to you.
     * There will not be a hearing.
-    * The court may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, **whichever is later**, the **Motion for Reconsideration** is denied, which means the original decision is not changed.
-    * If the court grants the **Motion for Reconsideration**, it will either enter a new order or ask both sides for more information.
+    * The judge may write a decision, but if the court does not issue a decision 30 days after the motion or response was filed, **whichever is later**, the **Motion for Reconsideration** is denied, which means the original decision is not changed.
+    * If the judge grants the **Motion for Reconsideration**, they will enter a new order or ask both sides for more information.
   
-  <div class="step-subheading">If the court asks for a response</div>
-  If the court asks for a response, provide the information the court asks for. You will have 10 days to file your response unless the court gives you a different deadline. Fill out:</p>
+  <div class="step-subheading">If the judge asks for a response</div>
+  If the judge asks for a response, provide the information they ask for. You will have 10 days to file your response unless the judge gives you a different deadline. Fill out:
   **Response to Motion, TF-707** [[Fill in PDF](https://ak-courts.info/tf707)]
 ---
-comment: 
+comment: |
+  2026-08-07 sync w content.docx 
   2026-06-05 keep option writing out an agreement for responding in middle of case.
   2026-06-03 more TrueFiling edits - timing for service, but also awaiting answers to filing response when other party files 706? motion to modify something 'other' than custody or support either kind. 
   2026-05-20 some edits to accommodate TrueFiling changes
@@ -56,7 +57,7 @@ content: |
     * Contact ${ other_party_in_case }, write out your agreement together, and file it with the court. See ${ contact_other_party_step.subject } and ${ file_agreement_step.subject }.
   
   
-  For both options, you must file all documents with the court within **10 days** from the day you were served the motion by email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope. 
+  For both options, you must file all documents with the court within **10 days** from the day you were served the motion by TrueFiling, email or hand-delivery. If you were served by mail, you have **13 days** from the day it was mailed to you, the date of the postmark on the envelope.
 ---
 comment: |
   2026-06-10 sync w content.docx 
@@ -126,13 +127,14 @@ content: |
   **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
   
   % else:
-  **Response to Motion (Request) for, TF-707**  [[Fill in PDF](https://ak-courts.info/tf707]
+  **Response to Motion (Request) for, TF-707**  [[Fill in PDF](https://ak-courts.info/tf707)]
   % endif
   
   <div class="step-subheading">Watch</div>
   [Motions Part 2: How to File an Opposition to a Motion](https://www.youtube.com/watch?v=E7cYJyRciBg)
 ---
 comment: |
+  2026-08-07 sync w content.docx
   2026-06-22 add type_of_response == 'modify' before asking for type_of_modification so interview only asks for type_of_modification if type_of_response == 'modify'
   2026-06-05 Update form numbers and add 'Or' in step heading for middle_of_case == 'no' to indicate this is the other option if user chooses not to use family law Response to Motion DR-707 from discussion w Abbey
 template: contact_other_party_step
@@ -141,38 +143,185 @@ subject: |
   Or, contact ${ other_party_in_case }, and write out your agreement
 content: |
   If you and ${ other_party_in_case } agree, and can work together, you can use these court forms to write out your agreement and file it with the court:
+
+    * **Joint Request, TF-704** [[Fill in PDF](https://ak-courts.info/tf704)]
+    * **Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
+
   % if type_of_response == 'modify' and type_of_modification.any_true('custody','child support') and respond_to_modify == 'agree':
 
-  **Joint Motion, TF-704** [[Fill in PDF](https://ak-courts.info/tf704)]
-  
-  **Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
-
-  <div class="step-subheading">If you are changing the Parenting Plan and custody order</div
-  
-  **Parenting Plan, DR-475** [[Fill in PDF](https://ak-courts.info/dr475)]
+  <div class="step-subheading">If you are changing the Parenting Plan and custody order</div>
+  <ul>
+    <li>
+      **Parenting Plan, DR-475** [<a href="https://ak-courts.info/dr475"> Fill in PDF</a>]
+    </li>
+    <li>
+      **Request to Put Agreement on Record, DR-264** [<a href="https://ak-courts.info/dr264"> Fill in PDF</a>]
+    </li>
+  </ul>
   
   <div class="step-subheading">If you are changing child support</div>
-  
-  **Child Support Guidelines Affidavit, DR-305** [[Fill in PDF](https://ak-courts.info/dr305)]<br>
-  Each parent files their own</li>
-
-  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
-  Each parent files their own
-
-  Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, where children are with 1 parent for at least 256 overnights/year.
-  **Shared Custody Support Calculation, DR-306** [[Fill in PDF](https://ak-courts.info/dr306)]
-  **Divided Custody Support Calculation, DR-307** [[Fill in PDF](https://ak-courts.info/dr307)]
-  **Hybrid Custody Child Support Calculation, DR-308** [[Fill in PDF](https://ak-courts.info/dr308)]
+  <ul>
+    <li>
+      **Child Support Guidelines Affidavit, DR-305** [<a href="https://ak-courts.info/dr305"> Fill in PDF</a>]<br>
+      Each parent files their own.
+    </li>
+    <li>
+      **Child Custody Jurisdiction Affidavit, DR-150** [<a href="https://ak-courts.info/dr150"> Fill in PDF</a>]<br>
+      Each parent files their own.
+    </li>
+    <li>Choose 1 calculation below based on the parenting schedule if it is not a primary custody calculation, when children are with 1 parent for at least 256 overnights/year.
+    <ul>
+      <li>
+        **Shared Custody Child Support Calculation, DR-306** [<a href="https://ak-courts.info/dr306"> Fill in PDF</a>]<br>
+        Use this form if the children spend at least 110 overnights with each parent.
+      </li>
+      <li>
+        **Divided Custody Child Support Calculation, DR-307** [<a href="https://ak-courts.info/dr307"> Fill in PDF</a>]<br>
+        Use this if both parents have primary physical custody of one or more children and neither parent has shared custody of any children. 
+      </li>
+      <li>
+        **Hybrid Custody Child Support Calculation, DR-308** [<a href="https://ak-courts.info/dr308"> Fill in PDF</a>]<br>
+        Use this form if both parents have shared custody of 1 or more children and 1 or both parents have primary custody of 1 or more children.
+      </li>
+    </ul>
+    </li>
+  </ul>
   % endif
-  % if (type_of_response =='modify' and type_of_modification.any_true('spousal support', 'other') and type_of_modification.all_false('child support', 'custody')) or (middle_of_case == 'no' and type_of_response =='set aside'):
-
-    *	**Request to Put Agreement on Record, DR-264** [[Fill in PDF](https://ak-courts.info/dr264)]
-  % endif
-
   Be sure you agree with the change before sending it to the judge. If you tell the court you agree to a change and the judge signs the agreement, it is a new court order and you are required to follow it. It can only be changed if:
   
     * You and ${ other_party_in_case } later agree to a new change. **Or**
     * You or ${ other_party_in_case } follow all the steps to ask the judge to change the order, and the judge agrees and signs a new order.
+---
+---
+comment: |
+  2026-08-07 sync w content.docx
+  2026-06-04 synced w content.docx
+template: file_agreement_step
+subject: |
+  Step ${ file_agreement_idx }:
+  File your agreement with the court within 10 or 13 days
+content: |
+  You have 13 days to file your agreement if the motion was mailed to you, 10 days if you were served another way.
+ 
+    * Make 2 copies of the forms you filled out stating your agreement,<br>
+    1 copy for each of you.
+    * File the originals with the court where the motion was filed.
+    * File by the deadline - 10 or 13 days.<br>
+  If the deadline is a weekend or holiday, your agreement is due the next day the court is open.<br>
+  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.
+---
+comment: |
+
+  2026-06-03 sync w content.docx
+  Based on [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
+  Replaced older version with newer, easier to read version see GitHub issue [after_response_step #3](https://github.com/A2JatAKCourts/docassemble-ChangingDivorceOrderInterviewIssues/issues/3)
+template: expect_after_response_step
+subject: |
+  Step ${ expect_after_response_idx }:
+  What to expect after you respond to the ${ motion_type }
+content: |
+  <div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
+  
+  If you serve ${ other_party_in_case } with your response:
+
+  * by TrueFiling, email or hand-delivery, they have 5 days to reply to the court in writing,
+  * by mail, they have 8 days.
+  
+  The documents ${ other_party_in_case } files after you serve them with your response is their "reply." A Reply is not required.
+  
+  <div class="step-subheading">The judge will issue an order</div>
+  
+  * The judge may set a date for a hearing, but they may decide the motion without a hearing
+  * The judge may grant the **${ motion_type }**. If they do, you will get a copy of the new order.
+  * The judge may deny the **${ motion_type }**. If they do, you will get an order denying the motion.
+  % if user_need =='change foreign custody order' or (user_need in('change AK order', 'change custody order', 'change divorce order') and middle_of_case == 'no'):
+  * Keep following your court order unless the judge grants the motion and issues a new order.
+  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://ak-courts.info/appeals).
+  % endif
+---
+comment: |
+  2026-08-07 sync w content.docx
+  2026-06-11 sync w content.docx, still needs bitly for timeline
+template: appeal_response_step
+subject: |
+  Step ${ appeal_response_idx }:
+  % if respond_to_appeal == 'agree':
+  Let ${ other_party_in_case } know you agree with the Appeal and decide if you want to respond in writing
+  % else:
+  Respond in writing to the Appeal
+  % endif
+content: |
+  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://ak-courts.info/findlawyer), if you can.
+  
+  The only information the Supreme Court looks at is:
+  
+  * the audio recording of the hearing or trial in the lower court,
+  * any items offered as evidence at the hearing or trial in the lower court,
+  * the documents in the lower court or agency record, and
+  * appeal briefs filed in the appeal to the Supreme Court.
+  
+  % if respond_to_appeal == 'agree':
+  The Alaska Court System [Appeals](https://ak-courts.info/appeals) web pages have a lot of information about the process. You can also review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
+  <div class="step-subheading">Agreement</div>
+  If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
+  
+    * Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.
+    * Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.
+  % else:
+  <div class="step-subheading">Timeline</div>
+  You can review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
+  <div class="step-subheading">Process</div>
+  If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
+  
+  * after receiving the papers from ${ other_party_in_case } that start the appeal,
+  * when deciding whether to file your own appeal too which is called a "cross appeal,"
+  * when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed), and
+  * when preparing for oral argument where both sides appear in the Supreme Court and each side argues their case and the justices may ask questions.
+  
+  The Alaska Court System[ Appeals web page](https://ak-courts.info/appeals) has information about each of these steps and how you can prepare your side of the case.
+  % endif
+---
+comment: |
+  2026-08-07 , replaced custody case in 2nd heading w case_type, person who started appeal with other party in case, sync w content.docx
+  2026-06-11 synced w content.docx still need bitlys created
+template: appeal_contact_parent_step
+subject: |
+  Step ${ appeal_contact_parent_idx }:
+  Contact ${ other_party_in_case }
+content: |
+  If you agree with the appeal, you can contact and tell ${ other_party_in_case }. You can both do the following:
+  <div class="step-subheading">In the Alaska Supreme Court appeal case</div>
+  <ul>
+  <li>${ capitalize(other_party_in_case) } can file:</li>
+  <ul>
+  <li><strong>Motion, SHS-AP 400</strong> [<a href="https://ak-courts.info/shsap400">Word document</a>]<br>
+  Name it "Motion to Dismiss because of Settlement Agreement," </li>
+  <li><strong>Affidavit &amp; Memorandum, SHS-AP 410</strong> [<a href="https://ak-courts.info/shsap410">Word document</a>], and </li>
+  <li><strong>Order, SHS-AP 420</strong> [<a href="https://ak-courts.info/shsap420">Word document</a>] telling the court the case can be dismissed. </li>
+  </ul>
+  <li>You can file a <strong>Response, SHS-AP 440</strong> [<a href="https://ak-courts.info/shsap440">Word document</a>], telling the court you agree.<br>
+  </li>
+  </ul>
+  <div class="step-subheading">In the trial court, where you had your ${ case_type } case</div>
+  If your agreement about the appeal changes the current court order, you both should fill out and file:
+  <ul>
+  <li><strong>Request to Put Agreement on Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill in PDF</a>]</li>
+  </ul>
+---
+comment: |
+  2026-06-04 synced w content.docx still
+template: tell_supreme_court_step
+subject: |
+  Step ${ tell_supreme_court_idx }:
+  Tell the Alaska Supreme Court
+content: |
+    * Fill out and file: **Notice of Decision Not to File Appellee Brief, SHS-AP 260** [[Word document](https://ak-courts.info/shsap260)].
+    * Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.
+    * You can write on the Notice that you agree with ${ other_party_in_case }.
+    * ${ capitalize(other_party_in_case) } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing.
+---
+
+########################################################
 ---
 template: file_response_step
 subject: |
@@ -217,125 +366,3 @@ content: |
   <li>Serve them on the date you put in the <strong>Certificate of Service</strong>.</li>
   <li>If you did not serve ${ other_party_in_case } on the date or the way you put on your <strong>Certificate of Service</strong>, fill out a new <strong>Certificate of  Service, <a href="https://courts.alaska.gov/shc/family/docs/shc-1620.doc">SCH-1620</strong></a> and file it with the court.</li>
   </ul>
----
-comment: |
-  2026-06-04 synced w content.docx
-template: file_agreement_step
-subject: |
-  Step ${ file_agreement_idx }: File your agreement with the court within 10 or 13 days
-content: |
-  You have 13 days to file your agreement if the motion was mailed to you, 10 days if you were served another way.
- 
-    * Make 2 copies of the forms you filled out stating your agreement -<br>
-  1 copy for each of you.
-    * File the originals with the court where the motion was filed. </li>
-    * File by the deadline - 10 or 13 days.<br>
-  If the deadline is a weekend or holiday, your agreement is due the next day the court is open.<br>
-  For example, if the deadline is a Saturday, and the court is open Monday, your agreement is due Monday.
----
-comment: |
-  2026-06-03 sync w content.docx
-  Based on [CIV-809 Instructions for Responding to Motions](https://public.courts.alaska.gov/web/forms/docs/civ-809.pdf) and [DR-721 Instructions for Responding to a Motion to change Custody Support or Visitation](https://public.courts.alaska.gov/web/forms/docs/dr-721.pdf)
-  Replaced older version with newer, easier to read version see GitHub issue [after_response_step #3](https://github.com/A2JatAKCourts/docassemble-ChangingDivorceOrderInterviewIssues/issues/3)
-template: expect_after_response_step
-subject: |
-  Step ${ expect_after_response_idx }:
-  What to expect after you respond to the ${ motion_type }
-content: |
-  <div class="step-subheading">${capitalize( other_party_in_case) } may file a Reply</div>
-  
-  If you serve ${ other_party_in_case } with your response:
-
-  * by TrueFiling, email or hand-delivery, they have 5 days to reply to the court in writing,
-  * by mail, they have 8 days.
-  
-  The documents ${ other_party_in_case } files after you serve them with your response is their "reply."  A Reply is not required.  
-  
-  <div class="step-subheading">The judge will issue an order</div>
-  
-  * The judge may set a date for a hearing, but they may decide the motion without a hearing
-  * The judge may grant the ${ motion_type }. If they do, you will get a copy of the new order.
-  * The judge may deny the motion. If they do, you will get an order denying the motion.
-  % if middle_of_case == 'no':
-  * Keep following your court order unless the judge grants the motion and issues a new order.
-  * Either one of you can decide to appeal the decision about the ${ motion_type } if you believe the judge made a legal mistake. Learn more about [filing an appeal](https://ak-courts.info/appeals).
-  % endif  
----
-comment: |
-  2026-06-11 sync w content.docx, still needs bitly for timeline
-template: appeal_response_step
-subject: |
-  Step ${ appeal_response_idx }:
-  % if respond_to_appeal == 'agree':
-  Let ${ other_party_in_case } know you agree with the Appeal and decide if you want to respond in writing
-  % else:
-  Respond in writing to the Appeal
-  % endif
-content: |
-  An appeal is the way to ask the Alaska Supreme Court to review the trial judge’s decision in your case. It is not a new trial or a chance to give a judge new evidence or information.  In an appeal, you argue that the trial judge made a legal mistake.  The civil appeals process is complicated, long and expensive. The process can take more than 2 years. [Talk to a lawyer](https://ak-courts.info/findlawyer), if you can.
-  
-  The only information the Supreme Court looks at is:
-  
-  * the audio recording of the hearing or trial in the lower court,
-  * any items offered as evidence at the hearing or trial in the lower court,
-  * the documents in the lower court or agency record, and
-  * appeal briefs filed in the appeal to the Supreme Court.
-  
-  % if respond_to_appeal == 'agree':
-  The Alaska Court System [Appeals](https://ak-courts.info/appeals) web pages have a lot of information about the process. You can also review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
-  <div class="step-subheading">Agreement</div>
-  If you agree with what ${ other_party_in_case } is asking for in the appeal, you have some options.
-  
-    * Contact ${ other_party_in_case } and write out your agreement. See Step ${ appeal_contact_parent_idx }.
-    * Tell the Alaska Supreme Court in writing you will not be a part of the appeal. See Step ${ tell_supreme_court_idx }.
-  % else:
-  <div class="step-subheading">Timeline</div>
-  You can review a [timeline for the steps in an appeal](https://ak-courts.info/shsap1000).
-  <div class="step-subheading">Process</div>
-  If you receive papers saying ${ other_party_in_case } filed an appeal, you need to prepare to respond. There are several times during the appeal that you need to be active:
-  
-  * after receiving the papers from ${ other_party_in_case } that start the appeal,
-  * when deciding whether to file your own appeal too which is called a "cross appeal,"
-  * when writing a response called a brief to ${ other_party_in_case }'s opening brief (written argument why the trial court decision should be changed), and
-  * when preparing for oral argument where both sides appear in the Supreme Court and each side argues their case and the justices< may ask questions.
-  
-  The Alaska Court System[ Appeals web page](https://ak-courts.info/appeals) has information about each of these steps and how you can prepare your side of the case.
-  % endif
----
-comment: |
-  2026-06-11 synced w content.docx still need bitlys created
-template: appeal_contact_parent_step
-subject: |
-  Step ${ appeal_contact_parent_idx }:
-  Contact ${ other_party_in_case }
-content: |
-  If you agree with the appeal, you can contact and tell ${ other_party_in_case }. You can both do the following:
-  <div class="step-subheading">In the Alaska Supreme Court appeal case</div>
-  <ul>
-  <li>The person who started the case can file:</li>
-  <ul>
-  <li><strong>Motion, SHS-AP 400</strong> [<a href="https://ak-courts.info/shsap400">Word document</a>]<br>
-  Name it "Motion to Dismiss because of Settlement Agreement" </li>
-  <li><strong>Affidavit &amp; Memorandum, SHS-AP 410</strong> [<a href="https://ak-courts.info/shsap410">Word document</a>], and </li>
-  <li><strong>Order, SHS-AP 420</strong> [<a href="https://ak-courts.info/shsap420">Word document</a>] telling the court the case can be dismissed. </li>
-  </ul>
-  <li>You can file a <strong>Response, SHS-AP 440</strong>, [<a href="https://ak-courts.info/shsap440">Word document</a>], telling the court you agree.<br>
-  </li>
-  </ul>
-  <div class="step-subheading">In the trial court, where you had your custody case</div>
-  If your agreement about the appeal changes the current court order, you both should fill out and file:
-  <ul>
-  <li><strong>Request to Put Agreement on Record, DR-264</strong> [<a href="https://ak-courts.info/dr264">Fill in PDF</a>]</li>
-  </ul>
----
-comment: |
-  2026-06-04 synced w content.docx still need bitly to be created
-template: tell_supreme_court_step
-subject: |
-  Step ${ tell_supreme_court_idx }:
-  Tell the Alaska Supreme Court
-content: |
-    * Fill out and file: **Notice of Decision Not to File Appellee Brief, SHS-AP 260** [[Word document](https://ak-courts.info/shsap260)].
-    * Make 2 copies of the forms you filled out stating your agreement – 1 for you and 1 for ${ other_party_in_case }.
-    * You can write on the Notice that you agree with ${ other_party_in_case }.
-    * ${ capitalize(other_party_in_case) } may want to file a <strong>Motion to Dismiss</strong> to stop the appeal from continuing.

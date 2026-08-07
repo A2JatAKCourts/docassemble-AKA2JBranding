@@ -144,18 +144,18 @@ content: |
 
     * You need to send them to the court. This is called “filing.” 
   % if (user_need in('answer custody', 'answer divorce') and type_of_response.all_false()) or (user_need in('change custody order', 'change divorce order') and parents_agree) or (user_need == 'change AK order' and why_change == 'income' and parents_agree):
-  Because both of you sign the forms and you each have a copy, you do not have to "serve" ${ other_party_in_case } ${ "by mailing documents or using a process server" if user_need in('answer custody', 'answer divorce') and type_of_response.all_false() else ""}.
+    * Because both of you sign the forms and you each have a copy, you do not have to "serve" ${ other_party_in_case }.
   % else:
-    * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.”  Read ${ truefiling_serve_step.subject }.  
-    *        Keep a copy for your records.
+    * You also need to give ${ other_party_in_case } a copy of everything you file with the court. This is called “service.” Read ${ truefiling_serve_step.subject }.
+    * Keep a copy for your records.
   % endif
 
   % if user_need in('answer custody', 'answer divorce') and type_of_response.any_true():  
-  **Timing**: You have 20 days after you receive the Complaint to file your documents with the court and give a copy to ${ other_party_in_case }.
+  **Timing**: You have **20 days** after you receive the Complaint, to file your documents with the court and give a copy to ${ other_party_in_case }.
   % elif user_need in('respond to motion in custody', 'respond to motion in divorce'):
-  **Timing**: If ${ other_party_in_case } mailed a copy of the motion to you, you have 13 days to file and give a copy to ${ other_party_in_case }. Use the date of the postmark on the envelope.
+  **Timing**: If ${ other_party_in_case } mailed a copy of the motion to you, you have **13 days** to file and give a copy to ${ other_party_in_case }. Use the date of the postmark on the envelope.
 
-  If they served you another way, you have 10 days to file  and give a copy to ${ other_party_in_case }.
+  If they served you another way, you have **10 days** to file and give a copy to ${ other_party_in_case }.
   % endif
 
   % if user_need == 'divorce' and ((legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids == 'yes') or (not minor_children and agree_or_settle in('no prop debt or pregnancy','agree','do not know')))) or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes')):
@@ -190,21 +190,25 @@ content: |
   
   **If you are not exempt:**
   
-    * [Create an account](https://ak-courts.info/tflogin) and file your documents. Read about [TrueFiling](https://ak-courts.info/truefile)
+    * [Create an account](https://ak-courts.info/tflogin) and file your documents.
+    * Read about [TrueFiling](https://ak-courts.info/truefile).
 
-  % if user_need in ('custody', 'divorce','change foreign custody order') or (user_need in ('change AK order', 'change custody order') and middle_of_case == 'no' and why_change in('review', 'schedule')) or (user_need =='change divorce order' and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))):
+  % if user_need in('custody', 'divorce', 'change foreign custody order') or (user_need == 'change custody order' and middle_of_case == 'no' and why_change in('review', 'schedule')) or (user_need == 'change divorce order' and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))) or (user_need == 'change AK order' and middle_of_case == 'no' and why_change == 'income' and not parents_agree):
   % if user_need in('custody', 'divorce'):
   Pay the $250 filing fee to start your case.
   % elif user_need in('change AK order', 'change divorce order', 'change custody order', 'change foreign custody order'):
   ${ file_modify_filing_fee }
+  % endif
 
   If you cannot afford the filing fee, you can ask the court to waive it:
 
     * Call the Family Law Self-Help Center<br>
       (907)264-0851, or<br>
-      (866)279-0851,<br>
-      or
-    * Use Exemption From the Payment of Fees, TF-920 [[Fill in PDF](https://ak-courts.info/tf920)].
+      (866)279-0851.
+
+  Or,
+
+    * Use **Exemption From the Payment of Fees, TF-920** [[Fill in PDF](https://ak-courts.info/tf920)].
   
   <div class = "example">
   <p class = "heading">Note</p>
@@ -215,18 +219,28 @@ content: |
   % if user_need in('custody', 'divorce'):
   After you pay the filing fee, or the court says you can file for free, the court clerk will give you 2 copies of:
 
-    * a **Summons**, and
-    * a ""Standing Order**.  The Standing Order has important information about your case. Usually, the clerk will give you this order when you file.
+    * a **Summons** and
+    * a "**Standing Order**". The **Standing Order** has important information about your case. Usually, the clerk will give you this order when you file.
 
     One copy is for you, the other copy is for ${ other_party_in_case }.
 
-  % if user_need == 'divorce' and legal_separation_or_divorce == 'divorce' and ((minor_children and agree_or_settle_kids in('yes', 'do not know')) or (not minor_children and agree_or_settle in('no prop debt or pregnancy', 'agree', 'do not know'))):
+    % if (user_need == 'custody' and which_forms != 'contested' and (jurisdiction or add_jurisdiction_info_to_plan != 'stop')) \
+        or (user_need == 'divorce' \
+            and (((other_case and ((ongoing == 'yes' and other_state_case == 'continue') \
+                                  or (ongoing == 'no' and (residency_and_jurisdiction or continue_despite_no_residency == 'continue')))) \
+                  or (not other_case and (residency_and_jurisdiction or continue_despite_no_residency == 'continue')))) \
+            and ((legal_separation_or_divorce == 'divorce' \
+                  and ((not minor_children and not married_more_than_2 and not pregnant and property_division.all_true() and no_prop_or_debt_agree) \
+                      or (minor_children and agree_or_settle_kids in ('yes', 'do not know')) \
+                      or (not minor_children and not married_more_than_2 and not pregnant and property_division.any_false() and agree_or_settle in ('agree', 'do not know')) \
+                      or (not minor_children and not married_more_than_2 and pregnant and agree_or_settle in ('agree', 'do not know')) \
+                      or (not minor_children and married_more_than_2 and agree_or_settle in ('agree', 'do not know')))) \
+              or (legal_separation_or_divorce == 'legal separation' and agree_or_settle_kids == 'yes'))):
   <div class = "example">
   <p class = "heading">Note</p>
-  If you file an uncontested complaint you may not get a **Summons**.
+  If you file an uncontested complaint, you may not get a **Summons**.
   </div>
-  % endif
-  % endif
+    % endif
   % endif
 ---
 comment: |
