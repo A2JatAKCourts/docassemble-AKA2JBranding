@@ -372,11 +372,11 @@ content: |
   [Motions Part 1: How to Ask the Court for Something](https://youtu.be/2irmxT0_0EA)
 ---
 comment: |
+  2026-08-10 added user_need 'change AK order' condition to child support rules content
   2026-08-05 added user_need 'change foreign order', synced w content.docx
   2026-07-27 added user_need 'change AK order'
   2026-06-10 deleted duplicate fee paragraph synced w yaml
   2026-05-15 adapting for TrueFiling and bitlys
-  Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
 template: modify_step
 subject: |
   Step ${ modify_idx }:
@@ -410,7 +410,7 @@ content: |
   If the judge changes the Parenting Plan, the judge may issue a new child support order.
   % endif
   
-  % if  user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+  % if user_need == 'change AK order' or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']):
   The child support rule, [Alaska Rule of Civil Procedure 90.3](https://ak-courts.info/civrules), states you need to prove there has been a “material change in circumstances” to modify child support. The most common changes in circumstances are:
   
   * Your children's schedule changes and they spend more or fewer overnights with you than they used to, or
