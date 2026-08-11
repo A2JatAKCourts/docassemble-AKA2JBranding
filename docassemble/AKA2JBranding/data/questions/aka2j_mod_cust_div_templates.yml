@@ -486,6 +486,34 @@ content: |
   </div>
 ---
 comment: |
+  2026-06-01 synced with content.docx
+template: dont_wait_modify_child_support_step
+subject: |
+  Step ${ dont_wait_modify_child_support_idx }:
+  Do not wait to file your Motion to Modify 
+content: |
+  File your **Motion to Change Custody, Visitation, & Support** and give ${ other_party_in_case } a copy of your motion as soon as you can after there is a “material change of circumstances.”
+
+  Until you file your motion with the court, **the parent who owes child support still owes the amount in your current order**. 
+  
+  If the judge agrees to change the amount of your child support, the judge will sign a new child support order. The new order includes the date the amount changed. This date is usually in the past. It will not be earlier than the date you filed your motion and gave a copy to ${ other_party_in_case }.
+
+  <div class = "example">
+      <p class = "heading">For example</p>
+  <ul>
+
+    <li>${ capitalize(other_party_in_case) } gets a new job making a lot more money on March 1.</li>
+    <li>You recalculate child support. ${ capitalize(other_party_in_case) } will owe you more child support each month.</li>
+    <li>You file a motion to modify child support with the court and give ${ other_party_in_case } a copy June 21.</li>
+    <li>The judge agrees to change your child support and grants your motion.</li>
+    <li>The judge signs a new child support order on September 1.</li>
+    <li>The court cannot order child support to be changed before you filed your motion and gave a copy to ${ other_party_in_case }.</li>
+    <li>The new order says that the new child support amount starts July 1.</li>
+    <li>Because you did not file your motion until June, ${ other_party_in_case } only has to pay the old amount of child support from March 1 to July 1.</li>
+    </ul>
+  </div>
+---
+comment: |
   2026-06-10 sync w content.docx still needs some bitlys created
 template: fill_modify_step
 subject: |
