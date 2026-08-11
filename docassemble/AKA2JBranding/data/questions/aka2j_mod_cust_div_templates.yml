@@ -120,6 +120,7 @@ content: |
   </ol>
 ---
 comment: |
+  2026-08-10 inserted signing_paragraph into yml 
   2026-08-04 formatting sync w content.docx see email from Jeannie 2026-05-28 RE: Foreign order forms questions GH issue Foreign orders for changing and enforcing #87 https://github.com/AlaskaLegalServices/docassemble-AKA2J/issues/87
   2026-06-08 formatting
   2026-05-28 still need to update w bitlys
@@ -151,8 +152,7 @@ content: |
   **Request to Register Tribal Court Order, DR-980** [[Fill in PDF](https://ak-courts.info/dr980)]
   % endif
 
-  If you fill out your forms on a computer and file them with TrueFiling, you can sign your forms electronically. Type “/s/ your name” on the signature line. For example, Zoe Lee’s signature would be "/s/ Zoe Lee."
-  If you fill out paper copies of the forms, or do not file them with TrueFiling, read {{ sign_step.subject }}
+  ${ signing_paragraph }
 
   % if user_need == 'change foreign custody order':
   <div class="step-subheading">Pay the filing fee of $150 or ask the court to waive it</div>
