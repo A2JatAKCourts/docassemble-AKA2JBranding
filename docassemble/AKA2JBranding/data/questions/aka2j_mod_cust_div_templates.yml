@@ -524,14 +524,15 @@ content: |
   </div>
 ---
 comment: |
+  2026-08-11 update step heading to fit user_need
   2026-06-10 sync w content.docx still needs some bitlys created
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
-  % if user_need in('change child support','change custody order'):
-  Fill out the Motion to Modify forms
-  % else:
+  % if user_need in('change foreign custody order','change custody order') or (user_need == 'change divorce order' and type_of_final_order == 'custody order'):
   Fill out the Motion to Modify Custody forms
+  % else:
+  Fill out the Motion to Modify forms
   % endif
 content: |
   <div class="step-subheading">Use</div>
