@@ -530,7 +530,7 @@ comment: |
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
-  % if user_need in('change foreign custody order','change custody order') or (user_need == 'change divorce order' and type_of_final_order == 'custody order'):
+  % if user_need in('change foreign custody order','change custody order') or (user_need == 'change divorce order' and type_of_final_order['custody order']):
   Fill out the Motion to Modify Custody forms
   % else:
   Fill out the Motion to Modify forms
