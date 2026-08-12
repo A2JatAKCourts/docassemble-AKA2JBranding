@@ -120,6 +120,7 @@ content: |
   </ol>
 ---
 comment: |
+  2026-08-12 added 'court' after the 2 foreign orders in step heading
   2026-08-11 updated heading to reflect tribal v. out of state foreign orders
   2026-08-10 inserted signing_paragraph into yml 
   2026-08-04 formatting sync w content.docx see email from Jeannie 2026-05-28 RE: Foreign order forms questions GH issue Foreign orders for changing and enforcing #87 https://github.com/AlaskaLegalServices/docassemble-AKA2J/issues/87
@@ -133,9 +134,9 @@ subject: |
  child support order from another state
  % elif user_need in('change foreign custody order','enforce foreign order'):
  % if foreign_court_type == 'other state':
- out-of-state order
+ out-of-state court order
  % elif foreign_court_type == 'tribal':
- tribal order
+ tribal court order
  % endif
  % endif
 content: |
