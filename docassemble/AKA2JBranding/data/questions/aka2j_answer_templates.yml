@@ -1,5 +1,6 @@
 ---
 comment: |
+  2026-07-28 synced typos and code and straight quotes with docx
   2026-05-05 added 'an' before open case
   2026-04-16 adding bitly links
   2026-04-10 updated ABA resources - no longer offer consumer guide, but do offer free legal answers in 41 states.
@@ -68,7 +69,7 @@ content: |
       * ${ "Or, why" if user_need == 'answer divorce' else "Why" } you think the Alaska court should hear the case even though your children have not lived in Alaska the last 6 months.
   % endif 
   % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and minor_children):
-      * Include where your children have lived for the last 6 months. 
+      * Include where your children have lived the last 6 months. 
   % endif
   
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
@@ -95,6 +96,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-05-09 synced with docx
   2026-05-05 tried to make it better to get rid of soft returns in docx
   2026-04-28 - fix step heading so it aligns in docx
 template: default_options_step
@@ -197,6 +199,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-07-28 change "the" children to "your" and sync w docx
   2026-05-08 take out limits around linking to dismiss step in wrong state and custody no jurisdiction like docx
   2026-05-06 typo 
   2026-04-27 bitly links and move to branding package
@@ -374,7 +377,7 @@ content: |
   % if (user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce':
   and why you think the case should move forward in Alaska.
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and minor_children) :
-   Include where the children have lived the last 6 months.
+   Include where your children have lived the last 6 months.
   % endif 
   % elif (user_need == 'answer custody' and not jurisdiction) or (user_need == 'answer divorce' and minor_children):
   ${ 'Explain' if user_need == 'answer custody' else 'Or, explain' } why you think the Alaska court should hear the case even though your children have not lived in Alaska 6 months.
@@ -456,6 +459,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-07-29 added extra ()'s in last condition so both default exclusive as well other instances get the sentence about court deciding not to dismiss in future if other party serves you properly. synced w docx.
   2026-06-11 added bitly for getting message to judge synced w content.docx
   2026-05-09 add missing paragraph already in content.docx, also took out what to put in dismiss step if case in other state ended with order, it's not in Jeannie's edits. matches content.docx 
   2026-04-21 - added 'stay married' in subject field
@@ -532,12 +536,13 @@ content: |
 
   Learn about motions: See [Motions: Requesting an Order from the Court; Opposing a Motion](https://ak-courts.info/mot).
 
-  % if type_of_response.all_true('default', exclusive = True) or (type_of_response['default'] and ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
+  % if (type_of_response.all_true('default', exclusive = True) or (type_of_response['default'] and ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')))) and not proper_service and stage_of_default in('application filed', 'hearing scheduled'):
   If ${ other_party_in_case } serves you properly in the future, the court may decide not to dismiss your case.   
-  Read ${ answer_step.subject }.
+  Read ${ answer_step.subject } to learn about filing an Answer.
   % endif
 ---
 comment: |
+  2026-07-30 reconciling differences ai found between mako and jinja - synced now
   2026-06-11 add bitly synced w content.docx
   2026-04-24 adjusting for 'stay married' and added sure you don't want to respond question
   2026-04-16 some code is still a little different between docx and this mako step
@@ -667,7 +672,7 @@ content: |
 
 
   <div class = "step-subheading">Watch a video about reaching an agreement</div>
-    Watch a [short video that discusses resolving your case](https://www.youtube.com/watch?v=4EuW9HET3nM&list=PLRS0LlEIQsuTsfO0wSTsSTIvVE5RO8sLc&index=7&t=3s) by reaching agreement with ${ other_party_in_case }.
+    Watch a [short video that discusses resolving your case](https://www.youtube.com/watch?v=4EuW9HET3nM&list=PLRS0LlEIQsuTsfO0wSTsSTIvVE5RO8sLc) by reaching agreement with ${ other_party_in_case }.
 
 
   
@@ -713,7 +718,7 @@ content: |
 
   You can hire your own private mediator to help resolve any issue in your case. If there was abuse or domestic violence in your relationship, be sure to hire someone with training and experience working with domestic violence. Tell your mediator if you want to bring a support person with you.
   
-  [Read about mediation](https://courts.alaska.gov/mediation).
+  [Read about mediation](https://ak-courts.info/med).
   
   [Find a private mediator](https://pmoa.wildapricot.org/directory) on the Professional Mediators of Alaska website. 
   
@@ -735,22 +740,22 @@ content: |
   % if user_need in('divorce', 'answer divorce', 'change divorce order'): # region content.collaborative_law_divorce_vs_parenting_words
   divorce
   % if minor_children: # region content.collaborative_law_minor_children_words
-  divorce and parenting
+  and parenting
   % endif # endregion content.collaborative_law_minor_children_words
   % elif user_need in('custody', 'answer custody', 'change custody order order'):
   parenting
   % endif # endregion content.collaborative_law_divorce_vs_parenting_words
   issues themselves. 
   
-  The judge does not get involved in making the decisions. Learn more about the Association on [their website](https://www.alaskacollaborative.org).
+  The judge does not get involved in making the decisions. Learn more about the Association on [their website](https://alaskacollaborative.org).
    
   % if (user_need == 'answer custody' and type_of_response.all_false() and not agreement_documents) or (user_need == 'answer divorce' and type_of_response.all_false()): # region content.what_to_do_if_you_reach_agreement
   <div class = "step-subheading">What to do if you reach an agreement</div>
   Use the Court Guide Action Plan: 
   % if user_need == 'answer custody': # region content.action_plan_link_by_user_need
-  [Starting a Custody Case](https://docassemble.akcourts.gov/start/AskingForChildCustody).
+  [Starting a Custody Case](https://courtguide.akcourts.gov/start/AskingForChildCustody).
   % elif user_need == 'answer divorce':
-  [Starting a Case to End Your Marriage](https://docassemble.akcourts.gov/start/DivorceAndSeparation/). 
+  [Starting a Case to End Your Marriage](https://courtguide.akcourts.gov/start/DivorceAndSeparation/). 
   % endif # endregion content.action_plan_link_by_user_need
   % endif # endregion content.what_to_do_if_you_reach_agreement
   % endif # endregion content.some_benefits_are
@@ -786,13 +791,13 @@ content: |
   
   The dynamics in a relationship with domestic violence may also cause people to feel pressured to agree to something they do not want. If this is your situation, these resources may help:
   
-    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, 
+    * [Find a domestic violence program in your area](https://andvsa.org/member-organization) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, 
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
   resources for children, 
   % endif
   and help with court.
-    * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://docassemble.akcourts.gov/start/ProtectiveOrders).
-    * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors/) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
+    * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://courtguide.akcourts.gov/start/ProtectiveOrders).
+    * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
   
   % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
   
@@ -867,6 +872,6 @@ content: |
   If you think you or your children's health, safety, or liberty would be harmed by providing the information on the **Child Custody Jurisdiction Affidavit, DR-150** to ${ other_party_in_case }:
   
     * Do not give ${ other_party_in_case } a copy of the completed **Child Custody Jurisdiction Affidavit** after you file it with the court. and
-    * File  **Direction to Seal Child Custody Jurisdiction Affidavit**, [DR-151](https://ak-courts.info/dr151).
+    * File **Direction to Seal Child Custody Jurisdiction Affidavit**, [DR-151](https://ak-courts.info/dr151).
   % endif
 ---
