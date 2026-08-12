@@ -276,7 +276,7 @@ comment: |
   2026-05-26 update some links with bitlys
 template: parents_agree_step
 subject: |
-  Step ${ parents_agree_idx }: 
+  Step ${ parents_agree_idx }:
   Find out if you and ${ other_party_in_case } agree
 content: |
   <p>If you want to change an order in your ${ case_type } case, you can talk with ${ other_party_in_case }. See if you agree about the change or if you both want to try to reach an agreement in one of these ways:</p>
@@ -381,7 +381,7 @@ comment: |
   update with bitlys: 2026-05-26
 template: tell_the_court_step
 subject: |
-  Step ${ tell_the_court_idx }: 
+  Step ${ tell_the_court_idx }:
   % if parents_agree:
   Tell the court about your agreement
   % elif user_need == 'change AK order' and parents_agree is None:
@@ -452,11 +452,11 @@ comment: |
 template: calculate_child_support_step
 subject: |
   Step ${ calculate_child_support_idx }:
-    % if user_need in('change custody order', 'change foreign custody order', 'change divorce order'):
-    Fill out your child support forms
-    % elif user_need in('change child support', 'change AK order'):
-    Calculate your new child support amount
-    % endif
+  % if user_need in('change custody order', 'change foreign custody order', 'change divorce order'):
+  Fill out your child support forms
+  % elif user_need in('change child support', 'change AK order'):
+  Calculate your new child support amount
+  % endif
 content: |
   Figure out the new child support amount using the new schedule and any new income information.  
     
@@ -490,7 +490,7 @@ comment:
   2026-06-11 need one more bitly from Abbey synced with content.docx
 template: alternate_service_step
 subject: |
-  Step ${ alternate_service_idx }: 
+  Step ${ alternate_service_idx }:
   % if user_need == 'divorce':
   Learn about starting a case when you do not know where ${other_party_in_case} is
   % elif user_need == 'custody':
@@ -682,7 +682,7 @@ comment: |
   updated 2026-05-14 put heading on new line after Step X:
 template: learn_more_about_process_step
 subject: |
-  Step ${ learn_more_about_process_idx }: 
+  Step ${ learn_more_about_process_idx }:
   % if user_need in('answer custody', 'answer divorce') and (type_of_response.all_true('improper service', exclusive = True) or (type_of_response.all_true('default', exclusive=True) and stage_of_default in ('application filed', 'hearing scheduled'))):
   If your case is moving forward, learn more about the process
   % elif user_need in('answer custody', 'answer divorce') and (type_of_response['wrong state'] or (type_of_response['case in 2 states'] and (stage_of_other_case =='still going' or (stage_of_other_case == 'ended with no order' and (type_of_response['improper service'] or (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'))))))):
@@ -810,7 +810,7 @@ comment: |
   2026-05-14 put heading on new line after Step X:
 template: get_help
 subject: |
-  Step ${ get_help_idx }: 
+  Step ${ get_help_idx }:
   Get more information or help
 content: |
   % if user_need == 'enforce custody order':

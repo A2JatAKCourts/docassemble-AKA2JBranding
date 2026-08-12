@@ -75,7 +75,7 @@ comment: |
   2026-06-01 - waiting for form number decisions and bitlys matches content.docx for now mvp
 template: motion_forms_step
 subject: |
-   Step ${ motion_forms_idx }: 
+   Step ${ motion_forms_idx }:
    % if  type_of_interim_order == 'standing order':
    Fill out your motion forms
    % else:
@@ -131,7 +131,7 @@ subject: |
  Register your
  % if user_need in('change foreign order','enforce foreign order'):
  child support order from another state
- % elif user_need in('change foreign order','enforce foreign order'):
+ % elif user_need in('change foreign custody order','enforce foreign order'):
  % if foreign_court_type == 'other state':
  out-of-state order
  % elif foreign_court_type == 'tribal':
@@ -364,7 +364,7 @@ comment: |
   July 10 2025
 template: fill_set_aside_step
 subject: |
-  Step ${ fill_set_aside_idx }: 
+  Step ${ fill_set_aside_idx }:
   % if user_need in('answer custody', 'answer divorce'):
   If you want to ask the court to set aside the default, fill out the forms
   % else:
@@ -390,15 +390,15 @@ comment: |
 template: modify_step
 subject: |
   Step ${ modify_idx }:
-    % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
-    Learn about motions to modify
-    % elif user_need == 'change divorce order':
-    Learn about a Motion to Modify your Parenting Plan
-    % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
-    Learn about motions to modify custody or a Parenting Plan order
-    % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
-    Learn about motions to modify a child support order
-    % endif
+  % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
+  Learn about motions to modify
+  % elif user_need == 'change divorce order':
+  Learn about a Motion to Modify your Parenting Plan
+  % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
+  Learn about motions to modify custody or a Parenting Plan order
+  % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+  Learn about motions to modify a child support order
+  % endif
 content: |
   % if not user_need in('respond to motion in custody', 'respond to motion in divorce'):
   Changing your Parenting Plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
@@ -542,7 +542,7 @@ content: |
 
   **Notice of Motion to Change Parenting Plan or Child Support, DR-710** [[Fill in PDF](https://ak-courts.info/dr710)]
 
-  **Child Custody Jurisdiction Affidavit, DR-150 [[Fill in PDF](https://ak-courts.info/dr150)]
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
 
   If you think the information on the **Child Custody Jurisdiction Affidavit**, could harm your or your children’s health, safety or liberty, if ${ other_party_in_case } or the public sees it, use **Direction to Seal Affidavit, DR-151** [[Fill in PDF](https://ak-courts.info/dr151)].
  
