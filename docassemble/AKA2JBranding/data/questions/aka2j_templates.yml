@@ -540,6 +540,7 @@ content: |
   Learn about motions. See [Motions: Requesting an Order from the Court; Opposing a Motion](https://ak-courts.info/mot).
 ---
 comment: |
+  2026-08-13 add 'child support' to get Motion for Interim Child Support in heading
   2026-07-27 add 'change AK order' to get step heading from changing child support interview.
   2026-06-10 synced w content.docx
   2026-05-19 adjust heading back to accommodate different motions and adding bitly for shc1010 
@@ -556,7 +557,7 @@ subject: |
   What to expect after you file your Answer
   % elif user_need == 'answer custody' and type_of_response.all_false():
   What to expect after you file your Complaint
-  % elif user_need in ('change divorce order', 'change foreign custody order', 'change custody order', 'change AK order'):
+  % elif user_need in ('change divorce order', 'change foreign custody order', 'change custody order', 'change AK order', 'child support'):
   What to expect after you file your ${ motion_type }
   % else:
   What to expect after you file your documents

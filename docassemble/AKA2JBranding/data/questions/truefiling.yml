@@ -104,6 +104,7 @@ subquestion: |
   You **do not** need to refresh your screen. Hang in there!
 ---
 comment: | 
+  2026-08-13 update syntax for parents_agree yesnomaybe radio from "not parents_agree" to "parents_agree is not True" 
   2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income', add 'enforce AK order' to get file_step heading
   2026-06-15 responding step heading from "to Reconsider" to "for Reconsideration"
   2026-06-12 condition for changing custody order and sync with content.docx
@@ -193,7 +194,7 @@ content: |
     * [Create an account](https://ak-courts.info/tflogin) and file your documents.
     * Read about [TrueFiling](https://ak-courts.info/truefile).
 
-  % if user_need in('custody', 'divorce', 'change foreign custody order') or (user_need == 'change custody order' and middle_of_case == 'no' and why_change in('review', 'schedule')) or (user_need == 'change divorce order' and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))) or (user_need == 'change AK order' and middle_of_case == 'no' and why_change == 'income' and not parents_agree):
+  % if user_need in('custody', 'divorce', 'change foreign custody order') or (user_need == 'change custody order' and middle_of_case == 'no' and why_change in('review', 'schedule')) or (user_need == 'change divorce order' and middle_of_case == 'no' and ((type_of_final_order['custody order'] and why_change in('review', 'schedule')) or (type_of_final_order['spousal support'] and why_change_divorce_order == 'changed circumstances'))) or (user_need == 'change AK order' and parents_agree is not True and middle_of_case == 'no' and why_change == 'income'):
   % if user_need in('custody', 'divorce'):
   Pay the $250 filing fee to start your case.
   % elif user_need in('change AK order', 'change divorce order', 'change custody order', 'change foreign custody order'):
@@ -242,6 +243,7 @@ content: |
   </div>
     % endif
   % endif
+---
 ---
 comment: |
   2026-07-22 update for user_need in ('change foreign order', 'change foreign custody order')
