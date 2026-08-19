@@ -504,6 +504,31 @@ content: |
   </div>
 ---
 comment: |
+  2026-08-19 added back in, somehow it got taken out!
+  2026-06-01? synced w content.docx? 
+template: dont_wait_modify_child_support_step
+subject: |
+  Step ${ dont_wait_modify_child_support_idx }: Do not wait to file your Motion to Modify 
+content: |
+  File your <strong>Motion to Modify Child Support</strong> and give the other parent a copy of your motion as soon as you can after there is a “material change of circumstances.”
+
+  Until you file your motion with the court, <strong>the parent who owes child support still owes the amount in your current order</strong>. 
+  
+  If the judge agrees to change the amount of your child support, the judge will sign a new child support order.  The new order includes the date the amount changed. This date is usually in the past. It will not be earlier than the date you filed your motion and gave a copy to the other parent.
+
+  <strong>For example</strong>
+
+    * The other parent gets a new job making a lot more money on March 1.
+    * You recalculate child support.  The other parent will owe you more child support each month.
+    * You file a motion to modify child support with the court and give the other parent a copy June 21.
+    * The judge agrees to change your child support and grants your motion.
+    * The judge signs a new child support order on September 1.
+    * The court cannot order child support to be changed before you filed your motion and gave a copy to the other parent.
+    * The new order says that the new child support amount starts July 1.
+    * Because you did not file your motion until June, the other parent only has to pay the old amount of child support from March 1 to July 1.
+---
+---
+comment: |
   2026-08-18 updated after working with Jeannie then synced w content.docx
   2026-06-10 sync w content.docx still needs some bitlys created
 template: fill_modify_step
