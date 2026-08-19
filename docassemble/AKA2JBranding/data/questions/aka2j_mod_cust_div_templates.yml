@@ -1,3 +1,6 @@
+comment: |
+  2026-08-18 update learn set aside, fill set aside, fill_modify
+  2026-08-07 
 objects:
   - service_cert_interim_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice.png', alt_text="Certificate of Service box")
   - service_cert_reconsider_set_aside_image: DAStaticFile.using(filename = 'docassemble.AKA2JBranding:certofservice.png', alt_text="Certificate of Service box")
@@ -75,7 +78,7 @@ comment: |
   2026-06-01 - waiting for form number decisions and bitlys matches content.docx for now mvp
 template: motion_forms_step
 subject: |
-   Step ${ motion_forms_idx }:
+   Step ${ motion_forms_idx }: 
    % if  type_of_interim_order == 'standing order':
    Fill out your motion forms
    % else:
@@ -120,25 +123,13 @@ content: |
   </ol>
 ---
 comment: |
-  2026-08-12 added 'court' after the 2 foreign orders in step heading
-  2026-08-11 updated heading to reflect tribal v. out of state foreign orders
-  2026-08-10 inserted signing_paragraph into yml 
   2026-08-04 formatting sync w content.docx see email from Jeannie 2026-05-28 RE: Foreign order forms questions GH issue Foreign orders for changing and enforcing #87 https://github.com/AlaskaLegalServices/docassemble-AKA2J/issues/87
   2026-06-08 formatting
   2026-05-28 still need to update w bitlys
 template: register_order_step
 subject: |
  Step ${ register_order_idx }:
- Register your
- % if user_need in('change foreign order','enforce foreign order'):
- child support order from another state
- % elif user_need in('change foreign custody order','enforce foreign order'):
- % if foreign_court_type == 'other state':
- out-of-state court order
- % elif foreign_court_type == 'tribal':
- tribal court order
- % endif
- % endif
+ Register ${"your child support order from another state" if user_need in('change foreign order','enforce foreign order') else "the out-of-state order"}
 content: |
   % if user_need =='enforce foreign order':
   A child support order from another state is called a “foreign order.”
@@ -163,7 +154,8 @@ content: |
   **Request to Register Tribal Court Order, DR-980** [[Fill in PDF](https://ak-courts.info/dr980)]
   % endif
 
-  ${ signing_paragraph }
+  If you fill out your forms on a computer and file them with TrueFiling, you can sign your forms electronically. Type “/s/ your name” on the signature line. For example, Zoe Lee’s signature would be "/s/ Zoe Lee."
+  If you fill out paper copies of the forms, or do not file them with TrueFiling, read {{ sign_step.subject }}
 
   % if user_need == 'change foreign custody order':
   <div class="step-subheading">Pay the filing fee of $150 or ask the court to waive it</div>
@@ -255,6 +247,7 @@ content: |
   ${ signing_paragraph }
 ---  
 comment: |
+  2026-08-18 updated after working with Jeannie 2026-08-14, 08-18 synced w content.docx
   2026-08-04 https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/88 not synced
   2026-04-09 synced with content.docx
 template: learn_set_aside_step
@@ -265,9 +258,17 @@ content: |
   A **Motion to Set Aside Judgment or Order** asks the judge to:
   
   * fix a mistake (Civil Rule 60(a)), or
-  * set aside or undo the final decision in your case, and let you and ${ other_party_in_case } present the issue again
-  for a new decision (Civil Rule 60(b)). Judges rarely agree to undo a decision.
-  
+  * set aside or undo the final
+  % if user_need in ('change AK order', 'change custody order') or (user_need  == 'change divorce order' and type_of_final_order.all_true('custody order', exclusive = True)):
+  custody
+  % endif
+  decision in your case, and let you and {{ other_party_in_case }} start 
+  % if user_need == 'change divorce order' and not type_of_final_order == 'custody order':
+  the custody part of 
+  % endif
+  your case all over again.<br>
+  Judges rarely agree to undo a decision. (Civil Rule 60(b)).
+    
   <div class="step-subheading">Reasons you may file a Motion to Set Aside Judgment or Order</div>
   
   Civil Rule 60(a) and (b) describe the reasons you can use to file this motion. You may decide to file a <strong>Motion to Set Aside Judgment or Order</strong>.
@@ -280,9 +281,9 @@ content: |
     <p class="heading">Examples when the judge may agree to fix a mistake on an order</p>
     <ul>
       <li>The order has the wrong birthday for one of your children.</li>
-      <li>The order was sent to both parents on January 4, <strong>2023</strong>, but the date on the order is January 4, <strong>2022</strong>.</li>
+      <li>The order was sent to both parents on January 4, <strong>2026</strong>, but the date on the order is January 4, <strong>2025</strong>.</li>
     </ul>
-  </div> 
+  </div>
   
   **Civil Rule 60(b)**
   
@@ -291,7 +292,9 @@ content: |
   For problems 1, 2, and 3, you must file your **Motion to Set Aside**:
     
     * **1 year** or less, from the date the court made the final orders in your case, and
-    * within a "reasonable time.” The judge decides if you filed your motion within a reasonable time. The judge may decide not to set aside the order if you file after a reasonable time has passed, even if your reason for filing is a good one.
+    * within a "reasonable time.” 
+    
+    The judge decides if you filed your motion within a reasonable time. The judge may decide not to set aside the order if you file after a reasonable time has passed, even if your reason for filing is a good one.
     
   The date of the final orders is usually the date the court sent the order to you. It is in the box at the bottom of the last page of your order.
   
@@ -359,13 +362,14 @@ content: |
   </ul>
 ---
 comment: |
+  2026-08-18 updated after working with Jeannie then synced w content.docx
   2026-08-04 no longer using CIV-807 but using generic DR motion form? https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/88
   2026-06-10 bitlys and synced w content.docx
   2026-05-22 added signing paragraph, replaced html with md
   July 10 2025
 template: fill_set_aside_step
 subject: |
-  Step ${ fill_set_aside_idx }:
+  Step ${ fill_set_aside_idx }: 
   % if user_need in('answer custody', 'answer divorce'):
   If you want to ask the court to set aside the default, fill out the forms
   % else:
@@ -378,28 +382,31 @@ content: |
   Put everything you want the judge to know and think about in your motion. You may not be able to tell the judge in person because they may not hold a hearing.
 
   ${ signing_paragraph }
+
+  **Notice of Motion, CIV-650** [[Fill in PDF](https://ak-courts.info/civ650)]<br>
+  Required if you are filing post-judgment and either (1) the other side was not represented by a lawyer, or (2) the other side was represented by a lawyer, but more than 1 year has passed since the final judgment.
   
   <div class="step-subheading">Watch</div>
   [Motions Part 1: How to Ask the Court for Something](https://youtu.be/2irmxT0_0EA)
 ---
 comment: |
-  2026-08-10 added user_need 'change AK order' condition to child support rules content
   2026-08-05 added user_need 'change foreign order', synced w content.docx
   2026-07-27 added user_need 'change AK order'
   2026-06-10 deleted duplicate fee paragraph synced w yaml
   2026-05-15 adapting for TrueFiling and bitlys
+  Learn step for custody and divorce if modifying custody or child support. Child support interview has its own learn_modify_child_support_step. 
 template: modify_step
 subject: |
   Step ${ modify_idx }:
-  % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
-  Learn about motions to modify
-  % elif user_need == 'change divorce order':
-  Learn about a Motion to Modify your Parenting Plan
-  % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
-  Learn about motions to modify custody or a Parenting Plan order
-  % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
-  Learn about motions to modify a child support order
-  % endif
+    % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
+    Learn about motions to modify
+    % elif user_need == 'change divorce order':
+    Learn about a Motion to Modify your Parenting Plan
+    % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
+    Learn about motions to modify custody or a Parenting Plan order
+    % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+    Learn about motions to modify a child support order
+    % endif
 content: |
   % if not user_need in('respond to motion in custody', 'respond to motion in divorce'):
   Changing your Parenting Plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
@@ -421,7 +428,7 @@ content: |
   If the judge changes the Parenting Plan, the judge may issue a new child support order.
   % endif
   
-  % if user_need == 'change AK order' or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']):
+  % if  user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
   The child support rule, [Alaska Rule of Civil Procedure 90.3](https://ak-courts.info/civrules), states you need to prove there has been a “material change in circumstances” to modify child support. The most common changes in circumstances are:
   
   * Your children's schedule changes and they spend more or fewer overnights with you than they used to, or
@@ -497,43 +504,15 @@ content: |
   </div>
 ---
 comment: |
-  2026-06-01 synced with content.docx
-template: dont_wait_modify_child_support_step
-subject: |
-  Step ${ dont_wait_modify_child_support_idx }:
-  Do not wait to file your Motion to Modify 
-content: |
-  File your **Motion to Change Custody, Visitation, & Support** and give ${ other_party_in_case } a copy of your motion as soon as you can after there is a “material change of circumstances.”
-
-  Until you file your motion with the court, **the parent who owes child support still owes the amount in your current order**. 
-  
-  If the judge agrees to change the amount of your child support, the judge will sign a new child support order. The new order includes the date the amount changed. This date is usually in the past. It will not be earlier than the date you filed your motion and gave a copy to ${ other_party_in_case }.
-
-  <div class = "example">
-      <p class = "heading">For example</p>
-  <ul>
-
-    <li>${ capitalize(other_party_in_case) } gets a new job making a lot more money on March 1.</li>
-    <li>You recalculate child support. ${ capitalize(other_party_in_case) } will owe you more child support each month.</li>
-    <li>You file a motion to modify child support with the court and give ${ other_party_in_case } a copy June 21.</li>
-    <li>The judge agrees to change your child support and grants your motion.</li>
-    <li>The judge signs a new child support order on September 1.</li>
-    <li>The court cannot order child support to be changed before you filed your motion and gave a copy to ${ other_party_in_case }.</li>
-    <li>The new order says that the new child support amount starts July 1.</li>
-    <li>Because you did not file your motion until June, ${ other_party_in_case } only has to pay the old amount of child support from March 1 to July 1.</li>
-    </ul>
-  </div>
----
-comment: |
-  2026-08-11 update step heading to fit user_need
+  2026-08-18 updated after working with Jeannie then synced w content.docx
   2026-06-10 sync w content.docx still needs some bitlys created
 template: fill_modify_step
 subject: |
   Step ${ fill_modify_idx }: 
-  % if user_need in('change foreign custody order','change custody order') or (user_need == 'change divorce order' and type_of_final_order['custody order']):
-  Fill out the Motion to Modify Custody forms
-  % else:
+  % if user_need in('change child support','change custody order'):
   Fill out the Motion to Modify forms
+  % else:
+  Fill out the Motion to Modify Custody forms
   % endif
 content: |
   <div class="step-subheading">Use</div>
@@ -541,9 +520,11 @@ content: |
 
   **Motion to Change Alaska Order about Parenting Plan (Custody) or Child Support, DR-705** [[Fill in PDF](https://ak-courts.info/dr705)]
 
-  **Notice of Motion to Change Parenting Plan or Child Support, DR-710** [[Fill in PDF](https://ak-courts.info/dr710)]
+  **Notice of Motion to Change Parenting Plan or Child Support, DR-710** [[Fill in PDF](https://ak-courts.info/dr710)]<br>
+  Required if you are filing post-judgment and **either** (1) the other side was not represented by a lawyer, **or** (2) the other side was represented by a lawyer, but more than 1 year has passed since the final judgment.
 
-  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
+
+  **Child Custody Jurisdiction Affidavit, DR-150 [[Fill in PDF](https://ak-courts.info/dr150)]
 
   If you think the information on the **Child Custody Jurisdiction Affidavit**, could harm your or your children’s health, safety or liberty, if ${ other_party_in_case } or the public sees it, use **Direction to Seal Affidavit, DR-151** [[Fill in PDF](https://ak-courts.info/dr151)].
  
