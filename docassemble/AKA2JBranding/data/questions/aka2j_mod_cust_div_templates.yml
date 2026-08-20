@@ -398,15 +398,15 @@ comment: |
 template: modify_step
 subject: |
   Step ${ modify_idx }:
-    % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
-    Learn about motions to modify
-    % elif user_need == 'change divorce order':
-    Learn about a Motion to Modify your Parenting Plan
-    % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
-    Learn about motions to modify custody or a Parenting Plan order
-    % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
-    Learn about motions to modify a child support order
-    % endif
+  % if user_need in('change custody order', 'change foreign custody order', 'change AK order'):
+  Learn about motions to modify
+  % elif user_need == 'change divorce order':
+  Learn about a Motion to Modify your Parenting Plan
+  % elif (user_need =='respond to motion in custody' and type_of_response == 'modify') or (user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['custody']):
+  Learn about motions to modify custody or a Parenting Plan order
+  % elif user_need == 'respond to motion in divorce' and type_of_response == 'modify' and type_of_modification['child support'] and not type_of_modification['custody']:
+  Learn about motions to modify a child support order
+  % endif
 content: |
   % if not user_need in('respond to motion in custody', 'respond to motion in divorce'):
   Changing your Parenting Plan or child support order is called "modifying" it. To ask the judge to change your order, file a **Motion to Modify**.
@@ -508,7 +508,8 @@ comment: |
   2026-06-01? synced w content.docx? 
 template: dont_wait_modify_child_support_step
 subject: |
-  Step ${ dont_wait_modify_child_support_idx }: Do not wait to file your Motion to Modify 
+  Step ${ dont_wait_modify_child_support_idx }:
+  Do not wait to file your Motion to Modify 
 content: |
   File your <strong>Motion to Modify Child Support</strong> and give the other parent a copy of your motion as soon as you can after there is a “material change of circumstances.”
 
@@ -549,7 +550,7 @@ content: |
   Required if you are filing post-judgment and **either** (1) the other side was not represented by a lawyer, **or** (2) the other side was represented by a lawyer, but more than 1 year has passed since the final judgment.
 
 
-  **Child Custody Jurisdiction Affidavit, DR-150 [[Fill in PDF](https://ak-courts.info/dr150)]
+  **Child Custody Jurisdiction Affidavit, DR-150** [[Fill in PDF](https://ak-courts.info/dr150)]
 
   If you think the information on the **Child Custody Jurisdiction Affidavit**, could harm your or your children’s health, safety or liberty, if ${ other_party_in_case } or the public sees it, use **Direction to Seal Affidavit, DR-151** [[Fill in PDF](https://ak-courts.info/dr151)].
  
