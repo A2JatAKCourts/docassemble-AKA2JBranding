@@ -123,13 +123,18 @@ content: |
   </ol>
 ---
 comment: |
+  2026-08-21 updated heading for tribal and out of state custody orders
   2026-08-04 formatting sync w content.docx see email from Jeannie 2026-05-28 RE: Foreign order forms questions GH issue Foreign orders for changing and enforcing #87 https://github.com/AlaskaLegalServices/docassemble-AKA2J/issues/87
   2026-06-08 formatting
   2026-05-28 still need to update w bitlys
 template: register_order_step
 subject: |
  Step ${ register_order_idx }:
- Register ${"your child support order from another state" if user_need in('change foreign order','enforce foreign order') else "the out-of-state order"}
+ % if user_need in('change foreign order','enforce foreign order'):
+ Register your child support order from another state
+ % elif user_need == 'change foreign custody order':
+ Register your ${ "tribal" if foreign_court_type == 'tribal' else "out of state" } court order
+ % endif 
 content: |
   % if user_need =='enforce foreign order':
   A child support order from another state is called a “foreign order.”
@@ -539,7 +544,6 @@ subject: |
   Fill out the Motion to Modify Custody forms
   % else:
   Fill out the Motion to Modify forms
-  
   % endif
 content: |
   <div class="step-subheading">Use</div>
