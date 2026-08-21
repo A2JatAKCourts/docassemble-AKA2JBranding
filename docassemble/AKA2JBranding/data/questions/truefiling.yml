@@ -105,6 +105,7 @@ subquestion: |
   You **do not** need to refresh your screen. Hang in there!
 ---
 comment: | 
+  2026-08-20 reorderd clauses in line 200 again. ((change ak order, why_change, parents_agree), middle_of_case)
   2026-08-18 reordered clauses in truefiling_file_and_serve_step %if on line 196 so why_change == 'income' comes before parents_agree; docassemble follows the condition left-to-right and stops at the first False, so any optional variable (like parents_agree) must be placed AFTER a gating check that is False on paths where the variable is not asked, or the interview will force the question.
   2026-08-13 update syntax for parents_agree yesnomaybe radio from "not parents_agree" to "parents_agree is not True" 
   2026-07-26 qualify user_need == 'change AK order' parents_agree by adding why_change == 'income', add 'enforce AK order' to get file_step heading
@@ -359,7 +360,8 @@ comment: |
   2026-06-23
 template: sign_step
 subject: |
-  Step ${ sign_idx }: Sign if you use paper forms or do not use TrueFiling
+  Step ${ sign_idx }:
+  Sign if you use paper forms or do not use TrueFiling
 content: |
   Signing your documents depends on:
   
