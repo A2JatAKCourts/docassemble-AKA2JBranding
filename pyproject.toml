@@ -13,7 +13,7 @@ authors = [
     { name = "Caroline Robinson", email = "CRobinson@AKcourts.gov" },
 ]
 dependencies = [
-    "docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main",
+    "docassemble.AssemblyLine>=4.5.0",
 ]
 license = "MIT"
 license-files = [
