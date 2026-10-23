@@ -34,6 +34,26 @@ default screen parts:
   under: ""
   footer: |
 		[:comment-dots: Feedback](${ feedback_link(user_info(), i=feedback_form, github_repo=github_repo_name, github_user=github_user) } ){:target="_blank"}
+  logo: |
+    <span class="title-container">
+      <span class="al-logo">
+        <img src="${ al_logo.url_for() }" alt="${ al_logo.alt_text }"/>
+      </span>
+      <span class="al-title">
+        <span class="title-row-1">${ AL_ORGANIZATION_TITLE }</span>
+        <span class="title-row-2">${ showifdef('dynamic_navbar_title', all_variables(special='metadata').get('title', '')) }</span>
+      </span>
+    </span>
+  short logo: |
+    <span class="title-container">
+      <span class="al-logo">
+        <img src="${ al_logo.url_for() }" alt="${ al_logo.alt_text }"/>
+      </span>
+      <span class="al-title">
+        <span class="title-row-1">${ AL_ORGANIZATION_TITLE }</span>
+        <span class="title-row-2">${ showifdef('dynamic_navbar_title', all_variables(special='metadata').get('short title', '')) }</span>
+      </span>
+    </span>
 ---
 code: |
   feedback_form = "docassemble.AKA2JBranding:feedback.yml" 
