@@ -6,14 +6,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.AKA2JBranding"
-version = "26.08.21"
+version = "26.10.23"
 description = "Package to customize Alaska jurisdiction's needs"
 readme = "README.md"
 authors = [
     { name = "Caroline Robinson", email = "CRobinson@AKcourts.gov" },
 ]
 dependencies = [
-    "docassemble.AssemblyLine>=4.5.0",
+    "docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main",
 ]
 license = "MIT"
 license-files = [

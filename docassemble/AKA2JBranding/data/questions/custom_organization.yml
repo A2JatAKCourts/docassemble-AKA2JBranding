@@ -48,7 +48,7 @@ features:
 ---
 id: basic questions intro screen
 question: |
-  ${interview_short_title}: Guided Assistant
+  ${interview_short_title}: Court Guide
 subquestion: |
   Answer questions to get a personal action plan to deal with your legal problem.
   
