@@ -2,6 +2,9 @@ comment: |
   Customize this feedback form to include any elements you want in
   your package.
 ---
+code: |
+   al_logo.alt_text = "Department, Divisions or State of Alaska logo"
+---
 include: 
   - docassemble.AKA2JBranding:custom_organization.yml
 ---
