@@ -1,0 +1,105 @@
+# Save and resume later — email-first implementation.
+# Include from the main interview with:
+# include:
+#   - save_and_resume.yml
+#
+# IMPORTANT: Anonymous cross-device links require an appropriate session
+# access/encryption configuration. Review multi_user with your administrator.
+# This file intentionally does not change multi_user.
+---
+# Display the action on interview question screens.
+# If your main interview already defines default screen parts/under,
+# merge this link into that existing block instead of overriding it.
+default screen parts:
+  right: |
+    [Save and finish later](${ url_action('save_and_resume') })
+---
+# A user-triggered action; no new mandatory interview flow.
+event: save_and_resume
+code: |
+  save_resume_return_url = interview_url()
+  force_ask('save_resume_email_address', 'save_resume_send_email')
+---
+id: save resume email address
+comment: |
+  If we end up offering sms "Enter an email address or phone number that is safe for you to get a link to continue this interview."" 
+question: |
+  Save and resume later
+subquestion: |
+  Enter an email address that is safe for you to get a link to continue this interview.
+fields:
+  #- Send my link by: resume_delivery_methods
+  #  datatype: checkboxes
+  #  minlength: 1
+  #  choices:
+  #    - Email: email
+  #    - Text message: sms
+  
+  - Email address: save_resume_email_address
+    datatype: email
+    default: ${ showifdef('resume_email_address', '') }
+    # js show if: |
+    #   val("resume_delivery_methods['email']") === true
+
+  # - Mobile phone number: resume_phone_number
+  #   datatype: al_international_phone
+  #   js show if: |
+  #     val("resume_delivery_methods['sms']") === true
+  #   required: False
+under: ""
+---
+# Send the email only after the address question has been answered.
+# send_email returns a success indicator.
+code: |
+  save_resume_email_sent = False
+  #  save_resume_sms_sent = False
+
+  # if resume_delivery_methods['email']:
+  if len(save_resume_email_address) > 1:
+    save_resume_email_sent = send_email(
+        to=save_resume_email_address,
+        template=save_resume_email_template
+    )
+
+  #   if resume_delivery_methods['sms']:
+  #     if server_capabilities().get('sms', False):
+  #       save_resume_sms_sent = send_sms(
+  #           to=resume_phone_number,
+  #           body="Return to your interview: " + interview_url()
+  #       )
+
+  save_resume_send_email = True
+  force_ask('save_resume_confirmation')
+
+---
+template: save_resume_email_template
+subject: |
+  Continue your online interview
+content: |
+  You can return to your interview using this link:
+
+  [Return to your interview](${ save_resume_return_url })
+
+  Keep this link private. Anyone with the link may be able to open
+  your interview. The link can be used again while the interview
+  session remains available.
+---
+id: save resume confirmation
+event: save_resume_confirmation
+question: |
+  Save and resume later
+subquestion: |
+  % if save_resume_email_sent:
+  We sent a link to **${ save_resume_email_address }**.
+    
+  You can use the link to return to your interview later.
+  % else:
+  We couldn't send your resume link.
+
+  Try checking the email address you entered.
+ 
+  % endif
+
+buttons:
+  - Come back later: leave
+---

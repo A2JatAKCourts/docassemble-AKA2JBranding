@@ -1,0 +1,211 @@
+---
+include:
+  - docassemble.EFSPIntegration:efiling_integration.yml
+---
+code: |
+  proxy_conn = ProxyConnection(credentials_code_block='tyler_login', default_jurisdiction=jurisdiction_id)
+---
+code: |
+  # Only one "trial count" for AK. The actual court selection is baked
+  # into the case types
+  trial_court = next(iter([c for c in proxy_conn.get_courts(fileable_only=True, with_names=True).data if c['name'] == "Alaska Court"]), "")
+---
+code: |
+  allow_anon_user = True
+---
+code: |
+  efile_case_category_filters = ['Civil']
+---
+need: court_code
+code: |
+  efile_case_type_filters =  [CodeType("CIPO" + court_code)]
+---
+code: |
+  efile_setup = len(available_efile_courts) > 0
+---
+code: |
+  jurisdiction_id = 'alaska'
+---
+code: |
+  # Avoid triggering this continue btn, no disclaimers in AK/TrueFiling
+  show_any_disclaimers = False
+---
+generic object: DAObject
+code: |
+  x.filing_description = ''
+  x.reference_number = None
+  x.filing_parties = ['users[0]']
+  x.filing_action = 'efile'
+  x.has_courtesy_copies = False
+---
+code: |
+  domestic_violence_protective_order_petition.filing_type_filters = ["Complaint/Petition/Application"]
+---
+code: |
+  domestic_violence_protective_order_petition_multi.filing_type_filters = ["Complaint/Petition/Application"]
+---
+code: |
+  sexual_assault_protective_order_petition.filing_type_filters = ["Complaint/Petition/Application"]
+---
+code: |
+  stalking_protective_order_petition.filing_type_filters = ["Complaint/Petition/Application"]
+---
+code: |
+  dv_127_confidential_law_enforcement_information_sheet.filing_type_filters = ["Law Enforcement Information Sheet (DV-127) - CONFIDENTIAL"]
+---
+code: |
+  dv_128_confidential_contact_information_sheet.filing_type_filters = ["Confidential Contact Information Sheet (DV-128) - CONFIDENTIAL",  "Other - Confidential Filing(s)"]
+---
+code: |
+  tf_835_self_certification_no_notary_available.filing_type_filters = ["Self-Certification (No Notary Available) - TF-835"]
+---
+code: |
+  is_initial_filing = True
+---
+code: |
+  should_cc_user = False
+---
+code: |
+  users[0].is_form_filler = al_person_answering == "user"
+---
+generic object: ALDocumentBundle
+code: |
+  x.optional_services.there_are_any = False
+---
+generic object: ALDocument
+code: |
+  x.optional_services.there_are_any = False
+---
+code: |
+  if users[i].age_in_years() < 18:
+    users[i].party_type_filters = [CodeType('MPET'), "Minor Petitioner"]
+  else:
+    users[i].party_type_filters = [CodeType('PET'), "Petitioner"]
+---
+code: |
+  if other_parties[i].age_in_years() < 18:
+    other_parties[i].party_type_filters = [CodeType('MRESP'), "Minor Respondent"]
+  else:
+    other_parties[i].party_type_filters = [CodeType('RESP'), "Respondent"]
+---
+code: |
+  advocate.party_type_filters = [CodeType('ADBM'), "Adult on Behalf of a Minor"]
+  advocate.party_type_default = None
+---
+code: |
+  adult_for_respondent.party_type_filters = [CodeType('ADBM'), "Adult on Behalf of a Minor"]
+  adult_for_respondent.party_type_default = None
+---
+code: |
+  advocate.is_form_filler = who_needs_the_order in ("child", "children")
+---
+if: can_check_efile
+code: |
+  # This stuff is usually set in the interview order, but we want to ask if folks want to e-file
+  # at the latest possible point
+
+  for i in range(users.number()):
+    users[i].party_type
+    users[i].is_form_filler
+    users[i].is_new
+  
+  if who_needs_the_order in ('child', 'children'):
+    advocate.party_type
+    advocate.is_new
+    advocate.is_form_filler
+
+  other_parties[0].is_new
+  other_parties[0].party_type
+
+  if other_parties[0].age_in_years() < 18 and knows_adult_for_respondent:
+    adult_for_respondent.party_type
+    adult_for_respondent.is_new
+  
+  # The rest is usually set at the end.
+  efile_case_category
+  efile_case_type
+  allow_anon_user
+  if domestic_violence_protective_order_petition.enabled:
+    domestic_violence_protective_order_petition.completed
+  if domestic_violence_protective_order_petition_multi.enabled:
+    domestic_violence_protective_order_petition_multi.completed
+  if sexual_assault_protective_order_petition.enabled:
+    sexual_assault_protective_order_petition.completed
+  if stalking_protective_order_petition.enabled:
+    stalking_protective_order_petition.completed
+  if dv_127_confidential_law_enforcement_information_sheet.enabled:
+    dv_127_confidential_law_enforcement_information_sheet.completed
+  if dv_128_confidential_contact_information_sheet.enabled:
+    dv_128_confidential_contact_information_sheet.completed
+  if tf_835_self_certification_no_notary_available.enabled:
+    tf_835_self_certification_no_notary_available.completed
+
+  # Slight hack: email is required if efiling, but we ask for it before we know if the users is efiling
+  if users[0].is_form_filler and (not defined("users[0].email") or users[0].email is None or len(users[0].email) == 0):
+    undefine("users[0].email")
+    users[0].email
+  if defined("advocate.is_form_filler") and advocate.is_form_filler and (not defined("advocate.email") or advocate.email is None or len(advocate.email) == 0):
+    undefine("advocate.email")
+    advocate.email
+
+  # Don't need to show fees, it will always be $0.
+  tyler_payment_id = None
+  review_fees = True 
+
+  # Don't show redundant screen confirming things
+  efile_user_reviewed = True
+
+  all_required_screens_shown
+
+  set_efile_variables = True
+---
+code: |
+  efile
+  efile_and_email = True
+---
+id: user-wants-efile
+question: |
+  Do you want to e-file this document directly with the court?
+subquestion: |
+  You are able to electronically-file (e-file) this document with ${ full_court_info['name'] }.
+
+  This means you don't have to print out the document. The court
+  will communicate with you through your email or phone.
+fields:
+  - Do you want to e-file?: user_wants_efile
+    datatype: yesnoradio
+---
+id: you-will-not-be-able-to-efile
+question: |
+  You will *not* be able to e-file this document
+subquestion: |
+  Unfortunately, you cannot e-file this document through this program.
+
+  However, you can still continue and download a completed form at the end.
+continue button field: show_no_efile
+---
+id: submitted form
+question: |
+  % if efile_resp.response_code == 200:
+  Your forms were submitted
+  % else:
+  Something went wrong delivering your form
+  % endif
+subquestion: |
+  % if efile_resp.response_code == 200:
+  Your envelope number is ${ efile_resp.data['envelopeId'] }.
+  Write this number down and use it when asking the court about this
+  filing.
+
+  We recommend you continue down below to download the form for your own records.
+  Click **Back to download screen** to get a copy of your forms and instructions.
+  % endif
+  
+  Here are your forms.
+  
+  ${ al_court_bundle.as_pdf() }
+
+  ${ collapse_template(debug_details) }
+
+continue button field: show_efile_resp
+continue button label: Back to download screen

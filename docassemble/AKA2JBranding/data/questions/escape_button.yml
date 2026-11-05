@@ -1,0 +1,17 @@
+---
+features:
+  javascript: docassemble.ALToolbox:escape_button.js
+---
+objects:
+  - al_navigation_items: DADict.using(auto_gather=False, gathered=True)
+---
+mandatory: True
+variable name: al_navigation_items["escape_button"]
+data: |
+  <div class="nav-item al_escape_nav"><a class="btn btn-danger al_escape" href="https://news.google.com">Safe exit</a></div>
+---
+default screen parts:
+  navigation bar html: |
+    % for nav_item in al_navigation_items.values():
+    ${ nav_item }
+    % endfor
